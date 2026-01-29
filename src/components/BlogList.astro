@@ -1,0 +1,61 @@
+---
+import BlogCard from "./BlogCard.astro";
+import type { CollectionEntry } from "astro:content";
+import { cleanSlug } from "../utils/content";
+
+type BlogPost = CollectionEntry<"blog">;
+
+interface Props {
+  posts: BlogPost[];
+  emptyMessage?: string;
+}
+
+const { posts, emptyMessage = "hələ yazı yoxdur" } = Astro.props;
+---
+
+{
+  posts.length === 0 ? (
+    <div class="empty-state">
+      <p>
+        <span class="comment">// </span> {emptyMessage}
+      </p>
+    </div>
+  ) : (
+    <div class="blog-list">
+      {posts.map((post: BlogPost) => (
+        <div
+          class="blog-item"
+          data-categories={JSON.stringify(post.data.categories)}
+          data-date={post.data.date.valueOf()}
+          data-title={post.data.title.toLowerCase()}
+        >
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            author={post.data.author}
+            date={post.data.date}
+            categories={post.data.categories}
+            image={post.data.image}
+            href={`/blogs/${cleanSlug(post.slug)}`}
+          />
+        </div>
+      ))}
+    </div>
+  )
+}
+
+<style>
+  .blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .empty-state {
+    padding: 2rem;
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+  }
+</style>

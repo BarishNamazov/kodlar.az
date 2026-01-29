@@ -1,0 +1,86 @@
+---
+import { getTagColor } from "../utils/styles";
+
+interface Props {
+  name: string;
+  color?: "blue" | "green" | "purple" | "orange" | "cyan" | "red" | "auto";
+  size?: "sm" | "md";
+  href?: string;
+  class?: string;
+}
+
+const {
+  name,
+  color = "auto",
+  size = "sm",
+  href,
+  class: className = "",
+} = Astro.props;
+
+const colorClass = color === "auto" ? getTagColor(name) : `tag--${color}`;
+const Tag = href ? "a" : "span";
+---
+
+<Tag href={href} class:list={["tag", colorClass, `tag--${size}`, className]}>
+  {name}
+</Tag>
+
+<style>
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+  }
+
+  /* Sizes */
+  .tag--sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.6875rem;
+  }
+
+  .tag--md {
+    padding: 0.375rem 0.625rem;
+    font-size: 0.75rem;
+  }
+
+  /* Colors */
+  .tag--blue {
+    background: var(--color-primary-muted);
+    color: var(--color-primary);
+  }
+
+  .tag--green {
+    background: var(--color-green-muted);
+    color: var(--color-green);
+  }
+
+  .tag--purple {
+    background: var(--color-purple-muted);
+    color: var(--color-purple);
+  }
+
+  .tag--orange {
+    background: var(--color-orange-muted);
+    color: var(--color-orange);
+  }
+
+  .tag--cyan {
+    background: var(--color-cyan-muted);
+    color: var(--color-cyan);
+  }
+
+  .tag--red {
+    background: var(--color-red-muted);
+    color: var(--color-red);
+  }
+
+  /* Hover for interactive tags */
+  a.tag:hover {
+    opacity: 0.8;
+  }
+</style>

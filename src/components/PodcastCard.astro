@@ -1,0 +1,296 @@
+---
+import ActionButton from "./ActionButton.astro";
+import Icon from "./Icon.astro";
+import { formatDateShort } from "../utils/styles";
+
+interface Props {
+  title: string;
+  description: string;
+  hosts: string[];
+  date: Date;
+  image?: string;
+  duration?: string;
+  youtube?: string;
+  featured?: boolean;
+}
+
+const {
+  title,
+  description,
+  hosts,
+  date,
+  duration,
+  youtube,
+  featured = false,
+} = Astro.props;
+
+const formattedDate = formatDateShort(date);
+---
+
+<article class:list={["card", "podcast-card", { featured }]}>
+  <div class="card-header">
+    <div class="tab-bar">
+      <div class="tab active">
+        <Icon name="podcast" size={12} />
+        <span>{title.substring(0, 18)}{title.length > 18 ? "..." : ""}.mp3</span
+        >
+      </div>
+    </div>
+    <div class="controls">
+      <span class="duration-badge">
+        <Icon name="clock" size={10} />
+        {duration || "00:00"}
+      </span>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <!-- Audio Visualizer Effect -->
+    <div class="visualizer">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="card-content">
+      <h3 class="card-title line-clamp-2">{title}</h3>
+      <p class="card-description line-clamp-2">{description}</p>
+
+      <div class="hosts-line">
+        <span class="comment">// hosts:</span>
+        <span class="hosts-value">["{hosts.join('", "')}"]</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <div class="date-info">
+      <span class="comment">//</span>
+      <span class="date">{formattedDate}</span>
+    </div>
+
+    <div class="action-buttons">
+      {
+        youtube && (
+          <ActionButton
+            href={youtube}
+            variant="youtube"
+            size="sm"
+            icon="youtube"
+            title="YouTube"
+            target="_blank"
+            rel="noopener"
+          />
+        )
+      }
+    </div>
+  </div>
+</article>
+
+<style>
+  .podcast-card {
+    overflow: hidden;
+  }
+
+  .podcast-card:hover {
+    border-color: var(--color-green);
+    box-shadow: 0 0 0 1px var(--color-green);
+  }
+
+  .podcast-card.featured {
+    grid-column: span 2;
+    border-color: var(--color-green);
+  }
+
+  /* Header */
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-bg-secondary);
+    border-bottom: 1px solid var(--color-border);
+    padding-right: 0.75rem;
+  }
+
+  .podcast-card .tab {
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.25rem;
+  }
+
+  .podcast-card .tab.active {
+    color: var(--color-text);
+    border-top-color: var(--color-green);
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .duration-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    background: var(--color-green-muted);
+    color: var(--color-green);
+    border-radius: var(--radius-sm);
+  }
+
+  /* Body */
+  .card-body {
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    min-height: 100px;
+  }
+
+  .podcast-card.featured .card-body {
+    min-height: 140px;
+  }
+
+  /* Visualizer */
+  .visualizer {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 60px;
+    padding: 0 0.25rem;
+    border-right: 1px solid var(--color-border);
+  }
+
+  .visualizer span {
+    width: 3px;
+    background: var(--color-green);
+    border-radius: 1px;
+    opacity: 0.6;
+    animation: visualize 1.2s ease-in-out infinite;
+  }
+
+  .visualizer span:nth-child(1) {
+    height: 30%;
+    animation-delay: 0s;
+  }
+  .visualizer span:nth-child(2) {
+    height: 60%;
+    animation-delay: 0.1s;
+  }
+  .visualizer span:nth-child(3) {
+    height: 40%;
+    animation-delay: 0.2s;
+  }
+  .visualizer span:nth-child(4) {
+    height: 80%;
+    animation-delay: 0.3s;
+  }
+  .visualizer span:nth-child(5) {
+    height: 50%;
+    animation-delay: 0.4s;
+  }
+  .visualizer span:nth-child(6) {
+    height: 70%;
+    animation-delay: 0.5s;
+  }
+  .visualizer span:nth-child(7) {
+    height: 35%;
+    animation-delay: 0.6s;
+  }
+  .visualizer span:nth-child(8) {
+    height: 55%;
+    animation-delay: 0.7s;
+  }
+  .visualizer span:nth-child(9) {
+    height: 45%;
+    animation-delay: 0.8s;
+  }
+  .visualizer span:nth-child(10) {
+    height: 65%;
+    animation-delay: 0.9s;
+  }
+
+  @keyframes visualize {
+    0%,
+    100% {
+      transform: scaleY(1);
+      opacity: 0.6;
+    }
+    50% {
+      transform: scaleY(0.5);
+      opacity: 0.3;
+    }
+  }
+
+  .podcast-card:hover .visualizer span {
+    opacity: 1;
+    animation-duration: 0.6s;
+  }
+
+  .card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.4;
+  }
+
+  .podcast-card.featured .card-title {
+    font-size: 1.125rem;
+  }
+
+  .card-description {
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  .hosts-line {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    margin-top: auto;
+  }
+
+  .hosts-value {
+    color: var(--color-cyan);
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.625rem 0.875rem;
+    background: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+  }
+
+  .date-info {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    color: var(--color-text-secondary);
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 0.375rem;
+  }
+
+  @media (max-width: 768px) {
+    .podcast-card.featured {
+      grid-column: span 1;
+    }
+
+    .visualizer {
+      display: none;
+    }
+  }
+</style>

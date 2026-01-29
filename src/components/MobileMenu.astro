@@ -1,0 +1,258 @@
+---
+import Icon from "./Icon.astro";
+import Logo from "./Logo.astro";
+import { GITHUB_URL } from "../config";
+---
+
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-backdrop" id="mobile-menu-backdrop"></div>
+  <div class="mobile-menu-content">
+    <div class="mobile-menu-header">
+      <a href="/" class="mobile-logo">
+        <Logo />
+      </a>
+      <button class="mobile-close-btn" id="mobile-close-btn">×</button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="/" class="mobile-nav-link">ana_səhifə()</a>
+      <a href="/blogs" class="mobile-nav-link">bloglar()</a>
+      <a href="/podcasts" class="mobile-nav-link">söhbətlər()</a>
+    </nav>
+    <div class="mobile-footer">
+      <div class="mobile-actions-grid">
+        <button class="mobile-action-btn search-trigger" aria-label="Axtar">
+          <Icon name="search" size={20} />
+          <span>Axtar</span>
+        </button>
+        <button class="theme-toggle mobile-action-btn" aria-label="Tema dəyiş">
+          <span class="sun-icon">
+            <Icon name="sun" size={20} />
+          </span>
+          <span class="moon-icon">
+            <Icon name="moon" size={20} />
+          </span>
+          <span>Tema</span>
+        </button>
+      </div>
+      <a
+        href={GITHUB_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mobile-github"
+      >
+        <Icon name="github" size={20} />
+        <span>GitHub</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 150;
+    display: none;
+  }
+
+  .mobile-menu.active {
+    display: block;
+  }
+
+  .mobile-menu-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+  }
+
+  .mobile-menu-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100%;
+    background: var(--color-bg);
+    border-left: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.2s ease;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .mobile-logo {
+    text-decoration: none;
+  }
+
+  .mobile-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+  }
+
+  .mobile-close-btn:hover {
+    color: var(--color-red);
+    border-color: var(--color-red);
+  }
+
+  .mobile-actions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .mobile-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    height: 40px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .mobile-action-btn:hover {
+    color: var(--color-text);
+    border-color: var(--color-primary);
+  }
+
+  .mobile-nav {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mobile-nav-link {
+    display: block;
+    padding: 0.875rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .mobile-nav-link:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  .mobile-footer {
+    padding: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .mobile-github {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .mobile-github:hover {
+    color: var(--color-text);
+    border-color: var(--color-primary);
+  }
+
+  /* Theme toggle specific styles */
+  .theme-toggle .sun-icon {
+    display: inline-flex;
+  }
+
+  .theme-toggle .moon-icon {
+    display: none;
+  }
+
+  :global([data-theme="light"]) .theme-toggle .sun-icon {
+    display: none;
+  }
+
+  :global([data-theme="light"]) .theme-toggle .moon-icon {
+    display: inline-flex;
+  }
+</style>
+
+<script>
+  function initMobileMenu() {
+    const menuBtn = document.getElementById("mobile-menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    const backdrop = document.getElementById("mobile-menu-backdrop");
+    const closeBtn = document.getElementById("mobile-close-btn");
+
+    function openMenu() {
+      menu?.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeMenu() {
+      menu?.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    menuBtn?.addEventListener("click", openMenu);
+    backdrop?.addEventListener("click", closeMenu);
+    closeBtn?.addEventListener("click", closeMenu);
+
+    // Close on link click
+    menu?.querySelectorAll(".mobile-nav-link").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+  }
+
+  // Initialize on page load
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initMobileMenu);
+  } else {
+    initMobileMenu();
+  }
+
+  // Re-initialize on navigation (for SPAs)
+  document.addEventListener("astro:page-load", initMobileMenu);
+  document.addEventListener("astro:after-swap", initMobileMenu);
+</script>

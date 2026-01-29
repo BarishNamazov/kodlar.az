@@ -1,0 +1,289 @@
+---
+import Icon from "./Icon.astro";
+import Logo from "./Logo.astro";
+import SearchModal from "./SearchModal.astro";
+import MobileMenu from "./MobileMenu.astro";
+import { GITHUB_URL } from "../config";
+
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = "/" } = Astro.props;
+
+const navItems = [
+  { href: "/", label: "ana_səhifə" },
+  { href: "/blogs", label: "məqalələr" },
+  { href: "/podcasts", label: "söhbətlər" },
+];
+---
+
+<header class="header">
+  <div class="header-container">
+    <a href="/" class="brand">
+      <Logo />
+    </a>
+
+    <nav class="nav">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class:list={["nav-link", { active: currentPath === item.href }]}
+          >
+            <span class="nav-prefix">//</span>
+            <span>{item.label}</span>
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="header-actions">
+      <button class="search-box search-trigger" id="search-trigger">
+        <Icon name="search" size={16} />
+        <span class="search-placeholder">ctrl+k</span>
+      </button>
+      <button class="theme-toggle" aria-label="Tema dəyiş">
+        <span class="sun-icon">
+          <Icon name="sun" size={18} />
+        </span>
+        <span class="moon-icon">
+          <Icon name="moon" size={18} />
+        </span>
+      </button>
+      <a
+        href={GITHUB_URL}
+        class="github-link"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
+      >
+        <Icon name="github" size={18} />
+      </a>
+    </div>
+
+    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+      <Icon name="menu" size={24} />
+    </button>
+  </div>
+</header>
+
+<MobileMenu />
+<SearchModal />
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--header-bg, rgba(13, 17, 23, 0.85));
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .brand {
+    text-decoration: none;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 0.875rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+  }
+
+  .nav-prefix {
+    color: var(--color-text-muted);
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: all var(--transition-fast);
+  }
+
+  .nav-link:hover {
+    color: var(--color-text);
+    background: var(--color-surface);
+  }
+
+  .nav-link:hover .nav-prefix {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .nav-link.active {
+    color: var(--color-primary);
+    background: var(--color-primary-muted);
+  }
+
+  .nav-link.active .nav-prefix {
+    opacity: 1;
+    transform: translateX(0);
+    color: var(--color-primary);
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .search-box {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 0.75rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .search-box:hover {
+    border-color: var(--color-primary);
+    color: var(--color-text-secondary);
+  }
+
+  .search-placeholder {
+    font-family: var(--font-mono);
+    padding: 0.125rem 0.375rem;
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-sm);
+  }
+
+  .github-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: var(--color-text-secondary);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+  }
+
+  .github-link:hover {
+    color: var(--color-text);
+    background: var(--color-surface);
+  }
+
+  .mobile-menu-btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    color: var(--color-text);
+    cursor: pointer;
+  }
+
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .theme-toggle:hover {
+    color: var(--color-text);
+    background: var(--color-surface);
+    border-color: var(--color-primary);
+  }
+
+  .theme-toggle .sun-icon {
+    display: inline-flex;
+  }
+
+  .theme-toggle .moon-icon {
+    display: none;
+  }
+
+  :global([data-theme="light"]) .theme-toggle .sun-icon {
+    display: none;
+  }
+
+  :global([data-theme="light"]) .theme-toggle .moon-icon {
+    display: inline-flex;
+  }
+
+  @media (max-width: 768px) {
+    .nav,
+    .header-actions {
+      display: none;
+    }
+
+    .mobile-menu-btn {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  function initTheme() {
+    const toggles = document.querySelectorAll(".theme-toggle");
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+
+    // Set initial theme
+    if (savedTheme) {
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    } else if (!prefersDark) {
+      document.documentElement.setAttribute("data-theme", "light");
+    }
+
+    toggles.forEach((toggle) => {
+      toggle.addEventListener("click", () => {
+        const current = document.documentElement.getAttribute("data-theme");
+        const newTheme = current === "light" ? "dark" : "light";
+
+        if (newTheme === "dark") {
+          document.documentElement.removeAttribute("data-theme");
+        } else {
+          document.documentElement.setAttribute("data-theme", newTheme);
+        }
+
+        localStorage.setItem("theme", newTheme);
+      });
+    });
+  }
+
+  initTheme();
+  document.addEventListener("astro:after-swap", initTheme);
+</script>

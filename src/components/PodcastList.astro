@@ -1,0 +1,244 @@
+---
+import Window from "./Window.astro";
+import Button from "./Button.astro";
+import type { CollectionEntry } from "astro:content";
+import { formatDateLong } from "../utils/styles";
+import { cleanSlug } from "../utils/content";
+import { getAuthor } from "../data/authors";
+
+type Podcast = CollectionEntry<"podcasts">;
+
+interface Props {
+  podcasts: Podcast[];
+  emptyMessage?: string;
+}
+
+const { podcasts, emptyMessage = "hələ söhbət yoxdur" } = Astro.props;
+
+function getYoutubeEmbedUrl(url: string) {
+  const videoId = url.match(
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/,
+  )?.[1];
+  return videoId ? `https://www.youtube.com/embed/${videoId}` : null;
+}
+---
+
+{
+  podcasts.length === 0 ? (
+    <div class="empty-state">
+      <p>
+        <span class="comment">// </span> {emptyMessage}
+      </p>
+    </div>
+  ) : (
+    <div class="podcast-list">
+      {podcasts.map(async (podcast) => {
+        const { Content } = await podcast.render();
+        return (
+          <Window
+            title={`${cleanSlug(podcast.slug)}.podcast`}
+            class="podcast-card"
+          >
+            <div class="podcast-content">
+              <div class="podcast-info">
+                <div class="podcast-meta">
+                  <span class="date">{formatDateLong(podcast.data.date)}</span>
+                </div>
+                <h2 class="podcast-title">{podcast.data.title}</h2>
+                <p class="podcast-desc">{podcast.data.description}</p>
+
+                <div class="hosts">
+                  <span class="comment">// aparıcılar:</span>
+                  {podcast.data.hosts.map((host: string, i: number) => {
+                    const author = getAuthor(host);
+                    return (
+                      <>
+                        {author ? (
+                          <a href={`/authors/${host}`} class="host host-link">
+                            {author.name}
+                          </a>
+                        ) : (
+                          <span class="host">{host}</span>
+                        )}
+                        {i < podcast.data.hosts.length - 1 ? ", " : ""}
+                      </>
+                    );
+                  })}
+                </div>
+
+                <div class="podcast-actions">
+                  {podcast.data.youtube && (
+                    <Button
+                      href={podcast.data.youtube}
+                      variant="youtube"
+                      icon="youtube"
+                      iconSize={18}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      YouTube-da izlə
+                    </Button>
+                  )}
+                </div>
+              </div>
+
+              {podcast.data.youtube &&
+                getYoutubeEmbedUrl(podcast.data.youtube) && (
+                  <div class="embed-container">
+                    <iframe
+                      src={getYoutubeEmbedUrl(podcast.data.youtube)}
+                      title={podcast.data.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    />
+                  </div>
+                )}
+            </div>
+
+            <div class="podcast-text">
+              <div class="text-content">
+                <Content />
+              </div>
+            </div>
+          </Window>
+        );
+      })}
+    </div>
+  )
+}
+
+<style>
+  .empty-state {
+    padding: 2rem;
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+  }
+  .podcast-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .podcast-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .podcast-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .podcast-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.75rem;
+  }
+
+  .date {
+    color: var(--color-cyan);
+  }
+
+  .podcast-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.3;
+  }
+
+  .podcast-desc {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  .hosts {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+  }
+
+  .host {
+    color: var(--color-green);
+  }
+
+  .host-link {
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .host-link:hover {
+    color: var(--color-cyan);
+    text-decoration: underline;
+  }
+
+  .podcast-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: var(--color-bg-secondary);
+  }
+
+  .embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .podcast-text {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .text-content {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    padding-left: 1rem;
+  }
+
+  .text-content :global(strong) {
+    color: var(--color-text);
+  }
+
+  @media (max-width: 768px) {
+    .podcast-content {
+      grid-template-columns: 1fr;
+    }
+
+    .embed-container {
+      order: -1;
+    }
+
+    .podcast-info {
+      gap: 1rem;
+    }
+
+    .podcast-title {
+      font-size: 1.125rem;
+    }
+
+    .podcast-desc {
+      font-size: 0.8125rem;
+    }
+
+    .podcast-actions {
+      flex-direction: column;
+    }
+  }
+</style>

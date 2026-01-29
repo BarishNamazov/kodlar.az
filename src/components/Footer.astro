@@ -1,0 +1,182 @@
+---
+import Logo from "./Logo.astro";
+import { GITHUB_URL, YOUTUBE_URL } from "../config";
+---
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="/" class="brand">
+          <Logo />
+        </a>
+        <p class="tagline">
+          // proqramlaşdırma haqqında məqalələr və söhbətlər
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>səhifələr</h4>
+          <ul>
+            <li><a href="/">ana_səhifə</a></li>
+            <li><a href="/blogs">məqalələr</a></li>
+            <li><a href="/podcasts">söhbətlər</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>resurslar</h4>
+          <ul>
+            <li>
+              <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer"
+                >github</a
+              >
+            </li>
+            <li><a href="/about">haqqımızda</a></li>
+            <li><a href="/contribute">məqalə_paylaş</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>izlə</h4>
+          <ul>
+            <li>
+              <a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer"
+                >youtube</a
+              >
+            </li>
+            <li>
+              <a href="/rss.xml" target="_blank" rel="noopener noreferrer"
+                >rss</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="copyright">/* © 2026 kodlar.az */</div>
+      <div class="made-with">
+        // <span class="highlight">&lt;kod/&gt;</span> və
+        <span class="highlight heart">❤</span> ilə yaradılmışdır
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border);
+    margin-top: auto;
+    padding: 3rem 0 1.5rem;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .footer-main {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .brand {
+    text-decoration: none;
+    display: inline-flex;
+    margin-bottom: 0.75rem;
+  }
+
+  .tagline {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-column h4 {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: lowercase;
+    margin-bottom: 1rem;
+  }
+
+  .footer-column ul {
+    list-style: none;
+  }
+
+  .footer-column li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-column a {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .footer-column a:hover {
+    color: var(--color-primary);
+  }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+
+  .copyright {
+    color: var(--color-text-secondary);
+  }
+
+  .made-with {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--color-text-muted);
+  }
+
+  .made-with .highlight {
+    color: var(--color-primary);
+  }
+
+  .made-with .heart {
+    color: var(--color-red);
+  }
+
+  @media (max-width: 768px) {
+    .footer-main {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .footer-links {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      gap: 0.75rem;
+      text-align: center;
+    }
+  }
+</style>

@@ -1,0 +1,213 @@
+---
+interface Props {
+  title?: string;
+  class?: string;
+  mono?: boolean;
+}
+
+const { title, class: className, mono = false, ...rest } = Astro.props;
+---
+
+<div class:list={["window", className]} {...rest}>
+  <div class="window-header">
+    {title && <span class="window-title">{title}</span>}
+    <div class="header-buttons">
+      <button
+        class="header-btn minimize"
+        aria-label="Minimize"
+        data-action="minimize"
+      >
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <line
+            x1="4"
+            y1="8"
+            x2="12"
+            y2="8"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"></line>
+        </svg>
+      </button>
+      <button
+        class="header-btn maximize"
+        aria-label="Maximize"
+        data-action="maximize"
+      >
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <rect
+            x="4"
+            y="4"
+            width="8"
+            height="8"
+            stroke="currentColor"
+            stroke-width="1.5"
+            fill="none"
+            rx="1"></rect>
+        </svg>
+      </button>
+      <button class="header-btn close" aria-label="Close" data-action="close">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path
+            d="M5 5L11 11M11 5L5 11"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class:list={["window-body", { mono }]}>
+    <slot />
+  </div>
+</div>
+
+<script>
+  function initWindows() {
+    const windows = document.querySelectorAll(".window");
+
+    windows.forEach((window) => {
+      const minimizeBtn = window.querySelector('[data-action="minimize"]');
+      const maximizeBtn = window.querySelector('[data-action="maximize"]');
+      const closeBtn = window.querySelector('[data-action="close"]');
+
+      if (minimizeBtn) {
+        minimizeBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          // Remove maximized state when minimizing
+          window.classList.remove("maximized");
+          window.classList.toggle("minimized");
+        });
+      }
+
+      if (maximizeBtn) {
+        maximizeBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          // Remove minimized state when maximizing
+          window.classList.remove("minimized");
+          window.classList.toggle("maximized");
+        });
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          (window as HTMLElement).style.display = "none";
+        });
+      }
+    });
+  }
+
+  // Initialize on page load
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initWindows);
+  } else {
+    initWindows();
+  }
+
+  // Re-initialize on navigation (for SPAs)
+  document.addEventListener("astro:page-load", initWindows);
+</script>
+
+<style>
+  .window {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .window-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0.625rem;
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border-muted);
+    min-height: 2.5rem;
+  }
+
+  .window-title {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-text);
+    flex: 1;
+    padding-left: 0.5rem;
+  }
+
+  .header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  .header-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-sm);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .header-btn:hover {
+    background: var(--color-surface-hover);
+    color: var(--color-text);
+  }
+
+  .header-btn.close:hover {
+    background: var(--color-red);
+    color: white;
+  }
+
+  .window-body {
+    padding: 1.25rem;
+  }
+
+  .window-body.mono {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+  }
+
+  /* Minimized state - collapse to just header */
+  .window.minimized .window-body {
+    display: none;
+  }
+
+  .window.minimized {
+    overflow: visible;
+  }
+
+  /* Maximized state - full width and larger */
+  .window.maximized {
+    position: fixed;
+    top: 5rem;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 100;
+    max-width: none;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .window.maximized .window-body {
+    height: calc(100% - 2.5rem);
+    overflow: auto;
+  }
+
+  /* Smooth transitions */
+  .window {
+    transition: all var(--transition-base);
+  }
+
+  .window-body {
+    transition: all var(--transition-base);
+  }
+</style>

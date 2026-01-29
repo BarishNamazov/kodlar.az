@@ -1,0 +1,37 @@
+{
+  "name": "kodlar.az",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "kodlar.az - İnformatika və proqramlaşdırma platforması",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "eslint . --fix --max-warnings 0 && prettier --write ."
+  },
+  "keywords": [
+    "blog",
+    "podcast",
+    "astro",
+    "static-site"
+  ],
+  "author": "BarishNamazov",
+  "license": "MIT",
+  "dependencies": {
+    "@astrojs/rss": "^4.0.15",
+    "@iarna/toml": "^2.2.5",
+    "astro": "^4.0.0",
+    "marked": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.10",
+    "@typescript-eslint/eslint-plugin": "8.54.0",
+    "@typescript-eslint/parser": "8.54.0",
+    "eslint": "9.39.2",
+    "eslint-plugin-astro": "1.5.0",
+    "prettier": "3.8.1",
+    "prettier-plugin-astro": "0.14.1"
+  }
+}

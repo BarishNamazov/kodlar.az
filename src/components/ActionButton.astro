@@ -1,0 +1,96 @@
+---
+import Icon from "./Icon.astro";
+
+interface Props {
+  href?: string;
+  variant?: "default" | "youtube";
+  size?: "sm" | "md";
+  icon: string;
+  iconSize?: number;
+  title?: string;
+  class?: string;
+  target?: string;
+  rel?: string;
+  id?: string;
+}
+
+const {
+  href,
+  variant = "default",
+  size = "md",
+  icon,
+  iconSize,
+  title,
+  class: className = "",
+  target,
+  rel,
+  id,
+} = Astro.props;
+
+const computedIconSize = iconSize ?? (size === "sm" ? 14 : 16);
+const Tag = href ? "a" : "button";
+---
+
+<Tag
+  href={href}
+  class:list={[
+    "action-btn",
+    `action-btn--${variant}`,
+    `action-btn--${size}`,
+    className,
+  ]}
+  title={title}
+  target={target}
+  rel={rel}
+  id={id}
+  aria-label={title}
+>
+  <Icon name={icon} size={computedIconSize} />
+</Tag>
+
+<style>
+  .action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+  }
+
+  .action-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  /* Sizes */
+  .action-btn--sm {
+    width: 28px;
+    height: 28px;
+  }
+
+  .action-btn--md {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Variants */
+  .action-btn--youtube {
+    background: var(--color-red-muted);
+    color: var(--color-red);
+    border-color: transparent;
+  }
+
+  .action-btn--youtube:hover {
+    border-color: var(--color-red);
+  }
+
+  /* Shared state */
+  .action-btn.shared {
+    color: var(--color-green);
+  }
+</style>

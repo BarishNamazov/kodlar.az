@@ -1,0 +1,122 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Button from "../../components/Button.astro";
+import Window from "../../components/Window.astro";
+import PodcastList from "../../components/PodcastList.astro";
+import { getCollection } from "astro:content";
+import { YOUTUBE_URL } from "../../config";
+
+const allPodcasts = await getCollection("podcasts");
+const sortedPodcasts = [...allPodcasts].sort((a, b) => {
+  return b.data.date.valueOf() - a.data.date.valueOf();
+});
+---
+
+<BaseLayout title="Söhbətlər" currentPath="/podcasts">
+  <div class="page-container">
+    <Window title="podcasts.sh" class="page-header" mono>
+      <div class="cmd-line">
+        <span class="prompt">$</span>
+        <span class="cmd">ls</span>
+        <span class="path">./podcasts/</span>
+        <span> | wc -l | awk &#123;'&#123;print $1 " söhbət"&#125;'&#125;</span>
+      </div>
+      <div class="output">
+        <span class="output-text">{allPodcasts.length} söhbət</span>
+      </div>
+    </Window>
+
+    <PodcastList podcasts={sortedPodcasts} />
+
+    <Window title="abunə" class="subscribe-section" mono>
+      <div class="subscribe-content">
+        <div class="subscribe-text">
+          <div class="cmd-line">
+            <span class="comment">// söhbətlərə abunə olun</span>
+          </div>
+          <h3>söhbətlər.abunə_ol()</h3>
+          <p class="description">Yeni epizodları qaçırmamaq üçün izləyin</p>
+        </div>
+        <div class="subscribe-links">
+          <Button
+            href={YOUTUBE_URL}
+            variant="youtube"
+            icon="youtube"
+            iconSize={18}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            abunə_ol()
+          </Button>
+        </div>
+      </div>
+    </Window>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .output {
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .output-text {
+    color: var(--color-text-muted);
+  }
+
+  .subscribe-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .subscribe-text h3 {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+  }
+
+  .description {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+  }
+
+  .subscribe-links {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    .page-header .cmd-line {
+      font-size: 0.7rem;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .subscribe-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .subscribe-links {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .subscribe-btn {
+      justify-content: center;
+    }
+  }
+</style>

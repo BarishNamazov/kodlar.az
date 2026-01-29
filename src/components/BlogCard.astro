@@ -1,0 +1,187 @@
+---
+import Tag from "./Tag.astro";
+import Icon from "./Icon.astro";
+import { getAuthor } from "../data/authors";
+import { formatDateShort } from "../utils/styles";
+
+interface Props {
+  title: string;
+  description: string;
+  author: string;
+  date: Date;
+  categories: string[];
+  image?: string;
+  href: string;
+}
+
+const { title, description, author, date, categories, href } = Astro.props;
+
+const formattedDate = formatDateShort(date);
+
+const authorData = getAuthor(author);
+const authorName = authorData?.name || author;
+---
+
+<article class="card blog-card">
+  <a href={href} class="card-link">
+    <div class="card-header">
+      <div class="tab-bar">
+        <div class="tab active">
+          <Icon name="code" size={12} />
+          <span
+            >{title.substring(0, 20)}{title.length > 20 ? "..." : ""}.md</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <div class="line-numbers">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="card-content">
+        <div class="card-tags">
+          {categories.slice(0, 3).map((cat) => <Tag name={cat} />)}
+        </div>
+
+        <h3 class="card-title line-clamp-2">{title}</h3>
+
+        <p class="card-description line-clamp-2">{description}</p>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <div class="author">
+        <span class="comment">//</span>
+        <span class="author-name">{authorName}</span>
+      </div>
+      <span class="date">{formattedDate}</span>
+    </div>
+  </a>
+</article>
+
+<style>
+  .blog-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .blog-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 1px var(--color-primary);
+  }
+
+  .card-link {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Tab bar - IDE style */
+  .card-header {
+    background: var(--color-bg-secondary);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .blog-card .tab-bar {
+    padding: 0 0.5rem;
+  }
+
+  .blog-card .tab {
+    margin-top: 0.375rem;
+  }
+
+  .blog-card .tab.active {
+    color: var(--color-text);
+  }
+
+  /* Body with line numbers */
+  .card-body {
+    display: flex;
+    padding: 1rem 0;
+    min-height: 120px;
+    flex: 1;
+  }
+
+  .line-numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 0.75rem;
+    border-right: 1px solid var(--color-border);
+    counter-reset: line;
+  }
+
+  .line-numbers span {
+    counter-increment: line;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    color: var(--color-text-subtle);
+    text-align: right;
+    min-width: 1.5rem;
+  }
+
+  .line-numbers span::before {
+    content: counter(line);
+  }
+
+  .card-content {
+    flex: 1;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.4;
+  }
+
+  .card-description {
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  /* Footer */
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+  }
+
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    color: var(--color-text-secondary);
+  }
+
+  .author-name {
+    color: var(--color-green);
+  }
+
+  .date {
+    color: var(--color-text-muted);
+  }
+</style>

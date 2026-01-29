@@ -1,0 +1,208 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogList from "../components/BlogList.astro";
+import Button from "../components/Button.astro";
+import Window from "../components/Window.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import { GITHUB_URL } from "../config";
+import Icon from "../components/Icon.astro";
+
+const allPosts = await getCollection("blog");
+const recentPosts = allPosts
+  .sort(
+    (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
+      b.data.date.valueOf() - a.data.date.valueOf(),
+  )
+  .slice(0, 3);
+
+const allPodcasts = await getCollection("podcasts");
+const sortedPodcasts = [...allPodcasts].sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const featuredPodcast = sortedPodcasts[0];
+---
+
+<BaseLayout title="Ana Səhifə">
+  <div class="home-container">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>
+          <span class="fn">kodlar</span><span class="dot">.</span><span
+            class="ext">az</span
+          >
+        </h1>
+        <p class="hero-desc">
+          İnformatika və proqramlaşdırma haqqında Azərbaycan dilində məqalələr,
+          söhbətlər və ictimai resurslar.
+        </p>
+
+        <div class="hero-actions">
+          <Button href="/blogs">məqalələr()</Button>
+          <Button href="/podcasts">söhbətlər()</Button>
+          <Button href="/about">haqqımızda()</Button>
+        </div>
+      </div>
+    </section>
+
+    {
+      featuredPodcast && (
+        <Window title="son_söhbət" class="featured-podcast">
+          <h3 class="fp-title">{featuredPodcast.data.title}</h3>
+          <p class="fp-desc">{featuredPodcast.data.description}</p>
+          <div class="fp-actions">
+            {featuredPodcast.data.youtube && (
+              <Button
+                href={featuredPodcast.data.youtube}
+                variant="youtube"
+                icon="youtube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                izlə()
+              </Button>
+            )}
+          </div>
+        </Window>
+      )
+    }
+
+    <section class="blogs-section">
+      <div class="section-header">
+        <h2><span class="comment">// </span>son məqalələr</h2>
+        <a href="/blogs" class="view-all">
+          hamısı() <Icon name="arrowRight" size={14} />
+        </a>
+      </div>
+
+      <BlogList posts={recentPosts} />
+    </section>
+
+    <Window title="töhfə ver" class="contribute-section" mono>
+      <div class="contribute-content">
+        <div class="contribute-text">
+          <div class="cmd-line">
+            <span class="comment"
+              >// öz məqalənizi paylaşın yaxud başqa yollarla töhfə verin</span
+            >
+          </div>
+          <h3>məqalə.paylaş()</h3>
+          <p class="contribute-desc">
+            Sizin məqalənizi burada görmək çox xoş olardı! Öz məqalənizi
+            paylaşmaq üçün töhfə vermək təlimatlarını GitHub-da oxuyun.
+          </p>
+        </div>
+        <Button
+          href={GITHUB_URL}
+          variant="primary"
+          icon="github"
+          iconSize={18}
+          target="_blank"
+        >
+          CONTRIBUTING.md
+        </Button>
+      </div>
+    </Window>
+  </div>
+</BaseLayout>
+
+<style>
+  .home-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hero {
+    padding: 2rem 0;
+  }
+
+  .hero-content h1 {
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-content h1 .fn {
+    color: var(--color-primary);
+  }
+
+  .hero-content h1 .dot {
+    color: var(--color-orange);
+  }
+
+  .hero-content h1 .ext {
+    color: var(--color-green);
+  }
+
+  .hero-desc {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .fp-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+  }
+
+  .fp-desc {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .fp-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  /* Contribute */
+  .contribute-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .contribute-text h3 {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+  }
+
+  .contribute-desc {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+
+    .contribute-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+  }
+</style>

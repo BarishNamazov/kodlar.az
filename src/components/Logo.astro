@@ -1,0 +1,41 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<span class:list={["logo", className]}>
+  <span class="logo-bracket">&lt;</span>
+  <span class="logo-text">kodlar</span>
+  <span class="logo-dot">.</span>
+  <span class="logo-az">az</span>
+  <span class="logo-bracket">/&gt;</span>
+</span>
+
+<style>
+  .logo {
+    font-family: var(--font-mono);
+    font-size: 1.125rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .logo-bracket {
+    color: var(--color-text-muted);
+  }
+
+  .logo-text {
+    color: var(--color-primary);
+  }
+
+  .logo-dot {
+    color: var(--color-orange);
+  }
+
+  .logo-az {
+    color: var(--color-green);
+  }
+</style>
