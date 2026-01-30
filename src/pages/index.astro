@@ -4,7 +4,7 @@ import BlogList from "../components/BlogList.astro";
 import Button from "../components/Button.astro";
 import Window from "../components/Window.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
-import { CONTRIBUTING_URL } from "../config";
+import { CONTRIBUTING_URL, SITE_DESCRIPTION } from "../config";
 import Icon from "../components/Icon.astro";
 
 const allPosts = await getCollection("blog");
@@ -32,8 +32,7 @@ const featuredPodcast = sortedPodcasts[0];
           >
         </h1>
         <p class="hero-desc">
-          İnformatika və proqramlaşdırma haqqında Azərbaycan dilində məqalələr,
-          söhbətlər və ictimai resurslar.
+          {SITE_DESCRIPTION}
         </p>
 
         <div class="hero-actions">

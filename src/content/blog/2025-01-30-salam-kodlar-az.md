@@ -91,7 +91,7 @@ bildiyimiz internet olmazdı.
 
 ## kodlar.az niyə yarandı
 
-Açıq bilik mədəniyyəti mənim həyatımı formalaşdıran əsas amil olub. Bildiyim
+Açıq bilik mədəniyyəti mənim öyrənməyimi formalaşdıran əsas amil olub. Bildiyim
 şeylərin böyük hissəsini başqalarının təmənnasız paylaşdıqlarına borclu olduğumu
 bilirəm.
 
