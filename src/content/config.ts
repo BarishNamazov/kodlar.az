@@ -1,25 +1,12 @@
 import { z, defineCollection } from "astro:content";
-import { extractDateFromFilename } from "../utils/content";
 
 const blogCollection = defineCollection({
   type: "content",
-  schema: ({ id }) =>
+  schema: () =>
     z.object({
       title: z.string(),
       author: z.string(),
-      date: z
-        .date()
-        .optional()
-        .transform((val, ctx) => {
-          if (val) return val;
-          const dateFromFilename = extractDateFromFilename(id);
-          if (dateFromFilename) return dateFromFilename;
-          ctx.addIssue({
-            code: z.ZodIssueCode.custom,
-            message: "Date must be in frontmatter or filename (YYYY-MM-DD)",
-          });
-          return z.NEVER;
-        }),
+      date: z.date(),
       description: z.string(),
       image: z.string().optional(),
       categories: z.array(z.string()),
@@ -28,23 +15,11 @@ const blogCollection = defineCollection({
 
 const podcastCollection = defineCollection({
   type: "content",
-  schema: ({ id }) =>
+  schema: () =>
     z.object({
       title: z.string(),
       description: z.string(),
-      date: z
-        .date()
-        .optional()
-        .transform((val, ctx) => {
-          if (val) return val;
-          const dateFromFilename = extractDateFromFilename(id);
-          if (dateFromFilename) return dateFromFilename;
-          ctx.addIssue({
-            code: z.ZodIssueCode.custom,
-            message: "Date must be in frontmatter or filename (YYYY-MM-DD)",
-          });
-          return z.NEVER;
-        }),
+      date: z.date(),
       image: z.string().optional(),
       hosts: z.array(z.string()),
       youtube: z.string().optional(),

@@ -33,6 +33,7 @@ export function formatDateShort(date: Date): string {
   return new Intl.DateTimeFormat("az-AZ", {
     day: "numeric",
     month: "short",
+    timeZone: "UTC",
   }).format(date);
 }
 
@@ -41,5 +42,6 @@ export function formatDateLong(date: Date): string {
     day: "numeric",
     month: "short",
     year: "numeric",
+    timeZone: "UTC",
   }).format(date);
 }
