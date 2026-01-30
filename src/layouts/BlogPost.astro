@@ -93,7 +93,8 @@ const authorData = getAuthor(frontmatter.author);
         </header>
 
         <div class="print-only-url">
-          <strong>Mənbə:</strong> {Astro.url.href}
+          <strong>Mənbə:</strong>
+          {Astro.url.href}
         </div>
 
         <h1 class="post-title">{frontmatter.title}</h1>
@@ -199,7 +200,7 @@ const authorData = getAuthor(frontmatter.author);
       const walker = document.createTreeWalker(
         container,
         NodeFilter.SHOW_TEXT,
-        null
+        null,
       );
 
       const nodesToProcess = [];
@@ -223,7 +224,7 @@ const authorData = getAuthor(frontmatter.author);
           // Add text before the footnote
           if (match.index > lastIndex) {
             fragment.appendChild(
-              document.createTextNode(text.slice(lastIndex, match.index))
+              document.createTextNode(text.slice(lastIndex, match.index)),
             );
           }
 
@@ -263,11 +264,13 @@ const authorData = getAuthor(frontmatter.author);
         container.classList.toggle("active");
 
         // Close other open footnotes
-        document.querySelectorAll(".footnote-container.active").forEach((fn) => {
-          if (fn !== container) {
-            fn.classList.remove("active");
-          }
-        });
+        document
+          .querySelectorAll(".footnote-container.active")
+          .forEach((fn) => {
+            if (fn !== container) {
+              fn.classList.remove("active");
+            }
+          });
       });
 
       return container;
@@ -276,9 +279,11 @@ const authorData = getAuthor(frontmatter.author);
     // Close footnotes when clicking outside
     document.addEventListener("click", (e) => {
       if (!e.target.closest(".footnote-container")) {
-        document.querySelectorAll(".footnote-container.active").forEach((fn) => {
-          fn.classList.remove("active");
-        });
+        document
+          .querySelectorAll(".footnote-container.active")
+          .forEach((fn) => {
+            fn.classList.remove("active");
+          });
       }
     });
 
@@ -399,7 +404,10 @@ const authorData = getAuthor(frontmatter.author);
         authorCard.removeAttribute("data-moved");
         if (originalAuthorParent) {
           if (originalAuthorNextSibling) {
-            originalAuthorParent.insertBefore(authorCard, originalAuthorNextSibling);
+            originalAuthorParent.insertBefore(
+              authorCard,
+              originalAuthorNextSibling,
+            );
           } else {
             originalAuthorParent.appendChild(authorCard);
           }
