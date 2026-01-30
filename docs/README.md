@@ -121,7 +121,7 @@ Lakin bu şərtlərə mütləq əməl etməlisiniz:
 Layihənin texniki detalları və istifadə olunan texnologiyalar haqqında məlumat
 üçün [TECHNICAL.md](TECHNICAL.md) sənədinə baxın.
 
---
+---
 
 ## Müəlliflik və təşəkkür
 
