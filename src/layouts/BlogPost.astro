@@ -374,13 +374,36 @@ const authorData = getAuthor(frontmatter.author);
     window.addEventListener("beforeprint", setupPrintFootnotes);
 
     // Move author card after print-only-url in print mode
+    let originalAuthorParent = null;
+    let originalAuthorNextSibling = null;
+
     window.addEventListener("beforeprint", () => {
       const authorCard = document.querySelector(".author-card");
       const printUrl = document.querySelector(".print-only-url");
 
       if (authorCard && printUrl && !authorCard.hasAttribute("data-moved")) {
+        // Store original position
+        originalAuthorParent = authorCard.parentNode;
+        originalAuthorNextSibling = authorCard.nextSibling;
+
         authorCard.setAttribute("data-moved", "true");
         printUrl.parentNode.insertBefore(authorCard, printUrl.nextSibling);
+      }
+    });
+
+    window.addEventListener("afterprint", () => {
+      const authorCard = document.querySelector(".author-card");
+
+      if (authorCard && authorCard.hasAttribute("data-moved")) {
+        // Move back to original position
+        authorCard.removeAttribute("data-moved");
+        if (originalAuthorParent) {
+          if (originalAuthorNextSibling) {
+            originalAuthorParent.insertBefore(authorCard, originalAuthorNextSibling);
+          } else {
+            originalAuthorParent.appendChild(authorCard);
+          }
+        }
       }
     });
 
