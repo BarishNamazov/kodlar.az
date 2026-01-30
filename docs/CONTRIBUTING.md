@@ -57,7 +57,9 @@ yaratmalıdır. Məqalələr həm texniki, həm də qeyri-texniki mövzularda ol
   məqsədlərlə istifadə etmək normaldır.
 - Bu tələb sərt qayda deyil. Məqsədimiz məzmunu təbii saxlamaq və AI söhbətinin
   verə bilmədiyi real təcrübə qatını qorumaqdır. AI-dan faydalı istifadə
-  üsullarınız varsa, ən yaxşısı bunu [GitHub Discussions](https://github.com/BarishNamazov/kodlar.az/discussions) bölməsində paylaşmaqdır.
+  üsullarınız varsa, ən yaxşısı bunu
+  [GitHub Discussions](https://github.com/BarishNamazov/kodlar.az/discussions)
+  bölməsində paylaşmaqdır.
 
 ### Tövsiyə olunan proses
 
@@ -65,7 +67,8 @@ yaratmalıdır. Məqalələr həm texniki, həm də qeyri-texniki mövzularda ol
 olunur:
 
 - Başlamazdan əvvəl qısa mövzu təklifi (auditoriya, səviyyə, plan/başlıqlar) ilə
-  [Discussions](https://github.com/BarishNamazov/kodlar.az/discussions)-da müzakirə açın.
+  [Discussions](https://github.com/BarishNamazov/kodlar.az/discussions)-da
+  müzakirə açın.
 - Resurs əlavə edirsinizsə: link + qısa izah (kimlər üçündür, nə verir, hansı
   ilkin biliklər tələb edir) yazın.
 - Hazır olanda PR ilə göndərin; mövcud resursa əlavələr edirsinizsə,
@@ -113,17 +116,20 @@ hərəkət etməkdir.
 
 ### Bug fix
 
-- Əvvəlcə problemi [GitHub Discussions](https://github.com/BarishNamazov/kodlar.az/discussions) bölməsində paylaşın və həqiqətən bug
-  olduğunu birlikdə dəqiqləşdirək (reproduksiya addımları, gözlənilən faktiki
-  davranış, mümkün olduqda ekran görüntüsü və ya loglar).
+- Əvvəlcə problemi
+  [GitHub Discussions](https://github.com/BarishNamazov/kodlar.az/discussions)
+  bölməsində paylaşın və həqiqətən bug olduğunu birlikdə dəqiqləşdirək
+  (reproduksiya addımları, gözlənilən faktiki davranış, mümkün olduqda ekran
+  görüntüsü və ya loglar).
 - Bug təsdiqləndikdən sonra düzəliş üçün PR hazırlaya bilərsiniz.
 
 ### Yeni funksiya və ya dəyişiklik
 
 Yeni funksiya, davranış dəyişikliyi, refaktor və ya böyük dəyişikliklər
-planlayırsınızsa, işə başlamazdan əvvəl mütləq [Discussions](https://github.com/BarishNamazov/kodlar.az/discussions)-da qısa müzakirə
-açın: məqsəd, səbəb, təsir sahəsi və alternativlər barədə razılaşmaq daha sonra
-həm sizə, həm də idarəçilərə vaxt qazandırır.
+planlayırsınızsa, işə başlamazdan əvvəl mütləq
+[Discussions](https://github.com/BarishNamazov/kodlar.az/discussions)-da qısa
+müzakirə açın: məqsəd, səbəb, təsir sahəsi və alternativlər barədə razılaşmaq
+daha sonra həm sizə, həm də idarəçilərə vaxt qazandırır.
 
 ## Söhbətlər
 
@@ -135,24 +141,26 @@ təcrübəyə dayansın.
 Qonaq olmaq istəyirsinizsə, [SUPPORT.md](SUPPORT.md) sənədində göstərilən əlaqə
 kanalları vasitəsilə bizə yazın.
 
-Əlavə olaraq, danışmağa dəyər insanları da tövsiyə edə bilərsiniz: [GitHub
-Discussions](https://github.com/BarishNamazov/kodlar.az/discussions) bölməsində qısa təqdimatla (kimdir, hansı mövzuda maraqlıdır, niyə
-dəyərlidir) paylaşın. Uyğun olarsa, idarəçi komanda olaraq həmin şəxslə əlaqə
-saxlaya bilərik.
+Əlavə olaraq, danışmağa dəyər insanları da tövsiyə edə bilərsiniz:
+[GitHub Discussions](https://github.com/BarishNamazov/kodlar.az/discussions)
+bölməsində qısa təqdimatla (kimdir, hansı mövzuda maraqlıdır, niyə dəyərlidir)
+paylaşın. Uyğun olarsa, idarəçi komanda olaraq həmin şəxslə əlaqə saxlaya
+bilərik.
 
 ## Təkliflər və rəy
 
 Layihə ilə bağlı istənilən təklif, rəy və ya sualınızı GitHub üzərindəki
-[Discussions](https://github.com/BarishNamazov/kodlar.az/discussions) bölməsində paylaşa bilərsiniz. İdeya, problem təsviri və ya
-məzmun təklifi formasında yazmağınız kifayətdir.
+[Discussions](https://github.com/BarishNamazov/kodlar.az/discussions) bölməsində
+paylaşa bilərsiniz. İdeya, problem təsviri və ya məzmun təklifi formasında
+yazmağınız kifayətdir.
 
 ## Sponsorluq və maddi dəstək
 
 kodlar.az qeyri-kommersiya yanaşması ilə icma tərəfindən inkişaf etdirilir.
-Layihəni maddi olaraq dəstəkləmək istəyirsinizsə, [SUPPORT.md](SUPPORT.md) sənədində
-göstərilən əlaqə kanalları vasitəsilə bizimlə əlaqə saxlayın. Əgər imkanınız
-varsa və layihədən faydalanırsınızsa, hər hansı məbləğdə dəstəyiniz çox
-dəyərlidir!
+Layihəni maddi olaraq dəstəkləmək istəyirsinizsə, [SUPPORT.md](SUPPORT.md)
+sənədində göstərilən əlaqə kanalları vasitəsilə bizimlə əlaqə saxlayın. Əgər
+imkanınız varsa və layihədən faydalanırsınızsa, hər hansı məbləğdə dəstəyiniz
+çox dəyərlidir!
 
 Dəstək göstərənlərə platformada xüsusi bir **təşəkkür qeydi** əlavə olunacaq.
 Toplanan vəsait tam şəkildə platformanın yaxşılaşdırılmasına (xidmət xərcləri,
