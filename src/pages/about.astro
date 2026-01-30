@@ -3,7 +3,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Icon from "../components/Icon.astro";
 import Button from "../components/Button.astro";
 import Window from "../components/Window.astro";
-import { GITHUB_URL } from "../config";
+import {
+  GITHUB_DISCUSSIONS_URL,
+  CONTRIBUTING_URL,
+  CONTACT_URL,
+  README_URL,
+  CODE_OF_CONDUCT_URL,
+} from "../config";
 ---
 
 <BaseLayout title="Haqqımızda">
@@ -17,7 +23,7 @@ import { GITHUB_URL } from "../config";
           haqqında pulsuz, keyfiyyətli məzmun platforması.
         </p>
 
-        <h2>## Missiyamız</h2>
+        <h2>## Hədəfimiz</h2>
         <p>
           Azərbaycan dilində texnoloji bilikləri əlçatan etmək, gənc
           proqramçılara dəstək olmaq, yerli mühəndislər icmasını inkişaf
@@ -34,8 +40,8 @@ import { GITHUB_URL } from "../config";
             <div class="feature-content">
               <h3>məqalələr()</h3>
               <p>
-                Alqoritmlər, data strukturları, proqramlaşdırma dilləri və
-                olimpiada məsələləri haqqında dərin məqalələr.
+                Texniki və qeyri-texniki mövzularda maraqlı məqalələr, şəxsi
+                təcrübələr, qeydlər və bələdçilər.
               </p>
             </div>
           </div>
@@ -47,7 +53,7 @@ import { GITHUB_URL } from "../config";
             <div class="feature-content">
               <h3>söhbətlər()</h3>
               <p>
-                Olimpiada qaliblləri, mühəndislər və tədqiqatçılarla maraqlı
+                Proqramçılar, olimpiadaçılar, tədqiqatçılarla maraqlı
                 söhbətlər və müzakirələr.
               </p>
             </div>
@@ -69,9 +75,10 @@ import { GITHUB_URL } from "../config";
         <h2>## Komanda</h2>
         <p>
           kodlar.az layihəsi ictimai resursdur və könüllü təşəbbüslər əsasında
-          idarə olunur. Əməkdaşlıq üçün <a
-            href="/authors/abutalib-barish-namazov">Abutalıb Barış Namazov</a
-          >a müraciət edə bilərsiniz.
+          idarə olunur. Əməkdaşlıq və ya suallarınız üçün <a
+            href={CONTACT_URL}
+            target="_blank">əlaqə səhifəsinə</a
+          > baxın.
         </p>
 
         <h2>## Əlaqə</h2>
@@ -80,7 +87,12 @@ import { GITHUB_URL } from "../config";
             Suallarınızı və təkliflərinizi GitHub üzərində "Discussions"
             bölməsində bildirə bilərsiniz:
           </p>
-          <Button href={GITHUB_URL} icon="github" iconSize={18} target="_blank">
+          <Button
+            href={GITHUB_DISCUSSIONS_URL}
+            icon="github"
+            iconSize={18}
+            target="_blank"
+          >
             Discussions
           </Button>
         </div>
@@ -94,13 +106,13 @@ import { GITHUB_URL } from "../config";
           bilərsiniz.
         </p>
         <Button
-          href={GITHUB_URL}
+          href={CONTRIBUTING_URL}
           variant="primary"
           icon="github"
           iconSize={18}
           target="_blank"
         >
-          CONTRIBUTE.md
+          CONTRIBUTING.md
         </Button>
       </div>
     </Window>

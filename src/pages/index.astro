@@ -4,7 +4,7 @@ import BlogList from "../components/BlogList.astro";
 import Button from "../components/Button.astro";
 import Window from "../components/Window.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
-import { GITHUB_URL } from "../config";
+import { CONTRIBUTING_URL } from "../config";
 import Icon from "../components/Icon.astro";
 
 const allPosts = await getCollection("blog");
@@ -92,7 +92,7 @@ const featuredPodcast = sortedPodcasts[0];
           </p>
         </div>
         <Button
-          href={GITHUB_URL}
+          href={CONTRIBUTING_URL}
           variant="primary"
           icon="github"
           iconSize={18}

@@ -1,6 +1,6 @@
 ---
 import Logo from "./Logo.astro";
-import { GITHUB_URL, YOUTUBE_URL } from "../config";
+import { GITHUB_URL, CONTRIBUTING_URL, YOUTUBE_URL } from "../config";
 ---
 
 <footer class="footer">
@@ -34,7 +34,7 @@ import { GITHUB_URL, YOUTUBE_URL } from "../config";
               >
             </li>
             <li><a href="/about">haqqımızda</a></li>
-            <li><a href="/contribute">məqalə_paylaş</a></li>
+            <li><a href={CONTRIBUTING_URL} target="_blank" rel="noopener noreferrer">məqalə_paylaş</a></li>
           </ul>
         </div>
 
