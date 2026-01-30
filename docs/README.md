@@ -90,15 +90,20 @@ Layihə ilə bağlı suallarınız, təklifləriniz və ya digər əlaqə məsə
 
 ## Lisenziya
 
-Bu layihə
-[Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](LICENSE)
+### Məzmun lisenziyası
+
+"Məzmun" dedikdə kodlar.az saytında yerləşən bütün yazılar, məqalələr,
+söhbətlər, şəkillər və digər materiallar nəzərdə tutulur.
+
+Bu layihənin bütün məzmunu
+[Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](LICENSE-CONTENT)
 lisenziyası ilə qorunur. Məzmunu istifadə edərkən və paylaşarkən bu lisenziyanın
 şərtlərinə riayət etməyiniz xahiş olunur.
 
 CC BY-SA 4.0 lisenziyası sizə aşağıdakı hüquqları verir:
 
-- Paylaşmaq — Məzmunu istənilən mühitdə və formatda kopyalaya və yenidən
-  paylaşa bilərsiniz.
+- Paylaşmaq — Məzmunu istənilən mühitdə və formatda kopyalaya və yenidən paylaşa
+  bilərsiniz.
 
 - Uyğunlaşdırmaq — Məzmunu dəyişdirə, inkişaf etdirə və üzərində yeni işlər
   yarada bilərsiniz (hətta, kommersiya məqsədilə).
@@ -113,6 +118,16 @@ Lakin bu şərtlərə mütləq əməl etməlisiniz:
 
 - Əlavə məhdudiyyət yoxdur — Lisenziyanın icazə verdiklərini məhdudlaşdıran
   hüquqi və ya texniki maneələr əlavə edilə bilməz.
+
+### Kod lisenziyası
+
+"Kod" dedikdə kodlar.az saytının proqram təminatı, skriptlər və digər
+proqramlaşdırma komponentləri nəzərdə tutulur. Məzmunlar bu kateqoriyaya daxil
+olmur.
+
+Layihənin kod bazası isə [MIT Lisenziyası](LICENSE_CODE) ilə qorunur. Bu sizə
+layihənin kodunu istənilən məqsədlə istifadə etmək, kopyalamaq, dəyişdirmək və
+paylaşmaq hüququ verir.
 
 ---
 
