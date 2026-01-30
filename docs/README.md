@@ -1,6 +1,6 @@
 # kodlar.az
 
-**kodlar.az** -- Azərbaycan dilində informatika, proqramlaşdırma və kompüter
+**kodlar.az** — Azərbaycan dilində informatika, proqramlaşdırma və kompüter
 elmləri haqqında açıq və ictimai məzmun platformasıdır. Layihənin məqsədi
 texnoloji bilikləri daha əlçatan etmək, yerli icmanı gücləndirmək və paylaşım
 mədəniyyətini təşviq etməkdir.
@@ -97,21 +97,21 @@ lisenziyası ilə qorunur. Məzmunu istifadə edərkən və paylaşarkən bu lis
 
 CC BY-SA 4.0 lisenziyası sizə aşağıdakı hüquqları verir:
 
-- Paylaşmaq -- Məzmunu istənilən mühitdə və formatda kopyalaya və yenidən
+- Paylaşmaq — Məzmunu istənilən mühitdə və formatda kopyalaya və yenidən
   paylaşa bilərsiniz.
 
-- Uyğunlaşdırmaq -- Məzmunu dəyişdirə, inkişaf etdirə və üzərində yeni işlər
+- Uyğunlaşdırmaq — Məzmunu dəyişdirə, inkişaf etdirə və üzərində yeni işlər
   yarada bilərsiniz (hətta, kommersiya məqsədilə).
 
 Lakin bu şərtlərə mütləq əməl etməlisiniz:
 
-- İstinad (Attribution) -- Orijinal mənbəni (kodlar.az) açıq şəkildə qeyd
+- İstinad (Attribution) — Orijinal mənbəni (kodlar.az) açıq şəkildə qeyd
   etməlisiniz.
 
-- Eyni lisenziya (ShareAlike) -- Dəyişdirilmiş və ya uyğunlaşdırılmış versiyalar
+- Eyni lisenziya (ShareAlike) — Dəyişdirilmiş və ya uyğunlaşdırılmış versiyalar
   da eyni CC BY-SA 4.0 lisenziyası altında paylaşılmalıdır.
 
-- Əlavə məhdudiyyət yoxdur -- Lisenziyanın icazə verdiklərini məhdudlaşdıran
+- Əlavə məhdudiyyət yoxdur — Lisenziyanın icazə verdiklərini məhdudlaşdıran
   hüquqi və ya texniki maneələr əlavə edilə bilməz.
 
 ---
@@ -120,3 +120,15 @@ Lakin bu şərtlərə mütləq əməl etməlisiniz:
 
 Layihənin texniki detalları və istifadə olunan texnologiyalar haqqında məlumat
 üçün [TECHNICAL.md](TECHNICAL.md) sənədinə baxın.
+
+--
+
+## Müəlliflik və təşəkkür
+
+Layihə
+[Abutalıb "Barış" Namazov](https://kodlar.az/author/abutalib-barish-namazov)
+tərəfindən yaradılıb. Veb saytın ilkin dizaynı
+[Abdulla Adbullazadə](https://kodlar.az/author/abdulla-abdullazade) tərəfindən
+hazırlanıb.
+
+Layihəyə töhfə verən bütün iştirakçılara təşəkkür edirik!
