@@ -26,6 +26,20 @@ export interface Author {
 
 let authorsCache: Record<string, Author> | null = null;
 
+function normalizeGitHubLink(link: string): string {
+  if (link.startsWith("http://") || link.startsWith("https://")) {
+    return link;
+  }
+  return `https://github.com/${link}`;
+}
+
+function normalizeLinkedInLink(link: string): string {
+  if (link.startsWith("http://") || link.startsWith("https://")) {
+    return link;
+  }
+  return `https://linkedin.com/in/${link}`;
+}
+
 function loadAuthors(): Record<string, Author> {
   if (authorsCache) {
     return authorsCache;
@@ -33,7 +47,7 @@ function loadAuthors(): Record<string, Author> {
 
   const authorsPath = path.join(process.cwd(), "src/data/authors.toml");
   const authorsContent = fs.readFileSync(authorsPath, "utf-8");
-  const parsedData = TOML.parse(authorsContent) as Record<
+  const parsedData = TOML.parse(authorsContent) as unknown as Record<
     string,
     {
       name: string;
@@ -50,10 +64,24 @@ function loadAuthors(): Record<string, Author> {
     const avatarPath = `../images/authors/${authorData.avatar}`;
     const avatarImage = authorImages[avatarPath]?.default;
 
+    // Normalize social links
+    const normalizedLinks = authorData.links
+      ? {
+          ...authorData.links,
+          github: authorData.links.github
+            ? normalizeGitHubLink(authorData.links.github)
+            : undefined,
+          linkedin: authorData.links.linkedin
+            ? normalizeLinkedInLink(authorData.links.linkedin)
+            : undefined,
+        }
+      : undefined;
+
     authorsCache[id] = {
       id,
       ...authorData,
       avatar: avatarImage || authorData.avatar,
+      links: normalizedLinks,
     };
   }
 
