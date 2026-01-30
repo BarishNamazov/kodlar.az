@@ -7,6 +7,8 @@ import {
   GITHUB_DISCUSSIONS_URL,
   CONTRIBUTING_URL,
   CONTACT_URL,
+  README_URL,
+  CODE_OF_CONDUCT_URL,
 } from "../config";
 ---
 
@@ -17,19 +19,17 @@ import {
         <h1>kodlar.az</h1>
 
         <p class="intro">
-          Azərbaycan dilində informatika, proqramlaşdırma və kompüterlər
-          haqqında pulsuz, keyfiyyətli məzmun platforması.
+          Azərbaycan dilində informatika, proqramlaşdırma və kompüter elmləri
+          haqqında açıq və ictimai məzmun platforması.
         </p>
 
-        <h2>## Hədəfimiz</h2>
+        <h2>## Hədəf</h2>
         <p>
-          Azərbaycan dilində texnoloji bilikləri əlçatan etmək, gənc
-          proqramçılara dəstək olmaq, yerli mühəndislər icmasını inkişaf
-          etdirmək, eyni zamanda məqalə yazarlığı, kontent istehsalı və açıq kod
-          mədəniyyətini təşviq etmək.
+          Texnoloji bilikləri daha əlçatan etmək, yerli icmanı gücləndirmək və
+          paylaşım / açıq kod mədəniyyətini təşviq etmək.
         </p>
 
-        <h2>## Nə edirik?</h2>
+        <h2>## Nələr var?</h2>
         <div class="features">
           <div class="feature">
             <div class="feature-icon">
@@ -37,10 +37,7 @@ import {
             </div>
             <div class="feature-content">
               <h3>məqalələr()</h3>
-              <p>
-                Texniki və qeyri-texniki mövzularda maraqlı məqalələr, şəxsi
-                təcrübələr, qeydlər və bələdçilər.
-              </p>
+              <p>Fundamental mövzular, bələdçilər, təcrübələr və qeydlər.</p>
             </div>
           </div>
 
@@ -50,10 +47,7 @@ import {
             </div>
             <div class="feature-content">
               <h3>söhbətlər()</h3>
-              <p>
-                Proqramçılar, olimpiadaçılar, tədqiqatçılarla maraqlı söhbətlər
-                və müzakirələr.
-              </p>
+              <p>Proqramçılar və mühəndislərlə müsahibə və müzakirələr.</p>
             </div>
           </div>
 
@@ -62,29 +56,44 @@ import {
               <Icon name="code" size={24} />
             </div>
             <div class="feature-content">
+              <h3>resurslar()</h3>
+              <p>Yol xəritələri, planlar və faydalı tədris materialları.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">
+              <Icon name="github" size={24} />
+            </div>
+            <div class="feature-content">
               <h3>açıq_kod()</h3>
               <p>
-                Bütün məzmun GitHub-da açıqdır. Siz də töhfə verə bilərsiniz!
+                Məzmun və kod GitHub-da açıqdır. Platforma sizin töhfələr
+                üzərində qurulur!
               </p>
             </div>
           </div>
         </div>
 
-        <h2>## Komanda</h2>
+        <h2>## Kimlər üçündür?</h2>
         <p>
-          kodlar.az layihəsi ictimai resursdur və könüllü təşəbbüslər əsasında
-          idarə olunur. Əməkdaşlıq və ya suallarınız üçün <a
-            href={CONTACT_URL}
-            target="_blank">əlaqə səhifəsinə</a
-          > baxın.
+          Məktəblilər, tələbələr, müəllimlər, peşəkarlar və sair — texnologiya
+          ilə maraqlanan hər kəs üçün.
         </p>
 
-        <h2>## Əlaqə</h2>
+        <h2>## Daha ətraflı</h2>
+        <p>
+          Layihənin daha detallı təsviri üçün
+          <a href={README_URL} target="_blank">README</a>
+          sənədinə baxın.
+        </p>
+
+        <h2>## Əlaqə və müzakirə</h2>
+        <p>
+          Rəy bildirmək, sual vermək və ya sadəcə söhbət etmək istəyirsinizsə,
+          aşağıdakı kanallardan istifadə edin:
+        </p>
         <div class="contact-links">
-          <p>
-            Suallarınızı və təkliflərinizi GitHub üzərində "Discussions"
-            bölməsində bildirə bilərsiniz:
-          </p>
           <Button
             href={GITHUB_DISCUSSIONS_URL}
             icon="github"
@@ -93,6 +102,20 @@ import {
           >
             Discussions
           </Button>
+          <Button href={CONTACT_URL} icon="mail" iconSize={18} target="_blank">
+            Əlaqə
+          </Button>
+          <Button href={README_URL} icon="file" iconSize={18} target="_blank">
+            README
+          </Button>
+          <Button
+            href={CODE_OF_CONDUCT_URL}
+            icon="shield"
+            iconSize={18}
+            target="_blank"
+          >
+            Code of Conduct
+          </Button>
         </div>
       </div>
     </Window>
@@ -100,8 +123,8 @@ import {
     <Window title="contribute.sh" class="contribute-cta" mono>
       <div class="cta-content">
         <p>
-          Siz də məqalə yaza, səhv düzəldə və ya yeni funksiyalar əlavə edə
-          bilərsiniz.
+          Məqalə yazın, resurs əlavə edin, söhbətlərdə iştirak edin, səhv
+          düzəldin və ya yeni funksiya təklif edin.
         </p>
         <Button
           href={CONTRIBUTING_URL}
