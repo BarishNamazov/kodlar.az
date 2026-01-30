@@ -5,6 +5,7 @@ import ActionButton from "../components/ActionButton.astro";
 import Tag from "../components/Tag.astro";
 import Icon from "../components/Icon.astro";
 import Window from "../components/Window.astro";
+import Comments from "../components/Comments.astro";
 import { getAuthor } from "../data/authors";
 import { formatDateLong } from "../utils/styles";
 import { Image } from "astro:assets";
@@ -95,6 +96,8 @@ const authorData = getAuthor(frontmatter.author);
         <div class="prose">
           <slot />
         </div>
+
+        <Comments />
 
         <footer class="post-footer">
           <div class="footer-left">

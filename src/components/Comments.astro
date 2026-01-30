@@ -1,0 +1,62 @@
+---
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<div class:list={["giscus-wrapper", className]} id="comments">
+  <h3 class="comments-title">
+    <span class="comment-syntax">// </span>şərhlər
+  </h3>
+  <div class="giscus"></div>
+</div>
+
+<script 
+  src="https://giscus.app/client.js"
+  data-repo="BarishNamazov/kodlar.az"
+  data-repo-id=""
+  data-category="General"
+  data-category-id=""
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="transparent_dark"
+  data-lang="az"
+  crossorigin="anonymous"
+  async
+></script>
+
+<style>
+  .giscus-wrapper {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .comments-title {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+  }
+
+  .comment-syntax {
+    color: var(--color-text-muted);
+  }
+
+  /* Giscus frame customization */
+  .giscus-wrapper :global(.giscus) {
+    max-width: 100%;
+  }
+
+  .giscus-wrapper :global(.giscus-frame) {
+    border: none;
+    width: 100%;
+  }
+</style>
