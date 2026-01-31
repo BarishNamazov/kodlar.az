@@ -1,6 +1,6 @@
 export const SITE_TITLE = "kodlar.az";
 export const SITE_DESCRIPTION =
-  "İnformatika və proqramlaşdırma haqqında Azərbaycan dilində məqalələr, söhbətlər və ictimai resurslar";
+  "İnformatika, proqramlaşdırma və kompüter elmləri haqqında Azərbaycan dilində məqalələr, söhbətlər və ictimai resurslar.";
 export const GITHUB_URL = "https://github.com/BarishNamazov/kodlar.az";
 export const GITHUB_DISCUSSIONS_URL =
   "https://github.com/BarishNamazov/kodlar.az/discussions";

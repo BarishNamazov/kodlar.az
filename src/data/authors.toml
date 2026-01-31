@@ -11,6 +11,7 @@ və *Citadel* şirkətlərində tədqiqatçı və proqramçı kimi çalışıb.
 Barış məktəbi Bakıda bitirib və məktəb illərində müxtəlif milli və
 beynəlxalq informatika və riyaziyyat olimpiadalarında iştirak edib.
 """
+avatar = "barish.webp"
 
 [abutalib-barish-namazov.links]
 github = "BarishNamazov"

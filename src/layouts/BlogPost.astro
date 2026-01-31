@@ -34,7 +34,7 @@ const authorData = getAuthor(frontmatter.author);
 ---
 
 <BaseLayout
-  title={`${frontmatter.title} | kodlar.az`}
+  title={`${frontmatter.title}`}
   description={frontmatter.description}
 >
   <div class="post-layout">
@@ -92,6 +92,13 @@ const authorData = getAuthor(frontmatter.author);
           </div>
         </header>
 
+        <div class="print-only-url">
+          <strong>Mənbə:</strong>
+          {Astro.url.href}
+        </div>
+
+        <h1 class="post-title">{frontmatter.title}</h1>
+
         <div class="prose">
           <slot />
         </div>
@@ -108,6 +115,7 @@ const authorData = getAuthor(frontmatter.author);
             </Button>
           </div>
           <div class="footer-right">
+            <ActionButton icon="printer" id="print-btn" title="Print" />
             <ActionButton icon="share" id="share-btn" title="Share" />
           </div>
         </footer>
@@ -135,8 +143,9 @@ const authorData = getAuthor(frontmatter.author);
                 <Image
                   src={authorData.avatar}
                   alt={authorData.name}
-                  width={40}
-                  height={40}
+                  width={200}
+                  height={200}
+                  quality={100}
                 />
               )
             ) : (
@@ -160,6 +169,11 @@ const authorData = getAuthor(frontmatter.author);
     const prose = document.querySelector(".prose");
     const toc = document.getElementById("toc");
 
+    // Process footnotes
+    if (prose) {
+      processFootnotes(prose);
+    }
+
     if (prose && toc) {
       const headings = prose.querySelectorAll("h2, h3");
 
@@ -180,6 +194,98 @@ const authorData = getAuthor(frontmatter.author);
         toc.appendChild(link);
       });
     }
+
+    function processFootnotes(container) {
+      const footnoteRegex = /\[\^([^\]]+)\]/g;
+      const walker = document.createTreeWalker(
+        container,
+        NodeFilter.SHOW_TEXT,
+        null,
+      );
+
+      const nodesToProcess = [];
+      let node;
+      while ((node = walker.nextNode())) {
+        if (footnoteRegex.test(node.textContent)) {
+          nodesToProcess.push(node);
+        }
+        footnoteRegex.lastIndex = 0;
+      }
+
+      nodesToProcess.forEach((textNode) => {
+        const parent = textNode.parentNode;
+        const text = textNode.textContent;
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+        let match;
+
+        footnoteRegex.lastIndex = 0;
+        while ((match = footnoteRegex.exec(text)) !== null) {
+          // Add text before the footnote
+          if (match.index > lastIndex) {
+            fragment.appendChild(
+              document.createTextNode(text.slice(lastIndex, match.index)),
+            );
+          }
+
+          // Create footnote element
+          const footnote = createFootnote(match[1]);
+          fragment.appendChild(footnote);
+
+          lastIndex = match.index + match[0].length;
+        }
+
+        // Add remaining text
+        if (lastIndex < text.length) {
+          fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+        }
+
+        parent.replaceChild(fragment, textNode);
+      });
+    }
+
+    function createFootnote(content) {
+      const container = document.createElement("span");
+      container.className = "footnote-container";
+
+      const trigger = document.createElement("sup");
+      trigger.className = "footnote-trigger";
+      trigger.textContent = "[*]";
+
+      const expansion = document.createElement("span");
+      expansion.className = "footnote-expansion";
+      expansion.textContent = content;
+
+      container.appendChild(trigger);
+      container.appendChild(expansion);
+
+      trigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        container.classList.toggle("active");
+
+        // Close other open footnotes
+        document
+          .querySelectorAll(".footnote-container.active")
+          .forEach((fn) => {
+            if (fn !== container) {
+              fn.classList.remove("active");
+            }
+          });
+      });
+
+      return container;
+    }
+
+    // Close footnotes when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".footnote-container")) {
+        document
+          .querySelectorAll(".footnote-container.active")
+          .forEach((fn) => {
+            fn.classList.remove("active");
+          });
+      }
+    });
 
     // Share Button: Native share or copy link
     const shareBtn = document.getElementById("share-btn");
@@ -220,6 +326,102 @@ const authorData = getAuthor(frontmatter.author);
         }
       });
     }
+
+    // Print mode: Create footnotes section at bottom
+    function setupPrintFootnotes() {
+      const footnotes = document.querySelectorAll(".footnote-container");
+
+      if (footnotes.length === 0) return;
+
+      // Remove existing print footnotes section if any
+      const existingSection = document.getElementById("print-footnotes");
+      if (existingSection) {
+        existingSection.remove();
+      }
+
+      // Create footnotes section
+      const footnotesSection = document.createElement("div");
+      footnotesSection.id = "print-footnotes";
+      footnotesSection.className = "print-footnotes-section";
+
+      const heading = document.createElement("h2");
+      heading.textContent = "Qeydlər";
+      footnotesSection.appendChild(heading);
+
+      const list = document.createElement("ol");
+
+      footnotes.forEach((container, index) => {
+        const number = index + 1;
+        const expansion = container.querySelector(".footnote-expansion");
+        const trigger = container.querySelector(".footnote-trigger");
+
+        if (expansion && trigger) {
+          // Update trigger to show number
+          trigger.setAttribute("data-footnote-num", number);
+
+          // Add footnote to list
+          const li = document.createElement("li");
+          li.textContent = expansion.textContent;
+          list.appendChild(li);
+        }
+      });
+
+      footnotesSection.appendChild(list);
+
+      // Add to end of prose content
+      if (prose) {
+        prose.appendChild(footnotesSection);
+      }
+    }
+
+    // Setup print footnotes on load and before print
+    setupPrintFootnotes();
+    window.addEventListener("beforeprint", setupPrintFootnotes);
+
+    // Move author card after print-only-url in print mode
+    let originalAuthorParent = null;
+    let originalAuthorNextSibling = null;
+
+    window.addEventListener("beforeprint", () => {
+      const authorCard = document.querySelector(".author-card");
+      const printUrl = document.querySelector(".print-only-url");
+
+      if (authorCard && printUrl && !authorCard.hasAttribute("data-moved")) {
+        // Store original position
+        originalAuthorParent = authorCard.parentNode;
+        originalAuthorNextSibling = authorCard.nextSibling;
+
+        authorCard.setAttribute("data-moved", "true");
+        printUrl.parentNode.insertBefore(authorCard, printUrl.nextSibling);
+      }
+    });
+
+    window.addEventListener("afterprint", () => {
+      const authorCard = document.querySelector(".author-card");
+
+      if (authorCard && authorCard.hasAttribute("data-moved")) {
+        // Move back to original position
+        authorCard.removeAttribute("data-moved");
+        if (originalAuthorParent) {
+          if (originalAuthorNextSibling) {
+            originalAuthorParent.insertBefore(
+              authorCard,
+              originalAuthorNextSibling,
+            );
+          } else {
+            originalAuthorParent.appendChild(authorCard);
+          }
+        }
+      }
+    });
+
+    // Print Button
+    const printBtn = document.getElementById("print-btn");
+    if (printBtn) {
+      printBtn.addEventListener("click", () => {
+        window.print();
+      });
+    }
   });
 </script>
 
@@ -242,6 +444,24 @@ const authorData = getAuthor(frontmatter.author);
     margin-bottom: 2rem;
     font-family: var(--font-mono);
     font-size: 0.8125rem;
+  }
+
+  .print-only-url {
+    display: none;
+  }
+
+  .post-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 2rem;
+    color: var(--color-text);
+    line-height: 1.3;
+  }
+
+  .post-title::before {
+    content: "# ";
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
   }
 
   .meta-block {
@@ -289,9 +509,7 @@ const authorData = getAuthor(frontmatter.author);
   .prose :global(h2) {
     font-size: 1.375rem;
     font-weight: 600;
-    margin: 2.5rem 0 1rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--color-border);
+    margin: 1.5rem 0 1rem;
     color: var(--color-text);
   }
 
@@ -353,6 +571,10 @@ const authorData = getAuthor(frontmatter.author);
     border-radius: 0 var(--radius-md) var(--radius-md) 0;
     color: var(--color-text-secondary);
     font-style: italic;
+
+    p {
+      margin-bottom: 0;
+    }
   }
 
   .prose :global(pre) {
@@ -385,6 +607,57 @@ const authorData = getAuthor(frontmatter.author);
     border-radius: var(--radius-lg);
     margin: 1.5rem 0;
     border: 1px solid var(--color-border);
+  }
+
+  /* Footnotes */
+  .prose :global(.footnote-container) {
+    display: inline;
+  }
+
+  .prose :global(.footnote-trigger) {
+    color: var(--color-primary);
+    cursor: pointer;
+    font-size: 0.75em;
+    font-weight: 600;
+    margin: 0 0.125rem;
+    transition: color var(--transition-fast);
+  }
+
+  .prose :global(.footnote-trigger:hover) {
+    color: var(--color-primary-hover);
+  }
+
+  .prose :global(.footnote-expansion) {
+    display: none;
+  }
+
+  .prose :global(.footnote-container.active .footnote-expansion) {
+    display: inline;
+    color: var(--color-text-muted);
+    font-style: italic;
+    padding: 0 0.25rem;
+    background: var(--color-surface);
+    border-radius: var(--radius-sm);
+    animation: footnoteExpand 0.2s ease;
+  }
+
+  @keyframes footnoteExpand {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .prose :global(.footnote-container.active .footnote-expansion::before) {
+    content: " (";
+    color: var(--color-text-muted);
+  }
+
+  .prose :global(.footnote-container.active .footnote-expansion::after) {
+    content: ") ";
+    color: var(--color-text-muted);
   }
 
   /* Post Footer */
@@ -534,6 +807,10 @@ const authorData = getAuthor(frontmatter.author);
       padding: 1rem;
     }
 
+    .post-title {
+      font-size: 1.5rem;
+    }
+
     .prose :global(h2) {
       font-size: 1.25rem;
     }
@@ -541,5 +818,279 @@ const authorData = getAuthor(frontmatter.author);
     .prose :global(pre) {
       font-size: 0.75rem;
     }
+
+    .prose :global(.footnote-container.active .footnote-expansion) {
+      font-size: 0.875rem;
+    }
+  }
+
+  /* Print styles */
+  @media print {
+    /* A4 page setup */
+    @page {
+      size: A4;
+      margin: 2cm;
+    }
+
+    /* Hide navigation and footer */
+    :global(header),
+    :global(footer),
+    :global(nav) {
+      display: none !important;
+    }
+
+    :global(body) {
+      margin: 0;
+      padding: 0;
+      background: white;
+    }
+
+    :global(main) {
+      margin: 0 !important;
+      padding: 0 !important;
+      min-height: auto !important;
+    }
+
+    :global(*) {
+      box-shadow: none !important;
+    }
+
+    .post-layout {
+      display: block;
+      max-width: 100%;
+      padding: 0 1rem;
+      margin: 0;
+    }
+
+    .post-content {
+      border: none !important;
+      box-shadow: none !important;
+      background: white !important;
+    }
+
+    .post-content :global(.window-header) {
+      display: none;
+    }
+
+    .post-content :global(.window-body) {
+      border: none !important;
+    }
+
+    .post-body {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .print-only-url {
+      order: 1;
+    }
+
+    .post-header {
+      order: 3;
+    }
+
+    .post-title {
+      order: 4;
+    }
+
+    .prose {
+      order: 5;
+    }
+
+    /* Hide footer buttons */
+    .post-footer {
+      display: none;
+    }
+
+    /* Hide entire sidebar in print (author will be moved via JS) */
+    .post-sidebar {
+      display: none !important;
+    }
+
+    /* Author card - style when moved into content area */
+    .post-body a.author-card {
+      display: flex !important;
+      border: none !important;
+      box-shadow: none !important;
+      background: transparent !important;
+      padding: 0;
+      margin: 1rem 0 1.5rem 0;
+      pointer-events: none;
+      order: 2;
+    }
+
+    .author-avatar {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      border: none !important;
+    }
+
+    .author-avatar img {
+      border: none !important;
+    }
+
+    /* ToC links */
+    .toc :global(.toc-link) {
+      color: #000;
+      text-decoration: none;
+    }
+
+    /* Content styling for print */
+    .print-only-url {
+      display: block !important;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #ddd;
+      font-size: 0.875rem;
+      color: #666;
+      word-break: break-all;
+    }
+
+    .print-only-url strong {
+      color: #000;
+      font-weight: 600;
+    }
+
+    .post-header {
+      page-break-after: avoid;
+      border: none !important;
+    }
+
+    .header-line {
+      border: none !important;
+    }
+
+    .post-title {
+      color: #000;
+      page-break-after: avoid;
+    }
+
+    .meta-line {
+      color: #333;
+    }
+
+    .key,
+    .value,
+    .author-link,
+    .author-name {
+      color: #000 !important;
+    }
+
+    /* Prose content */
+    .prose {
+      color: #000;
+    }
+
+    .prose :global(h2),
+    .prose :global(h3) {
+      color: #000;
+      page-break-after: avoid;
+    }
+
+    .prose :global(p),
+    .prose :global(li) {
+      color: #000;
+      orphans: 3;
+      widows: 3;
+    }
+
+    .prose :global(a) {
+      color: #000;
+      text-decoration: underline;
+    }
+
+    .prose :global(pre) {
+      page-break-inside: avoid;
+      border: 1px solid #ddd !important;
+      background: #f5f5f5 !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .prose :global(code) {
+      color: #000;
+      background: transparent !important;
+    }
+
+    .prose :global(:not(pre) > code) {
+      background: #f0f0f0 !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .prose :global(blockquote) {
+      page-break-inside: avoid;
+      border-left: 3px solid #000 !important;
+      background: #f5f5f5 !important;
+      border-right: none !important;
+      border-top: none !important;
+      border-bottom: none !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .prose :global(img) {
+      page-break-inside: avoid;
+      max-width: 100%;
+      border: none !important;
+    }
+
+    /* Footnotes in print */
+    .prose :global(.footnote-expansion) {
+      display: none !important;
+    }
+
+    .prose :global(.footnote-trigger) {
+      display: inline !important;
+      color: #000;
+      cursor: default;
+      font-size: 0.75em;
+      vertical-align: super;
+      font-size: 0;
+    }
+
+    .prose :global(.footnote-trigger::before) {
+      content: "[" attr(data-footnote-num) "]";
+      font-size: 0.75rem;
+      color: #000;
+    }
+
+    /* Print footnotes section at bottom */
+    .prose :global(#print-footnotes) {
+      display: block !important;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px solid #000;
+      page-break-before: auto;
+    }
+
+    .prose :global(#print-footnotes h2) {
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+      color: #000;
+    }
+
+    .prose :global(#print-footnotes h2::before) {
+      content: "";
+    }
+
+    .prose :global(#print-footnotes ol) {
+      margin: 0;
+      padding-left: 1.5rem;
+      list-style: decimal;
+    }
+
+    .prose :global(#print-footnotes li) {
+      margin-bottom: 0.75rem;
+      color: #333;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+  }
+
+  /* Hide print footnotes section on screen */
+  :global(#print-footnotes) {
+    display: none;
   }
 </style>
