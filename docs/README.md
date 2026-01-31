@@ -143,7 +143,7 @@ Layihənin texniki detalları və istifadə olunan texnologiyalar haqqında məl
 Layihə
 [Abutalıb "Barış" Namazov](https://kodlar.az/author/abutalib-barish-namazov)
 tərəfindən yaradılıb. Veb saytın ilkin dizaynı
-[Abdulla Adbullazadə](https://kodlar.az/author/abdulla-abdullazade) tərəfindən
+[Abdulla Abdullazadə](https://kodlar.az/author/abdulla-abdullazade) tərəfindən
 hazırlanıb.
 
 Layihəyə töhfə verən bütün iştirakçılara təşəkkür edirik!

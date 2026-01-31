@@ -15,7 +15,7 @@ interface Props {
 const {
   title,
   description = SITE_DESCRIPTION,
-  image = "/images/og-image.jpg",
+  image = "/og-image.png",
   currentPath = Astro.url.pathname,
 } = Astro.props;
 
@@ -44,10 +44,15 @@ const searchData = allPosts.map((p: CollectionEntry<"blog">) => ({
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:site_name" content="kodlar.az" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
     <meta property="og:locale" content="az_AZ" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={Astro.url.href} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
