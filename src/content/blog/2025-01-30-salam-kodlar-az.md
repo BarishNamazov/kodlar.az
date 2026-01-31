@@ -35,7 +35,7 @@ kömək etmək istəyirdi. Öyrəmək üçün unikal bir yer idi.
 İnformatika üçün də oxşar yerlər tapdım: [Codeforces](https://codeforces.com) və
 başqaları. Pulsuz yarışmalar, yeni məsələlər, sonra da həm iştirakçıların, həm
 müəlliflərin həlləri açıq şəkildə paylaşılırdı. Bəzi olimpiadaçılar bloqlarda öz
-qeydlərini yazırdılar -- hansı kitabı oxuduqlarını, necə hazırlaşdıqlarını.
+qeydlərini yazırdılar, məsələn, hansı kitabı oxuduqlarını, necə hazırlaşdıqlarını.
 
 Bütün bunlar pulsuz idi. Heç kəs məndən bir şey istəmirdi. Sadəcə öyrənmək
 istəyənlər üçün açıq qapı idi.
@@ -79,7 +79,7 @@ Stallman və sonradan Linux kernelini yaradan Linus Torvalds kimi insanlar başa
 düşdülər ki, bilik qapalı qalsa, inkişaf dayanacaq.
 
 Bu gün istifadə etdiyimiz internetin özü açıq standartlar üzərində qurulub. Əgər
-Tim Berners-Lee "World Wide Web" (WWW) texnologiyasını patentləsəydi, bu gün
+Tim Berners-Lee "World Wide Web" (WWW) texnologiyasını patentləşdirsəydi, bu gün
 bildiyimiz internet olmazdı.
 
 Şirkətlər və universitetlər paylaşırlar, çünki:
@@ -96,7 +96,7 @@ Açıq bilik mədəniyyəti mənim öyrənməyimi formalaşdıran əsas amil olu
 bilirəm.
 
 kodlar.az bu hissin nəticəsidir. Azərbaycan dilində keyfiyyətli texniki məzmun
-çox azdır. Mən bu boşluğu bir az da olsa doldurmaq istəyirəm. Bu layihə mənim
+çox azdır. Mən bu boşluğu biraz da olsa doldurmaq istəyirəm. Bu layihə mənim
 şəxsi təşəbbüsüm kimi başlasa da, onun gələcəyi sizdən, bu icmadan asılıdır.
 
 Bu platformanı yaşayan, nəfəs alan bir məkana çevirmək üçün sizin səsinizə,
