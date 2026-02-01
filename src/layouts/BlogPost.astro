@@ -104,6 +104,13 @@ const authorData = getAuthor(frontmatter.author);
           <slot />
         </div>
 
+        <div class="comments-section">
+          <h2 class="comments-title">
+            <span class="comment">// </span>şərhlər
+          </h2>
+          <div id="giscus-container"></div>
+        </div>
+
         <footer class="post-footer">
           <div class="footer-left">
             <Button
@@ -426,6 +433,30 @@ const authorData = getAuthor(frontmatter.author);
   });
 </script>
 
+<script>
+  // Load giscus comments
+  const script = document.createElement("script");
+  script.src = "https://giscus.app/client.js";
+  script.setAttribute("data-repo", "BarishNamazov/kodlar.az");
+  script.setAttribute("data-repo-id", "R_kgDOREVWjw");
+  script.setAttribute("data-category", "Məqalələr");
+  script.setAttribute("data-category-id", "DIC_kwDOREVWj84C1u8q");
+  script.setAttribute("data-mapping", "pathname");
+  script.setAttribute("data-strict", "0");
+  script.setAttribute("data-reactions-enabled", "1");
+  script.setAttribute("data-emit-metadata", "0");
+  script.setAttribute("data-input-position", "bottom");
+  script.setAttribute("data-theme", "catppuccin_latte");
+  script.setAttribute("data-lang", "en");
+  script.setAttribute("crossorigin", "anonymous");
+  script.async = true;
+
+  const container = document.getElementById("giscus-container");
+  if (container) {
+    container.appendChild(script);
+  }
+</script>
+
 <style>
   .post-layout {
     max-width: 1120px;
@@ -659,6 +690,37 @@ const authorData = getAuthor(frontmatter.author);
   .prose :global(.footnote-container.active .footnote-expansion::after) {
     content: ") ";
     color: var(--color-text-muted);
+  }
+
+  /* Comments Section */
+  .comments-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .comments-title {
+    font-family: var(--font-mono);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0 0 1.5rem;
+    color: var(--color-text);
+  }
+
+  .comments-title .comment {
+    color: var(--color-text-muted);
+  }
+
+  #giscus-container :global(.giscus),
+  #giscus-container :global(.giscus-frame) {
+    outline: none !important;
+    border: none !important;
+  }
+
+  #giscus-container :global(.giscus:focus),
+  #giscus-container :global(.giscus-frame:focus) {
+    outline: none !important;
+    border: none !important;
   }
 
   /* Post Footer */
@@ -899,7 +961,11 @@ const authorData = getAuthor(frontmatter.author);
       order: 5;
     }
 
-    /* Hide footer buttons */
+    /* Hide comments and footer buttons */
+    .comments-section {
+      display: none;
+    }
+
     .post-footer {
       display: none;
     }
