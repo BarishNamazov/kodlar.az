@@ -2,7 +2,9 @@
 
 Bu sənəd **kodlar.az** layihəsinə töhfə vermək istəyənlər üçün rəhbərdir. Burada
 qəbul olunan töhfə növləri, töhfə vermək üçün izləniləcək addımlar və layihənin
-gözləntiləri barədə məlumat verilir.
+gözləntiləri barədə məlumat verilir. Bütün töhfələrdə davranış kodeksinə riayət
+edilməsi vacibdir; ətraflı məlumat üçün [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+sənədinə baxın.
 
 Əgər töhfəniz bu repozitoriyada kod dəyişikliyi edirsə, repozitoriyanı "fork"
 edib, "Pull Request" (PR) yaratmaq lazım olacaq. Bu funksionallıqdan daha öncə
