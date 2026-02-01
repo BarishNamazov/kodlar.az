@@ -8,7 +8,6 @@ import Window from "../components/Window.astro";
 import { getAuthor } from "../data/authors";
 import { formatDateLong } from "../utils/styles";
 import { Image } from "astro:assets";
-import { SITE_TITLE } from "../config";
 
 interface Props {
   frontmatter: {
@@ -32,9 +31,6 @@ const wordCount = rawContent
 const readTime = Math.max(1, Math.ceil(wordCount / 200));
 
 const authorData = getAuthor(frontmatter.author);
-
-// Only show comments on production (kodlar.az)
-const isProduction = Astro.url.hostname.includes(SITE_TITLE);
 ---
 
 <BaseLayout
@@ -108,16 +104,12 @@ const isProduction = Astro.url.hostname.includes(SITE_TITLE);
           <slot />
         </div>
 
-        {
-          isProduction && (
-            <div class="comments-section">
-              <h2 class="comments-title">
-                <span class="comment">// </span>şərhlər
-              </h2>
-              <div id="giscus-container" />
-            </div>
-          )
-        }
+        <div class="comments-section">
+          <h2 class="comments-title">
+            <span class="comment">// </span>şərhlər
+          </h2>
+          <div id="giscus-container"></div>
+        </div>
 
         <footer class="post-footer">
           <div class="footer-left">
