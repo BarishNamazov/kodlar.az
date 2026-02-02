@@ -141,9 +141,9 @@ Layihənin texniki detalları və istifadə olunan texnologiyalar haqqında məl
 ## Müəlliflik və təşəkkür
 
 Layihə
-[Abutalıb "Barış" Namazov](https://kodlar.az/author/abutalib-barish-namazov)
+[Abutalıb "Barış" Namazov](https://kodlar.az/authors/abutalib-barish-namazov)
 tərəfindən yaradılıb. Veb saytın ilkin dizaynı
-[Abdulla Abdullazadə](https://kodlar.az/author/abdulla-abdullazade) tərəfindən
+[Abdulla Abdullazadə](https://kodlar.az/authors/abdulla-abdullazade) tərəfindən
 hazırlanıb.
 
 Layihəyə töhfə verən bütün iştirakçılara təşəkkür edirik!
