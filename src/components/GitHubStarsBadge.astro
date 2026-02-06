@@ -1,0 +1,31 @@
+---
+import Icon from "./Icon.astro";
+import { getGitHubStars } from "../utils/github";
+
+interface Props {
+  iconSize?: number;
+}
+
+const { iconSize = 12 } = Astro.props;
+const count = await getGitHubStars();
+---
+
+<span class="github-stars-badge">
+  <Icon name="starFilled" size={iconSize} />
+  <span class="stars-count">{count}</span>
+</span>
+
+<style>
+  .github-stars-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-warning, #fbbf24);
+  }
+
+  .stars-count {
+    color: var(--color-text-secondary);
+  }
+</style>
