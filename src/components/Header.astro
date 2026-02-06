@@ -11,6 +11,20 @@ interface Props {
 
 const { currentPath = "/" } = Astro.props;
 
+// Fetch GitHub stars at build time
+let starsCount: number | string = "⭐";
+try {
+  const response = await fetch(
+    "https://api.github.com/repos/BarishNamazov/kodlar.az",
+  );
+  if (response.ok) {
+    const data = await response.json();
+    starsCount = data.stargazers_count;
+  }
+} catch (error) {
+  // Keep default value on error
+}
+
 const navItems = [
   { href: "/", label: "ana_səhifə" },
   { href: "/blogs", label: "məqalələr" },
@@ -59,9 +73,9 @@ const navItems = [
         aria-label="GitHub"
       >
         <Icon name="github" size={18} />
-        <span class="github-stars" id="github-stars">
+        <span class="github-stars">
           <Icon name="star" size={12} />
-          <span class="stars-count">--</span>
+          <span class="stars-count">{starsCount}</span>
         </span>
       </a>
     </div>
@@ -307,34 +321,4 @@ const navItems = [
 
   initTheme();
   document.addEventListener("astro:after-swap", initTheme);
-
-  async function fetchGitHubStars() {
-    const starsCount = document.querySelector(".stars-count");
-    if (!starsCount) return;
-
-    const cached = localStorage.getItem("github-stars");
-    const cachedTime = localStorage.getItem("github-stars-time");
-    const oneHour = 60 * 60 * 1000;
-
-    if (cached && cachedTime && Date.now() - parseInt(cachedTime) < oneHour) {
-      starsCount.textContent = cached;
-      return;
-    }
-
-    try {
-      const response = await fetch(
-        "https://api.github.com/repos/BarishNamazov/kodlar.az",
-      );
-      const data = await response.json();
-      const stars = data.stargazers_count;
-      starsCount.textContent = stars;
-      localStorage.setItem("github-stars", stars.toString());
-      localStorage.setItem("github-stars-time", Date.now().toString());
-    } catch (error) {
-      starsCount.textContent = "⭐";
-    }
-  }
-
-  fetchGitHubStars();
-  document.addEventListener("astro:after-swap", fetchGitHubStars);
 </script>
