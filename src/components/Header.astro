@@ -12,18 +12,14 @@ interface Props {
 const { currentPath = "/" } = Astro.props;
 
 // Fetch GitHub stars at build time
-let starsCount: number | string = "⭐";
-try {
-  const response = await fetch(
-    "https://api.github.com/repos/BarishNamazov/kodlar.az",
-  );
-  if (response.ok) {
-    const data = await response.json();
-    starsCount = data.stargazers_count;
-  }
-} catch (error) {
-  // Keep default value on error
+const response = await fetch(
+  "https://api.github.com/repos/BarishNamazov/kodlar.az",
+);
+if (!response.ok) {
+  throw new Error(`GitHub API request failed with status ${response.status}`);
 }
+const data = await response.json();
+const starsCount = data.stargazers_count;
 
 const navItems = [
   { href: "/", label: "ana_səhifə" },
