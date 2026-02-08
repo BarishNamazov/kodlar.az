@@ -3,7 +3,7 @@ title: "Proqramlaşdırma Səyahətimdə İmtina Etdiyim 5 Vərdiş"
 author: murad-nurubayli
 description: "Şəxsi təcrübələrimdən dərs çıxartdığım əsas vərdişlər"
 date: 2026-02-08
-categories: [Açıq Bilik]
+categories: [Karyera]
 ---
 
 # Proqramlaşdırma Səyahətimdə İmtina Etdiyim 5 Vərdiş
