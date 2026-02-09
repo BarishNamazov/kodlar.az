@@ -97,13 +97,13 @@ söhbətlər, şəkillər və digər materiallar nəzərdə tutulur.
 
 Bu layihənin bütün Kontenti
 [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](LICENSE-CONTENT)
-lisenziyası ilə qorunur. Kontenti istifadə edərkən və paylaşarkən bu lisenziyanın
-şərtlərinə riayət etməyiniz xahiş olunur.
+lisenziyası ilə qorunur. Kontenti istifadə edərkən və paylaşarkən bu
+lisenziyanın şərtlərinə riayət etməyiniz xahiş olunur.
 
 CC BY-SA 4.0 lisenziyası sizə aşağıdakı hüquqları verir:
 
-- Paylaşmaq — Kontenti istənilən mühitdə və formatda kopyalaya və yenidən paylaşa
-  bilərsiniz.
+- Paylaşmaq — Kontenti istənilən mühitdə və formatda kopyalaya və yenidən
+  paylaşa bilərsiniz.
 
 - Uyğunlaşdırmaq — Kontenti dəyişdirə, inkişaf etdirə və üzərində yeni işlər
   yarada bilərsiniz (hətta, kommersiya məqsədilə).
