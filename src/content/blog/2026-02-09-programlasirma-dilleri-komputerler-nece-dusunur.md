@@ -1,9 +1,11 @@
 ---
-title: "Proqramlaşdırma Dilləri"
+title: "Proqramlaşdırma Dilləri: Kompüterlər Necə Düşünür?"
 author: ali-taghizade
-description: "Proqramlaşdırma dilləri haqqında kiçik məlumat."
+description:
+  "Proqramlaşdırma dillərinin əsas anlayışları, fərqləri və niyə mövcud
+  olduqları haqqında qısa icmal."
 date: 2026-02-09
-categories: [Kompüter Elmləri]
+categories: ["Proqram Dilləri"]
 ---
 
 Bəzən gözümüzdə sehrli qutu olaraq görünən kompüterlər bizə maraqlı gəlir.
@@ -11,7 +13,7 @@ Bilirik ki, realda sehr mövcud deyil. Bəs necə olur ki, bu kömpüter adlanan
 cihazda insanlar oyunlar oynaya, videolar izləyə və bir çox işlərini edə
 bilirlər?
 
-> **Proqramlaşdırma dili nədir və niyə var?**
+## Proqramlaşdırma dili nədir və niyə var?
 
 Kompüter sadə dildə izah etsək sadəcə onlara verilən əmrləri yerinə yetirə bilən
 qabaqcıl kalkulyatordan başqa bir şey deyil. Kalkulyator deməkdə məqsəd verilən
@@ -43,7 +45,7 @@ işləri sadə tutmaq üçün bunları bilsək yetərlidir. Bu proqramlarla biz 
 proqramlaşdırdığımız mənbə (**source**) kodunu maşın dilinin anlaya bildiyi
 vəziyyətə gətirə bilərik.
 
-> **Niyə fərqli və çoxlu proqramlaşdırma dillərinə sahibik?**
+## Niyə fərqli və çoxlu proqramlaşdırma dillərinə sahibik?
 
 Proqramlaşdırma ixtira olunduqdan sonra standartlar bəlli deyildi. Eyni zamanda,
 kompüterlərin istifadəsi çox geniş ola biləcəyinə görə, proqramlaşdırma dilləri
@@ -118,8 +120,7 @@ dil bəzən digərlərindən daha çətin anlaşıla bilər. Bu biraz da mifdən
 dili təməl olaraq hazırlandığı üçün C/C++ öyrənməklə bir çox dili də öyrənmiş
 olursunuz.
 
-> **Proqramlaşdırma dillərində səviyyələr nələrdir və bəzi dillər niyə çətin
-> adlanır?**
+## Proqramlaşdırma dillərində səviyyələr nələrdir və bəzi dillər niyə çətin adlanır?
 
 Niyə C/C++ çətin adlandırılır? Çünki C/C++ orta səviyyə proqramlaşdırma dilidir.
 Proqramlaşdırma dilləri səviyyələrinə görə 3 hissəyə ayrılır: Aşağı, Orta və
@@ -132,7 +133,7 @@ bir dil olduğu üçün həm maşın dilinə həm də insan dilinə daha yatqın
 yuxarı səviyyə dillərə nəzərən daha qarmaşıq sayılsa da kompüterləri anlamaq
 üçün ən sadə dil də məhz bu dildir.
 
-> **Niyə bəzi dillər aktuallığını itirir?**
+## Niyə bəzi dillər aktuallığını itirir?
 
 Buna bir çox səbəb gətirilə bilər:
 

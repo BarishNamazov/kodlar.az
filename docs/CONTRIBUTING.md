@@ -96,6 +96,8 @@ Məqalənizi PR kimi göndərmək üçün aşağıdakı addımları izləyin:
   məqalələrə baxaraq nümunə götürə bilərsiniz. Əgər məqalənizi xüsusi resurs
   kimi əlavə edirsinizsə, "frontmatter" meta məlumatında `resource: true`
   sahəsini əlavə edin.
+- [TECHNICAL.md](TECHNICAL.md) sənədində izah olunan qaydalara uyğun olaraq
+  lokal mühitdə məqaləni yoxlayın, formatlama və lint yoxlamasından keçirin.
 - Dəyişiklərinizi "commit" edin və öz branch-ınıza "push" edin.
 - Əsas repozitoriyaya PR yaradın və dəyişikliklərinizi təsvir edin.
 - Əgər idarəçilər tərəfindən rəylər verilərsə, onlara cavab verin və lazım
