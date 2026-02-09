@@ -19,7 +19,7 @@ Kompüter sadə dildə izah etsək sadəcə onlara verilən əmrləri yerinə ye
 qabaqcıl kalkulyatordan başqa bir şey deyil. Kalkulyator deməkdə məqsəd verilən
 əmrlərin çox sadə olmasıdır. Qarmaşıq gördüyümüz dünya isə sadəcə proqramçının
 bu sadə əmrləri toplu və ağıllı şəkildə işlətməsindən nəticələnir. Bu da
-proqramlaşdırmanın nə olduğunu bizə ifadə edir. Lakin, bir çox insanın
+proqramlaşdırmanın nə olduğunu bizə ifadə edir. Lakin bir çox insanın
 rahatlıqla bildiyi bir məlumat var: kompüterlər sıfırlar (**0**) və birlərlə
 (**1**) işləyir. Həqiqətən də kompüterlər özündə yalnız bitlərlə hesablama edə
 və məlumat saxlaya bilir. Eyni zamanda, yazılan proqramlar da bu şəkildə
@@ -27,7 +27,7 @@ olmalıdır ki, kompüter onu anlaya bilsin. Bu kompüterin anladığı bir dil 
 üçün biz buna maşın dili deyirik. İstifadə etdiyimiz bütün software sistemləri
 kompüterdə maşın dilində olur. Amma proqramların bitlərlə yazılması düşüncəsi
 çox qorxunc səslənir. Təsəvvür edin ki, yazmaq istədiyiniz proqram üçün yalnızca
-0 və 1 düymələrinə basırsınız. Bu həm çox qarmaşıq görünər həm də çox uzun vaxt
+0 və 1 düymələrinə basırsınız. Bu həm çox qarmaşıq görünər, həm də çox uzun vaxt
 aparar. Bu problemə həll üçün insanların daha yaxşı anlaya biləcəkləri bir üsul
 olaraq proqramlaşdırma dilləri ixtira olunmuşdur. Proqramlaşdırma dilləri özündə
 sadəcə yazıdan (**text**) ibarət olub əmrləri sözlərlə ifadə edib yazmaqdır. Biz
@@ -40,7 +40,7 @@ bu dilləri anlamır, onlar sadəcə maşın dilini bilirlər. Bu zaman bizim
 köməyimizə tərcüməçi proqramlar gəlir. Bu tərcüməçi proqramlar proqramlaşdırma
 dillərinə görə fərqlənir, lakin hər birinin məqsədi maşın dilinə çevirməkdir.
 Onlar kodları çevirmə metodlarına görə iki hissəyə ayrılır: Interpreter və
-Compiler. Əslində bu çevirmələrə daha da çox metodlar vardır amma biz hələlik
+Compiler. Əslində bu çevirmələrə daha da çox metodlar vardır, amma biz hələlik
 işləri sadə tutmaq üçün bunları bilsək yetərlidir. Bu proqramlarla biz bizim
 proqramlaşdırdığımız mənbə (**source**) kodunu maşın dilinin anlaya bildiyi
 vəziyyətə gətirə bilərik.
@@ -71,7 +71,7 @@ misal dillərdən bəhs edək:
   və versiyaları müasir tutulur. Lakin, onu fərqləndirən bir çox cəhət onun hər
   yerdə istifadə oluna bilməməsinə də nəticələnir. Hər nə qədər Turing-complete
   dil olmasına baxmayaraq, bu dil əsasında sadəcə serverlər üçün nəzərdə
-  tutulub. Yəni native applər hazırlanması uyğun deyil. Bundan əlavə olaraq, PHP
+  tutulub. Yəni, native applər hazırlanması uyğun deyil. Bundan əlavə olaraq, PHP
   mənbə kodları sadəcə düz mətn olaraq yadda saxlanıldığı üçün də bir çox
   təhlükəsizlik problemlərinə açıqdır. Son olaraq, inkişafa açıq olması onu öz
   versiyaları arasında böyük fərqləndirir. Bu da köhnəlmiş PHP kodlarının geriyə
@@ -88,7 +88,7 @@ misal dillərdən bəhs edək:
   bilməyənlərin belə istifadə edə biləcəyi dil olması idi. Əsasən finans
   sistemləri üçün inkişaf etdirilib. Bu dil bizim bildiyimiz proqramlaşdırma
   dili anlayışından olduqca uzaqdır və ən sadə alqoritmlər belə çox uzun kodlara
-  çevrilə bilər. Olduqca riskli və qarmaşıq olan bu dil, sadəcə standartların
+  çevrilə bilər. Olduqca riskli və qarmaşıq olan bu dil sadəcə standartların
   olmadığı dövrü əla ifadə edən tarixi fakt olaraq yaşayır ancaq.
 - Java: Bu dil müasir dövrün ən çox istifadə edilən və obyekt-yönümlü
   proqramlaşdırmanın (**Object Oriented Proqramming**) ən güclü dillərindən
@@ -96,14 +96,14 @@ misal dillərdən bəhs edək:
   populyar idi. Əsasən həm compiler, həm də interpreter metodlarının müsbət
   cəhətlərini hibrit birləşdirən JIT virtual maşın məntiqi ilə işləyir. Onu
   populyar edən bir digər nöqtəsi isə, zəngin və müasir kitabxana ekosistemidir.
-  Lakin, indiki dövrdə, ən böyük məqsədi istənilən sistemin asan və tez tətbiq
+  Lakin indiki dövrdə, ən böyük məqsədi istənilən sistemin asan və tez tətbiq
   (**implement**) oluna bilməsidir və bu da onu performans cəhətdən geriyə
   salır. Hər nə qədər Python kimi dillərdən daha sürətli olsa da, onun hər yerdə
   OOP paradiqmasını istifadə qanunu, prosessorun işləmə məntiqinə biraz zidd
-  olduğu üçün yavaşladır. Həmçinin nəticə də, birbaşa maşın dilinə çevrilməyən
+  olduğu üçün yavaşladır. Həmçinin nəticədə birbaşa maşın dilinə çevrilməyən
   bir dildir. Əlavə olaraq, Java proqramçı üçün kəskin bəzi qaydalar qoyur. Bu
   qaydalarla kodu daha təhlükəsiz etməyə çalışsa da, bu həm də proqramçını
-  limitləyir. Misal zibil qutusu (**Garbage Collector**) metodunu istifadə
+  limitləyir. Misal, zibil qutusu (**Garbage Collector**) metodunu istifadə
   etməsi onun aşağı səviyyə işlərdə istifadəsini bağlayır. Sonda, PHP-də qeyd
   edilən versiya probleminə də sahibdir.
 
