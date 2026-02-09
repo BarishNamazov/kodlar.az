@@ -87,8 +87,8 @@ bildiyimiz internet olmazdı.
 
 - Hamı eyni açıq alətdən istifadə edəndə texnologiya daha sürətli inkişaf edir.
 - Kodu minlərlə göz yoxlayanda səhvlər daha tez tapılır.
-- Bilik paylaşıldıqca azalmır, əksinə onu istifadə edən insanlar sayəsində
-  çoxalır.
+- Bilik paylaşıldıqca dəyəri itmir, əksinə onu istifadə edən insanlar sayəsində
+  dəyəri çoxalır.
 
 ## kodlar.az niyə yarandı
 
