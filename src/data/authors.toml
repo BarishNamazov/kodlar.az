@@ -53,3 +53,15 @@ Onun maraq dairəsinə proqram təminatının dizaynı, təmiz arxitektura və m
 [murad-nurubayli.links]
 github = "muradnurubeyli"
 linkedin = "muradnurubayli"
+
+[ali-taghizade]
+name = 'Əli Tağızadə'
+bio = """
+- ADA Universitetində Kompüter Elmləri üzrə bakalavr təhsili alır.
+- Maraq dairələri: Programlaşdırma, Oyun Dizaynı, Əməliyyat Sistemləri, Build Tools, 
+Hardware/Software integration, Kompüter Qrafikaları
+"""
+
+[ali-taghizade.links]
+github = "tagizadea"
+linkedin = "ali-taghizade"
