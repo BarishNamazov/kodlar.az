@@ -3,7 +3,7 @@ title: "TCP-də Tıxac Nəzarəti: Qısa və Praktik Giriş"
 author: eldar-hasanov
 description: "Tıxac Nəzarəti Nədir və TCP bunu necə edir?"
 date: 2026-02-10
-categories: [Açıq Bilik]
+categories: [Şəbəkə]
 ---
 
 ## Giriş
