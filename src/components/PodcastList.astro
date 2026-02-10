@@ -34,6 +34,9 @@ function getYoutubeEmbedUrl(url: string) {
     <div class="podcast-list">
       {podcasts.map(async (podcast) => {
         const { Content } = await podcast.render();
+        const hostAuthors = await Promise.all(
+          podcast.data.hosts.map((host: string) => getAuthor(host)),
+        );
         return (
           <Window
             title={`${cleanSlug(podcast.slug)}.podcast`}
@@ -50,7 +53,7 @@ function getYoutubeEmbedUrl(url: string) {
                 <div class="hosts">
                   <span class="comment">// aparıcılar:</span>
                   {podcast.data.hosts.map((host: string, i: number) => {
-                    const author = getAuthor(host);
+                    const author = hostAuthors[i];
                     return (
                       <>
                         {author ? (

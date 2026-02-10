@@ -21,9 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "@astrojs/rss": "^4.0.15",
-    "@iarna/toml": "^2.2.5",
-    "astro": "^4.0.0",
-    "marked": "^17.0.1"
+    "astro": "^4.0.0"
   },
   "devDependencies": {
     "@types/node": "^25.0.10",

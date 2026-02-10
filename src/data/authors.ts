@@ -1,7 +1,5 @@
-import TOML from "@iarna/toml";
-import fs from "node:fs";
-import path from "node:path";
 import type { ImageMetadata } from "astro";
+import { getCollection, getEntry } from "astro:content";
 
 // Import all author images
 const authorImages = import.meta.glob<{ default: ImageMetadata }>(
@@ -11,7 +9,6 @@ const authorImages = import.meta.glob<{ default: ImageMetadata }>(
 
 export interface AuthorLinks {
   github?: string;
-  twitter?: string;
   linkedin?: string;
   website?: string;
 }
@@ -22,9 +19,10 @@ export interface Author {
   avatar: string | ImageMetadata;
   bio: string;
   links?: AuthorLinks;
+  render: () => Promise<{ Content: AstroComponentFactory }>;
 }
 
-let authorsCache: Record<string, Author> | null = null;
+type AstroComponentFactory = import("astro/runtime/server/index.js").AstroComponentFactory;
 
 function normalizeGitHubLink(link: string): string {
   if (link.startsWith("http://") || link.startsWith("https://")) {
@@ -40,65 +38,50 @@ function normalizeLinkedInLink(link: string): string {
   return `https://linkedin.com/in/${link}`;
 }
 
-function loadAuthors(): Record<string, Author> {
-  if (authorsCache) {
-    return authorsCache;
-  }
-
-  const authorsPath = path.join(process.cwd(), "src/data/authors.toml");
-  const authorsContent = fs.readFileSync(authorsPath, "utf-8");
-  const parsedData = TOML.parse(authorsContent) as unknown as Record<
-    string,
-    {
-      name: string;
-      avatar: string;
-      bio: string;
-      links?: AuthorLinks;
-    }
-  >;
-
-  authorsCache = {};
-
-  for (const [id, authorData] of Object.entries(parsedData)) {
-    // Try to find the imported image
-    const avatarPath = `../images/authors/${authorData.avatar}`;
-    const avatarImage = authorImages[avatarPath]?.default;
-
-    // Normalize social links
-    const normalizedLinks = authorData.links
-      ? {
-          ...authorData.links,
-          github: authorData.links.github
-            ? normalizeGitHubLink(authorData.links.github)
-            : undefined,
-          linkedin: authorData.links.linkedin
-            ? normalizeLinkedInLink(authorData.links.linkedin)
-            : undefined,
-        }
-      : undefined;
-
-    authorsCache[id] = {
-      id,
-      ...authorData,
-      avatar: avatarImage || authorData.avatar,
-      links: normalizedLinks,
-    };
-  }
-
-  return authorsCache;
+function resolveAvatar(avatar?: string): string | ImageMetadata {
+  if (!avatar) return "";
+  const avatarPath = `../images/authors/${avatar}`;
+  return authorImages[avatarPath]?.default || avatar;
 }
 
-export function getAuthor(id: string): Author | undefined {
-  const authors = loadAuthors();
-  return authors[id];
+function normalizeLinks(links?: AuthorLinks): AuthorLinks | undefined {
+  if (!links) return undefined;
+  return {
+    ...links,
+    github: links.github ? normalizeGitHubLink(links.github) : undefined,
+    linkedin: links.linkedin
+      ? normalizeLinkedInLink(links.linkedin)
+      : undefined,
+  };
 }
 
-export function getAllAuthors(): Author[] {
-  const authors = loadAuthors();
-  return Object.values(authors);
+export async function getAuthor(id: string): Promise<Author | undefined> {
+  const entry = await getEntry("authors", id);
+  if (!entry) return undefined;
+
+  return {
+    id: entry.id,
+    name: entry.data.name,
+    avatar: resolveAvatar(entry.data.avatar),
+    bio: entry.body ?? "",
+    links: normalizeLinks(entry.data.links),
+    render: () => entry.render(),
+  };
 }
 
-export function getAuthorIds(): string[] {
-  const authors = loadAuthors();
-  return Object.keys(authors);
+export async function getAllAuthors(): Promise<Author[]> {
+  const entries = await getCollection("authors");
+  return entries.map((entry) => ({
+    id: entry.id,
+    name: entry.data.name,
+    avatar: resolveAvatar(entry.data.avatar),
+    bio: entry.body ?? "",
+    links: normalizeLinks(entry.data.links),
+    render: () => entry.render(),
+  }));
+}
+
+export async function getAuthorIds(): Promise<string[]> {
+  const entries = await getCollection("authors");
+  return entries.map((entry) => entry.id);
 }

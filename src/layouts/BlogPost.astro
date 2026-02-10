@@ -30,7 +30,7 @@ const wordCount = rawContent
   .filter((word) => word.length > 0).length;
 const readTime = Math.max(1, Math.ceil(wordCount / 200));
 
-const authorData = getAuthor(frontmatter.author);
+const authorData = await getAuthor(frontmatter.author);
 ---
 
 <BaseLayout

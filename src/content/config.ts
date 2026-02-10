@@ -26,7 +26,24 @@ const podcastCollection = defineCollection({
     }),
 });
 
+const authorCollection = defineCollection({
+  type: "content",
+  schema: () =>
+    z.object({
+      name: z.string(),
+      avatar: z.string().optional(),
+      links: z
+        .object({
+          github: z.string().optional(),
+          linkedin: z.string().optional(),
+          website: z.string().optional(),
+        })
+        .optional(),
+    }),
+});
+
 export const collections = {
   blog: blogCollection,
   podcasts: podcastCollection,
+  authors: authorCollection,
 };

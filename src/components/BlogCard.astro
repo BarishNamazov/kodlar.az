@@ -18,7 +18,7 @@ const { title, description, author, date, categories, href } = Astro.props;
 
 const formattedDate = formatDateShort(date);
 
-const authorData = getAuthor(author);
+const authorData = await getAuthor(author);
 const authorName = authorData?.name || author;
 ---
 

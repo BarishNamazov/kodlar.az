@@ -8,14 +8,15 @@ import Window from "../../components/Window.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { getAuthor, getAuthorIds } from "../../data/authors";
 import { Image } from "astro:assets";
-import { marked } from "marked";
 
 const { author: authorSlug } = Astro.params;
-const authorData = getAuthor(authorSlug as string);
+const authorData = await getAuthor(authorSlug as string);
 
 if (!authorData) {
   return Astro.redirect("/404");
 }
+
+const { Content: BioContent } = await authorData.render();
 
 const allPosts = await getCollection("blog");
 const authorPosts = allPosts
@@ -37,10 +38,8 @@ const authorPodcasts = allPodcasts
       b.data.date.valueOf() - a.data.date.valueOf(),
   );
 
-const bioHtml = authorData.bio ? await marked(authorData.bio) : null;
-
 export async function getStaticPaths() {
-  const authorIds = getAuthorIds();
+  const authorIds = await getAuthorIds();
 
   return authorIds.map((id) => ({
     params: { author: id },
@@ -73,7 +72,7 @@ export async function getStaticPaths() {
         </div>
         <div class="author-details">
           <h1>{authorData.name}</h1>
-          {bioHtml && <div class="bio" set:html={bioHtml} />}
+          <div class="bio"><BioContent /></div>
           {
             authorData.links && (
               <div class="author-links">
