@@ -89,8 +89,12 @@ Məqalənizi PR kimi göndərmək üçün aşağıdakı addımları izləyin:
 
 - Repozitoriyanı "fork" edin.
 - Yeni bir "branch" yaradın.
-- Əgər lazımdırsa, özünüzü [`authors.toml`](../src/data/authors.toml) faylına
-  əlavə edin.
+- Əgər lazımdırsa, özünüz üçün [`src/content/authors/`](../src/content/authors/)
+  qovluğuna yeni Markdown faylı əlavə edin. Faylın adı sizin müəllif slug-ınız
+  olmalıdır (məsələn, `ad-soyad.md`). Frontmatter-da `name` (ad), `avatar`
+  (şəkil faylının adı, istəyə bağlı) və `links` (GitHub, LinkedIn, website) qeyd
+  edin; kontent hissəsinə isə qısa bio yazın. Mövcud müəllif fayllarına baxaraq
+  nümunə götürə bilərsiniz.
 - Məqaləni Markdown formatında [`blog`](../src/content/blog/) qovluğuna əlavə
   edin. Faylın adı `YYYY-MM-DD-meqale-basligi.md` formatında olmalıdır. Digər
   məqalələrə baxaraq nümunə götürə bilərsiniz. Əgər məqalənizi xüsusi resurs
