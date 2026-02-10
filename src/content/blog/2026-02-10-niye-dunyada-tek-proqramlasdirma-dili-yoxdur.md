@@ -1,5 +1,5 @@
 ---
-title: "Niyə Dünyada Tək Proqramlaşdırma Dili Yox?"
+title: "Niyə Dünyada Tək Proqramlaşdırma Dili Yoxdur?"
 author: abdulla-abdullazade
 description: "Proqramlaşdırmaya yeni başlayanda qarşılaşdığım suallardan biri: niyə belə çox dil var?"
 date: 2026-02-10
