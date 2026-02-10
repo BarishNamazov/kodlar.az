@@ -7,9 +7,7 @@ export async function getGitHubStars(): Promise<number> {
     "https://api.github.com/repos/BarishNamazov/kodlar.az",
   );
   if (!response.ok) {
-    throw new Error(
-      `GitHub API request failed with status ${response.status}`,
-    );
+    throw new Error(`GitHub API request failed with status ${response.status}`);
   }
   const data = await response.json();
   cachedStars = data.stargazers_count;
