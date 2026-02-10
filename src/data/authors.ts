@@ -22,7 +22,8 @@ export interface Author {
   render: () => Promise<{ Content: AstroComponentFactory }>;
 }
 
-type AstroComponentFactory = import("astro/runtime/server/index.js").AstroComponentFactory;
+type AstroComponentFactory =
+  import("astro/runtime/server/index.js").AstroComponentFactory;
 
 function normalizeGitHubLink(link: string): string {
   if (link.startsWith("http://") || link.startsWith("https://")) {

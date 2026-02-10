@@ -6,5 +6,5 @@ links:
 ---
 
 - ADA Universitetində Kompüter Elmləri üzrə bakalavr təhsili alır.
-- Maraq dairələri: Programlaşdırma, Oyun Dizaynı, Əməliyyat Sistemləri, Build Tools,
-Hardware/Software integration, Kompüter Qrafikaları
+- Maraq dairələri: Programlaşdırma, Oyun Dizaynı, Əməliyyat Sistemləri, Build
+  Tools, Hardware/Software integration, Kompüter Qrafikaları
