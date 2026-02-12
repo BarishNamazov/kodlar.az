@@ -1,6 +1,6 @@
 ---
 title: "Haskell: Proqramlaşdırma Təfəkkürünüzü Dəyişəcək Dil"
-author: "Ziya Məmmədov"
+author: "ziya-mammadov"
 description: "Bu məqalədə biz proqramlaşdırma dünyasının ən maraqlı və intellektual zəngin dillərindən biri olan Haskell haqqında danışacağıq."
 date: 2026-02-12
 categories: [Proqramlaşdırma Dilləri]
