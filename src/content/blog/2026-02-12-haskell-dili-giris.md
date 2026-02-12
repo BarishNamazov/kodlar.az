@@ -1,11 +1,11 @@
 ---
-title: "Haskell - Proqramlaşdırma Təfəkkürünüzü Dəyişən Dil"
+title: "Haskell Dili: Funksional Proqramlaşdırmaya Giriş"
 author: "ziya-mammadov"
 description:
   "Bu məqalədə biz proqramlaşdırma dünyasının ən maraqlı və intellektual zəngin
   dillərindən biri olan Haskell haqqında danışacağıq."
 date: 2026-02-12
-categories: [Proqramlaşdırma Dilləri, Haskell, Funksional proqramlaşdırma]
+categories: [Proqram Dilləri]
 ---
 
 > "Dil bizim necə düşündüyümüzü formalaşdırır və nə haqqında düşünə biləcəyimizi
@@ -50,14 +50,15 @@ Haskell-i fərqləndirən bir neçə məqam var:
     və ya "baş" (head) və "quyruq" (tail) hissələrinə `(x:xs)` (x -> head & xs
     -> tail) parçalayırıq.
 
-## Tip Təhlükəsizliyi və Algebrayik Məlumat Tipləri
+## Tip Təhlükəsizliyi və Cəbri Məlumat Tipləri
 
-Mənim üçün Haskell-in ən gözəl tərəfi **Algebrayik Məlumat Tipləridir** (ADT -
-Algebraic Data Type). Biz öz dünyamızı çox dəqiq modelləşdirə bilirik. Məsələn,
-bir proqramda dəyərin olub-olmaması (null problemi) bir çox dildə işgəncədir.
-Haskell-də isə `Maybe a` tipi var: ya `Just a` (dəyər var), ya da `Nothing`
-(dəyər yoxdur). Bu, sizi hər ehtimalı nəzərə almağa məcbur edir və proqramın
-gözlənilmədən çökməsinin qarşısını alır.
+Mənim üçün Haskell-in ən gözəl tərəfi **Cəbri Məlumat Tipləridir** (ADT -
+Algebraic Data Type)[^burada "cəbri" sözü bu tiplərin üzərində apa bildiyimiz
+riyazi əməllərdən gəlir]. Biz öz dünyamızı çox dəqiq modelləşdirə bilirik.
+Məsələn, bir proqramda dəyərin olub-olmaması (null problemi) bir çox dildə
+işgəncədir. Haskell-də isə `Maybe a` tipi var: ya `Just a` (dəyər var), ya da
+`Nothing` (dəyər yoxdur). Bu, sizi hər ehtimalı nəzərə almağa məcbur edir və
+proqramın gözlənilmədən çökməsinin qarşısını alır.
 
 Həmçinin, `type` və `data` açar sözləri ilə yeni tiplər yarada, hətta məntiqi
 ifadələr və ya riyazi ifadə ağacları kimi mürəkkəb strukturlar qura bilərik.
@@ -103,11 +104,12 @@ sumSqPositive :: [Int] -> Int
 sumSqPositive = foldr (+) 0 . map (^ 2) . filter (> 0)
 ```
 
-Burada `.` simvolu funksiya "compasition"-u bildirir: məlumat filtrdən keçir,
-map olunur və sonda foldr ilə toplanır.
+Burada `.` simvolu funksiya kompozisiyanı bildirir: məlumat filtrdən keçir, map
+olunur və sonda foldr ilə toplanır. Bu kompozisiya məktəb riyaziyyatında
+öyrəndiyimiz `f(g(h(x)))` kimi bir ifadəyə bənzəyir.
 
 2. ADT ilə Strukturlaşdırılmış Yanaşma: Bu üslub OOP-dəki siniflərə bənzəyir,
-   lakin daha təhlükəsizdir.
+   lakin daha zəngindir.
 
 ```haskell
 data Shape = Circle Float | Rect Float Float deriving (Show)
@@ -117,8 +119,8 @@ area (Circle r) = pi * r^2
 area (Rect w h) = w * h
 ```
 
-Bu kodda pattern matching (nümunə uyğunluğu) istifadə olunur; Haskell avtomatik
-olaraq fiqurun tipini təyin edir.
+Bu kodda pattern matching (uyğunluq funksiyaları) istifadə olunur; Haskell
+avtomatik olaraq fiqurun tipini təyin edir.
 
 ## Çətinliklər və Yayğın Səhvlər
 
@@ -142,9 +144,11 @@ dillərdə (Java, Python və s.) daha təmiz və xətasız kod yazmağı öyrət
 ## Yeni Başlayanlara Tövsiyələr
 
 1.  **Kiçik addımlarla başlayın:** Əvvəlcə siyahılar və rekursiyanı mənimsəyin.
-2.  **GHCi [^1]-dən qorxmayın:** Bu interaktiv mühit sizin ən yaxın dostunuzdur,
-    hər n kiçik funksiyanı orada yoxlayın.
-3.  **Tipləri izləyin:** Əgər kodunuz kompilyasiya olunmursa, çox gümman ki,
+2.  **GHCi-dən bol istifadə edin:** GHC Hasell üçün kompilyatordur. Onun
+    interaktiv versiyası GHCi adlanır. Burada "canlı" nümunələr yoxlayaraq
+    funksional ideyalarımızı təsdiq edə bilərik. Bu interaktiv mühit sizin ən
+    yaxın dostunuzdur, hər n kiçik funksiyanı orada yoxlayın.
+3.  **Tipləri yaxşı öyrənin:** Əgər kodunuz kompilyasiya olunmursa, çox gümman ki,
     tiplərdə uyğunsuzluq var. Haskell-in xəta mesajlarını oxumağı öyrənin.
 4.  **Monadlara fokuslanmayın:** Başlanğıcda monadların riyazi nəzəriyyəsini
     deyil, onların praktik olaraq proqramın axınını necə idarə etdiyini
@@ -157,5 +161,3 @@ dil deyil, bir az qəribə, bir az da maraqlı bir təcrübə olacaq. Amma Haske
 kimi dillər problemlərə daha diqqətlə yanaşmağı, yazdığın kodun arxasında nə baş
 verdiyini düşünməyi vadar edir. Bu da uzun müddətdə proqramlaşdırmaya baxışını
 dəyişir.
-
-[^1]: GHC-nin interaktiv mühiti.
