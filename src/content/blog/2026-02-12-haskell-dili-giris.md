@@ -148,8 +148,8 @@ dillərdə (Java, Python və s.) daha təmiz və xətasız kod yazmağı öyrət
     interaktiv versiyası GHCi adlanır. Burada "canlı" nümunələr yoxlayaraq
     funksional ideyalarımızı təsdiq edə bilərik. Bu interaktiv mühit sizin ən
     yaxın dostunuzdur, hər n kiçik funksiyanı orada yoxlayın.
-3.  **Tipləri yaxşı öyrənin:** Əgər kodunuz kompilyasiya olunmursa, çox gümman ki,
-    tiplərdə uyğunsuzluq var. Haskell-in xəta mesajlarını oxumağı öyrənin.
+3.  **Tipləri yaxşı öyrənin:** Əgər kodunuz kompilyasiya olunmursa, çox gümman
+    ki, tiplərdə uyğunsuzluq var. Haskell-in xəta mesajlarını oxumağı öyrənin.
 4.  **Monadlara fokuslanmayın:** Başlanğıcda monadların riyazi nəzəriyyəsini
     deyil, onların praktik olaraq proqramın axınını necə idarə etdiyini
     (məsələn, `do` notasiyası ilə) öyrənin.
