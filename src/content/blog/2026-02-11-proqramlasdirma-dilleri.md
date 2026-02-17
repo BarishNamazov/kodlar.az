@@ -4,159 +4,243 @@ author: abutalib-barish-namazov
 description:
   "Niyə bu qədər çox dil var, onlar düşüncə tərzimizi necə formalaşdırır və
   bunların hamısı bizim üçün nə deməkdir."
-date: 2026-02-11
+date: 2026-02-17
 categories: ["Proqram Dilləri"]
+resource: true
+resource_audiences: ["Proqramçılar", "Universitet Tələbələri"]
 ---
 
 Dünyada yüzlərlə proqramlaşdırma dili mövcuddur. Əgər nə vaxtsa onların
 siyahısına baxıb **niyə** — niyə sadəcə ən yaxşısını seçib yolumuza davam
-etmirik — deyə düşünmüsünüzsə, tamamilə doğru sualı verirsiniz. Sən demə, bunun
-cavabı proqramlaşdırmanın əslində nə olduğu barədə dərin bir həqiqəti üzə
-çıxarır: bu, sadəcə bir maşın üçün təlimat yazmaq deyil, həm də problemlər
-haqqında düşüncə tərzi seçməkdir.
+etmirik — deyə düşünmüsünüzsə, deməli, doğru bir sual verirsiniz. Sən demə,
+bunun cavabı proqramlaşdırmanın əslində nə olduğu barədə dərin bir həqiqəti üzə
+çıxarır: dil seçimi etmək sadəcə bir maşın üçün təlimat yazmaq deyil, həm də
+problemlər haqqında düşüncə tərzi seçməkdir.
 
 Bu resurs həmin mənzərənin xəritəsidir. Bu sahəyə girməzdən əvvəl kiminsə sizə
-təqdim etməsini arzulayacağınız bir bələdçi. Bütün proqram mühəndisləri və
-kompüter elmləri/mühəndisliyi tələbələri bunları yaxşı bilməlidirlər.
+təqdim etməsini arzulayacağınız bir əl kitabçasıdır. Bütün proqram mühəndisləri
+və kompüter elmləri/mühəndisliyi tələbələri bunları yaxşı bilməlidirlər.
+
+## Önsöz
+
+Bu resurs proqramlaşdırma haqqında bilən və ən azı bir dildə yaxşı kod yazmağı
+bacaran proqramçılar üçün nəzərdə tutulub. Məsələn, olimpiadaçı məktəblilər,
+universitetin 2-ci kurs ya da daha yuxarı kurs tələbələri, proqramlaşdırma ilə
+peşəkar səviyyədə məşğul olanlar və sair. Əgər indiyə kimi yalnızca bir-iki dil
+istifadə etmisinizsə, onda sizin üçün lap maraqlı olacaq.
+
+Bu xəritəni oxuduqca qarşınıza sizə tanış olmayan yeni terminlər, fərqli düşüncə
+tərzləri və paradiqmalar çıxa bilər. Bu zaman ağlınızda çoxlu sualların
+yaranması tamamilə normaldır və məhz mənim də gözləntim budur! Sizi bu sualların
+ardınca getməyə və mövzular barədə öz müstəqil araşdırmanızı aparmağa təşviq
+edirəm.
+
+Əgər hər hansı bir məqam qaranlıq qalarsa, axtardığınız cavabları tapmaqda
+çətinlik çəkərsinizsə və ya sadəcə öz fikirlərinizi bölüşmək istəsəniz,
+çəkinmədən aşağıdakı şərh bölməsində suallarınızı verə bilərsiniz. Həmçinin,
+daha ətraflı və texniki söhbətlər üçün layihənin GitHub müzakirələri
+(Discussions) bölməsində yeni bir mövzu aça bilərsiniz.
+
+Bu resursun inkişafı üçün
+[fikir bildirən dostlara](https://github.com/BarishNamazov/kodlar.az/discussions/22)
+təşəkkür edirəm.
 
 ---
 
 ## 1. Proqramlaşdırma Dili Əslində Nədir?
 
-Özəyində proqramlaşdırma dili, insan niyyəti ilə maşın icrası arasındakı
-interfeysdir. Sizin kompüterə etdirmək istədiyiniz bir şey var. Kompüter isə
-elektrik gərginliklərini və ikili (binar) siqnalları başa düşür. Proqramlaşdırma
-dili bu iki reallıq arasındakı boşluqda dayanır və birini digərinə tərcümə edir.
+Ən sadə təriflə, proqramlaşdırma dili sizin nə etmək istədiyinizlə maşının nə
+edə biləcəyi arasındakı körpüdür. Sizin kompüterə etdirmək istədiyiniz bir
+tapşırıq var. Kompüter isə yalnız elektrik gərginliklərini və sıfırlarla birləri
+(binar siqnalları) başa düşür. Proqramlaşdırma dili məhz bu iki fərqli reallıq
+arasında dayanır və sizin fikirlərinizi maşının dilinə tərcümə edir.
 
-Amma bu tərif məsələni tam əhatə etmir. Kod eyni anda ən azı üç iş görür.
+Amma bu "tərcüməçi" rolu məsələnin yalnız görünən tərəfidir. Kod əslində eyni
+anda üç mühüm iş görür:
 
-Birincisi, o, **təlimatlar** verir — maşının yerinə yetirdiyi addım-addım
-əmrlər. İkincisi, o, **abstraksiyalar** yaradır — mürəkkəb əməliyyatları sadə
-adlarla çağırmağa imkan verir, qarışıq detalları təmiz bir səth altında
-gizlədir. Üçüncüsü və bəlkə də ən maraqlısı, o, **reallığın modeli** kimi çıxış
-edir. Proqramçı "istifadəçi", "əməliyyat" və ya "sensor oxunuşu"nu təmsil edən
-kod yazarkən, maşının daxilində miniatür bir konseptual dünya qurur. İstifadə
-etdikləri dil həmin dünyanın necə görünəcəyini formalaşdırır.
+- **Təlimatlar verir:** Maşının yerinə yetirməli olduğu addım-addım əmrləri
+  siyahıya alır.
+- **Abstraksiyalar yaradır:** Mürəkkəb əməliyyatları sadə adlar altında
+  birləşdirir və arxada gedən qarışıq detalları bizdən gizlədir.
+- **Reallığı modelləşdirir:** Bir proqramçı "istifadəçi", "səbət" və ya "sensor"
+  üçün kod yazarkən, əslində maşının daxilində o reallığın miniatür bir modelini
+  qurur. Və seçdiyiniz dil o dünyanın necə işləyəcəyini birbaşa formalaşdırır.
 
-Kodun əslində necə işlədiyi barədə faydalı bir yanaşma var. Bəzi dillər
-**kompilyasiya olunur (tərtib edilir)**: yazdığınız kod proqram işə düşməzdən
-_əvvəl_ maşının oxuya biləcəyi təlimatlara çevrilir; sanki bir kitabı başqa dilə
-tərcümə edib, bitmiş tərcüməni təhvil verirsiniz. Digər dillər **interpretasiya
-olunur**: kod real vaxt rejimində sətir-sətir oxunur və icra edilir, bu daha çox
-canlı söhbət zamanı tərcüməçinin işinə bənzəyir. Bir çox müasir dillər bu iki
-yanaşma arasındakı sərhədi bulandırır, lakin konseptual fərq hələ də önəmlidir.
-Kompilyasiya olunan dillər daha sürətli olmağa meyllidirlər. İnterpretasiya
-olunan dillər isə inkişaf zamanı daha çevik və səhvlərə qarşı daha dözümlü
-olurlar.
+Bu təlimatların kompüterə necə çatdırılmasına gəldikdə isə, dillər işləmə
+prinsipinə görə əsasən üç kateqoriyaya bölünür:
 
-Burada son bir fikir də qeyd edim. Biz bunlara _dillər_ deyirik və bu söz ilk
-baxışda göründüyündən daha uyğundur. Təbii dillər kimi, proqramlaşdırma
-dillərinin də qrammatikası, lüğəti, idiomları və danışanlar icması var. Təbii
-dillər kimi, onlar da istifadəçilərinin düşüncə tərzini formalaşdırır. Haskell
-dilində səlis danışan bir proqramçı problemə C dilində danışandan fərqli
-yanaşacaq; bu, hansısa birinin daha yaxşı olduğuna görə yox, dillərin fərqli
-zehni vərdişləri təşviq etməsinə görədir.
+1. **Kompilyasiya olunan dillər:** Burada yazdığınız kod proqram işə düşməzdən
+   _əvvəl_ tamamilə maşın dilinə çevrilir. Bunu bir kitabı əvvəlcədən başqa dilə
+   tərcümə edib, hazır və çap olunmuş nəşrini kiməsə verməyə bənzədə bilərsiniz.
+   Bu dillər adətən daha sürətli işləyir, çünki kompilyator əvvəlcədən kod
+   üzərində dərin optimizasiya apara bilir. Lakin proqramı hər dəfə işə salmaq
+   üçün kompilyasiya prosesinin bitməsini gözləmək lazımdır ki, bu da böyük kod
+   bazalarında uzun vaxt ala bilər. Belə dillərə C, C++, Rust və Go daxildir.
+
+2. **İnterpretasiya olunan dillər:** Burada isə kod real vaxt rejimində,
+   sətir-sətir oxunur və dərhal icra edilir. Bu, sinxron tərcüməçinin canlı
+   söhbət zamanı etdiyi işə bənzəyir. Bu dillər proqramı yazarkən və test
+   edərkən proqramçıya daha çox çeviklik verir. Təbii ki, əvvəlcədən
+   optimizasiya edilmiş ayrıca kompilyasiya mərhələsi olmadığı üçün, bu dillərdə
+   yazılan proqramlar kompilyasiya olunmuş proqramlardan adətən daha yavaş
+   işləyir. Belə dillərə Python, Ruby və PHP daxildir.
+
+3. **Hibrid dillər:** Bu yanaşmada kod həm interpretasiya olunur, həm də icra
+   zamanı əlavə optimizasiya üçün _JIT (Just-In-Time - anında kompilyasiya)_
+   kompilyasiyası kimi texnologiyalardan istifadə edilir. Adətən, kod əvvəlcə
+   maşın dilindən daha sadə, amma daha primitiv olan "bytecode" adlanan aralıq
+   dilə çevrilir. Təsəvvür edin ki, sinxron tərcüməçi sizin tez-tez təkrar
+   etdiyiniz cümlələri əzbərləyir və növbəti dəfə onları dərhal (tərcümə
+   etmədən) səsləndirərək prosesi xeyli sürətləndirir. Bir çox hallarda bir
+   dilin həm tam interpretasiya olunan, həm də hibrid versiyası olur. Bu
+   kateqoriyaya bu mühitlər və dillər daxildir: Java (JVM), C# (.NET),
+   JavaScript və Python (PyPy kimi alternativ mühitlərdə).
+
+Son olaraq, niyə onlara məhz _"dil"_ dediyimizə diqqət yetirək. Bu, sadəcə
+bənzətmə deyil. Təbii dillərdə olduğu kimi, proqramlaşdırma dillərinin də öz
+qrammatikası, lüğəti, idiomları və danışanlar icması var. Ən əsası isə, təbii
+dillər kimi onlar da düşüncə tərzimizi formalaşdırır. Məsələn,
+[Haskell](/blogs/haskell-dili-giris) dilində "düşünən" bir proqramçı eyni
+problemə C dilində yazan birindən tamamilə fərqli yanaşacaq. Bu, dillərdən
+birinin digərindən daha yaxşı olması demək deyil. Fərqli dillər bizi problemlərə
+fərqli bucaqlardan baxmağa təşviq edir.
 
 ---
 
 ## 2. Niyə Bu Qədər Çox Proqramlaşdırma Dili Var?
 
-Qısa cavab: çünki tək bir mükəmməl dil yoxdur.[^bəlkə suni intellekt ümumi
-intellektə sahib olanda proqram dili sadəcə təbii dil olacaq :-)]
+Qısa cavab: çünki hər problemi qüsursuz həll edən tək bir "mükəmməl" dil
+yoxdur.[^bəlkə süni intellekt ümumi intellektə sahib olanda proqram dili sadəcə
+təbii dil olacaq :-)]
 
-Hər bir proqramlaşdırma dili dizayn qərarlarında dondurulmuş bir kompromislər
-(güzəştlər) toplusudur. Dilləri fərqli istiqamətlərə çəkən bəzi məqamlar
-bunlardır:
+Hər bir proqramlaşdırma dili əslində bir sıra güzəştlərin, yəni kompromislərin
+toplusudur. Dilin dizaynerləri bir xüsusiyyətdə üstünlük əldə etmək üçün qəsdən
+başqa bir xüsusiyyətdən imtina etməli olurlar. Gəlin müxtəlif dillərin
+yaranmasına səbəb olan və onları fərqli istiqamətlərə çəkən əsas amillərə baxaq:
 
-**Performans və Təhlükəsizlik.** C kimi bir dil sizə xam sürət və yaddaş
-üzərində birbaşa nəzarət verir — lakin o, səhv etməyəcəyinizə güvənir və səhv
-etdiyiniz zaman nəticələr fəlakətli ola bilər. Rust kimi bir dil oxşar
-performans təklif edir, lakin tərtib (kompilyasiya) zamanı ciddi təhlükəsizlik
-qaydalarını tətbiq edərək, proqramınız işə düşməzdən əvvəl bütöv səhv
-kateqoriyalarını tutur. Bunun əvəzi isə daha çətin öyrənmə prosesi və daha
-tələbkar bir kompilyatordur (məsələn, kompilyasiya daha uzun çəkir).
+- **Performans və Təhlükəsizlik arasındakı balans:** C və C++ kimi dillər sizə
+  xam sürət və kompüterin yaddaşı üzərində birbaşa, qeyri-məhdud nəzarət imkanı
+  verir. Lakin bu dillər sizin heç vaxt səhv etməyəcəyinizə güvənir. Kiçik bir
+  diqqətsizlik proqramın çökməsinə və ya ciddi təhlükəsizlik boşluğuna səbəb ola
+  bilər. Digər tərəfdən, Rust kimi müasir dillər eyni yüksək performansı təklif
+  edir, lakin kompilyasiya zamanı çox ciddi qaydalar tətbiq edərək yaddaş
+  xətalarının qarşısını proqram işə düşmədən əvvəl alır. Təbii ki, bunun da öz
+  bədəli var: Rust dilini öyrənmək daha çətindir və kompilyasiya prosesi daha
+  uzun çəkir. Əlavə olaraq, Rust dilində qəliz proqramların zehni modeli daha
+  mürəkkəbdir.
 
-**İfadə Asanlığı və Sadəlik.** Haskell kimi bəzi dillər sizə inanılmaz dərəcədə
-güclü abstraksiyalar verir: mürəkkəb fikirləri çox az sətirlə ifadə edə
-bilərsiniz. Lakin bu güc konseptual sıxlıqla gəlir — öyrənmə procesi çox
-çətindir və başqasının kodunu oxumaq riyaziyyatı deşifrə etmək kimi hiss edilə
-bilər. Go kimi digər dillər isə qəsdən öz xüsusiyyətlərini məhdudlaşdırır. Go
-bəzən "darıxdırıcı" olduğu üçün tənqid edilir, lakin bu darıxdırıcılıq bir
-üstünlükdür: hər hansı bir Go proqramçısı başqa bir Go proqramçısının kodunu
-çətinlik çəkmədən oxuya bilər.
+* **İfadə Asanlığı və Sadəlik arasındakı balans:** Haskell kimi dillər çox güclü
+  abstraksiyalar təqdim edir. Olduqca mürəkkəb riyazi və məntiqi fikirləri cəmi
+  bir neçə sətir kodla ifadə edə bilərsiniz. Lakin bu yığcamlıq kodun oxunmasını
+  çətinləşdirir; başqasının yazdığı kodu anlamaq qəliz bir tənliyi deşifrə
+  etməyə bənzəyə bilər. Bunun tam əksi olaraq, Go kimi dillər qəsdən öz
+  imkanlarını və qrammatikasını məhdudlaşdırır. Go çox vaxt "darıxdırıcı"
+  adlandırılır, çünki orada hər hansı bir işi görməyin adətən yalnız bir sadə
+  yolu olur. Lakin bu "darıxdırıcılıq" böyük komandalarda bir üstünlüyə
+  çevrilir: istənilən proqramçı başqa bir həmkarının kodunu asanlıqla oxuyub
+  başa düşə bilir.
 
-**Ekosistem və Alətlər.** Çox az dil təkbaşına güclü ola bilər (məsələn, C
-dili). Dillərin çoxu paket menecerləri, kitabxanalar, freymvorklar, sazlayıcılar
-(debuggers), icma forumları və iş bazarları ilə birlikdə gəlir. Python ən
-sürətli dil deyil. Ən təhlükəsiz dil də deyil. Lakin onun data elmi (data
-science) və maşın öyrənməsi üçün ekosistemi o qədər zəngin və yetkindir ki, bu
-tapşırıqlar üçün başqa dil seçmək çox vaxt "velosipedi yenidən kəşf etmək"
-deməkdir.
+* **Ekosistem və Alətlərin gücü:** Heç bir dil təcrid olunmuş halda böyük uğur
+  qazana bilməz. Dillərin dəyəri çox vaxt onların ətrafında yaranan hazır
+  kitabxanalar, paket menecerləri, freymvorklar və geniş icma ilə ölçülür.
+  Məsələn, Python nə ən sürətli, nə də ən təhlükəsiz dildir. Lakin verilənlər
+  elmi və maşın öyrənməsi sahələrindəki ekosistemi o qədər zəngin və yetkindir
+  ki, bu işlər üçün başqa dil seçmək çox vaxt "təkəri yenidən kəşf etmək"
+  mənasına gəlir. Hətta, C və Assembly kimi dillər də saneyədən və icmadan
+  gördükləri dəstək sahəsində uğur qazana biliblər.
 
-Bu texniki məqamlardan əlavə, insan və tarix faktorları da rol oynayır. Akademik
-tədqiqatçılar fikirləri araşdırmaq üçün dillər yaradırlar — ML və Haskell kimi
-dillər universitet laboratoriyalarından çıxıb. Korporasiyalar biznes
-problemlərini həll etmək üçün dillər yaradırlar — Java Sun Microsystems-də, C#
-Microsoft-da, Go isə Google-da doğulub. Bəzi dillər xüsusi bir platforma
-səbəbindən mövcuddur: Objective-C onilliklər ərzində Apple ekosisteminin dili
-idi, JavaScript isə veb səhifələri interaktiv etmək üçün on gün ərzində
-yaradılmışdı. Həmin tələsik yaranma hekayəsi, onilliklər boyu davam edən
-təkamüldən sonra belə dilin qəribəliklərində hələ də görünür.
+Bu texniki səbəblərdən əlavə, dillərin müxtəlifliyində insan amili və tarixi
+faktorlar da böyük rol oynayır. Məsələn:
 
-Keçmiş istifadə (legacy) də önəmlidir. Dünyanın maliyyə infrastrukturunun böyük
-bir hissəsi hələ də 1959-cu ildə hazırlanmış COBOL dilində işləyir. COBOL
-kiminsə sevimlisi olduğu üçün yox, milyonlarla sətirlik işlək, sınaqdan keçmiş
-kodu yenidən yazmaq bahalı və təhlükəli olduğu üçün hələ də qalıb.
+- **Akademik mühit:** Bəzi dillər sırf yeni kompüter elmləri ideyalarını
+  sınaqdan keçirmək üçün universitet laboratoriyalarında doğulub. Lisp və
+  Haskell buna gözəl nümunədir.
+- **Korporativ ehtiyaclar:** Nəhəng şirkətlər öz daxili biznes və miqyaslama
+  problemlərini həll etmək üçün yeni dillər yaradırlar. Java Sun
+  Microsystems-də, C# Microsoft-da, Go isə Google-da məhz bu cür ehtiyaclardan
+  yaranıb. Bəzən isə hansısa şirkət bir dili öz əhatəsinə alır, məsələn, Jane
+  Street şirkəti OCaml dilini istifadə etdikləri üçün onun inkişafına böyük
+  töhfələr verir.
+- **Platforma məhdudiyyətləri:** Objective-C və sonradan Swift uzun illər yalnız
+  Apple ekosisteminin məhsulları üçün standart olub. Veb səhifələrə
+  interaktivlik qatmaq üçün yaradılan JavaScript isə cəmi 10 gün ərzində
+  yazılmışdı. Onun bu cür tələsik yaranmasının izləri bu gün də dilin bəzi
+  qəribəliklərində özünü göstərir.
 
-"Yeganə doğru dil" mifi cəlbedicidir, lakin yanlışdır. Bu, niyə həm çəkicə, həm
-də vintaçana ehtiyacımız olduğunu soruşmağa bənzəyir. Onlar fərqli problemləri
-həll edirlər. Və bəzən onlar arasındakı seçim alətdən çox, onu tutan əllə bağlı
-olur.
+Nəhayət, **tarixi miras** amilini unutmaq olmaz. Dünyanın qlobal maliyyə və bank
+infrastrukturunun böyük bir hissəsi hələ də 1959-cu ildə yaradılmış COBOL
+dilində işləyir. COBOL müasir və ya çox sevilən dil olduğu üçün deyil,
+onilliklər boyu sınaqdan çıxmış milyonlarla sətirlik işlək kodu yenidən başqa
+dildə yazmaq həddindən artıq bahalı, eyni zamanda riskli olduğu üçün hələ də
+yaşayır.
+
+Nəticə etibarilə, "yeganə mükəmməl dil" anlayışı sadəcə bir mifdir. Bütün
+problemləri tək bir dillə həll etməyə çalışmaq, "niyə həm çəkicə, həm də
+vintaçana ehtiyacımız var?" deyə soruşmağa bənzəyir. Onların hərəsi fərqli bir
+məqsəd üçün dizayn edilib. Seçim isə çox vaxt qarşınızdakı problemdən,
+komandanızın təcrübəsindən və mövcud ekosistemdən asılıdır.
+
+Hazırkı ekosistemlər ona imkan verir ki, demək olar ki, istənilən proqramı
+istənilən məşhur proqram dilində yaza biləsiniz. Amma bu zaman siz də yuxarıda
+danışdığımız kompromisləri nəzərə almalısınız.
 
 ---
 
 ## 3. Qısa Tarixçə: Problemlər və Həllər
 
-Proqramlaşdırma dillərinin tarixini kalendardakı günlər və adlar siyahısı kimi
-deyil, bir zəncirvari problemlər və insanların onları həll etmək üçün icad
-etdiyi həllər kimi başa düşmək ən doğrusudur.
+Proqramlaşdırma dillərinin tarixini sadəcə təqvimdəki illər və adlar siyahısı
+kimi öyrənmək darıxdırıcıdır. Əvəzində, bu tarixə bir "zəncirvari problemlər və
+insanların o problemləri həll etmək üçün tapdığı çıxış yolları" kimi baxmaq ən
+doğrusudur. Hər yeni dil özündən əvvəlkinin yaratdığı bir dərdi həll etmək üçün
+yaranıb.
 
 ### Maşınla Birbaşa Danışmaq
 
-Başlanğıcda heç bir dil yox idi — yalnız aparat təminatı (hardware) var idi. İlk
-proqramçılar maşınlarla **perfokartlar** vasitəsilə ünsiyyət qururdular:
-üzərində dəqiq nümunələr əsasında deşiklər açılmış karton parçaları. Hər bir
-deşik (və ya deşiyin olmaması) bir məlumat bitini təmsil edirdi. Proqramlaşdırma
-əməliyyatlarınızı kağız üzərində planlaşdırmaq, onları kartlara kodlaşdırmaq,
-dəstəni maşına daxil etmək və gözləmək demək idi. Səhv etsəniz, yeni bir kart
-deşməli idiniz. Bu, fiziki, toxunula bilən bir proqramlaşdırma aktı idi.
+Başlanğıcda heç bir "dil" yox idi — yalnız nəhəng, otaq boyda fiziki qurğular
+var idi. İlk proqramçılar maşınlarla **perfokartlar** vasitəsilə ünsiyyət
+qururdular.
 
 <Image src="https://static.vecteezy.com/system/resources/previews/023/583/060/original/pure-ibm-punch-card-for-electronic-calculated-data-processing-machines-retro-punchcard-for-input-and-storage-in-automated-technology-information-processing-systems-illustration-isolated-vector.jpg" alt="perfokart" />
 
-Perfokartlar yerini **maşın koduna** — prosessorun birbaşa icra etdiyi xam ikili
-təlimatlara verdi. Maşın kodunu yazmaq kart deşməkdən daha sürətli olsa da, çox
-da xoş deyildi. Hər bir təlimat bir rəqəm idi. Dəyişən adları, funksiyalar, heç
-bir abstraksiya yox idi. Yaddaş ünvanlarını əzbərləməli idiniz.
+Təsəvvür edin: üzərində dəqiq riyazi hesablama ilə deşiklər açılmış karton
+parçaları. Hər bir deşik (və ya deşiyin olmaması) bir məlumat bitini təmsil
+edirdi. O dövrdə proqramlaşdırma, edəcəyiniz əməliyyatları əvvəlcə kağız
+üzərində diqqətlə planlaşdırmaq, xüsusi aparatla onları kartonlara deşərək
+kodlaşdırmaq, sonra bu ağır kart dəstəsini maşına daxil edib nəticəni gözləmək
+demək idi. Bir dənə də olsun səhv etsəniz, həmin kartı atıb yenisini deşməli
+idiniz. Bu, tam mənasıyla fiziki, əllə toxunula bilən və çox zəhmət tələb edən
+bir proses idi.
 
-**Assembli (Assembly) dili** ilk abstraksiya oldu. `10110000 01100001` yazmaq
-əvəzinə, `MOV AL, 61h` yaza bilərdiniz — bu hələ də prosessora birbaşa təlimat
-idi, lakin insanın heç olmasa oxuya biləcəyi bir şey idi. Assembli
-proqramlaşdırmanı daha sürətli və az xətalı etdi, lakin o hələ də hədəflədiyiniz
-xüsusi aparat təminatına sıx bağlı idi. Bir prosessor üçün yazılmış kod
-digərində işləmirdi.
+Zamanla perfokartlar yerini **maşın koduna** — prosessorun birbaşa anladığı xam
+ikili təlimatlara (sıfırlar və birlər) verdi. Maşın kodunu klaviatura ilə yazmaq
+kart deşməkdən daha sürətli olsa da, insan beyni üçün çox yorucu idi. Hər bir
+əmr sadəcə bir ədəd idi. Dəyişən adları, funksiyalar və ya işinizi
+asanlaşdıracaq heç bir anlayış yox idi. Proqramçı məlumatın saxlanıldığı yaddaş
+ünvanlarını (uzun rəqəmləri) əzbər bilməli idi.
 
-### Yüksək Səviyyəli Dillərə Sıçrayış
+Buna görə də **Assembli** dili yaradıldı və bu, proqramlaşdırmada ilk böyük
+qurtuluş, ilk abstraksiya oldu. Proqramçılar artıq `10110000 01100001` kimi
+anlaşılamayan rəqəmlər sətiri yazmaq əvəzinə, `MOV AL, 61h` (məlumatı filan yerə
+köçür) yaza bilərdilər. Bu, hələ də prosessorla birbaşa, çox aşağı səviyyədə
+danışmaq idi, lakin heç olmasa insan dilinə bənzəyirdi. Assembli işləri xeyli
+sürətləndirsə də, böyük bir qüsuru var idi: o, birbaşa prosessorun növünə bağlı
+idi. Bir marka kompüter üçün yazılmış assembli kodu, başqa bir kompüterdə
+qətiyyən işləmirdi.
 
-1950-ci illər inqilabi bir fikir gətirdi: bəs əgər nə hesablamaq _istədiyinizi_
-təsvir edən kod yaza bilsəniz və bir proqram — **kompilyator** — bunu sizin üçün
-maşın koduna tərcümə etsə necə olar?
+### Yüksək Səviyyəli Dillərə Keçid
 
-**FORTRAN** (1957) elmi və riyazi hesablamalar üçün qurulmuş ilk geniş uğur
-qazanan yüksək səviyyəli dil oldu. O, mühəndislərə maşın təlimatları ardıcıllığı
-əvəzinə, cəbrə bənzəyən formullar yazmağa imkan verdi. FORTRAN əvvəlcə
-mübahisəli idi — bir çox proqramçı inanırdı ki, kompilyator heç vaxt əllə
-yazılmış assebler qədər səmərəli kod istehsal edə bilməz. Onlar yanılırdılar, ya
-da ən azından fərq əhəmiyyət kəsb etməyəcək qədər sürətlə azaldı.
+1950-ci illərdə inqilabi bir sual ortaya atıldı: bəs əgər biz addım-addım maşına
+nə edəcəyini deyil, sadəcə nə hesablamaq _istədiyimizi_ riyazi tənliklər kimi
+yaza bilsək və xüsusi bir proqram — yəni **kompilyator** — bunu bizim əvəzimizə
+o qəliz maşın koduna tərcümə etsə necə olar?
+
+Beləliklə, **FORTRAN** (1957) yarandı. Elmi və riyazi hesablamalar üçün qurulmuş
+bu dil böyük səs-küyə səbəb oldu. Mühəndislər artıq maşın təlimatları deyil,
+məktəbdə öyrəndikləri cəbrə bənzəyən formullar yazırdılar. Başlanğıcda bir çox
+təcrübəli proqramçı buna şübhə ilə yanaşırdı; onlar inanırdılar ki, heç bir
+avtomatik kompilyator insanın əllə yazdığı assembli kodu qədər sürətli işləyə
+bilməz. Lakin onlar yanılırdılar, kompilyatorlar o qədər sürətlə inkişaf etdi
+ki, aradakı fərq tezliklə əriyib yox oldu.
 
 ```fortran
       PROGRAM DOT_PRODUCT
@@ -173,13 +257,13 @@ da ən azından fərq əhəmiyyət kəsb etməyəcək qədər sürətlə azaldı
       END
 ```
 
-**COBOL** (1959) fərqli bir sahəni hədəflədi: biznes məlumatlarının emalı.
-FORTRAN rəqəmlər və tənlikləri idarə edirdisə, COBOL qeydləri, faylları və
-əməliyyatları idarə etmək üçün dizayn edilmişdi. Onun sintaksisi qəsdən geniş və
-ingilis dilinə bənzər idi, bu da biznes məntiqinin təkcə mühəndislər tərəfindən
-deyil, menecerlər tərəfindən də oxuna bilməsi fikrinə əsaslanırdı. Bu
-oxunaqlılıq hədəfinə yalnız qismən nail olundu, lakin COBOL-un kommersiya
-hesablamalarına təsiri böyük oldu.
+**COBOL** (1959) isə tamam fərqli bir sahəni hədəfə almışdı: biznes
+məlumatlarının emalı. FORTRAN rəqəmlər və mürəkkəb tənliklər üçün idisə, COBOL
+bank hesabları, maaş cədvəlləri və sənədləri idarə etmək üçün yaradılmışdı. Onun
+qrammatikası qəsdən genişləndirilmiş və ingilis dilinə bənzədilmişdi. Məqsəd o
+idi ki, yazılan biznes məntiqini təkcə mühəndislər deyil, həm də şirkət
+menecerləri oxuyub anlaya bilsinlər. Bu gün dünyanın maliyyə sisteminin böyük
+hissəsi hələ də bu dildən asılıdır.
 
 ```cobol
        IDENTIFICATION DIVISION.
@@ -203,12 +287,11 @@ hesablamalarına təsiri böyük oldu.
            STOP RUN.
 ```
 
-**ALGOL** (1958–1960) məşhur olduğundan daha çox təsirli idi. O,
-strukturlaşdırılmış proqramlaşdırma anlayışlarını — kod blokları, iç-içə
-idarəetmə strukturları, leksik əhatə dairəsi — təqdim etdi ki, bunlar ondan
-sonra gələn demək olar ki, hər bir dilin təməli oldu. ALGOL, birbaşa olaraq az
-adam tərəfindən istifadə edilməsinə baxmayaraq, illər boyu akademik kompüter
-elmləri məqalələrinin dili oldu.
+**ALGOL** (1958–1960) bəlkə də adını çox adamın eşitmədiyi, lakin təsiri nəhəng
+olan bir dildir. O, bu gün hər dildə istifadə etdiyimiz "strukturlaşdırılmış
+proqramlaşdırma" anlayışlarını -- kod bloklarını və iç-içə keçmiş idarəetmə
+strukturlarını gətirdi. Ondan sonra gələn demək olar ki, bütün populyar dillər
+ALGOL-un qoyduğu bu təməl üzərində ucalıb.
 
 ```algol
 begin
@@ -223,13 +306,25 @@ begin
 end
 ```
 
-**Lisp** (1958) tamamilə fərqli bir istiqamətə getdi. John McCarthy tərəfindən
-yaradılan Lisp, kod və məlumatı eyni şey kimi qəbul edirdi — proqramlar digər
-siyahıları, o cümlədən özlərini manipulyasiya edə bilən siyahılar idi. Bu,
-Lisp-i xüsusilə süni intellekt tədqiqatları üçün qeyri-adi dərəcədə çevik və
-güclü etdi. Lisp, zibil toplama (garbage collection), əsas idarəetmə strukturu
-kimi rekursiya və yüksək dərəcəli funksiyalar kimi ideyaları təqdim etdi — bu
-ideyaların məşhurluğa çatması onilliklər çəkdi, lakin indi onlar hər yerdədir.
+**Lisp** (1958) isə bəlkə də dövrünün ən qeyri-adi, fəlsəfi yolla gedən dili
+idi. Bu dilin ən məşhur xüsusiyyəti "kod və məlumatın eyni şey olması"
+fəlsəfəsidir. Bəs bu nə deməkdir? Əksər dillərdə yazdığınız kod quruluşca
+məlumatdan (məsələn, rəqəmlər və ya mətn siyahılarından) tamamilə fərqlənir.
+Lisp-də isə həm məlumatlar, həm də proqramın öz kodu eyni formatda — mötərizələr
+içərisindəki siyahılar kimi yazılır. Məhz bu oxşarlıq sayəsində, bir Lisp
+proqramı başqa bir Lisp proqramını çox asanlıqla oxuya, analiz edə, dəyişdirə və
+işlədiyi yerdəcə yeni kod yaza bilər (sanki adi bir rəqəm siyahısını redaktə
+edirmiş kimi).
+
+Kompüterə öz kodunu dəyişdirmək və "düşünmək" imkanı verən bu misilsiz çeviklik
+Lisp-i onilliklər boyu süni intellekt tədqiqatlarının bir nömrəli dilinə
+çevirmişdi. Lisp həmçinin avtomatik yaddaş təmizlənməsi kimi qabaqcıl ideyaları
+sənayeyə gətirən ilk dildir.
+
+Uzun illər çox universitet, MIT daxil olmaqla, Lisp-i kompüter elmləri
+tədrisində ilk və əsas dil kimi istifadə edirdi. Hazırda bu dəyişsə də, Lisp-in
+təsiri və mədəniyyəti bir çox dildə, xüsusən də Clojure və Racket kimi müasir
+Lisp dialektlərində yaşamağa davam edir.
 
 ```scheme
 (defun factorial (n)
@@ -240,427 +335,522 @@ ideyaların məşhurluğa çatması onilliklər çəkdi, lakin indi onlar hər y
 (mapcar #'factorial '(1 2 3 4 5))
 ```
 
+Lisp-in yaradıcılarından bəziləri məşhur _Scheme (1975)_ adlı dili yaratdılar və
+1984-cü ildə yayımlanan
+[SICP (Structure and Interpretation of Computer Programs)](https://mitpress.mit.edu/sites/default/files/sicp/index.html)
+kitabında onu kompüter elmləri tədrisində standart dil kimi təqdim etdilər. Bu
+kitabı oxumaq, məncə, hər proqramçı üçün bir növ yeni dünyaya açılan qapını
+açmaq kimidir. SICP proqramlaşdırmanın əsas konseptlərini, o cümlədən aşağıda
+haqqında danışacağımız paradiqmaların bir neçəsini, Scheme dilində çox sadə və
+eleqant nümunələrlə izah edir. Kitabın müəllifləri hələ də MIT-də dərs keçirlər
+və onları hər həftə işlədiyim mərtəbədə görürəm.
+
 ### Struktur və Nizam-intizam
 
-1960-cı illərin sonlarına doğru proqram təminatı o qədər mürəkkəbləşirdi ki,
-insanlar nəzarəti itirməyə başladılar. Lüğətə "proqram təminatı böhranı" ifadəsi
-daxil oldu. Proqramlar gecikir, xətalarla dolu olur və büdcəni aşırdı. Problemin
-bir hissəsi o idi ki, dövrün dilləri `GOTO` ifadələrinin məhdudiyyətsiz
-istifadəsi ilə mümkün olan dolaşıq, izlənməsi çətin kodu — məşhur "spagetti
-kodu"nu təşviq edirdi.
+1960-cı illərin sonlarına doğru proqramlar o qədər böyüdü və mürəkkəbləşdi ki,
+inkişaf prosesi xaosla nəticələndi. Tarixə "proqram təminatı böhranı" kimi düşən
+bu dövrdə layihələr gecikir, büdcəni aşır və xətalarla dolu olurdu. Səbəb sadə
+idi: o dövrün dilləri kodu istənilən yerdən başqa bir yerə tullamağa imkan verən
+xüsusi əmrlərə sahib idi ki, bu da izlənməsi mümkünsüz olan, bir-birinə dolanmış
+"spagetti kodu" yaradırdı.
 
-Edsger Dijkstra və digərlərinin rəhbərlik etdiyi **strukturlaşdırılmış
-proqramlaşdırma** hərəkatı, proqramların təmiz, birləşdirilə bilən
-strukturlardan qurulmalı olduğunu müdafiə edirdi: ardıcıllıqlar, seçimlər
-(if/else) və dövrlər. Niklaus Wirth tərəfindən hazırlanmış **Pascal** (1970) bu
-hərəkatın simvolu idi — nizamlı proqramlaşdırma vərdişlərini aşılamaq üçün
-nəzərdə tutulmuş tədris dili.
+Bunun qarşısını almaq üçün proqramların yuxarıdan aşağıya, səliqəli şəkildə
+axmasını tələb edən nizam-intizamlı hərəkat başladı. Bu yeni məntiqi tələbələrə
+öyrətmək üçün **Pascal** (1970) dili yaradıldı və uzun illər universitetlərdə
+standart tədris dili kimi istifadə olundu.
 
-**C** (1972) strukturlaşdırılmış proqramlaşdırmanı daha praqmatik bir istiqamətə
-apardı. Bell Labs-da Dennis Ritchie tərəfindən yaradılan C, əməliyyat sistemləri
-— xüsusən də Unix yazmaq üçün dizayn edilmişdi. O, assembli dilinin nəzarəti və
-səmərəliliyini yüksək səviyyəli dilin oxunaqlılığı və daşına bilməsi ilə
-birləşdirdi. C təhlükəsiz deyildi. O, yaddaşla təhlükəli şeylər etməyə imkan
-verirdi. Lakin o, sürətli, çevik və "dəmirə yaxın" idi və onilliklər boyu sistem
-proqramlaşdırmasının ortaq dili oldu. Onun təsirini qiymətləndirməmək mümkün
-deyil: C-nin sintaksisi C++, Java, C#, JavaScript və bir çox başqalarının
-əcdadıdır.
+Amma dünyanı əsl mənada dəyişən dil **C** (1972) oldu. Bell Labs-da yaradılan C
+dili, əməliyyat sistemlərini (xüsusən Unix-i) yazmaq üçün dizayn edilmişdi. C
+qeyri-adi bir balans tapmışdı: o, mühəndisə yüksək səviyyəli dilin aydınlığını,
+eyni zamanda Assembli dilinin performansı və cihaz üzərindəki qeyri-məhdud
+nəzarətini verirdi. C yaddaş xətalarını bağışlamayan, olduqca təhlükəsizsiz bir
+dil idi. Lakin o qədər sürətli və çevik idi ki, onilliklər boyu dünyanı idarə
+etdi. C++ və Java başda olmaqla, bu gün istifadə etdiyimiz bir çox dilin
+qrammatikası birbaşa C-dən miras qalıb.
 
 ### Obyektlərin Yüksəlişi
 
-1980-ci illərdə proqram təminatı sistemləri böyüdükcə yeni bir təşkilati ideya
-sürət qazandı: **obyekt-yönümlü proqramlaşdırma (OOP)**. Əsas fikir proqram
-təminatını "obyektlər" toplusu kimi modelləşdirmək idi, burada hər bir obyekt
-məlumatları və həmin məlumatlar üzərində fəaliyyət göstərən əməliyyatları bir
-araya gətirirdi.
+1980-ci illərdə kod bazaları daha da böyüdükcə, məlumatları təşkil etmək üçün
+yeni bir fəlsəfə meydana çıxdı: **Obyekt-yönümlü proqramlaşdırma (OOP)**.
 
-**Smalltalk** (1972–1980) bu ideyanın ən saf ifadəsi idi — Smalltalk-da hər şey,
-o cümlədən rəqəmlər və mühakimə (boolean) dəyərləri bir obyekt idi. O, həmçinin
-qrafik istifadəçi interfeysləri üçün qabaqcıl bir mühit idi. Smalltalk ondan
-sonra gələn demək olar ki, hər şeyə təsir etdi, lakin OOP-ni kütlələrə çatdıran,
-obyekt-yönümlü xüsusiyyətləri C-yə əlavə edən **C++** (1979–1985) oldu. C++
-C-nin performansından imtina etmədən OOP-nin gücünü təklif edirdi və bu da onu
-1990-cı illər boyu iri miqyaslı proqram təminatı üçün dominant dilə çevirdi.
+Əvvəllər proqramçılar məlumatları (məsələn, bank hesabının balansı) ayrı, o
+məlumatları dəyişən funksiyaları (pulu artırıb-azaltmaq) ayrı yazırdılar. Sistem
+böyüdükcə bu dağınıqlıq işləri çətinləşdirirdi. OOP ilə proqramçılar fərqli cür
+düşünməyə başladılar: "Sistemimiz hansı obyektlərdən ibarətdir?" İndi həm
+istifadəçinin məlumatları, həm də edə biləcəyi fəaliyyətlər tək bir mərkəzdə —
+"Obyekt" daxilində qablaşdırılırdı.
 
-**Java** (1995) paradiqmanı daha da irəli apardı. Sun Microsystems-də "bir dəfə
-yaz, hər yerdə işlət" şüarı ilə dizayn edilən Java, proqramları platformalar
-arasında daşına bilən edən virtual maşında işləyən aralıq bayt-koda kompilyasiya
-olunurdu. Java həmçinin avtomatik yaddaş idarəçiliyi (zibil toplama) və bir çox
-xətanı tərtib zamanı tutan ciddi tip sistemi əlavə etdi. O, korporativ proqram
-təminatı, Android inkişafı və universitet kurikulumları üçün standart dilə
-çevrildi.
+Bu fəlsəfəni tam mənasıyla tətbiq edən ilk dil **Smalltalk** (1972–1980) olsa
+da, bu inqilabı kütləviləşdirən **C++** (1979) oldu. O, C-nin nəzarətçi və
+sürətli təbiətini OOP-nin mütəşəkkil quruluşu ilə birləşdirdi.
 
-Microsoft-un Java-ya cavabı olan **C#** (2000), Windows və .NET ekosisteminə sıx
-inteqrasiya ilə oxşar bir yol izlədi.
+Sonra isə **Java** (1995) səhnəyə çıxdı. O, işləri daha da asanlaşdırdı:
+proqramçını çoxlu dərdlərdən qurtardı (məsələn, yaddaş avtomatik təmizlənir) və
+"bir dəfə yaz, hər yerdə işlət" şüarı ilə çıxış etdi. Java dilində yazılan
+proqram birbaşa maşın koduna deyil, xüsusi bir aralıq koda çevrilirdi --
+yuxarıda danışdığımız hibrid versiya kimi. Bu sistem sayəsində bir dəfə yazılmış
+kod istənilən əməliyyat sistemində problemsiz işləyə bilirdi. Qısa müddətdə
+böyük korporasiyaların sevimlisi olan Java-ya rəqib olaraq Microsoft tərəfindən
+**C#** (2000) yaradıldı.
 
 ### İnternet Hər Şeyi Dəyişir
 
-1990-cı illərin ortalarında Ümumdünya Hörümçək Torunun (World Wide Web)
-yüksəlişi brauzerlərdə, serverlərdə və şəbəkələrdə işləyən proqram təminatına
-tələbat partlayışı yaratdı. Bu dövr bizə skript dillərini bəxş etdi.
+1990-cı illərin ortalarında İnternetin və veb brauzerlərin partlayışı yeni bir
+ehtiyac yaratdı: səhifələri hərəkətli və interaktiv etmək. Səhifə yükləndikdən
+sonra hərəkət edən qrafiklər, kliklənən düymələr yaratmaq üçün skript dilləri
+populyarlaşdı.
 
-**JavaScript** (1995) Netscape Navigator-da veb səhifələrinə interaktivlik əlavə
-etmək üçün Brendan Eich tərəfindən on gün ərzində yaradıldı. Tələsik mənşəyinə
-baxmayaraq, JavaScript hər veb brauzerdə yerli olaraq işləyən yeganə
-proqramlaşdırma dili oldu və bu ona müştəri tərəfi (client-side) veb inkişafında
-inhisar qazandırdı. Zamanla o, serverləri, mobil tətbiqləri və hətta masaüstü
-proqramları gücləndirən ümumi məqsədli bir dilə çevrildi. Microsoft tərəfindən
-hazırlanan **TypeScript** (2012) JavaScript-in üzərinə statik tip sistemi əlavə
-edərək, iri miqyaslı inkişaf üçün onun bir çox zəif cəhətlərini həll etdi.
+Ən məşhur hekayələrdən biri **JavaScript**-in (1995) yaranmasıdır. O, brauzerdə
+işləyən bəsit animasiyalar üçün cəmi on gün ərzində, çox tələsik yazılmışdı. Heç
+kim onun bu qədər böyüyəcəyini gözləmirdi. Lakin brauzerlərə başqa dil əlavə
+edilmədiyi üçün JavaScript bütün vebin tək ortaq dili inhisarını ələ keçirdi.
+(Bu gün böyük layihələrdə JavaScript-in buraxdığı struktur boşluqlarını bağlamaq
+üçün onun təkmilləşdirilmiş versiyası olan **TypeScript** istifadə edilir).
 
-**Python** (1991) Guido van Rossum tərəfindən oxunaqlılıq və sadəliyə vurğu
-edilərək dizayn edildi. Onun təmiz sintaksisi və yumşaq öyrənmə əyrisi onu
-tədris, skript yazma və sürətli prototipləmə üçün populyar etdi. 2010-cu illərdə
-data elmi və maşın öyrənməsi populyarlığı gəldikdə, Python-un zəngin ədədi və
-elmi kitabxanalar ekosistemi (NumPy, pandas, scikit-learn, TensorFlow) onu həmin
-sahələrdə dominant dilə çevirdi.
+Eyni dövrdə **Python** (1991) da səssizcə böyüyürdü. Onun əsas məqsədi
+oxunaqlılıq və kodun təmizliyi idi; o qədər aydın dili var idi ki, hər kəs
+asanlıqla öyrənə bilərdi. İllər sonra, xüsusən 2010-cu illərdə məlumat elmi və
+süni intellekt dalğası gəldikdə, Python özünün zəngin riyazi kitabxanaları
+sayəsində bu sahənin mütləq hakiminə çevrildi.
 
-**Ruby** (1995), **Perl** (1987) və **PHP** (1995) hər biri öz sahələrini tutdu
-— Ruby zərif veb inkişafında (Rails vasitəsilə), Perl mətn emalı və sistem
-inzibatçılığında, PHP isə WordPress və Facebook-un ilk versiyaları daxil
-olmaqla, erkən dinamik vebin arxasındakı işçi qüvvəsi kimi idilər.
+İnternetin ilk vaxtlarında server tərəfini ayaqda tutan **PHP**, **Ruby** və
+**Perl** kimi dillər də bu dövrün vacib aktyorlarından oldu. Ruby zərif veb
+inkişafında (Rails vasitəsilə), Perl mətn emalı və sistem inzibatçılığında, PHP
+isə WordPress və Facebook-un ilk versiyaları daxil olmaqla, erkən dinamik vebin
+arxasındakı işçi qüvvəsi kimi idilər.
 
 ### Müasir Dövr: Təhlükəsizlik, Sürət və Eşzamanlılıq
 
-Dillərin ən son nəsli bir neçə təkrarlanan mövzu ilə müəyyən edilir: yaddaş
-təhlükəsizliyi, eşzamanlılıq (concurrency) və paradiqmaların qarışması.
+Bu gün prosessorların tək bir nüvəsinin sürəti əvvəlki kimi kəskin artmır,
+əvəzində kompüterlərin nüvə sayı çoxalır. Buna görə də müasir dillər çoxnüvəli
+mühitlərdə eyni anda bir neçə işi təhlükəsiz görməyə (eşzamanlılıq) və yaddaş
+təhlükəsizliyinə köklənib.
 
-**Rust** (2010, stabil 2015) təhlükəsizlik probleminə birbaşa hücum edir. Onun
-sahiblik və borc (ownership and borrowing) sistemi zibil toplayıcı olmadan
-kompilyasiya zamanı yaddaş təhlükəsizliyinə zəmanət verir və C səviyyəsində risk
-olmadan C səviyyəsində performans təklif edir. Rust Mozilla, Amazon, Microsoft
-və Linux kernel layihəsi tərəfindən qəbul edilib.
+- **Rust** (2015) yaddaş idarəetməsi probleminə inqilabi bir yanaşma gətirdi. O,
+  arxa planda işləyən və sistemi yavaşladan yaddaş təmizləyicisinə ehtiyac
+  duymadan, sırf kompilyasiya zamanı sərt qaydalarla yaddaş xətalarının
+  qarşısını alır. C qədər sürətli, amma ondan dəfələrlə təhlükəsizdir.
 
-Google-da yaradılan **Go** (2009) sadəlik, sürətli kompilyasiya və "goroutines"
-vasitəsilə daxili eşzamanlılıq üçün optimallaşdırılıb. O, bulud infrastrukturu,
-mikroservislər və əmr sətri alətləri üçün sevimli dilə çevrilib.
+* **Go** (2009) Google tərəfindən yaradıldı. Onun məqsədi xüsusilə serverlərdə
+  milyonlarla sorğunu eyni anda, çətinlik çəkmədən (eşzamanlı) idarə etmək və
+  böyük komandalarda proqramçıların işini maksimal dərəcədə sadələşdirməkdir.
 
-**Swift** (2014) təhlükəsizlik, performans və müasir sintaksisi birləşdirərək
-Apple-ın əsas dili kimi Objective-C-ni əvəz etdi. **Kotlin** (2011) Android və
-JVM ekosistemi üçün oxşar bir şey edərək, Java-ya daha ifadəli və yığcam
-alternativ təklif etdi.
+* Mobil inkişafda köhnə və ağır dillər yerini müasir, təmiz və sürətli dillərə
+  buraxdı: Apple ekosistemində **Swift**, Android dünyasında isə **Kotlin**
+  standartlaşdı.
 
-**Elixir** (2011) kimi dillər, daha dostcanlı sintaksislə funksional
-proqramlaşdırmanı və xətaya dözümlü eşzamanlılığı (Erlang-ın döyüşdə sınanmış
-virtual maşınından miras qalmış) daha geniş auditoriyaya gətirdi.
-
-Hekayə, əlbəttə ki, hələ də yazılır.
+Gördüyünüz kimi, proqramlaşdırma dillərinin tarixi hələ bitməyib. Yeni
+problemlər yarandıqca, onları fərqli yollarla həll edəcək yeni alətlər və
+məntiqi yanaşmalar kəşf edilməyə davam edəcək.
 
 ---
 
 ## 4. Proqramlaşdırma Paradiqmaları: Kod Haqqında Necə Düşünürük?
 
-Paradiqma dilin tək xüsusiyyəti deyil, həm də onunla yazılan proqramların
-məntiqini təşkil etmək üçün zehni modeldir. Müasir dillərin əksəriyyəti bir neçə
-paradiqmanı dəstəkləyir, lakin hər birini ayrı-ayrılıqda başa düşmək bizə kömək
-edəcək.
+"Paradiqma" sözünün mənası "bir şeyə yanaşma tərzi" deməkdir. Təsəvvür edin ki,
+bir ev tikmək istəyirsiniz. Bir usta sizə deyir ki, "kərpicləri tək-tək üst-üstə
+düzüb divar hördükdən sonra damı vur" (bu bir yanaşmadır). Digər usta isə deyir
+ki, "zavodda əvvəlcədən hazırlanmış bütöv otaqları kranla gətirib bir-birinə
+bağla" (bu isə fərqli bir yanaşmadır). Hər ikisinin nəticəsində ortaya bir ev
+çıxır, amma iş prosesi, istifadə olunan alətlər və sizin düşüncə tərziniz
+tamamilə fərqli olur.
+
+Proqramlaşdırmada da paradiqma sadəcə dilin texniki bir xüsusiyyəti deyil; o,
+proqramçıya kodu necə təşkil etməyi diktə edən bir fəlsəfə, bir zehni modeldir.
+Müasir dillərin əksəriyyəti bir neçə paradiqmanı eyni anda dəstəkləyir, lakin
+onların hər birinin kökündə yatan məntiqi ayrı-ayrılıqda başa düşmək sizə
+istənilən dildə daha yaxşı kod yazmağa kömək edəcək.
 
 ### 4.1 İmperativ və Prosedural Proqramlaşdırma
 
-Bu ən intuitiv paradiqmadır, çünki gündəlik həyatda necə təlimat verdiyimizi əks
-etdirir. _Bunu et. Sonra onu et. Əgər bu şərt doğrudursa, başqa bir şey et.
-Bitənə qədər təkrarla._
+Bu, hamımız üçün ən intuitiv və təbii yanaşmadır, çünki gündəlik həyatda kimsəyə
+yol salarkən və ya təlimat verərkən məhz bu üsuldan istifadə edirik: _Bunu et.
+Sonra onu et. Əgər bu şərt ödənirsə, fərqli bir şey et. Bitənə qədər təkrarla._
 
-İmperativ proqramlaşdırma proqramın **vəziyyətini** — dəyişənlərdə saxlanılan
-dəyərləri, yaddaşın məzmununu dəyişdirən ifadələr ardıcıllığıdır. Prosedural
-proqramlaşdırma təlimatları **prosedurlara** (və ya funksiyalara) təşkil etməklə
-buna struktur əlavə edir: adlandırılmış, təkrar istifadə edilə bilən kod
-blokları.
+**İmperativ proqramlaşdırma** proqramın mövcud "vəziyyətini" dəyişdirən əmrlər
+ardıcıllığıdır. (Proqramlaşdırmada **vəziyyət** dedikdə, o anda yaddaşda
+saxlanılan bütün məlumatlar, dəyişənlərin o anki dəyərləri nəzərdə tutulur).
+Kompüterə addım-addım bu vəziyyəti necə dəyişəcəyini deyirsiniz.
 
-C, Pascal və Go prosedural dillərdir. Bu üslubda yazanda proqramınız resept kimi
-oxunur: hər biri dünyanın bir hissəsini dəyişdirən addımlar seriyası.
+**Prosedural proqramlaşdırma** isə bu addımlar yığınına bir az nizam qatır: o,
+uzun təlimatları yenidən istifadə edilə bilən kod bloklarına — _funksiyalara_ və
+ya _prosedurlara_ bölür. C, Pascal və qismən də Go bu üslubun bariz
+nümunələridir. Bu üslubda yazılan kod bir resept kimi oxunur.
 
-Bu modelin gücü onun birbaşalığındadır. Nə baş verdiyini addım-addım izləyə
-bilərsiniz. Zəifliyi ondadır ki, proqramlar böyüdükcə, dəyişən vəziyyətlər
-çoxluğu (kodun müxtəlif hissələri tərəfindən dəyişdirilən bütün o dəyişənlər)
-haqqında mühakimə yürütmək çətinləşir. Səhvlər proqramın uzaq hissələri
-arasındakı gözlənilməz qarşılıqlı əlaqələrdə gizlənir.
+Bu modelin ən böyük gücü onun sadəliyi və birbaşalığındadır. Zəifliyi isə
+ondadır ki, proqramlar böyüdükcə ortalıqda çoxlu sayda dəyişən məlumat
+(vəziyyət) yaranır. Eyni məlumat fərqli funksiyalar tərəfindən fərqli vaxtlarda
+dəyişdirildikdə, xətaların haradan qaynaqlandığını tapmaq getdikcə çətinləşir.
 
 ### 4.2 Obyekt-yönümlü Proqramlaşdırma (OOP)
 
-OOP fərqli bir təşkilati prinsip təklif edir: əməliyyatlar ardıcıllığı haqqında
-düşünmək əvəzinə, **obyektlər** haqqında düşünün — məlumatları (atributları) və
-davranışı (metodları) bir araya gətirən müstəqil varlıqlar.
+OOP fərqli bir sualdan yola çıxır: "Kod hansı ardıcıllıqla işləməlidir?" demək
+əvəzinə, "Sistemimiz hansı varlıqlardan, yəni obyektlərdən ibarətdir?" deyə
+soruşur. Burada məqsəd məlumatları (xüsusiyyətləri) və o məlumatlar üzərində
+əməliyyat aparan davranışları (metodları) müstəqil **obyektlər** daxilində
+birləşdirməkdir.
 
-Bir `BankAccount` (Bank Hesabı) obyekti balans ehtiva edə bilər və `deposit()`
-(mədaxil) və `withdraw()` (məxaric) kimi metodlar təklif edə bilər. Balansın
-necə saxlandığının daxili detalları təmiz bir interfeys arxasında gizlədilir —
-bu **enkapsulyasiya**dır. Obyektlər **mirasalma (inheritance)** vasitəsilə
-iyerarxiyalara təşkil edilə bilər: `SavingsAccount` (Əmanət Hesabı)
-`BankAccount`-dan miras ala bilər və faiz hesablamaları əlavə edə bilər. Və
-**polimorfizm** müxtəlif növ obyektlərin eyni mesaja müxtəlif yollarla cavab
-verməsinə imkan verir — hər hansı bir hesab növündə `calculateFee()` (Rüsumu
-Hesabla) çağıra bilərsiniz və hər biri bunu öz qaydalarına uyğun hesablayacaq.
+Bunu anlamaq üçün OOP-nin üç əsas sütununa baxaq:
 
-OOP 1980-ci illərin sonlarından 2000-ci illərə qədər dominant paradiqma oldu və
-bunun əsaslı səbəbi var idi. O, bir çox real dünya sahələrinə yaxşı uyğun gəlir,
-böyük komandalar üçün miqyaslana bilir (müxtəlif insanlar müxtəlif obyektlər
-üzərində işləyə bilər) və proqram təminatı dizaynı üçün təbii bir lüğət təmin
-edir.
+- **Enkapsulyasiya (Gizlətmə):** Bir obyektin daxili işləməsinin kənar kodlardan
+  gizlədilməsidir. Təsəvvür edin ki, avtomobil sürürsünüz. Siz sadəcə qaz
+  pedalına basırsınız (bu sizin istifadə etdiyiniz interfeysdir), amma içəridə
+  motorun necə işlədiyini, yanacağın necə yandığını bilmək məcburiyyətində
+  deyilsiniz. Bu detallar sizdən "enkapsulyasiya" olunub.
+- **Mirasalma (Inheritance):** Bir obyektin başqa bir obyektin xüsusiyyətlərini
+  özünə götürə bilməsidir. Məsələn, bir `BankHesabı` obyektiniz var. Siz yeni
+  bir `KreditHesabı` yaradarkən hər şeyi sıfırdan yazmırsınız; sadəcə adi bank
+  hesabının xüsusiyyətlərini "miras alıb", üzərinə faiz hesablama məntiqini
+  əlavə edirsiniz.
+- **Polimorfizm (Çoxformluluq):** Eyni əmrin fərqli obyektlər tərəfindən
+  özlərinə məxsus şəkildə icra edilməsidir. Məsələn, itə və pişiyə eyni "Səs
+  ver" əmrini versəniz, it hürəcək, pişik isə miyovlayacaq. Əmr eynidir, amma
+  nəticə obyektin kimliyindən asılı olaraq dəyişir.
 
-Lakin OOP-nin tənqidçiləri də çoxdur. Dərin miras iyerarxiyaları kövrək və
-dəyişdirilməsi çətin ola bilər. Dəyişən obyektlərə vurğu eşzamanlı
-proqramlaşdırmanı çətinləşdirə bilər — bir neçə nüvə (thread) eyni obyektə eyni
-vaxtda daxil olduqda, işlər incə yollarla tərs gedə bilər. Və bəzi problemlər
-obyektlərə yaxşı uyğun gəlmir. Sənayenin cavabı OOP-ni tərk etmək yox, onu
-yumşaltmaq oldu: müasir ən yaxşı təcrübələr mirasdan çox kompozisiyaya, kiçik
-interfeyslərə və digər paradiqmalardan ideyalar götürməyə üstünlük verir.
+OOP 1980-ci illərin sonlarından 2000-ci illərə qədər mütləq dominant paradiqma
+oldu, çünki bu model real dünyanı kodda təsvir etmək üçün çox təbiidir. Lakin bu
+gün həddindən artıq dərinləşmiş mirasalma zəncirləri kodu kövrəkləşdirdiyi üçün
+sənaye sırf OOP-dən daha qarışıq dizayn nümunələrinə doğru meyl edir.
 
 ### 4.3 Funksional Proqramlaşdırma
 
-Funksional proqramlaşdırma fərqli bir əsasdan başlayır: bəs əgər vəziyyəti
-dəyişdirmək əvəzinə, hesablamaları riyazi funksiyaların qiymətləndirilməsi kimi
-təsvir etsəniz necə olar?
+Funksional proqramlaşdırma tamamilə fərqli və daha sərt bir fəlsəfəyə əsaslanır:
+bəs əgər proqramın vəziyyətini (state) dəyişdirmək qəti qadağan olsaydı necə
+olardı?
 
-Saf funksional üslubda məlumatlar **dəyişməzdir (immutable)** — bir dəyər
-yaradıldıqdan sonra heç vaxt dəyişmir. Siyahını dəyişdirmək əvəzinə, arzu olunan
-dəyişikliklərlə yeni bir siyahı yaradırsınız. Funksiyalar **birinci dərəcəli
-vətəndaşlardır**: onlar digər funksiyalara arqument kimi ötürülə, nəticə kimi
-qaytarıla və dəyişənlərdə saxlanıla bilər. Başqa bir funksiyanı giriş kimi qəbul
-edən funksiya **yüksək dərəcəli funksiya** adlanır və bu, inanılmaz dərəcədə
-güclü bir abstraksiya olur.
+Bu paradiqmanı anlamaq üçün iki vacib anlayışı bilmək lazımdır:
 
-Faydaları əhəmiyyətlidir. Dəyişməz məlumatlar paylaşılan vəziyyətlə bağlı bütöv
-səhv kateqoriyalarını aradan qaldırır. Proqramlar haqqında mühakimə yürütmək
-asanlaşır, testlər yazmaq rahatlaşır və təbii olaraq **paralel icraya**
-uyğunlaşır — əgər heç nə dəyişdirilmirsə, eyni anda bir neçə hesablama aparmaqda
-heç bir təhlükə yoxdur.
+- **Dəyişməzlik (Immutability):** Saf funksional üslubda məlumatlar dəyişməzdir.
+  Bir ədəd, siyahı və ya obyekt yaradıldıqdan sonra onun üzərində heç bir
+  dəyişiklik edilə bilməz. Əgər 5 elementli siyahıya yeni bir element əlavə
+  etmək istəyirsinizsə, köhnə siyahını dəyişdirmirsiniz; əvəzində içində 6
+  element olan _tamamilə yeni_ bir siyahı yaradırsınız.
+- **Birinci dərəcəli vətəndaşlar (First-class citizens):** Bu termin
+  proqramlaşdırmada bir az qəribə səslənə bilər. Bu o deməkdir ki, funksiyalara
+  xüsusi bir rəftar edilmir; onlar da eynilə sıradan ədədlər və ya mətnlər
+  kimidir. Siz bir funksiyanı başqa bir dəyişənə mənimsədə, başqa bir funksiyaya
+  arqument kimi göndərə və ya nəticə kimi geri qaytara bilərsiniz.
 
-Klassik funksional dillər **Haskell**, **Scheme** və **ML** ailəsidir (OCaml və
-Standard ML). **Erlang** və onun müasir varisi **Elixir** xətaya dözümlülük və
-eşzamanlılığa vurğu edərək funksional proqramlaşdırmanı telekommunikasiya və veb
-xidmətlərinə gətirdi. **F#** funksional proqramlaşdırmanı .NET ekosisteminə
-gətirdi.
+Bu yanaşmanın faydaları misilsizdir. Məlumatlar heç vaxt dəyişdirilmədiyi üçün
+proqramın uzaq künclərində gizlənən təsadüfi xətalar (bunlara **yan təsirlər**
+və ya _side effects_ deyilir) yox olur. Ən əsası isə, eyni anda minlərlə paralel
+əməliyyat aparmaq tamamilə təhlükəsiz hala gəlir, çünki heç bir əməliyyat
+digərinin məlumatını korlaya bilməz.
 
-Onilliklər ərzində funksional proqramlaşdırma akademik və qeyri-praktik hesab
-edilirdi. Bu fikir kəskin şəkildə dəyişdi. Bu gün demək olar ki, hər bir əsas
-cərəyan dili funksional xüsusiyyətləri qəbul edib: Java, Python, C++ və
-JavaScript-də lambdalar və bağlanmalar (closures); map/filter/reduce
-əməliyyatları; Rust, Python və C#-da uyğunluq funksiyaları (pattern matching).
-Funksional inqilab digər dilləri əvəz etməklə baş vermədi — onlara sızmaqla baş
-verdi.
+Haskell və Lisp kimi klassik funksional dillər uzun illər akademik mühitə qapalı
+qalsa da, bu gün çoxnüvəli prosessorların yüksəlişi ilə demək olar ki, hər bir
+populyar dil (Java, Python, C++, JavaScript) funksional proqramlaşdırmanın
+gücünü özünə inteqrasiya edib.
 
 ### 4.4 Deklarativ Proqramlaşdırma
 
-Deklarativ proqramlaşdırma proqramçı və kompüter arasındakı adi əlaqəni tərsinə
-çevirir. Bir şeyi addım-addım _necə_ yerinə yetirəcəyini dəqiqləşdirmək əvəzinə,
-_nə_ istədiyinizi təsvir edirsiniz və sistem onu necə çatdıracağını özü müəyyən
-edir.
+Deklarativ proqramlaşdırma insan və kompüter arasındakı ənənəvi rolları tərsinə
+çevirir. Bir işin addım-addım _necə_ yerinə yetiriləcəyini kompüterə diktə etmək
+əvəzinə, siz yalnız yekunda _nə_ istədiyinizi təsvir edirsiniz. Sistem isə
+məqsədə necə çatacağını, öz daxilindəki işləri necə quracağını özü həll edir.
 
-**SQL** ən geniş istifadə olunan deklarativ dildir.
-`SELECT name FROM users WHERE age > 30` yazanda, onu tapmaq alqoritmini deyil,
-istədiyiniz nəticəni təsvir edirsiniz. Verilənlər bazası mühərriki cədvəlləri
-necə skan edəcəyinə, indeksləri necə istifadə edəcəyinə və sorğunu necə
-optimallaşdıracağına qərar verir.
+Məlumat bazaları (database) üçün istifadə edilən **SQL** ən geniş yayılmış
+deklarativ dildir. Siz verilənlər bazasına
+`SELECT name FROM users WHERE age > 30` (Yaşı 30-dan böyük olan istifadəçilərin
+adını seç) yazanda, kompüterə cədvəlin sətirlərini tək-tək necə axtaracağını və
+ya yaddaşı necə idarə edəcəyini demirsiniz. Siz sadəcə nəticəni tələb edirsiniz.
+Verilənlər bazası mühərriki ən sürətli yolu tapmaq işini öz üzərinə götürür.
 
-**HTML** və **CSS** də deklarativdirlər: HTML sənədin _strukturunu_, CSS isə
-onun _görünüşünü_ təsvir edir. Heç biri renderləmə alqoritmini dəqiqləşdirmir —
-brauzer bunu həll edir.
+Veb səhifələrin strukturunu və görünüşünü quran HTML və CSS də deklarativ
+dillərdir. Siz HTML-də ekrana bir düymənin piksellərlə necə çəkiləcəyini
+kodlamırsınız; sadəcə "burada bir düymə olsun" deyirsiniz, qalanını veb brauzer
+həll edir.
 
-**Prolog** deklarativ proqramlaşdırmanı məntiqi ekstremallığa çatdırır. Siz
-faktları və qaydaları müəyyən edirsiniz, dilin nəticə çıxarma mühərriki isə
-nəticələri əldə edir. Prolog istifadəsi nadir bir dildir, lakin ideyaları
-məhdudiyyət həlledicilərində, tip sistemlərində və müəyyən süni intellekt
-tətbiqlərində yaşayır.
-
-Deklarativ yanaşmalar sahə yaxşı müəyyən edildikdə və sistem icranı insan
-proqramçıdan daha yaxşı optimallaşdıra bildikdə parlayır. Bir şeyin tam olaraq
-necə baş verdiyinə incə nəzarət lazım olduqda isə çətinlik çəkirlər.
+Deklarativ yanaşma xüsusilə problem sahəsi dar və sərhədləri bəlli olan hallarda
+çox güclüdür. Lakin işin incəliklərinə və tam olaraq necə baş verdiyinə birbaşa
+nəzarət tələb olunduqda, bu yanaşma öz gücünü itirir və yenidən imperativ
+dillərə ehtiyac yaranır.
 
 ---
 
 ## 5. Vizual və Qrafik Proqramlaşdırma
 
-Bütün proqramlaşdırma mətn yazmaqdan ibarət deyil. Əhəmiyyətli və böyüyən bir
-alətlər ailəsi insanlara vizual elementləri manipulyasiya edərək — blokları
-birləşdirərək, axın diaqramları çəkərək və ya qraf üzərində düyünləri bir-birinə
-bağlayaraq proqramlaşdırmağa imkan verir.
+Bütün proqramlaşdırma mətn yazmaqdan ibarət deyil. Bəzən kod yazmaq kərpiclərdən
+və ya leqolardan nəsə qurmağa bənzəyə bilər. Əhəmiyyətli və sürətlə böyüyən bir
+alətlər ailəsi var ki, onlar insanlara mətn əvəzinə **vizual elementləri
+manipulyasiya edərək** — rəngli blokları birləşdirərək, oxlarla axın diaqramları
+çəkərək və ya qrafik üzərindəki qutuları (düyünləri) bir-birinə bağlayaraq
+proqramlaşdırmağa imkan verir.
 
-**Scratch** və **Blockly** kimi **blok əsaslı dillər** proqramlaşdırma
-anlayışlarını uşaqlara və yeni başlayanlara öyrətmək üçün dizayn edilib.
-Sintaksis yazmaq (və hərf səhvləri etmək) əvəzinə, istifadəçilər dövrləri,
-şərtləri və dəyişənləri təmsil edən rəngli blokları birləşdirirlər. Bu, giriş
-baryerini kəskin şəkildə aşağı salır və milyonlarla gənci hesablama düşüncəsi
-ilə tanış edir.
+**Scratch** və **Blockly** kimi **blok əsaslı dillər** xüsusilə uşaqlara və bu
+sahəyə yeni başlayanlara proqramlaşdırmanın təməl anlayışlarını öyrətmək üçün
+dizayn edilib. Burada klaviatura ilə qəliz qrammatika (sintaksis) yazmaq və ya
+kiçik bir hərf səhvinə görə saatlarla xəta axtarmaq dərdi yoxdur. Əvəzində,
+dövrləri, şərtləri və dəyişənləri təmsil edən rəngli, pazl parçalarına bənzəyən
+blokları sadəcə sürüşdürüb bir-birinə keçirirsiniz. Bu yanaşma öyrənmə baryerini
+kəskin şəkildə aşağı salır və milyonlarla gənci proqramlaşdırma məntiqi
+(hesablama düşüncəsi) ilə əyləncəli şəkildə tanış edir.
 
-**Düyün əsaslı sistemlər** yaradıcı və texniki sahələrdə populyar olan fərqli
-bir yanaşma tətbiq edir. **Unreal Engine-in Blueprints** sistemi oyun
-dizaynerlərinə C++ tələb olunmadan vizual qrafikdə düyünləri birləşdirərək oyun
-məntiqi qurmağa imkan verir. **Unity-nin Vizual Skriptləməsi** də oxşar bir iş
-görür. **LabVIEW** elmi alətləri və sınaq sistemlərini proqramlaşdırmaq üçün
-məlumat axını diaqramlarından istifadə edir.
+Lakin vizual proqramlaşdırma sadəcə uşaqlar üçün deyil. **Düyün əsaslı
+(node-based) sistemlər** yaradıcı və yüksək texniki sahələrdə peşəkarlar
+tərəfindən geniş istifadə olunur. Məsələn, **Unreal Engine-in Blueprints**
+sistemi oyun dizaynerlərinə tək bir sətir belə C++ kodu yazmadan, sadəcə
+ekrandakı məntiq qutularını (düyünləri) oxlarla bir-birinə bağlayaraq mürəkkəb
+oyun mexanikaları qurmağa imkan verir. **Unity-nin Vizual Skriptləməsi** də
+oxşar məntiqə əsaslanır. Elm və mühəndislik dünyasında isə **LabVIEW** kimi
+alətlər cihazları və sınaq sistemlərini idarə etmək üçün məlumat axını
+diaqramlarından istifadə edir.
 
-Vizual proqramlaşdırmanın üstünlükləri realdır: əlçatanlıq, sürətli prototipləmə
-və müəyyən növ məntiqlərin (xüsusilə məlumat axını və vəziyyət maşınlarının)
-daha intuitiv təsviri. Lakin vizual proqramlaşdırmanın da aydın məhdudiyyətləri
-var. Proqramlar böyüdükcə, vizual qrafiklər idarəolunmaz hala gəlir — spagetti
-kodun vizual ekvivalenti. Abstraksiyaya nail olmaq daha çətindir. Versiya
-nəzarəti (zamanla dəyişikliklərin izlənməsi) çətindir, çünki "mənbə kodu" sadə
-mətndən daha çox binar və ya qrafik fayldır. Və müəyyən miqyasda mətn sadəcə
-şəkillərdən daha səmərəli ünsiyyət qurur.
+Vizual proqramlaşdırmanın üstünlükləri göz qabağındadır: vizual olaraq hər kəs
+üçün anlaşılandır, ideyaları sürətlə prototipə çevirməyə imkan verir və
+proseslərin (xüsusən məlumatın haradan gəlib hara getdiyinin) gözlə rahat
+görülməsini təmin edir. Lakin onun da çox aydın məhdudiyyətləri var:
 
-Vizual proqramlaşdırma mətn əsaslı proqramlaşdırmanın əvəzedicisi deyil, lakin
-güclü bir tamamlayıcıdır — və bir çox sahələr və auditoriyalar üçün işi görmək
-üçün doğru alətdir.
+- **İdarəolunmazlıq:** Proqramlar böyüdükcə, ekrandakı o gözəl oxlar və qutular
+  idarəolunmaz bir tora çevrilir -- bu, mətn əsaslı "spagetti kodun" vizual
+  versiyasıdır.
+- **Abstraksiya çətinliyi:** Vizual sistemlərdə mürəkkəb riyazi və ya məntiqi
+  abstraksiyalar qurmaq mətnə nisbətən daha çətindir.
+- **Komanda işi və izləmə:** Komanda işində zamanla edilən dəyişiklikləri
+  izləmək (versiya nəzarəti) problem yaradır, çünki "mənbə kodu" sadə,
+  sətir-sətir müqayisə edilə bilən mətn deyil, qəliz bir qrafik faylıdır.
+
+Müəyyən bir böyüklükdən və mürəkkəblikdən sonra mətn, şəkillərdən daha yığcam və
+səmərəli bir ünsiyyət vasitəsinə çevrilir. Xülasə, vizual proqramlaşdırma
+ənənəvi mətn əsaslı proqramlaşdırmanın tam əvəzedicisi deyil. Lakin o, çox güclü
+bir köməkçi alətdir və düzgün sahədə, düzgün məqsəd üçün (məsələn, oyun dizaynı,
+təhsil və ya dizaynerlər üçün sürətli avtomatlaşdırma) işi görmək üçün ən ideal
+seçim ola bilər.
 
 ---
 
 ## 6. Dillər Bu Gün Nə Üçün İstifadə Olunur?
 
-Bütün bu tarix və nəzəriyyə çox praktik bir suala bağlanır: kim nəyi və niyə
-istifadə edir?
+Bütün bu tarixi səyahət və nəzəri biliklər yekunda bizi çox praktik bir suala
+gətirib çıxarır: bəs real dünyada kim nəyi və niyə istifadə edir?
 
-**Sistem proqramlaşdırması** — əməliyyat sistemləri, sürücülər (drivers),
-mikroproqram təminatı (firmware), verilənlər bazaları — performans və nəzarət
-tələb edir. C hələ də burada dominantdır, baxmayaraq ki, Rust sürətlə yer
-qazanır. Go bulud infrastrukturu və şəbəkə alətlərində bir niş tapıb. **Zig**
-daha yaxşı təhlükəsizlik və erqonomika ilə C-yə alternativ təklif edən yeni bir
-iştirakçıdır.
+Sahələrə görə dillərin necə bölüşdürüldüyünə nəzər salaq:
 
-**Veb inkişafı** proqram təminatında ən böyük tək sahədir. JavaScript (və
-TypeScript) brauzerdə hökmranlıq edir. Server tərəfində seçimlər daha genişdir:
-Node.js (JavaScript), Python (Django, Flask), Ruby (Rails), PHP (Laravel), Go,
-Java (Spring) və C# (ASP.NET) hamısı rəqabət aparır. HTML və CSS hər bir veb
-səhifənin deklarativ onurğa sütunudur.
+- **Sistem proqramlaşdırması:** Bu sahə kompüterin "ürəyi" ilə işləməyi tələb
+  edir -- əməliyyat sistemləri, cihaz sürücüləri və məlumat bazası mühərrikləri.
+  Burada ən vacib amil yüksək performans və təchizat üzərində mütləq nəzarətdir.
+  **C** və **C++** onilliklərdir bu sahənin hakimidir. Lakin son illərdə
+  **Rust** proqramın çökməsinin qarşısını alan yaddaş təhlükəsizliyi üstünlüyü
+  ilə bu taxtı güclü şəkildə sarsıdır. **Go** bulud infrastrukturu alətlərində
+  özünə möhkəm yer edib. **Zig** isə C-yə daha müasir və təhlükəsiz alternativ
+  kimi diqqət çəkən yeni bir dildir.
 
-**Data elmi və maşın öyrənməsi** böyük ölçüdə Python hakimiyyəti altındadır,
-statistika üçün R güclü ikinci seçimdir. **Julia**, Python-un istifadə
-rahatlığını C-nin sürəti ilə birləşdirməyi hədəfləyən, yüksək performanslı ədədi
-hesablamalar üçün dizayn edilmiş daha yeni bir dildir. **MATLAB** mühəndislik və
-akademik dairələrdə möhkəmlənib.
+* **Veb inkişafı:** Bu, proqram təminatı sənayesinin ən böyük bazarıdır və iki
+  əsas hissəyə bölünür. İstifadəçinin birbaşa gördüyü və toxunduğu tərəfdə (yəni
+  brauzerdə) **JavaScript** və onun daha nizamlı versiyası olan **TypeScript**
+  birmənalı hər yerdə işlənilir. Səhifənin skeletini və dizaynını isə **HTML**
+  və **CSS** təşkil edir. Məlumatların işləndiyi server tərəfində isə böyük bir
+  rəqabət var: **Python** (Django, Flask freymvorkları), **PHP** (Laravel),
+  **Java** (Spring), **C#** (.NET), **Ruby** (Rails), **Go** və **Node.js**
+  ehtiyacdan asılı olaraq geniş istifadə olunur.
 
-**Oyun inkişafı** performans baxımından kritik mühərriklər üçün C++ dilinə
-arxalanır, C# isə Unity-də geniş istifadə olunur. Lua da oyun məntiqi üçün
-populyar bir skript dilidir.
+* **Məlumat elmi və Maşın öyrənməsi:** Süni intellektin və böyük məlumat
+  analizinin bugünkü kralı şübhəsiz ki, **Python** dilidir. Onun öyrənilməsinin
+  asanlığı və zəngin riyazi kitabxanaları onu bu sahədə əvəzedilməz edir.
+  Statistik analizlər üçün **R** dili güclü ikinci seçimdir. **Julia** isə
+  Python-un istifadə rahatlığını C-nin sürəti ilə birləşdirmək məqsədilə
+  yaradılmış və xüsusilə ağır elmi hesablamalarda parlayan daha yeni bir dildir.
+  Akademik və mühəndislik dairələrində isə **MATLAB** hələ də öz mövqeyini
+  qoruyur.
 
-**Mobil inkişaf** iOS üçün Swift və Android üçün Kotlin istifadə edir,
-baxmayaraq ki, çoxplatformalı (cross-platform) freymvorklar (JavaScript ilə
-React Native, Dart ilə Flutter) getdikcə populyarlaşır.
+* **Oyun inkişafı:** Video oyunlar prosessorları ən çox yoran proqramlardır.
+  Buna görə də yüksək performans tələb edən ağır oyun mühərrikləri (məsələn,
+  Unreal Engine) üçün **C++** sənaye standartıdır. Daha müstəqil oyunlar və
+  mobil oyunlar üçün isə Unity mühərriki və **C#** dili çox məşhurdur. Bəzən
+  oyunun əsas mühərriki C++ ilə yazılır, daxilindəki sadə məntiq və ssenarilər
+  isə **Lua** kimi yüngül skript dilləri ilə idarə olunur.
 
-**Mikroproqram sistemləri (Embedded systems)** — mikrokontrollerlərin, IoT
-cihazlarının və aparat təminatının proqramlaşdırılması — hələ də əsasən C-yə
-əsaslanır, Rust və Zig daha təhlükəsiz alternativlər kimi ortaya çıxır.
+* **Mobil inkişaf:** Birbaşa əməliyyat sisteminə xas tətbiqlər yazmaq
+  istəyirsinizsə, Apple cihazları (iOS) üçün **Swift**, Android cihazları üçün
+  isə **Kotlin** öyrənməlisiniz. Lakin hər iki platforma üçün ayrı-ayrı kod
+  yazmaq əvəzinə tək bir kodla hər ikisində işləyən tətbiqlər yaratmaq getdikcə
+  populyarlaşır. Bunun üçün JavaScript əsaslı **React Native** və Dart dilini
+  istifadə edən **Flutter** ən çox seçilən alətlərdir.
 
-**Təhsil** giriş kursları üçün Python, daha gənc öyrənənlər üçün Scratch və
-proqramlaşdırma dili nəzəriyyəsinə yönəlmiş kurslarda Haskell və ya Scheme kimi
-dillərdən istifadə edir.
+* **Mikrokontrollerlər və Ağıllı Cihazlar:** Ekranı olmayan, lakin içərisində
+  "ağıl" olan cihazları təsəvvür edin: ağıllı soyuducular, avtomobillərin beyni,
+  və ya ürək kardiostimulyatorları. Çox məhdud yaddaşa və enerjiyə sahib bu
+  cihazları proqramlaşdırmaq üçün hələ də **C** və qismən **C++** ən güclü
+  seçimdir. Lakin burada da **Rust** və **Zig** daha təhlükəsiz alternativlər
+  kimi yavaş-yavaş irəliləyir.
 
-Mənzərə aydındır: heç bir dil bütün sahələrdə dominant deyil və seçim həmişə
-problemin, platformanın, komandanın və ekosistemin funksiyasıdır.
+* **Təhsil və Akademik Tədqiqatlar:** Proqramlaşdırmaya yeni başlayanlara
+  məntiqi öyrətmək üçün ən çox **Python**, azyaşlı uşaqlar üçün isə vizual
+  bloklara əsaslanan **Scratch** istifadə olunur. Lakin universitetlərdə
+  proqramlaşdırmanın dərin nəzəriyyəsini, paradiqmalarını və riyazi əsaslarını
+  öyrətmək üçün çox vaxt **Haskell**, **Scheme** və ya **OCaml** kimi dillərə
+  müraciət edilir.
+
+Mənzərə aydındır: bütün sahələrdə hökmranlıq edən, hər işə yarayan tək bir
+"sehrli" dil yoxdur. Sizin dil seçiminiz həmişə həll etməyə çalışdığınız
+problemin növündən, hədəflədiyiniz platformadan və ətrafınızdakı komandanın
+təcrübəsindən asılıdır.
 
 ---
 
 ## 7. Müasir Dillər İdeyaların Qarışığıdır
 
-Son dil dizaynındakı ən vacib inkişaflardan biri sərt paradiqma sərhədlərinin
-dağılmasıdır. Köhnə kateqoriyalar — "bu OOP dilidir", "o funksional dildir" —
-getdikcə köhnəlir.
+Proqramlaşdırma dillərinin dizaynında son illərdə baş verən ən böyük inqilab,
+sərt sərhədlərin aradan qalxmasıdır. Artıq "bu ancaq obyekt-yönümlü dildir" və
+ya "o yalnız funksional dildir" kimi qəti kateqoriyalar keçmişdə qalıb. Müasir
+dillər ehtiyaca uyğun olaraq fərqli fəlsəfələrin ən yaxşı ideyalarını bir araya
+gətirən hibridlərə çevrilib.
 
-Rust, funksional proqramlaşdırmadan borc alınmış cəbri məlumat növləri və
-uyğunluq funksiyaları (pattern matching) olan sistem dilidir. Python-da sinif
-əsaslı OOP ilə yanaşı siyahı qavrayışları (list comprehensions), birinci
-dərəcəli funksiyalar və dekoratorlar var. JavaScript prototip mirasını,
-bağlanmaları (closures) və async/await-i dəstəkləyir. Kotlin OOP və funksional
-xüsusiyyətləri rəvan şəkildə qarışdırır. Hətta uzun müddət saf OOP qalası olan
-Java-da indi lambdalar, axınlar (streams), möhürlənmiş siniflər (sealed classes)
-və uyğunluq funksiyaları var.
+Gəlin real nümunələrə baxaq. **Rust** kompüterin yaddaşına birbaşa müdaxilə edə
+bilən, çox aşağı səviyyəli bir sistem dilidir. Lakin o, funksional
+proqramlaşdırmadan çox güclü ideyaları — cəbri məlumat növləri və şablon
+uyğunlaşdırması kimi anlayışları borc alıb. **Python** özəyində obyekt-yönümlü
+olsa da, içərisində funksional proqramlaşdırmanın ən sevilən xüsusiyyətlərini
+barındırır. **Kotlin** obyekt-yönümlü və funksional yanaşmaları o qədər rəvan
+şəkildə qarışdırır ki, yazarkən aradakı sərhədi hiss etmirsiniz. Hətta uzun
+illər sərt obyekt-yönümlü fəlsəfənin sarsılmaz qalası sayılan **Java** belə, son
+yenilikləri ilə funksional elementləri (məsələn, lambdaları və məlumat
+axınlarını) özünə inteqrasiya etməyə məcbur oldu.
 
-Bu yaxınlaşma təsadüfi deyil. Dil dizaynerləri öyrəniblər ki, fərqli
-paradiqmalar proqramın fərqli hissələri üçün faydalıdır. Sahənizi obyektlərlə
-modelləşdirə, məlumatları funksional kəmərlərlə emal edə və infrastrukturunuzu
-deklarativ konfiqurasiya faylları ilə təyin edə bilərsiniz — hamısı eyni
-layihədə, bəzən eyni dildə.
+Bu yaxınlaşma təsadüfi deyil. Dil dizaynerləri və mühəndislər zamanla öyrəndilər
+ki, fərqli paradiqmalar proqramın fərqli hissələri üçün daha faydalıdır. Siz
+eyni bir layihə daxilində (hətta eyni dildə) təməl sisteminizi obyektlərlə
+modelləşdirə, böyük məlumat yığınlarını funksional borularla emal edə və server
+sazlamalarınızı deklarativ şəkildə təyin edə bilərsiniz.
 
-Təhlükəsizlik də mərkəzi dizayn qayğısına çevrilib. Tony Hoare-in "milyard
-dollarlıq səhvi" adlandırdığı "Null pointer" istisnaları (exceptions), "null"
-olma ehtimalını tip sistemində açıq şəkildə göstərən dillər (Kotlin, Rust,
-Swift, TypeScript) tərəfindən həll edilir. Bir vaxtlar qabaqcıl və xətaya meylli
-mövzu olan eşzamanlılıq async/await, aktorlar, kanallar və strukturlaşdırılmış
-eşzamanlılıq modelləri ilə birinci dərəcəli dil xüsusiyyətinə çevrilir.
+Müasir dillərdə digər böyük inkişaf **təhlükəsizlik** məsələsidir.
+Proqramlaşdırma tarixində "milyard dollarlıq xəta" adlandırılan məşhur bir
+problem var: mövcud olmayan məlumata müraciət etmək (Null pointer istisnaları).
+Bu xəta illərlə saysız-hesabsız proqramın qəfil çökməsinə səbəb olub (oxu:
+[1 milyard dollarlıq səhv](https://en.wikipedia.org/wiki/Tony_Hoare#Apologies_and_retractions:~:text=I%20call%20it%20my%20billion%2Ddollar%20mistake%2E)).
 
-Alətlər də hər zamankindən daha çox əhəmiyyət kəsb edir. Müasir tərtibatçılar
-bir dildən paket meneceri, formatlayıcı, linter, IDE inteqrasiyası üçün dil
-serveri və hərtərəfli sənədləşdirmə ilə gəlməsini gözləyirlər. Böyük ideyaları
-olan, lakin zəif alətləri olan dil qəbul edilmək üçün mübarizə aparır. Orta
-səviyyəli ideyaları, lakin əla alətləri olan dil isə çiçəklənə bilər.
+Lakin Kotlin, Rust, Swift və TypeScript kimi yeni nəsil dillər bu problemi
+kökündən həll edir. Onlar hər hansı bir məlumatın null (boş) olma ehtimalını
+qabaqcadan, kod hələ kompilyasiya olunarkən proqramçıya məcburi şəkildə
+yoxlatdırırlar. Həmçinin, əvvəllər çox qəliz və xətaya meylli olan
+**eşzamanlılıq** (eyni anda bir neçə işi təhlükəsiz görmək məntiqi) artıq müasir
+dillərdə xüsusi əmrlər və məlumat kanalları vasitəsilə asan anlaşılan, standart
+bir dil xüsusiyyətinə çevrilib.
 
-Trend aydındır: ən uğurlu müasir dillər ideoloji cəhətdən saf deyil. Onlar
-praqmatikdir, çox paradiqmalıdır və tərtibatçının tam təcrübəsi nəzərə alınmaqla
-dizayn edilmişdir.
+Nəhayət, bugünkü mühitdə bir dilin təkbaşına güclü olması kifayət deyil;
+**alətlər ekosistemi** hər zamankindən daha vacibdir. Müasir tərtibatçılar yeni
+bir dil yükləyərkən onunla birlikdə paket meneceri, kodu avtomatik səliqəyə
+salan formatlayıcı, xətaları anında tapan alətlər və kod redaktorları üçün
+ağıllı köməkçilərin dərhal hazır olmasını gözləyirlər. İnqilabi ideyaları olan,
+lakin alətləri zəif olan bir dil bu gün sənayedə qəbul edilmək üçün böyük
+çətinlik çəkir. Lakin ortalama ideyaları olan, amma mükəmməl alətlər toplusuna
+sahib bir dil asanlıqla uğur qazana bilər.
+
+Trend çox aydındır: ən uğurlu müasir proqramlaşdırma dilləri ideoloji cəhətdən
+"saf" deyil. Onlar praqmatikdir, çoxsaylı paradiqmaları özündə birləşdirir və ən
+əsası, proqramçının gündəlik iş rahatlığını mərkəzə qoyaraq dizayn edilir.
 
 ---
 
 ## 8. Dili Necə Seçmək Lazımdır?
 
-Bu qədər seçim varkən, əslində necə seçim etməlisiniz?
+Bu qədər çox fərqli xüsusiyyətlərə malik proqramlaşdırma dili varkən, növbəti
+layihəniz və ya öyrənmək üçün doğru dili necə seçməlisiniz? Seçim prosesini
+asanlaşdırmaq üçün bir neçə əsas meyara ardıcıllıqla diqqət yetirmək lazımdır:
 
-**Problem sahəsindən başlayın.** Əgər veb frontend qurursunuzsa, JavaScript və
-ya TypeScript demək olar ki, məcburidir. Əgər data təhlili edirsinizsə, Python
-praqmatik standartdır. Əgər əməliyyat sistemi komponenti yazırsınızsa, Rust və
-ya C doğru ünvandır. Sahə seçimi kəskin şəkildə daraldır.
+- **Problem sahəsindən başlayın.** Hər dilin özünü daha "rahat hiss etdiyi" və
+  standart qəbul olunduğu sahələr var. Əgər veb səhifənin istifadəçi
+  interfeysini (frontend) qurursunuzsa, JavaScript və ya TypeScript demək olar
+  ki, qaçılmazdır. Əgər məlumat təhlili, statistika və ya süni intellektlə
+  məşğul olacaqsınızsa, Python sənayenin qızıl standartıdır. Yox əgər əməliyyat
+  sistemi komponenti və ya saniyənin mində biri qədər sürətlə işləməli olan
+  mühərrik yazırsınızsa, C, C++ və ya Rust doğru ünvandır. Həll edəcəyiniz
+  problemi dəqiqləşdirmək, onsuz da siyahıdakı variantları kəskin şəkildə
+  daraldacaq.
 
-**Məhdudiyyətləri nəzərə alın.** Real vaxt performansı lazımdırmı? Bu,
-proqnozlaşdırıla bilməyən zibil toplama fasilələri olan dilləri aradan qaldırır.
-32KB RAM-ı olan mikrokontrollerdə işləməlisinizmi? Bu, əksər dilləri tamamilə
-aradan qaldırır. Bir həftəyə hazır olması lazım olan prototip qurursunuz? Zəngin
-ekosistemləri və sürətli inkişaf dövrləri olan dillərə üstünlük verin.
+* **Texniki məhdudiyyətləri nəzərə alın.** Proqramınızın real vaxt rejimində,
+  heç bir ləngimə olmadan (məsələn, avtopilot sistemlərində və ya tibbi
+  cihazlarda) işləməsi lazımdırmı? O zaman avtomatik yaddaş təmizləyicisi
+  işləyən və prosesi qəfil millisaniyəlik dondura bilən dilləri (məsələn, Java
+  və ya C#) kənara qoymalısınız. Bəlkə cəmi 32KB yaddaşı (RAM) olan kiçik bir
+  mikrokontroller üçün kod yazırsınız? Bu xüsusiyyət əksər müasir dilləri dərhal
+  aradan qaldırır. Yoxsa cəmi bir həftəyə hazır olması tələb edilən bir biznes
+  prototipi qurursunuz? O zaman daxili intizamdan çox, sürətli inkişaf imkanları
+  və hazır paketləri olan dillərə üstünlük verməlisiniz.
 
-**Komandanı amil kimi qəbul edin.** Ən yaxşı dil çox vaxt komandanızın artıq
-bildiyi dildir. Dil dəyişdirmək real xərclər gətirir: yenidən təlim, yeni
-alətlər, toplanmış təcrübənin itirilməsi. Əgər sıfırdan komanda qurursunuzsa,
-işə qəbul bazarını nəzərə alın — böyük icmaları olan dillər üçün işçi tapmaq
-daha asandır.
+* **Komanda amilini yaddan çıxarmayın.** Bir şirkətdə işləyərkən ən yaxşı dil
+  çox vaxt komandanızın artıq mükəmməl bildiyi dildir. Yeni və "parlaq" bir dilə
+  keçid etmək böyük görünməz xərclər gətirir: işçilərin yenidən öyrənməsi,
+  fərqli alətlərin qurulması və illərlə toplanmış praktik təcrübənin itirilməsi.
+  Əgər layihəyə sıfırdan komanda yığırsınızsa, işçi bazarındakı vəziyyəti də
+  nəzərə alın -- populyar və geniş yayılmış dillər üçün təcrübəli proqramçı
+  tapmaq həmişə daha asandır.
 
-**Ekosistem haqqında düşünün.** Bir dil yalnız onun kitabxanaları, freymvorkları
-və icması qədər yaxşıdır. Bir dil seçməzdən əvvəl, xüsusi ehtiyaclarınız üçün
-mövcud paketlərə baxın. Yaxşı saxlanılan bir kitabxana aylarla işə qənaət edə
-bilər; birinin olmaması dil seçimini dözülməz edə bilər.
+* **Ekosistemin gücünü dəyərləndirin.** Bir proqramlaşdırma dili yalnız onun
+  ətrafında formalaşmış kitabxanalar, freymvorklar və ona dəstək olan icma qədər
+  güclüdür. Bir dili layihənizə tətbiq etməzdən əvvəl, sizin xüsusi
+  ehtiyaclarınız üçün mövcud hazır paketlərə mütləq baxın. Yaxşı
+  sənədləşdirilmiş və minlərlə insanın istifadə etdiyi bir kitabxana sizi
+  aylarla sıfırdan kod yazmaq əziyyətindən xilas edə bilər. Əksinə, lazımi hazır
+  alətlərin olmaması bəyəndiyiniz bir dillə işləməyi tam bir kabusa çevirə
+  bilər.
 
-**Uzunömürlülüyü nəzərə alın.** Əgər on il ərzində saxlanılması lazım olan bir
-şey qurursunuzsa, sabit keçmişi, korporativ və ya icma dəstəyi və aydın
-idarəetmə modeli olan bir dil seçin. Həyəcanverici yeni dilləri araşdırmaq
-əyləncəlidir, lakin istehsalat sistemləri yetkinlikdən faydalanır.
+* **Uzunömürlülüyə diqqət yetirin.** Əgər növbəti on il ərzində yaşayacaq və
+  xidmət göstərəcək ciddi bir sistem (məsələn, bank proqramı) qurursunuzsa,
+  sabit keçmişi, arxasında böyük korporativ dəstəyi (və ya nəhəng icması) olan
+  yetkin dilləri seçin. Yeni çıxmış, səs-küylü dilləri sınaqdan keçirmək
+  əyləncəlidir, lakin real biznes sistemləri hər zaman sabitlikdən və
+  yetkinlikdən daha çox faydalanır.
 
-**Əgər öyrənirsinizsə,** sadəcə nə qurmaq istədiyinizə görə yox, nəyi başa
-düşmək istədiyinizə görə seçin. Python sizə problemlər haqqında aydın düşünməyi
-öyrədəcək. C kompüterlərin əslində necə işlədiyini öyrədəcək. Haskell hesablama
-haqqında düşüncə tərzinizi yenidən quracaq. JavaScript sizi proqram
-təminatındakı ən böyük ekosistemə bağlayacaq. Hər dil bir linzadır və hər linza
-fərqli bir şeyi ortaya çıxarır.
+* **Əgər məqsədiniz öyrənməkdirsə,** seçiminizi sadəcə "nə qurmaq istəyirəm"
+  sualına görə deyil, "nəyi başa düşmək istəyirəm" sualına görə edin.
+  - **Python** sizə problemlər haqqında aydın və təmiz düşünməyi öyrədəcək.
+  - **C** kompüterlərin və yaddaşın əslində pərdəarxasında necə işlədiyini
+    göstərəcək.
+  - **Scheme (Lisp)** kimi dillər hesablama haqqında düşüncə tərzinizi və
+    məntiqinizi tamamilə yenidən quracaq.
+  - **JavaScript** isə sizi proqram təminatı dünyasındakı ən böyük və qaynayan
+    ekosistemə birbaşa bağlayacaq.
 
-Tələbələr və öyrənən həvəslilər! Mütləq yuxarıdakı 4 paradiqmadan hamısını
-sınayın -- bu sizə proqramlaşdırma haqqında zəngin bir anlayış verəcək və sizi
-istənilən bir dilə daha sürətli uyğunlaşmağa hazırlayacaq.
+Hər bir dil dünyaya baxmaq üçün fərqli bir linzadır və hər linza mənzərənin
+fərqli bir tərəfini ortaya çıxarır.
+
+Tələbələr və bu sahəyə böyük həvəslə yanaşanlar üçün kiçik bir tövsiyə: Yuxarıda
+bəhs etdiyimiz **4 əsas paradiqmanın hər birini mütləq sınaqdan keçirin**. Bu
+fərqli fəlsəfələrlə yaxından tanış olmaq sizə proqramlaşdırma haqqında çox
+zəngin və dərin bir anlayış verəcək. Nəticədə, karyeranız boyu qarşınıza çıxacaq
+istənilən yeni dilə, texnologiyaya və ya freymvorka qat-qat sürətli uyğunlaşa
+biləcəksiniz.
 
 ---
 
 ## 9. Nəticə: Dillər İdeyaların Daşıyıcılarıdır
 
-Bütün bunlardan götürüləcək tək bir fikir varsa, o da budur ki, proqramlaşdırma
-dillərini öyrənmək əslində _ideyaları_ öyrənməkdir.
+Bütün bu yazılanlardan yadda saxlamalı olduğunuz tək bir əsas fikir varsa, o da
+budur: proqramlaşdırma dillərini öyrənmək əslində _ideyaları_ və _yeni düşüncə
+tərzlərini_ öyrənməkdir.
 
-Öyrəndiyiniz hər bir dil sizə problemləri parçalamağın yeni bir yolunu, nəzərə
-alınmalı yeni kompromislər dəstini, mürəkkəbliyi təşkil etmək üçün yeni bir
-zehni model öyrədir. Sintaksis — o fiqurlu mötərizələr, nöqtəli vergüllər, açar
-sözlər — səthdir. Bu, başlayanda çətin hiss olunan hissədir və əsas anlayışları
-mənimsədikdən sonra sadə olduğu üzə çıxan hissədir.
+Öyrəndiyiniz hər yeni dil sizə qarşınızdakı problemi kiçik hissələrə
+parçalamağın yeni bir yolunu, qəbul etməli olduğunuz yeni kompromisləri və kodun
+mürəkkəbliyini idarə etmək üçün fərqli bir zehni model öyrədir. Qrammatika, yəni
+o fiqurlu mötərizələr, nöqtəli vergüllər və xüsusi açar sözlər işin sadəcə
+səthidir. Başlanğıcda ən çox vaxt aparan və çətin gələn bu hissə, arxadakı əsas
+məntiqi qavradıqdan sonra əslində ən asan və mexaniki detala çevrilir.
 
-İmperativ idarəetmə axınını, obyekt-yönümlü dizaynı, funksional kompozisiyanı və
-deklarativ spesifikasiyanı başa düşən bir proqramçı yeni bir dili günlər yaxud
-həftələr ərzində öyrənə bilər, çünki onlar artıq konseptual lüğətə sahibdirlər.
-Xüsusi dil bir ləhcəyə (dialektə) çevrilir.
+İmperativ ardıcıllığı, obyekt-yönümlü dizaynı, funksional yanaşmanı və
+deklarativ məntiqi dərindən anlayan bir proqramçı üçün tamamilə yeni bir dili
+öyrənmək aylarla deyil, sadəcə günlər və ya həftələr çəkir. Çünki o insan artıq
+beynində geniş bir konseptual lüğətə (anlayışlar bazasına) sahibdir. Bu
+səviyyədən sonra hər hansı bir spesifik dil sadəcə fərqli bir ləhcəyə çevrilir.
 
-İlk diliniz sizi formalaşdıracaq. O, sizə vərdişlər, instinktlər və (təəssüf ki)
-kor nöqtələr verəcək. Bu təbii və qaçılmazdır. Amma onun sizi məhdudlaşdırmasına
-icazə verməyin. Ən çox inkişaf edən proqramçılar qəsdən rahatlıq zonalarından
-kənara çıxanlardır — illərlə Java-dan sonra Haskell yazanlar, Python
-karyerasından sonra Rust-ı sınayanlar, dünyanı tamamilə fərqli bir bucaqdan
-görmək üçün Prolog-u araşdıranlar.
+Öyrəndiyiniz ilk dil sizin düşüncə tərzinizi formalaşdıracaq. O, sizə müəyyən
+kod yazma vərdişləri, instinktlər və (təəssüf ki) hadisələrə tək tərəfdən
+baxmağa səbəb olan bəzi kor nöqtələr verəcək. Bu, tamamilə təbii və qaçılmaz bir
+prosesdir. Lakin ilk dilinizin sizi məhdudlaşdırmasına, sizi öz çərçivəsinə
+salmasına icazə verməyin. Peşəkar olaraq ən çox inkişaf edən proqramçılar,
+qəsdən öz rahatlıq zonalarından kənara çıxmağı bacaranlardır: illərlə Java
+yazdıqdan sonra beynini Haskell ilə yoranlar, rahat Python karyerasından sonra
+yaddaş idarəetməsi üçün Rust-ı sınaqdan keçirənlər və ya dünyaya tamamilə fərqli
+bir bucaqdan baxmaq üçün Prolog dilini araşdıranlar.
 
-Proqramlaşdırma dilləri mənzərəsi genişdir və hələ də genişlənir. Amma bu xaos
-deyil. Nümunələr var, tarix var və bunların hamısının bir məntiqi var. Doğru
-xəritə ilə bu mənzərədə inamla hərəkət edə bilərsiniz.
+Proqramlaşdırma dilləri dünyası həddindən artıq genişdir və hər gün daha da
+genişlənməyə davam edir. Amma inanın ki, bu heç də idarəolunmaz bir xaos deyil.
+Ortada təkrarlanan naxışlar, böyük bir tarix və bunların hamısını bir-birinə
+bağlayan dərin bir məntiq var. Əlinizdəki doğru xəritə ilə (ümid edirəm ki, bu
+məqalə o xəritənin bir parçası oldu) bu böyük mənzərədə inamla və azmadan
+hərəkət edə bilərsiniz.
 
-İndi isə gedin və kəşf edin. Əgər hansısa mövzu sizi daha dərindən maraqlandırırsa,
-mütləq şərh bildirin -- suallarınızı xoşluqla cavablandıraram və əlavə resurslar
-təklif edə bilərəm.
+İndi isə gedin və yeni dilləri kəşf edin! Əgər bu məqalədəki hansısa mövzu,
+paradiqma və ya dil sizi daha dərindən maraqlandırırsa, mütləq aşağıda şərh
+bildirin. Suallarınızı böyük məmnuniyyətlə cavablandıracaq və araşdırmanızı
+davam etdirmək üçün sizə əlavə resurslar təklif edəcəyəm.
