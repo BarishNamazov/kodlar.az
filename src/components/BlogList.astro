@@ -26,6 +26,7 @@ const { posts, emptyMessage = "hələ yazı yoxdur" } = Astro.props;
         <div
           class="blog-item"
           data-categories={JSON.stringify(post.data.categories)}
+          data-audiences={JSON.stringify(post.data.resource_audiences || [])}
           data-date={post.data.date.valueOf()}
           data-title={post.data.title.toLowerCase()}
         >
@@ -37,6 +38,7 @@ const { posts, emptyMessage = "hələ yazı yoxdur" } = Astro.props;
             categories={post.data.categories}
             image={post.data.image}
             href={`/blogs/${cleanSlug(post.slug)}`}
+            resource={post.data.resource}
           />
         </div>
       ))}

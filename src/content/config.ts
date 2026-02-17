@@ -10,6 +10,8 @@ const blogCollection = defineCollection({
       description: z.string(),
       image: z.string().optional(),
       categories: z.array(z.string()),
+      resource: z.boolean().optional(),
+      resource_audiences: z.array(z.string()).optional(),
     }),
 });
 

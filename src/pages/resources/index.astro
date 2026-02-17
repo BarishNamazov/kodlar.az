@@ -1,0 +1,38 @@
+---
+import PostListLayout from "../../layouts/PostListLayout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+const allPosts = await getCollection("blog");
+const resourcePosts = allPosts.filter(
+  (post: CollectionEntry<"blog">) => post.data.resource === true,
+);
+const sortedPosts = resourcePosts.sort(
+  (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
+    b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const allCategories = [
+  ...new Set(
+    resourcePosts.flatMap(
+      (post: CollectionEntry<"blog">) => post.data.categories,
+    ),
+  ),
+];
+const allAudiences = [
+  ...new Set(
+    resourcePosts.flatMap(
+      (post: CollectionEntry<"blog">) => post.data.resource_audiences || [],
+    ),
+  ),
+];
+---
+
+<PostListLayout
+  title="Resurslar"
+  currentPath="/resources"
+  windowTitle="resources"
+  searchPlaceholder="resurs_axtar..."
+  contributeLabel="yeni_resurs_əlavə_et()"
+  posts={sortedPosts}
+  categories={allCategories}
+  audiences={allAudiences}
+/>
