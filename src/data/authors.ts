@@ -1,5 +1,5 @@
 import type { ImageMetadata } from "astro";
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 
 // Import all author images
 const authorImages = import.meta.glob<{ default: ImageMetadata }>(
@@ -22,7 +22,8 @@ export interface Author {
   render: () => Promise<{ Content: AstroComponentFactory }>;
 }
 
-type AstroComponentFactory = import("astro/runtime/server/index.js").AstroComponentFactory;
+type AstroComponentFactory =
+  import("astro/runtime/server/index.js").AstroComponentFactory;
 
 function normalizeGitHubLink(link: string): string {
   if (link.startsWith("http://") || link.startsWith("https://")) {
@@ -55,12 +56,13 @@ function normalizeLinks(links?: AuthorLinks): AuthorLinks | undefined {
   };
 }
 
-export async function getAuthor(id: string): Promise<Author | undefined> {
-  const entry = await getEntry("authors", id);
+export async function getAuthor(slug: string): Promise<Author | undefined> {
+  const entries = await getCollection("authors");
+  const entry = entries.find((e) => e.slug === slug);
   if (!entry) return undefined;
 
   return {
-    id: entry.id,
+    id: entry.slug,
     name: entry.data.name,
     avatar: resolveAvatar(entry.data.avatar),
     bio: entry.body ?? "",
@@ -72,7 +74,7 @@ export async function getAuthor(id: string): Promise<Author | undefined> {
 export async function getAllAuthors(): Promise<Author[]> {
   const entries = await getCollection("authors");
   return entries.map((entry) => ({
-    id: entry.id,
+    id: entry.slug,
     name: entry.data.name,
     avatar: resolveAvatar(entry.data.avatar),
     bio: entry.body ?? "",
@@ -83,5 +85,5 @@ export async function getAllAuthors(): Promise<Author[]> {
 
 export async function getAuthorIds(): Promise<string[]> {
   const entries = await getCollection("authors");
-  return entries.map((entry) => entry.id);
+  return entries.map((entry) => entry.slug);
 }
