@@ -43,7 +43,7 @@ istəyənlər üçün açıq qapı idi.
 
 Məktəbi bitirdikdən sonra MIT-ə yola düşdüm. Orada
 [OpenCourseWare](https://ocw.mit.edu) ilə tanış oldum. MIT dərslərinin
-videoları, qeydləri, ev tapşırıqları hamı üçün açıq şəkildə yerləşdir. Sonra
+videoları, qeydləri, ev tapşırıqları hamı üçün açıq şəkildə yerləşdirilib. Sonra
 universitetin içində gördüm ki, bu, sadəcə formal bir proqram deyil: çox
 professorlar öz dərslərinin materiallarını şəxsi saytlarında da paylaşırlar.
 Bunların çoxunu az adam bilir, çünki heç bir reklam yoxdur. Sadəcə qoyurlar ki,
