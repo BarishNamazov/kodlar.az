@@ -144,7 +144,7 @@ dillərdə (Java, Python və s.) daha təmiz və xətasız kod yazmağı öyrət
 ## Yeni Başlayanlara Tövsiyələr
 
 1.  **Kiçik addımlarla başlayın:** Əvvəlcə siyahılar və rekursiyanı mənimsəyin.
-2.  **GHCi-dən bol istifadə edin:** GHC Hasell üçün kompilyatordur. Onun
+2.  **GHCi-dən bol istifadə edin:** GHC Haskell üçün kompilyatordur. Onun
     interaktiv versiyası GHCi adlanır. Burada "canlı" nümunələr yoxlayaraq
     funksional ideyalarımızı təsdiq edə bilərik. Bu interaktiv mühit sizin ən
     yaxın dostunuzdur, hər n kiçik funksiyanı orada yoxlayın.

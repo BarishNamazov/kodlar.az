@@ -8,7 +8,7 @@ links:
 ---
 
 Ziya Məmmədov hazırda University of Edinburgh (UoE) universitetində Süni
-intelekt və kompüter elmləri üzrə bakalavr təhsili alır.
+İntelekt və Kompüter Elmləri üzrə bakalavr təhsili alır.
 
 Ziya proqram təminatının dizaynı, proqramlaşdırma dilləri və nəzəriyyəsi, eləcə
 də AI for Bio, HCI və kognitiv sistemlər sahələrinə maraq göstərir. Kod yazmağı,
