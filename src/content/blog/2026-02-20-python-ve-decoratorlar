@@ -1,0 +1,9 @@
+---
+title: "Python və \"Decorator\"lar"
+author: nicat-xalid
+date: 2026-02-20
+categories: [Proqram Dilləri]
+---
+
+"Decorator"lar bir çox Python kitabxanası və "framework"lərində istifadə olunan özəllikdir. Tərcümədə "örtük" deməkdir. Hər hansı metodu istifadə etməzdən qabaq görüləcək işləri özündə ehtiva edir. Məsələn Django çərçivəsində hansısa spesifik bir URL-də istifadəçinin öz hesabına daxil olub-olmadığını yoxlayırıq.
+Gəlin birlikdə öyrənək.
