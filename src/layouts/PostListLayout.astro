@@ -1,0 +1,687 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import BlogList from "../components/BlogList.astro";
+import Button from "../components/Button.astro";
+import Icon from "../components/Icon.astro";
+import Window from "../components/Window.astro";
+import { CONTRIBUTING_URL } from "../config";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  title: string;
+  currentPath: string;
+  windowTitle: string;
+  searchPlaceholder: string;
+  contributeLabel: string;
+  posts: CollectionEntry<"blog">[];
+  categories: string[];
+  audiences?: string[];
+}
+
+const {
+  title,
+  currentPath,
+  windowTitle,
+  searchPlaceholder,
+  contributeLabel,
+  posts,
+  categories,
+  audiences,
+} = Astro.props;
+---
+
+<BaseLayout title={title} currentPath={currentPath}>
+  <div class="page-container">
+    <div class="content-area">
+      <Window title={windowTitle} class="page-header" mono>
+        <div class="search-row">
+          <span class="prompt">$</span>
+          <span class="cmd">grep</span>
+          <input
+            type="text"
+            id="blog-search"
+            placeholder={searchPlaceholder}
+            class="search-input"
+          />
+        </div>
+
+        <div class="filter-section">
+          <div class="cmd-line">
+            <span class="comment">// kateqoriyalar</span>
+          </div>
+          <div class="filter-list" id="category-filters">
+            <button class="filter-btn active" data-category="all">hamısı</button
+            >
+            {
+              categories.map((cat) => (
+                <button class="filter-btn" data-category={cat}>
+                  {cat}
+                </button>
+              ))
+            }
+          </div>
+        </div>
+
+        {
+          audiences && audiences.length > 0 && (
+            <div class="filter-section">
+              <div class="cmd-line">
+                <span class="comment">// auditoriya</span>
+              </div>
+              <div class="filter-list" id="audience-filters">
+                <button class="filter-btn active" data-audience="all">
+                  hamısı
+                </button>
+                {audiences.map((aud) => (
+                  <button class="filter-btn" data-audience={aud}>
+                    {aud}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )
+        }
+      </Window>
+
+      <div class="active-bar" id="active-filters" style="display: none;">
+        <span class="comment">// aktiv_filtrlər:</span>
+        <div class="active-tags" id="filter-tags"></div>
+        <button class="clear-btn" id="clear-filters">təmizlə()</button>
+      </div>
+
+      <BlogList posts={posts} />
+
+      <div id="empty-state" style="display: none;">
+        <Window class="empty-box" mono>
+          <div class="empty-content">
+            <div class="shrug">¯\_(ツ)_/¯</div>
+            <p class="empty-msg">Heç bir nəticə tapılmadı</p>
+            <button class="reset-btn" id="reset-filters">filter.reset()</button>
+          </div>
+        </Window>
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <h3><span class="comment">// </span>sırala</h3>
+        <div class="sort-list" id="sort-options">
+          <button class="sort-btn active" data-sort="date-desc"
+            >sort.date("desc")</button
+          >
+          <button class="sort-btn" data-sort="date-asc">sort.date("asc")</button
+          >
+          <button class="sort-btn" data-sort="title-asc"
+            >sort.title("a-z")</button
+          >
+          <button class="sort-btn" data-sort="title-desc"
+            >sort.title("z-a")</button
+          >
+        </div>
+      </div>
+
+      <div class="sidebar-card contribute">
+        <div class="icon-wrap">
+          <span>&lt;</span>
+          <Icon name="plus" size={14} />
+          <span>/&gt;</span>
+        </div>
+        <h3>{contributeLabel}</h3>
+        <Button
+          href={CONTRIBUTING_URL}
+          variant="primary"
+          target="_blank"
+          class="contribute-btn"
+        >
+          github.pr_aç()
+        </Button>
+      </div>
+    </aside>
+  </div>
+</BaseLayout>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  let selectedCategory = params.get("cat") || "";
+  let selectedAudience = params.get("aud") || "";
+  let currentSort = "date-desc";
+  let searchQuery = "";
+
+  const searchInput = document.getElementById(
+    "blog-search",
+  ) as HTMLInputElement;
+  const blogGrid = document.querySelector(".blog-list");
+  const categoryFilters = document.getElementById("category-filters");
+  const audienceFilters = document.getElementById("audience-filters");
+  const sortOptions = document.getElementById("sort-options");
+  const activeFiltersBox = document.getElementById("active-filters");
+  const filterTags = document.getElementById("filter-tags");
+  const clearFiltersBtn = document.getElementById("clear-filters");
+  const emptyState = document.getElementById("empty-state");
+  const resetFiltersBtn = document.getElementById("reset-filters");
+
+  function filterAndSort() {
+    if (!blogGrid) return;
+
+    const items = Array.from(
+      blogGrid.querySelectorAll(".blog-item"),
+    ) as HTMLElement[];
+    let visibleCount = 0;
+
+    function matchesSearchQuery(query: string, title: string): boolean {
+      if (!query) return true;
+      return title.toLowerCase().includes(query.toLowerCase().trim());
+    }
+
+    items.forEach((item) => {
+      const categories = JSON.parse(item.dataset.categories || "[]");
+      const audiences = JSON.parse(item.dataset.audiences || "[]");
+      const title = item.dataset.title || "";
+
+      const categoryMatch = !selectedCategory || categories.includes(selectedCategory);
+      const audienceMatch = !selectedAudience || audiences.includes(selectedAudience);
+
+      const searchMatch = matchesSearchQuery(searchQuery, title);
+
+      if (categoryMatch && audienceMatch && searchMatch) {
+        item.style.display = "";
+        visibleCount++;
+      } else {
+        item.style.display = "none";
+      }
+    });
+
+    const visibleItems = items.filter((item) => item.style.display !== "none");
+
+    visibleItems.sort((a, b) => {
+      switch (currentSort) {
+        case "date-desc":
+          return Number(b.dataset.date) - Number(a.dataset.date);
+        case "date-asc":
+          return Number(a.dataset.date) - Number(b.dataset.date);
+        case "title-asc":
+          return (a.dataset.title || "").localeCompare(b.dataset.title || "");
+        case "title-desc":
+          return (b.dataset.title || "").localeCompare(a.dataset.title || "");
+        default:
+          return 0;
+      }
+    });
+
+    visibleItems.forEach((item) => blogGrid.appendChild(item));
+
+    if (emptyState) {
+      emptyState.style.display = visibleCount === 0 ? "block" : "none";
+    }
+
+    updateActiveFilters();
+  }
+
+  function updateActiveFilters() {
+    if (!activeFiltersBox || !filterTags) return;
+
+    if (!selectedCategory && !selectedAudience && !searchQuery) {
+      activeFiltersBox.style.display = "none";
+      return;
+    }
+
+    activeFiltersBox.style.display = "flex";
+    filterTags.innerHTML = "";
+
+    if (selectedCategory) {
+      const tag = document.createElement("span");
+      tag.className = "active-tag";
+      tag.innerHTML = `"${selectedCategory}" <button data-remove="${selectedCategory}">×</button>`;
+      filterTags.appendChild(tag);
+    }
+
+    if (selectedAudience) {
+      const tag = document.createElement("span");
+      tag.className = "active-tag audience";
+      tag.innerHTML = `"${selectedAudience}" <button data-remove-audience="${selectedAudience}">×</button>`;
+      filterTags.appendChild(tag);
+    }
+
+    if (searchQuery) {
+      const tag = document.createElement("span");
+      tag.className = "active-tag search";
+      tag.innerHTML = `query: "${searchQuery}" <button data-remove-search>×</button>`;
+      filterTags.appendChild(tag);
+    }
+
+    filterTags.querySelectorAll("button[data-remove]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        selectedCategory = "";
+        updateCategoryButtons();
+        filterAndSort();
+      });
+    });
+
+    filterTags
+      .querySelectorAll("button[data-remove-audience]")
+      .forEach((btn) => {
+        btn.addEventListener("click", () => {
+          selectedAudience = "";
+          updateAudienceButtons();
+          filterAndSort();
+        });
+      });
+
+    filterTags.querySelectorAll("button[data-remove-search]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        searchQuery = "";
+        if (searchInput) searchInput.value = "";
+        filterAndSort();
+      });
+    });
+  }
+
+  function updateCategoryButtons() {
+    if (!categoryFilters) return;
+    categoryFilters.querySelectorAll(".filter-btn").forEach((btn) => {
+      const cat = btn.getAttribute("data-category");
+      if (cat === "all") {
+        btn.classList.toggle("active", selectedCategory === "");
+      } else {
+        btn.classList.toggle("active", cat === selectedCategory);
+      }
+    });
+  }
+
+  function updateAudienceButtons() {
+    if (!audienceFilters) return;
+    audienceFilters.querySelectorAll(".filter-btn").forEach((btn) => {
+      const aud = btn.getAttribute("data-audience");
+      if (aud === "all") {
+        btn.classList.toggle("active", selectedAudience === "");
+      } else {
+        btn.classList.toggle("active", aud === selectedAudience);
+      }
+    });
+  }
+
+  categoryFilters?.addEventListener("click", (e) => {
+    const target = (e.target as HTMLElement).closest(".filter-btn");
+    if (!target) return;
+
+    const category = target.getAttribute("data-category");
+
+    if (category === "all") {
+      selectedCategory = "";
+    } else if (category) {
+      selectedCategory = selectedCategory === category ? "" : category;
+    }
+
+    updateCategoryButtons();
+    filterAndSort();
+  });
+
+  audienceFilters?.addEventListener("click", (e) => {
+    const target = (e.target as HTMLElement).closest(".filter-btn");
+    if (!target) return;
+
+    const audience = target.getAttribute("data-audience");
+
+    if (audience === "all") {
+      selectedAudience = "";
+    } else if (audience) {
+      selectedAudience = selectedAudience === audience ? "" : audience;
+    }
+
+    updateAudienceButtons();
+    filterAndSort();
+  });
+
+  sortOptions?.addEventListener("click", (e) => {
+    const target = (e.target as HTMLElement).closest(".sort-btn");
+    if (!target) return;
+
+    const sort = target.getAttribute("data-sort");
+    if (sort) {
+      currentSort = sort;
+      sortOptions
+        .querySelectorAll(".sort-btn")
+        .forEach((btn) => btn.classList.remove("active"));
+      target.classList.add("active");
+      filterAndSort();
+    }
+  });
+
+  searchInput?.addEventListener("input", (e) => {
+    searchQuery = (e.target as HTMLInputElement).value;
+    filterAndSort();
+  });
+
+  clearFiltersBtn?.addEventListener("click", () => {
+    selectedCategory = "";
+    selectedAudience = "";
+    searchQuery = "";
+    if (searchInput) searchInput.value = "";
+    updateCategoryButtons();
+    updateAudienceButtons();
+    filterAndSort();
+  });
+
+  resetFiltersBtn?.addEventListener("click", () => {
+    selectedCategory = "";
+    selectedAudience = "";
+    searchQuery = "";
+    currentSort = "date-desc";
+    if (searchInput) searchInput.value = "";
+    updateCategoryButtons();
+    updateAudienceButtons();
+    sortOptions?.querySelectorAll(".sort-btn").forEach((btn) => {
+      btn.classList.toggle(
+        "active",
+        btn.getAttribute("data-sort") === "date-desc",
+      );
+    });
+    filterAndSort();
+  });
+
+  // Apply initial filters from URL query params
+  if (selectedCategory || selectedAudience) {
+    updateCategoryButtons();
+    updateAudienceButtons();
+    filterAndSort();
+  }
+</script>
+
+<style>
+  .page-container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 1.5rem;
+  }
+
+  .content-area {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .search-row {
+    margin-bottom: 1rem;
+  }
+
+  /* Filter Section */
+  .filter-section {
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .filter-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  .filter-btn {
+    padding: 0.375rem 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    background: var(--color-surface);
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .filter-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .filter-btn.active {
+    background: var(--color-primary-muted);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  /* Active Filters Bar */
+  .active-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 0.875rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    flex-wrap: wrap;
+  }
+
+  .active-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    flex: 1;
+  }
+
+  .active-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.25rem 0.5rem;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-cyan);
+  }
+
+  .active-tag.audience {
+    color: var(--color-orange);
+  }
+
+  .active-tag.search {
+    color: var(--color-orange);
+  }
+
+  :global(.active-bar .active-tag button) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    margin-left: 0.25rem;
+    padding: 0;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    line-height: 1;
+    box-sizing: border-box;
+    transition: all var(--transition-fast);
+  }
+
+  :global(.active-bar .active-tag button:hover) {
+    background: var(--color-red);
+    border-color: var(--color-red);
+    color: white;
+    transform: scale(1.05);
+  }
+
+  .clear-btn {
+    padding: 0.25rem 0.625rem;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    background: transparent;
+    color: var(--color-red);
+    border: 1px solid var(--color-red);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .clear-btn:hover {
+    background: var(--color-red-muted);
+  }
+
+  /* Empty State */
+  .empty-box .window-body {
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  .empty-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .shrug {
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--color-text-muted);
+  }
+
+  .empty-msg {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+
+  .reset-btn {
+    padding: 0.5rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    background: var(--color-primary-muted);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    margin-top: 0.5rem;
+  }
+
+  .reset-btn:hover {
+    background: var(--color-primary);
+    color: var(--color-bg);
+  }
+
+  /* Sidebar */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: sticky;
+    top: 5rem;
+    height: fit-content;
+  }
+
+  /* Sort */
+  .sort-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .sort-btn {
+    padding: 0.5rem 0.625rem;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    background: transparent;
+    color: var(--color-text-secondary);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    text-align: left;
+    transition: all var(--transition-fast);
+  }
+
+  .sort-btn:hover {
+    background: var(--color-bg-secondary);
+    color: var(--color-text);
+  }
+
+  .sort-btn.active {
+    background: var(--color-primary-muted);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  /* Contribute */
+  .contribute {
+    text-align: center;
+    padding: 1.25rem;
+  }
+
+  .icon-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .icon-wrap span {
+    color: var(--color-text-muted);
+  }
+
+  .contribute h3 {
+    font-size: 0.6875rem;
+    margin-bottom: 0.75rem;
+    text-align: center;
+  }
+
+  .contribute-btn {
+    display: flex;
+    width: 100%;
+    font-size: 0.6875rem;
+    justify-content: center;
+  }
+
+  @media (max-width: 1024px) {
+    .page-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-area {
+      display: contents;
+    }
+
+    :global(.page-header) {
+      order: 1;
+    }
+
+    :global(.active-bar) {
+      order: 2;
+    }
+
+    .sidebar {
+      position: static;
+      flex-direction: row;
+      flex-wrap: wrap;
+      order: 3;
+      margin-bottom: 1rem;
+    }
+
+    :global(.blog-list) {
+      order: 4;
+    }
+
+    :global(#empty-state) {
+      order: 4;
+    }
+
+    .sidebar-card {
+      flex: 1;
+      min-width: 180px;
+    }
+  }
+</style>

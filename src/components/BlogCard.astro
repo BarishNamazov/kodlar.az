@@ -12,9 +12,10 @@ interface Props {
   categories: string[];
   image?: string;
   href: string;
+  resource?: boolean;
 }
 
-const { title, description, author, date, categories, href } = Astro.props;
+const { title, description, author, date, categories, href, resource } = Astro.props;
 
 const formattedDate = formatDateShort(date);
 
@@ -43,6 +44,7 @@ const authorName = authorData?.name || author;
       </div>
       <div class="card-content">
         <div class="card-tags">
+          {resource && <Tag name="resurs" color="cyan" class="resurs-link" />}
           {categories.slice(0, 3).map((cat) => <Tag name={cat} />)}
         </div>
 
@@ -61,6 +63,17 @@ const authorName = authorData?.name || author;
     </div>
   </a>
 </article>
+
+<script>
+  document.querySelectorAll(".resurs-link").forEach((el) => {
+    (el as HTMLElement).style.cursor = "pointer";
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      window.location.href = "/resources";
+    });
+  });
+</script>
 
 <style>
   .blog-card {

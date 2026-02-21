@@ -56,9 +56,7 @@ function normalizeLinks(links?: AuthorLinks): AuthorLinks | undefined {
   };
 }
 
-export async function getAuthor(
-  slug: string,
-): Promise<Author | undefined> {
+export async function getAuthor(slug: string): Promise<Author | undefined> {
   const entries = await getCollection("authors");
   const entry = entries.find((e) => e.slug === slug);
   if (!entry) return undefined;

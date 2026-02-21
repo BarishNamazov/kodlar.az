@@ -17,6 +17,8 @@ interface Props {
     description: string;
     image?: string;
     categories: string[];
+    resource?: boolean;
+    resource_audiences?: string[];
   };
   rawContent?: string;
 }
@@ -76,7 +78,7 @@ const authorData = await getAuthor(frontmatter.author);
                     <>
                       <Tag
                         name={cat}
-                        href={`/blogs?cat=${cat.toLowerCase()}`}
+                        href={`/blogs?cat=${encodeURIComponent(cat)}`}
                       />
                       {i < frontmatter.categories.length - 1 && (
                         <span class="comma">, </span>
@@ -87,6 +89,27 @@ const authorData = await getAuthor(frontmatter.author);
                 ]</span
               >
             </div>
+            {frontmatter.resource && (
+              <div class="meta-line">
+                <span class="key">tip:</span>
+                <Tag name="resurs" color="cyan" href="/resources" />
+              </div>
+            )}
+            {frontmatter.resource_audiences && frontmatter.resource_audiences.length > 0 && (
+              <div class="meta-line">
+                <span class="key">auditoriya:</span>
+                <span class="array">[
+                  {frontmatter.resource_audiences.map((audience, i) => (
+                    <>
+                      <Tag name={audience} color="orange" href={`/resources?aud=${encodeURIComponent(audience)}`} />
+                      {i < frontmatter.resource_audiences!.length - 1 && (
+                        <span class="comma">, </span>
+                      )}
+                    </>
+                  ))}
+                  ]</span>
+              </div>
+            )}
           </div>
           <div class="header-line cmd-line">
             <span class="comment">---</span>
@@ -595,6 +618,24 @@ const authorData = await getAuthor(frontmatter.author);
     font-weight: 600;
   }
 
+  .prose :global(hr) {
+    border: none;
+    margin: 2rem 0;
+    overflow: visible;
+    text-align: center;
+    height: auto;
+    line-height: 1;
+  }
+
+  .prose :global(hr::before) {
+    content: "/* ──────────────────────────────── */";
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+  }
+
   .prose :global(blockquote) {
     margin: 1.5rem 0;
     padding: 1rem 1.25rem;
@@ -757,6 +798,8 @@ const authorData = await getAuthor(frontmatter.author);
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    max-height: calc(100vh - 16rem);
+    overflow-y: auto;
   }
 
   .toc :global(.toc-link) {
