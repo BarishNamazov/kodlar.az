@@ -1,9 +1,9 @@
 ---
-name: "Nicat Xalid"
-links:
+ad: "Nicat Xalid"
+keçidlər:
   gitlab: "nicatt"
   linkedin: "nicatt"
-  website: "https://nicat.org"
+  bloq: "https://nicat.org"
 ---
 
 - Azərbaycan Texniki Universitetinin Kompüter Elmləri üzrə bakalavr təhsili alıb.
