@@ -2,7 +2,7 @@
 title: "Gələcəyin Proqramçısı Necə Olmalıdır?"
 author: murad-nurubayli
 description: "AI və texnologiyaların inkişaf etdiyi dövrdə bu sahəyə başlayan yeni proqramçı nələrə diqqət etməlidir?"
-date: 2026-02-10
+date: 2026-02-20
 categories: [Karyera]
 ---
 
