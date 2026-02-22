@@ -156,8 +156,8 @@ adın ilk iki hərfini tanıyır.
 
 Sonra `IF... THEN...` və `FOR... NEXT...` strukturlarını öyrənirsən. Bütün bu
 yeni alətlərlə təlimatın sənə təqdim etdiyi növbəti böyük çağırışın öhdəsindən
-gəlməyə hazır olduğunu hiss edirsən. "Əgər iddialısansa," o səni qızışdırır,
-"aşağıdakı proqramı yaz və nə baş verdiyini gör." Proqram indiyə qədər gördüyün
+gəlməyə hazır olduğunu hiss edirsən. Əgər iddialısansa, o səni qızışdırır,
+"aşağıdakı proqramı yaz və nə baş verdiyini gör". Proqram indiyə qədər gördüyün
 hər şeydən daha uzun və mürəkkəbdir, amma onun nə etdiyini bilmək üçün
 səbirsizlənirsən:
 
