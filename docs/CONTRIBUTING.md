@@ -50,15 +50,15 @@ yaratmalıdır. Məqalələr həm texniki, həm də qeyri-texniki mövzularda ol
 - Maraqlı hekayələr və şəxsi təcrübələr (özünüz yaxud başqa məşhur şəxsiyyətlər
   haqqında)
 
-### AI (süni intellekt) istifadəsi barədə
+### S.İ. (süni intellekt) istifadəsi barədə
 
-- Məqalənin/resurs mətninin tam yazdırılması üçün AI istifadə etməməyi tövsiyə
+- Məqalənin/resurs mətninin tam yazdırılması üçün Sİ istifadə etməməyi tövsiyə
   edirik.
-- Amma AI-dan qrammatika yoxlaması, üslubun cilalanması, terminlərin
+- Amma Sİ-dən qrammatika yoxlaması, üslubun cilalanması, terminlərin
   dəqiqləşdirilməsi, mətnin anlaşılma səviyyəsinin qiymətləndirilməsi kimi
   məqsədlərlə istifadə etmək normaldır.
-- Bu tələb sərt qayda deyil. Məqsədimiz məzmunu təbii saxlamaq və AI söhbətinin
-  verə bilmədiyi real təcrübə qatını qorumaqdır. AI-dan faydalı istifadə
+- Bu tələb sərt qayda deyil. Məqsədimiz məzmunu təbii saxlamaq və Sİ söhbətinin
+  verə bilmədiyi real təcrübə qatını qorumaqdır. Sİ-dən faydalı istifadə
   üsullarınız varsa, ən yaxşısı bunu
   [GitHub Discussions](https://github.com/BarishNamazov/kodlar.az/discussions)
   bölməsində paylaşmaqdır.
@@ -71,7 +71,7 @@ olunur:
 - Başlamazdan əvvəl qısa mövzu təklifi (auditoriya, səviyyə, plan/başlıqlar) ilə
   [Discussions](https://github.com/BarishNamazov/kodlar.az/discussions)-da
   müzakirə açın.
-- Resurs əlavə edirsinizsə: link + qısa izah (kimlər üçündür, nə verir, hansı
+- Resurs əlavə edirsinizsə: keçid + qısa izah (kimlər üçündür, nə verir, hansı
   ilkin biliklər tələb edir) yazın.
 - Hazır olanda PR ilə göndərin; mövcud resursa əlavələr edirsinizsə,
   dəyişikliklərinizin məqsədini və səbəbini qısa şəkildə qeyd edin.
