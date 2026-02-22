@@ -15,7 +15,8 @@ interface Props {
   resource?: boolean;
 }
 
-const { title, description, author, date, categories, href, resource } = Astro.props;
+const { title, description, author, date, categories, href, resource } =
+  Astro.props;
 
 const formattedDate = formatDateShort(date);
 
