@@ -1,11 +1,10 @@
 ---
-title: "Python və \"Decorator\"lar"
+title: "Python və 'Decorator'lar"
 author: nicat-xalid
 date: 2026-02-20
-categories: [Proqram Dilləri]
+categories: [Proqram Dilləri, Python]
 ---
 
-# Python və "Decorator"lar
 "Decorator"lar bir çox Python kitabxanası və çərçivələrində (framework) istifadə olunan özəllikdir. Tərcümədə "örtük" deməkdir. Hər hansı metodu istifadə etməzdən qabaq görüləcək işləri özündə ehtiva edir. Məsələn Django çərçivəsində hansısa spesifik bir URL-də istifadəçinin öz hesabına daxil olub-olmadığını yoxlayırıq.
 Gəlin birlikdə öyrənək.
 
@@ -17,7 +16,7 @@ def account_view(request):
 
 `account_view` funksiyasının üzərinə yazılan decorator (bundan sonra _örtük_) ora sorğu göndərməzdən qabaq, hesaba daxil olub-olmadığını yoxayır. Əgər daxil olubsa cavab qaytarır, yoxsa login səhifəsinə yönləndirir.
 Bəs bunun işləmə prinsipi nədir? Necə olur ki, həmən funksiya çağırılmamışdan qabaq `login_required` işə düşür?
-Əslində işləmə prinsipi çox sadədir. İşin sehri sadəcə "**syntactic sugar**"dadır.
+Əslində işləmə prinsipi çox sadədir. İşin sehri sadəcə "**syntactic sugar**"dadır (bundan sonra _sintaktik şəkər_).
 
 ## İlk addımlar
 
@@ -31,7 +30,7 @@ divider(5, 2)
 divider(5, 0)
 ```
 
-İkinci çağrılmada 5 və 0 ötürdük və 0-a bölmə olmadığından Python bizə <span style="color: rgb(255, 0, 0);">ZeroDivisionError</span> qaytardı.
+İkinci çağrılmada 5 və 0 ötürdük və 0-a bölmə olmadığından Python bizə `ZeroDivisionError` qaytardı.
 Örtük vasitəsi ilə biz çıxa biləcək xətaları əvvəlcədən idarə edə bilərik. İlk öncə sadə bir misala baxaq:
 
 ```python
@@ -55,9 +54,7 @@ Bu kod bizə belə bir nəticə qaytaracaq:
 
 ```
 Funksiyadan qabaq işləyəcək.
-
 divide funksiyası
-
 Funksiyadan sonra işləyəcək.
 ```
 
@@ -83,12 +80,12 @@ foo = my_decorator(divide)
 foo(5, 2)
 ```
 
-<pre style="color: rgb(255, 0, 0);">
+```
 Traceback (most recent call last):
   File "main.py", line 12, in 
     foo(5, 2)
 TypeError: wrapper() takes 0 positional arguments but 2 were given
-</pre>
+```
 
 Bu xətanı biz ona görə aldıq ki, 4-cü sətrdə çağrılan `func()` metoduna heç bir arqument verməmişik. Halbuki `divide()` bizdən _num1_ və _num2_ dəyərlərini gözləyir.\
 Örtüklərdə daxili funksiyamız olan `wrapper()` əsas funksiyamızın (`divider()`) parametrlərini qəbul edə bilir. Biz də bunu `func()`-a ötürə bilərik:
@@ -127,7 +124,7 @@ foo = my_decorator(divide)
 foo(5, 2)
 ```
 
-## Syntactic sugar
+## Sintaktik şəkər
 
 Örtüyü
 
@@ -223,7 +220,6 @@ divide(5, 2)
 Nəticə:
 
 ```
-"You can not divide by zero."
-
+You can not divide by zero.
 2.5
 ```
