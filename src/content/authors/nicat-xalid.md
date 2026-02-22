@@ -1,10 +1,11 @@
 ---
-ad: "Nicat Xalid"
-keçidlər:
-  gitlab: "nicatt"
+name: "Nicat Xalid"
+links:
   linkedin: "nicatt"
-  bloq: "https://nicat.org"
+  website: "https://nicat.org"
 ---
 
-- Azərbaycan Texniki Universitetinin Kompüter Elmləri üzrə bakalavr təhsili alıb.
-- Maraq dairələri: Programlaşdırma, oyun mühərrikləri, 3Ö modelləmə, video oyunlar.
+- Azərbaycan Texniki Universitetinin Kompüter Elmləri üzrə bakalavr təhsili
+  alıb.
+- Maraq dairələri: Programlaşdırma, oyun mühərrikləri, 3-ölçülü modelləmə, video
+  oyunlar.
