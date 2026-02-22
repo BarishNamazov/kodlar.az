@@ -106,7 +106,7 @@ foo(5, 2)
 ```
 
 Bununla da xəta aradan qalxmış olur.\
-Əgər funksiya bizdəki kimi 2 yox daha çox parametr qəbul etsə hər dəfə bunları yazmaq o qədər də ağlabatan deyil. Üstəlik hər funksiya üçün eyni işi görən ayrı-ayrı örtüklərlər yazmalı olacağıq. Bunun həll yolu ***args** və ****kwargs** ikilisidir.\
+Əgər funksiya bizdəki kimi 2 yox daha çox parametr qəbul etsə hər dəfə bunları yazmaq o qədər də ağlabatan deyil. Üstəlik hər funksiya üçün eyni işi görən ayrı-ayrı örtüklərlər yazmalı olacağıq. Bunun həll yolu [***args** və ****kwargs** ikilisidir](https://realpython.com/python-kwargs-and-args/).\
 *args funksiyaya ötürülən istənilən positional (mövqeli) arqumentləri, **kwargs isə keyword (açar sözlü) arqumentləri qəbul edir.
 
 ```python
