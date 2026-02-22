@@ -9,6 +9,8 @@ categories: [Tarix]
 ---
 
 Əsas məqalə: [Two-Bit History - Learning BASIC Like It's 1983](https://twobithistory.org/2018/09/02/learning-basic.html)
+
+
 1983-cü ildə mən hələ doğulmamışdım. Bu, bəzən təəssüfləndiyim bir şeydir.
 Xüsusilə də 8-bitlik kompüter erasının baş verdiyi o dövrdə yaşamadığım üçün çox
 təəssüflənirəm, çünki düşünürəm ki, kompüterlərlə ilk dəfə nisbətən sadə və az
