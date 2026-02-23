@@ -8,8 +8,8 @@ date: 2026-02-21
 categories: [Tarix]
 ---
 
-Əsas məqalə: [Two-Bit History - Learning BASIC Like It's 1983](https://twobithistory.org/2018/09/02/learning-basic.html)
-
+Əsas məqalə:
+[Two-Bit History - Learning BASIC Like It's 1983](https://twobithistory.org/2018/09/02/learning-basic.html)
 
 1983-cü ildə mən hələ doğulmamışdım. Bu, bəzən təəssüfləndiyim bir şeydir.
 Xüsusilə də 8-bitlik kompüter erasının baş verdiyi o dövrdə yaşamadığım üçün çox
@@ -43,9 +43,20 @@ proqramın necə işlədiyi barədə onu özün dəyişdirməyə başlayacaq qə
 sahibi olacaqdın. Əgər həvəsli bir oyunçu idinsə, demək olar ki, məcburiyyətdən
 yaxşı bir proqramçıya çevrilirdin.
 
-Mən də uşaqlığım boyu kompüter oyunları oynamışam. Amma mənim oynadığım oyunlar CD-ROM-larda gəlirdi. Bəzən xətalarla qarşılaşan quraşdırıcını necə düzəldəcəyimi Google-da axtarmalı olurdum ki, bu da Windows Registry-ni və ya buna bənzər bir şeyi redaktə etməyi tələb edirdi. Bu cür kiçik problemlərin həlli məni kompüterlərlə kifayət qədər rahatlaşdırmışdı ki, universitetdə kompüter elmləri oxumağı düşünüm. Amma bu, mənə heç vaxt kompüterlərin necə işlədiyi və ya onları necə idarə etmək barədə həlledici bir şey öyrətmədi.
+Mən də uşaqlığım boyu kompüter oyunları oynamışam. Amma mənim oynadığım oyunlar
+CD-ROM-larda gəlirdi. Bəzən xətalarla qarşılaşan quraşdırıcını necə
+düzəldəcəyimi Google-da axtarmalı olurdum ki, bu da Windows Registry-ni və ya
+buna bənzər bir şeyi redaktə etməyi tələb edirdi. Bu cür kiçik problemlərin
+həlli məni kompüterlərlə kifayət qədər rahatlaşdırmışdı ki, universitetdə
+kompüter elmləri oxumağı düşünüm. Amma bu, mənə heç vaxt kompüterlərin necə
+işlədiyi və ya onları necə idarə etmək barədə həlledici bir şey öyrətmədi.
 
-İndi isə, əlbəttə ki, mən pul qazanmaq üçün kompüterlərlə nə etməli olduqlarını deyirəm. Bununla belə, yalnız daha sadə kompüterlərlə proqramlaşdırma edərək böyüyənlərə nəsib olan bəzi fundamental anlayışlardan məhrum olduğumu hiss etməkdən özümü saxlaya bilmirəm. 1980-ci illərin əvvəllərində kompüterlərlə ilk dəfə qarşılaşmaq necə bir hiss olardı? Bu, bu gün kompüterdən istifadə təcrübəsindən nə ilə fərqlənərdi?
+İndi isə, əlbəttə ki, mən pul qazanmaq üçün kompüterlərlə nə etməli olduqlarını
+deyirəm. Bununla belə, yalnız daha sadə kompüterlərlə proqramlaşdırma edərək
+böyüyənlərə nəsib olan bəzi fundamental anlayışlardan məhrum olduğumu hiss
+etməkdən özümü saxlaya bilmirəm. 1980-ci illərin əvvəllərində kompüterlərlə ilk
+dəfə qarşılaşmaq necə bir hiss olardı? Bu, bu gün kompüterdən istifadə
+təcrübəsindən nə ilə fərqlənərdi?
 
 Bu yazı adi yazılarımızdan bir az fərqli olacaq, çünki bu suallara xəyalımda bir
 cavab tapmağa çalışacağam.
@@ -61,12 +72,25 @@ Məktəbdə elə bir neçə nəfər tanıyırdın ki, əgər orada Zork oynaya b
 onsuz da Rudy-nin evinə getməkdənsə sənin evində vaxt keçirməyə üstünlük
 verərdilər.
 
-Beləliklə, valideynlərini bu kompüteri almağa razı saldın. Anan dedi ki, evdə kompüterin olması sənin oyun zallarından uzaq durmağın deməkdirsə, bunu nəzərdən keçirə bilərlər. Sən istəksizcə razılaşdın. Atan eşitdiyi MultiPlan adlı elektron cədvəl proqramında ailənin maliyyəsini izləməyə başlayacağını düşünürdü, buna görə də kompüter qonaq otağına qoyuldu. Ancaq bir il sonra ondan istifadə edən yeganə şəxs sən olacaqdın. Nəhayət, onu yataq otağındakı masanın üstünə qoymağa icazə verdilər — elə *Police* plakatının düz altına.
+Beləliklə, valideynlərini bu kompüteri almağa razı saldın. Anan dedi ki, evdə
+kompüterin olması sənin oyun zallarından uzaq durmağın deməkdirsə, bunu nəzərdən
+keçirə bilərlər. Sən istəksizcə razılaşdın. Atan eşitdiyi MultiPlan adlı
+elektron cədvəl proqramında ailənin maliyyəsini izləməyə başlayacağını
+düşünürdü, buna görə də kompüter qonaq otağına qoyuldu. Ancaq bir il sonra ondan
+istifadə edən yeganə şəxs sən olacaqdın. Nəhayət, onu yataq otağındakı masanın
+üstünə qoymağa icazə verdilər — elə _Police_ plakatının düz altına.
 
 (Bacın bu qərara etiraz etdi, amma 1983-cü il idi və kompüterlər
 [qızlar üçün deyildi](https://www.npr.org/sections/money/2014/10/21/357629765/when-women-stopped-coding).)
 
-Atan kompüteri işdən evə gələrkən [ComputerLand](https://www.youtube.com/watch?v=MA_XtT3VAVM)-dən götürdü. Siz ikiniz qutunu televizorun yanına qoyub açdınız. “DOSTCANLI KOMPÜTERLƏR DÜNYASINA XOŞ GƏLMİSİNİZ,” deyə qablaşdırmanın üzərində yazılmışdı. İyirmi dəqiqə sonra sən hələ də əmin deyildin — siz hələ də Commodore-u televizora qoşmağa çalışır, televizorun antenna kabelinin 75-om, yoxsa 300-om koaksial tip olub-olmadığını düşünürdünüz. Amma, nəhayət, televizoru 3-cü kanala çevirib kobud, bənövşəyi bir görüntü görə bildin.
+Atan kompüteri işdən evə gələrkən
+[ComputerLand](https://www.youtube.com/watch?v=MA_XtT3VAVM)-dən götürdü. Siz
+ikiniz qutunu televizorun yanına qoyub açdınız. “DOSTCANLI KOMPÜTERLƏR DÜNYASINA
+XOŞ GƏLMİSİNİZ,” deyə qablaşdırmanın üzərində yazılmışdı. İyirmi dəqiqə sonra
+sən hələ də əmin deyildin — siz hələ də Commodore-u televizora qoşmağa çalışır,
+televizorun antenna kabelinin 75-om, yoxsa 300-om koaksial tip olub-olmadığını
+düşünürdünüz. Amma, nəhayət, televizoru 3-cü kanala çevirib kobud, bənövşəyi bir
+görüntü görə bildin.
 
 ![Commodore 64 başlanğıc ekranı](https://twobithistory.org/images/c64_startup.png)
 
@@ -111,7 +135,18 @@ olan düymələrlə rənglər arasında keçid edirsən.
 
 ![Commodore 64 rəng zolaqları](https://twobithistory.org/images/c64_colors.png)
 
-Nə qədər möhtəşəm olsa da, anlayırsan ki, bu proqramlaşdırma sayılmır. Dünən gecə öyrənmisən ki, kompüteri proqramlaşdırmaq üçün onunla BASIC adlı dildə danışmalısan. Sənə BASIC sanki elmi-fantastik filmlərdən çıxmış bir şey kimi görünür, lakin 1983-cü ilə qədər BASIC-in demək olar ki, on iki illik yaşı var. O, hesablama texnikasını sosial elmlər və humanitar elmlər üzrə bakalavr tələbələri üçün əlçatan etmək istəyən iki Dartmouth professoru, Con Kemeni (John Kemeny) və Tom Kurts (Tom Kurtz) tərəfindən icad edilmişdir. O, minikompüterlərdə geniş yayılmışdı və universitet riyaziyyat dərslərində populyar idi. Daha sonra Bill Qeyts və Pol Allen Altair üçün MicroSoft BASIC interpretatorunu yazdıqdan sonra mikrokompüterlərdə standart halına gəldi. Amma təlimat bunların heç birini izah etmir və sən bunları yalnız illər sonra öyrənəcəksən
+Nə qədər möhtəşəm olsa da, anlayırsan ki, bu proqramlaşdırma sayılmır. Dünən
+gecə öyrənmisən ki, kompüteri proqramlaşdırmaq üçün onunla BASIC adlı dildə
+danışmalısan. Sənə BASIC sanki elmi-fantastik filmlərdən çıxmış bir şey kimi
+görünür, lakin 1983-cü ilə qədər BASIC-in demək olar ki, on iki illik yaşı var.
+O, hesablama texnikasını sosial elmlər və humanitar elmlər üzrə bakalavr
+tələbələri üçün əlçatan etmək istəyən iki Dartmouth professoru, Con Kemeni (John
+Kemeny) və Tom Kurts (Tom Kurtz) tərəfindən icad edilmişdir. O,
+minikompüterlərdə geniş yayılmışdı və universitet riyaziyyat dərslərində
+populyar idi. Daha sonra Bill Qeyts və Pol Allen Altair üçün MicroSoft BASIC
+interpretatorunu yazdıqdan sonra mikrokompüterlərdə standart halına gəldi. Amma
+təlimat bunların heç birini izah etmir və sən bunları yalnız illər sonra
+öyrənəcəksən
 
 Təlimatın yoxlamağı təklif etdiyi ilk BASIC əmrlərindən biri `PRINT` əmridir.
 `PRINT "COMMODORE 64"` yazırsan, `2` düyməsinin üstündəki dırnaq işarəsini
@@ -119,7 +154,13 @@ tapmaq bir az vaxt apardığı üçün yavaş-yavaş yazırsan. `RETURN` düymə
 basırsan və bu dəfə kompüter şikayət etmək əvəzinə, sənə dediyini edir və
 növbəti sətirdə "COMMODORE 64" göstərir.
 
-İndi `PRINT` əmrini hər cür fərqli şeylərdə istifadə etməyə çalışırsan: toplanmış iki rəqəm, vurulmuş iki rəqəm, hətta bir neçə onluq kəsr. `PRINT` sözünü tam yazmağı dayandırıb əvəzində `?` istifadə edirsən, çünki təlimat sənə məsləhət görüb ki, `?` tez-tez mütəxəssis proqramçılar tərəfindən istifadə edilən `PRINT` əmrinin qısaltmasıdır. Özünü artıq bir mütəxəssis kimi hiss edirsən, amma sonra xatırlayırsan ki, sən hələ üçüncü fəsil olan "Başlanğıc BASIC Proqramlaşdırma"ya çatmamısan.
+İndi `PRINT` əmrini hər cür fərqli şeylərdə istifadə etməyə çalışırsan:
+toplanmış iki rəqəm, vurulmuş iki rəqəm, hətta bir neçə onluq kəsr. `PRINT`
+sözünü tam yazmağı dayandırıb əvəzində `?` istifadə edirsən, çünki təlimat sənə
+məsləhət görüb ki, `?` tez-tez mütəxəssis proqramçılar tərəfindən istifadə
+edilən `PRINT` əmrinin qısaltmasıdır. Özünü artıq bir mütəxəssis kimi hiss
+edirsən, amma sonra xatırlayırsan ki, sən hələ üçüncü fəsil olan "Başlanğıc
+BASIC Proqramlaşdırma"ya çatmamısan.
 
 Çox keçmədən oraya çatırsan. Fəsil səni ilk əsl BASIC proqramını yazmağa təşviq
 etməklə başlayır. `NEW` yazır və `RETURN` basırsan, bu da sənə təmiz bir səhifə
@@ -281,8 +322,8 @@ yazmağı əhatə edir.
 
 Nəhayət o xüsusi qutulara yazmaqla keçirdiyin o uzun illər səninlə qalır. Hətta
 onilliklər sonra belə, geniş qrafik və ya səs API-si olan bir maşını
-proqramlaşdırarkən bilirsən ki, pərdəarxasında API sonda o qutulara və ya
-onlara bənzər nələrəsə yazır. Bəzən yalnız API-lərdən istifadə edən daha gənc
+proqramlaşdırarkən bilirsən ki, pərdəarxasında API sonda o qutulara və ya onlara
+bənzər nələrəsə yazır. Bəzən yalnız API-lərdən istifadə edən daha gənc
 proqramçılar haqqında düşünəcək və onların API-nin onlar üçün nə etdiyini
 düşündükləri ilə maraqlanacaqsan. Bəlkə də onlar API-nin başqa bir gizli API-ni
 çağırdığını düşünürlər. Bəs o zaman onlar gizli API-nin nəyi çağırdığını
