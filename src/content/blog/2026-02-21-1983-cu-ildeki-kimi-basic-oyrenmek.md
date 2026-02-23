@@ -8,8 +8,10 @@ date: 2026-02-21
 categories: [Tarix]
 ---
 
-Əsas məqalə:
-[Two-Bit History - Learning BASIC Like It's 1983](https://twobithistory.org/2018/09/02/learning-basic.html)
+> Bu məqalə Two-Bit History tərəfindən yayımlanmış
+> [Learning BASIC Like It's 1983](https://twobithistory.org/2018/09/02/learning-basic.html)
+> adlı yazının tərcüməsidir. Bəzi cümlələr və ifadələr Azərbaycan dilinə
+> uyğunlaşdırılmışdır. Orijinal məqalənin dərc olunma tarixi: Sentyabr 2, 2018.
 
 1983-cü ildə mən hələ doğulmamışdım. Bu, bəzən təəssüfləndiyim bir şeydir.
 Xüsusilə də 8-bitlik kompüter erasının baş verdiyi o dövrdə yaşamadığım üçün çox
@@ -190,7 +192,7 @@ Təlimatın növbəti bir neçə bölməsi sənə **dəyişənlər** haqqında �
 bildirir ki, onlar "kompüterin içərisində rəqəm və ya mətn simvollarını saxlaya
 bilən bir sıra qutular kimidir." `%` simvolu ilə bitən dəyişənlər tam
 ədədlərdir, `$` simvolu ilə bitən dəyişənlər isə simvollar sətiridir (strings).
-Bütün digər dəyişənlər isə "sürüşən vergül" (floating point) adlanan
+Bütün digər dəyişənlər isə "vergüllü ədəd" (həqiqi ədədlər) adlanan
 dəyişənlərdir. Təlimat sənə dəyişən adlarında diqqətli olmağı xəbərdar edir,
 çünki adın istədiyin qədər uzun olmasına heç nə mane olmasa da, kompüter yalnız
 adın ilk iki hərfini tanıyır.
@@ -278,7 +280,7 @@ Təlimat izah edir:
 > olacağını, ekranda hansı simvolların göstəriləcəyini və harada göstəriləcəyini
 > — və bir çox başqa vəzifələri yoxlamaq üçün bu yaddaş yerlərinə baxır.
 
-Mövcud bütün arxa plan və kənar rəng kombinasiyalarını dövr etmək üçün bir
+Mövcud bütün arxa fon və kənar rəng kombinasiyalarını dövr etmək üçün bir
 proqram yazırsan:
 
 ```basic
@@ -307,25 +309,25 @@ deyil. Ən azından o nöqtəyə qədər olan hər şeyi başa düşürsən.
 
 ## Xüsusi Qutular
 
-O şənbə günü təlimatın hamısını bitirə bilmirsən, çünki indi enerjin tükənməyə
-başlayır. Amma nəticə etibarilə onun hamısını oxuyursan. Bu müddət ərzində
-Commodore 64-ün bir çox başqa xüsusi təyinatlı qutuları haqqında öyrənirsən.
-Ekranda nəyin olduğunu idarə etmək üçün yaza biləcəyin qutular var — əslində,
-bir simvolun görünə biləcəyi hər yer üçün bir qutu. Altıncı fəsildə, "Sprayt
-Qrafikası"nda sən ətrafda hərəkət etdirilə bilən, hətta böyüdülüb-kiçildilə
-bilən şəkillər yaratmağa imkan verən xüsusi təyinatlı qutular haqqında
-öyrənirsən. Yeddinci fəsildə, "Səs Yaratmaq"da, Commodore 64-ün musiqi ifa
-etməsi üçün yaza biləcəyin qutuları öyrənirsən. Məlum olur ki, Commodore 64-də
-sonradan API adlandırılacağını öyrənəcəyin şeylərdən çox az var. Commodore 64-ü
-idarə etmək əsasən sxem tərəfindən xüsusi məna verilmiş yaddaş ünvanlarına
-yazmağı əhatə edir.
+O şənbə günü təlimatın hamısını bitirə bilmirsən, çünki enerjin tükənməyə
+başlayır. Amma axır-əvvəl onun hamısını oxuyursan. Bu müddət ərzində Commodore
+64-ün bir çox başqa xüsusi təyinatlı qutuları haqqında öyrənirsən. Ekranda nəyin
+olduğunu idarə etmək üçün yaza biləcəyin qutular var — əslində, bir simvolun
+görünə biləcəyi hər yer üçün bir qutu. Altıncı fəsildə, "Sprayt Qrafikası"nda
+sən ətrafda hərəkət etdirilə bilən, hətta böyüdülüb-kiçildilə bilən şəkillər
+yaratmağa imkan verən xüsusi təyinatlı qutular haqqında öyrənirsən. Yeddinci
+fəsildə, "Səs Yaratmaq"da, Commodore 64-ün musiqi ifa etməsi üçün yaza biləcəyin
+qutuları öyrənirsən. Məlum olur ki, Commodore 64-də sonradan API
+adlandırılacağını öyrənəcəyin şeylərdən çox az var. Commodore 64-ü idarə etmək
+əsasən sxem tərəfindən xüsusi məna verilmiş yaddaş ünvanlarına yazmağı əhatə
+edir.
 
-Nəhayət o xüsusi qutulara yazmaqla keçirdiyin o uzun illər səninlə qalır. Hətta
-onilliklər sonra belə, geniş qrafik və ya səs API-si olan bir maşını
-proqramlaşdırarkən bilirsən ki, pərdəarxasında API sonda o qutulara və ya onlara
+Nəhayət, o xüsusi qutulara yazmaqla keçirdiyin o uzun illər səninlə qalır.
+Hətta, onilliklər sonra belə, geniş qrafik və ya səs API-si olan bir maşını
+proqramlaşdırarkən bilirsən ki, sistemdə API sonda o qutulara və ya onlara
 bənzər nələrəsə yazır. Bəzən yalnız API-lərdən istifadə edən daha gənc
 proqramçılar haqqında düşünəcək və onların API-nin onlar üçün nə etdiyini
 düşündükləri ilə maraqlanacaqsan. Bəlkə də onlar API-nin başqa bir gizli API-ni
 çağırdığını düşünürlər. Bəs o zaman onlar gizli API-nin nəyi çağırdığını
 düşünürlər? Sən o gənc proqramçılara acıyırsan, çünki onlar, yəqin ki, çox
-qarışıqlıq içindədirlər.
+çaşqınlıq içindədirlər.
