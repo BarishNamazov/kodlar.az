@@ -149,7 +149,7 @@ qədər də ağlabatan deyil. Üstəlik, hər funksiya üçün eyni işi görən
 
 Bunun həll yolu `*args` və `**kwargs` ikilisidir.
 
-- `*args` -- funksiyaya ötürülən istənilən mövqelil (positiona) arqumentləri
+- `*args` -- funksiyaya ötürülən istənilən mövqeli (positiona) arqumentləri
   qəbul edir.
 - `**kwargs` -- istənilən açar sözlü (keyword) arqumentləri qəbul edir.
 
