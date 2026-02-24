@@ -7,5 +7,5 @@ links:
 
 - Azərbaycan Texniki Universitetinin Kompüter Elmləri üzrə bakalavr təhsili
   alıb.
-- Maraq dairələri: Programlaşdırma, oyun mühərrikləri, 3-ölçülü modelləmə, video
+- Maraq dairələri: Proqramlaşdırma, oyun mühərrikləri, 3-ölçülü modelləmə, video
   oyunlar.

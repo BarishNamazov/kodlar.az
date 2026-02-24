@@ -4,7 +4,7 @@ categories:
   - Proqram Dilləri
   - Python
 date: 2026-02-20
-description: Python-da decorator-lar nədir və onlardan necə istifadə edilir?
+description: Python proqramlaşdırma dilində "decorator"lar nədir və onlardan necə istifadə edilir?
 title: Python və 'Decorator'lar
 ---
 
@@ -75,7 +75,7 @@ Funksiyadan sonra işləyəcək.
 ```
 
 Burada biz `my_decorator` adında bir funksiya yaratdıq. Onun içində `wrapper`
-adında inner (daxili) funksiya var. Əlavə olaraq `divide` funksiyası yaratdıq.
+adında daxili (inner) funksiya var. Əlavə olaraq `divide` funksiyası yaratdıq.
 
 Daha sonra `foo` adında bir dəyişən yaradıb `divide()` funksiyasını parametr
 kimi ötürdüyümüz `my_decorator` funksiyasına mənimsətdik.
@@ -149,9 +149,9 @@ qədər də ağlabatan deyil. Üstəlik, hər funksiya üçün eyni işi görən
 
 Bunun həll yolu `*args` və `**kwargs` ikilisidir.
 
-- `*args` -- funksiyaya ötürülən istənilən positional (mövqeli) arqumentləri
+- `*args` -- funksiyaya ötürülən istənilən mövqeli (positiona) arqumentləri
   qəbul edir.
-- `**kwargs` -- istənilən keyword (açar sözlü) arqumentləri qəbul edir.
+- `**kwargs` -- istənilən açar sözlü (keyword) arqumentləri qəbul edir.
 
 > Bu ikili haqqında daha ətraflı məlumat almaq üçün
 > [bu məqaləyə](https://realpython.com/python-kwargs-and-args/) baxa bilərsiniz.
@@ -208,9 +208,9 @@ def divide(num1, num2):
     print(num1 / num2)
 ```
 
-## @wraps decorator-u
+## @wraps örtüyü
 
-Python-da `__name__`, `__doc__` və s. kimi daxili magic (sehrli) dəyişənlər var.
+Python-da `__name__`, `__doc__` və s. kimi daxili sehrli (magic) dəyişənlər var.
 Məsələn:
 
 ```python
