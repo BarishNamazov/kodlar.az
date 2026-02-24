@@ -4,7 +4,7 @@ categories:
   - Proqram Dilləri
   - Python
 date: 2026-02-20
-description: ython proqramlaşdırma dilində "decorator"lar nədir və onlardan necə istifadə edilir?
+description: Python proqramlaşdırma dilində "decorator"lar nədir və onlardan necə istifadə edilir?
 title: Python və 'Decorator'lar
 ---
 
