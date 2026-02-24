@@ -178,8 +178,10 @@ const {
       const audiences = JSON.parse(item.dataset.audiences || "[]");
       const title = item.dataset.title || "";
 
-      const categoryMatch = !selectedCategory || categories.includes(selectedCategory);
-      const audienceMatch = !selectedAudience || audiences.includes(selectedAudience);
+      const categoryMatch =
+        !selectedCategory || categories.includes(selectedCategory);
+      const audienceMatch =
+        !selectedAudience || audiences.includes(selectedAudience);
 
       const searchMatch = matchesSearchQuery(searchQuery, title);
 

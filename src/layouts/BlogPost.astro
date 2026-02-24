@@ -89,27 +89,38 @@ const authorData = await getAuthor(frontmatter.author);
                 ]</span
               >
             </div>
-            {frontmatter.resource && (
-              <div class="meta-line">
-                <span class="key">tip:</span>
-                <Tag name="resurs" color="cyan" href="/resources" />
-              </div>
-            )}
-            {frontmatter.resource_audiences && frontmatter.resource_audiences.length > 0 && (
-              <div class="meta-line">
-                <span class="key">auditoriya:</span>
-                <span class="array">[
-                  {frontmatter.resource_audiences.map((audience, i) => (
-                    <>
-                      <Tag name={audience} color="orange" href={`/resources?aud=${encodeURIComponent(audience)}`} />
-                      {i < frontmatter.resource_audiences!.length - 1 && (
-                        <span class="comma">, </span>
-                      )}
-                    </>
-                  ))}
-                  ]</span>
-              </div>
-            )}
+            {
+              frontmatter.resource && (
+                <div class="meta-line">
+                  <span class="key">tip:</span>
+                  <Tag name="resurs" color="cyan" href="/resources" />
+                </div>
+              )
+            }
+            {
+              frontmatter.resource_audiences &&
+                frontmatter.resource_audiences.length > 0 && (
+                  <div class="meta-line">
+                    <span class="key">auditoriya:</span>
+                    <span class="array">
+                      [
+                      {frontmatter.resource_audiences.map((audience, i) => (
+                        <>
+                          <Tag
+                            name={audience}
+                            color="orange"
+                            href={`/resources?aud=${encodeURIComponent(audience)}`}
+                          />
+                          {i < frontmatter.resource_audiences!.length - 1 && (
+                            <span class="comma">, </span>
+                          )}
+                        </>
+                      ))}
+                      ]
+                    </span>
+                  </div>
+                )
+            }
           </div>
           <div class="header-line cmd-line">
             <span class="comment">---</span>
