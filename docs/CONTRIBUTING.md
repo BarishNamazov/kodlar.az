@@ -119,13 +119,10 @@ Terminologiya ilə işləyərkən aşağıdakı qaydanı izləyin:
 - Yeni məqalə yazmazdan əvvəl [Termin lüğəti](/glossary) səhifəsinə və
   [`src/data/glossary.ts`](../src/data/glossary.ts) faylına baxın.
 - Mövcud termindən istifadə edirsinizsə, yazıda həmin termini `[[term]]`
-  formatında qeyd edin ki, oxucular üçün avtomatik izah (tooltip) görünsün.
+  formatında qeyd edin ki, oxucular üçün avtomatik izah görünsün.
 - Əgər yeni termin əlavə edirsinizsə, həm Azərbaycan dilində standart yazılışı,
   həm ingiliscə qarşılığı, qısa izahı və etibarlı mənbə linkini glossary faylına
   əlavə edin.
-- Eyni anlayış üçün məqalə boyunca fərqli yazılışlardan (məsələn, həm
-  "framework", həm "çərçivə") paralel istifadə etməyin; bir standart seçib onu
-  qoruyun.
 
 Belə düzəlişlər üçün bu sənəddə daha öncə izah olunan qayda ilə PR (Pull
 Request) yaradın və təsvirində:
