@@ -22,9 +22,9 @@ collapse” adlandırılan vəziyyət yaşanmışdı. Şəbəkələr yenidən g�
 paketlərlə o qədər yüklənmişdi ki, faydalı ötürmə sürəti mövcud tutumun çox
 kiçik bir hissəsinə düşmüşdü. Xətlər dolu idi, amma demək olar ki, heç bir real
 məlumat qarşı tərəfə çatmırdı. Bu böhranın həlli TCP-nin ən vacib
-xüsusiyyətlərindən birinə çevrildi: tıxac nəzarəti (congestion control). Bu gün
-hər bir TCP bağlantısı (istər kiçik bir API sorğusu, istərsə də çox-giqabaytlıq
-fayl yükləməsi) məlumatı hansı sürətlə göndərməli olduğunu müəyyən etmək üçün bu
+xüsusiyyətlərindən birinə çevrildi: [[tıxac nəzarəti]]. Bu gün hər bir TCP
+bağlantısı (istər kiçik bir API sorğusu, istərsə də çox-giqabaytlıq fayl
+yükləməsi) məlumatı hansı sürətlə göndərməli olduğunu müəyyən etmək üçün bu
 alqoritmlərə güvənir.
 
 Hazırda Imperial College-də şəbəkə sistemləri üzrə tezis üzərində işləyərkən,
