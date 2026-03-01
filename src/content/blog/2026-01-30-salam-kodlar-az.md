@@ -12,7 +12,7 @@ Bu platformadakı ilk yazını sadə, amma vacib bir sualla başlamaq istəyirə
 
 Həmişə inanmışam ki, bilik paylaşıldıqca dəyər qazanır. Öyrəndiyim bir çox şeydə
 başqalarının təmənnasız paylaşdıqlarının böyük payı olub. Bu gün də biliklərimin
-əhəmiyyətli hissəsi açıq mənbələr hesabına yaranır.
+əhəmiyyətli hissəsi [[açıq mənbə]]lər hesabına yaranır.
 
 **"Açıq Bilik"** mədəniyyəti məhz bu tezisi dəstəkləyir. kodlar.az da bu
 mədəniyyətdə iştirakımın təbii davamı olaraq yarandı. Oxuduqca görəcəksiniz ki,
@@ -70,7 +70,7 @@ populyar olmuş "sistemləri sındıran" mənasında yox, kompüterlərin dərin
 gedən maraqlılar mənasındadır] mədəniyyətinin köklərində yatır.
 
 Kompüter sənayesinin ilk illərində (1950-60-cı illər) əsas dəyər "dəmir"də
-(aparat təchizatında) idi. Proqram təminatı isə sadəcə həmin dəmiri işlətmək
+([[aparat təchizatı]]nda) idi. [[proqram təminatı]] isə sadəcə həmin dəmiri işlətmək
 üçün bir vasitə sayılırdı və mühəndislər arasında resept kimi sərbəst mübadilə
 olunurdu. Heç kimin ağlına gəlmirdi ki, kodu gizlətsin.
 
