@@ -86,8 +86,8 @@ prinsipinə görə əsasən üç kateqoriyaya bölünür:
    işləyir. Belə dillərə Python, Ruby və PHP daxildir.
 
 3. **Hibrid dillər:** Bu yanaşmada kod həm interpretasiya olunur, həm də icra
-   zamanı əlavə optimizasiya üçün _[[JIT kompilyasiyası]] (Just-In-Time - anında
-   kompilyasiya)_ kimi texnologiyalardan istifadə edilir. Adətən, kod əvvəlcə
+   zamanı əlavə optimizasiya üçün _[[ani kompilyasiya]]_ kimi
+   texnologiyalardan istifadə edilir. Adətən, kod əvvəlcə
    maşın dilindən daha sadə, amma daha primitiv olan "[[baytkod]]" adlanan
    aralıq dilə çevrilir. Təsəvvür edin ki, sinxron tərcüməçi sizin tez-tez
    təkrar etdiyiniz cümlələri əzbərləyir və növbəti dəfə onları dərhal (tərcümə
@@ -142,7 +142,7 @@ yaranmasına səbəb olan və onları fərqli istiqamətlərə çəkən əsas am
 
 * **Ekosistem və Alətlərin gücü:** Heç bir dil təcrid olunmuş halda böyük uğur
   qazana bilməz. Dillərin dəyəri çox vaxt onların ətrafında yaranan hazır
-  kitabxanalar, paket menecerləri, freymvorklar və geniş icma ilə ölçülür.
+  kitabxanalar, paket menecerləri, çərçivələr və geniş icma ilə ölçülür.
   Məsələn, Python nə ən sürətli, nə də ən təhlükəsiz dildir. Lakin verilənlər
   elmi və maşın öyrənməsi sahələrindəki ekosistemi o qədər zəngin və yetkindir
   ki, bu işlər üçün başqa dil seçmək çox vaxt "təkəri yenidən kəşf etmək"
@@ -219,7 +219,7 @@ asanlaşdıracaq heç bir anlayış yox idi. Proqramçı məlumatın saxlanıld�
 ünvanlarını (uzun rəqəmləri) əzbər bilməli idi.
 
 Buna görə də **Assembli** dili yaradıldı və bu, proqramlaşdırmada ilk böyük
-qurtuluş, ilk abstraksiya oldu. Proqramçılar artıq `10110000 01100001` kimi
+qurtuluş, ilk [[abstraksiya]] oldu. Proqramçılar artıq `10110000 01100001` kimi
 anlaşılamayan rəqəmlər sətiri yazmaq əvəzinə, `MOV AL, 61h` (məlumatı filan yerə
 köçür) yaza bilərdilər. Bu, hələ də prosessorla birbaşa, çox aşağı səviyyədə
 danışmaq idi, lakin heç olmasa insan dilinə bənzəyirdi. Assembli işləri xeyli
@@ -352,7 +352,7 @@ inkişaf prosesi xaosla nəticələndi. Tarixə "proqram təminatı böhranı" k
 bu dövrdə layihələr gecikir, büdcəni aşır və xətalarla dolu olurdu. Səbəb sadə
 idi: o dövrün dilləri kodu istənilən yerdən başqa bir yerə tullamağa imkan verən
 xüsusi əmrlərə sahib idi ki, bu da izlənməsi mümkünsüz olan, bir-birinə dolanmış
-"spagetti kodu" yaradırdı.
+"[[spagetti kodu]]" yaradırdı.
 
 Bunun qarşısını almaq üçün proqramların yuxarıdan aşağıya, səliqəli şəkildə
 axmasını tələb edən nizam-intizamlı hərəkat başladı. Bu yeni məntiqi tələbələrə
@@ -497,7 +497,7 @@ Bunu anlamaq üçün OOP-nin üç əsas sütununa baxaq:
   pedalına basırsınız (bu sizin istifadə etdiyiniz interfeysdir), amma içəridə
   motorun necə işlədiyini, yanacağın necə yandığını bilmək məcburiyyətində
   deyilsiniz. Bu detallar sizdən "enkapsulyasiya" olunub.
-- **Mirasalma (Inheritance):** Bir obyektin başqa bir obyektin xüsusiyyətlərini
+- **Mirasalma:** Bir obyektin başqa bir obyektin xüsusiyyətlərini
   özünə götürə bilməsidir. Məsələn, bir `BankHesabı` obyektiniz var. Siz yeni
   bir `KreditHesabı` yaradarkən hər şeyi sıfırdan yazmırsınız; sadəcə adi bank
   hesabının xüsusiyyətlərini "miras alıb", üzərinə faiz hesablama məntiqini
@@ -515,17 +515,17 @@ sənaye sırf OOP-dən daha qarışıq dizayn nümunələrinə doğru meyl edir.
 ### 4.3 [[Funksional Proqramlaşdırma]]
 
 Funksional proqramlaşdırma tamamilə fərqli və daha sərt bir fəlsəfəyə əsaslanır:
-bəs əgər proqramın vəziyyətini (state) dəyişdirmək qəti qadağan olsaydı necə
+bəs əgər proqramın vəziyyətini dəyişdirmək qəti qadağan olsaydı necə
 olardı?
 
 Bu paradiqmanı anlamaq üçün iki vacib anlayışı bilmək lazımdır:
 
-- **Dəyişməzlik (Immutability):** Saf funksional üslubda məlumatlar dəyişməzdir.
+- **Dəyişməzlik:** Saf funksional üslubda məlumatlar dəyişməzdir.
   Bir ədəd, siyahı və ya obyekt yaradıldıqdan sonra onun üzərində heç bir
   dəyişiklik edilə bilməz. Əgər 5 elementli siyahıya yeni bir element əlavə
   etmək istəyirsinizsə, köhnə siyahını dəyişdirmirsiniz; əvəzində içində 6
   element olan _tamamilə yeni_ bir siyahı yaradırsınız.
-- **Birinci dərəcəli vətəndaşlar (First-class citizens):** Bu termin
+- **Birinci dərəcəli vətəndaşlar:** Bu termin
   proqramlaşdırmada bir az qəribə səslənə bilər. Bu o deməkdir ki, funksiyalara
   xüsusi bir rəftar edilmir; onlar da eynilə sıradan ədədlər və ya mətnlər
   kimidir. Siz bir funksiyanı başqa bir dəyişənə mənimsədə, başqa bir funksiyaya
@@ -533,7 +533,7 @@ Bu paradiqmanı anlamaq üçün iki vacib anlayışı bilmək lazımdır:
 
 Bu yanaşmanın faydaları misilsizdir. Məlumatlar heç vaxt dəyişdirilmədiyi üçün
 proqramın uzaq künclərində gizlənən təsadüfi xətalar (bunlara **yan təsirlər**
-və ya _side effects_ deyilir) yox olur. Ən əsası isə, eyni anda minlərlə paralel
+deyilir) yox olur. Ən əsası isə, eyni anda minlərlə paralel
 əməliyyat aparmaq tamamilə təhlükəsiz hala gəlir, çünki heç bir əməliyyat
 digərinin məlumatını korlaya bilməz.
 
@@ -587,7 +587,7 @@ kəskin şəkildə aşağı salır və milyonlarla gənci proqramlaşdırma mən
 (hesablama düşüncəsi) ilə əyləncəli şəkildə tanış edir.
 
 Lakin vizual proqramlaşdırma sadəcə uşaqlar üçün deyil. **Düyün əsaslı
-(node-based) sistemlər** yaradıcı və yüksək texniki sahələrdə peşəkarlar
+sistemlər** yaradıcı və yüksək texniki sahələrdə peşəkarlar
 tərəfindən geniş istifadə olunur. Məsələn, **Unreal Engine-in Blueprints**
 sistemi oyun dizaynerlərinə tək bir sətir belə C++ kodu yazmadan, sadəcə
 ekrandakı məntiq qutularını (düyünləri) oxlarla bir-birinə bağlayaraq mürəkkəb
@@ -602,7 +602,7 @@ proseslərin (xüsusən məlumatın haradan gəlib hara getdiyinin) gözlə raha
 görülməsini təmin edir. Lakin onun da çox aydın məhdudiyyətləri var:
 
 - **İdarəolunmazlıq:** Proqramlar böyüdükcə, ekrandakı o gözəl oxlar və qutular
-  idarəolunmaz bir tora çevrilir -- bu, mətn əsaslı "spagetti kodun" vizual
+  idarəolunmaz bir tora çevrilir -- bu, mətn əsaslı "[[spagetti kodu]]nun" vizual
   versiyasıdır.
 - **Abstraksiya çətinliyi:** Vizual sistemlərdə mürəkkəb riyazi və ya məntiqi
   abstraksiyalar qurmaq mətnə nisbətən daha çətindir.
@@ -640,7 +640,7 @@ Sahələrə görə dillərin necə bölüşdürüldüyünə nəzər salaq:
   brauzerdə) **JavaScript** və onun daha nizamlı versiyası olan **TypeScript**
   birmənalı hər yerdə işlənilir. Səhifənin skeletini və dizaynını isə **HTML**
   və **CSS** təşkil edir. Məlumatların işləndiyi server tərəfində isə böyük bir
-  rəqabət var: **Python** (Django, Flask freymvorkları), **PHP** (Laravel),
+  rəqabət var: **Python** (Django, Flask çərçivələri), **PHP** (Laravel),
   **Java** (Spring), **C#** (.NET), **Ruby** (Rails), **Go** və **Node.js**
   ehtiyacdan asılı olaraq geniş istifadə olunur.
 
