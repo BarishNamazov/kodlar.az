@@ -10,9 +10,9 @@ description:
 title: Python və Dekoratorlar
 ---
 
-[[Dekorator]]lar bir çox Python [[kitabxana]]sı və [[freymvörk]]lərində istifadə olunan
-özəllikdir. Hər hansı metodu istifadə etməzdən qabaq görüləcək işləri özündə
-ehtiva edir.
+[[Dekorator]]lar bir çox Python [[kitabxana]]sı və [[freymvörk]]lərində istifadə
+olunan özəllikdir. Hər hansı metodu istifadə etməzdən qabaq görüləcək işləri
+özündə ehtiva edir.
 
 **Nümunə:** Məsələn, Django freymvörkündə hansısa spesifik bir URL-də
 istifadəçinin öz hesabına daxil olub-olmadığını yoxlayırıq. Gəlin birlikdə
@@ -24,9 +24,9 @@ def account_view(request):
     return HttpResponse('Çox gizli səhifə ;)')
 ```
 
-`account_view` funksiyasının üzərinə yazılan dekorator ora sorğu göndərməzdən qabaq
-hesaba daxil olub-olmadığını yoxlayır. Əgər daxil olubsa, cavab qaytarır, yoxsa
-login səhifəsinə yönləndirir.
+`account_view` funksiyasının üzərinə yazılan dekorator ora sorğu göndərməzdən
+qabaq hesaba daxil olub-olmadığını yoxlayır. Əgər daxil olubsa, cavab qaytarır,
+yoxsa login səhifəsinə yönləndirir.
 
 Bəs bunun işləmə prinsipi nədir? Necə olur ki, həmin funksiya çağırılmamışdan
 qabaq `login_required` işə düşür? Əslində işləmə prinsipi çox sadədir. İşin
@@ -93,8 +93,8 @@ istənilən funksiyadan qabaq hər hansısa bir əməliyyat etmək mümkündür.
 
 ## Dekoratorlar və arqumentlər
 
-Əgər bizim dekorator ilə istifadə edəcəyimiz funksiyamız (`divide`) parametr qəbul
-edəcəksə, o zaman belə bir xəta ilə qarşılaşa bilərik:
+Əgər bizim dekorator ilə istifadə edəcəyimiz funksiyamız (`divide`) parametr
+qəbul edəcəksə, o zaman belə bir xəta ilə qarşılaşa bilərik:
 
 ```python
 def my_decorator(func):
@@ -125,8 +125,9 @@ Bu xətanı biz ona görə aldıq ki, daxili `wrapper` içində çağırılan `f
 metoduna heç bir arqument verməmişik. Halbuki `divide()` bizdən `num1` və `num2`
 dəyərlərini gözləyir.
 
-Dekoratorlarda daxili funksiyamız olan `wrapper()`, əsas funksiyamızın (`divide()`)
-parametrlərini qəbul edə bilir. Biz də bunu `func()`-a ötürə bilərik:
+Dekoratorlarda daxili funksiyamız olan `wrapper()`, əsas funksiyamızın
+(`divide()`) parametrlərini qəbul edə bilir. Biz də bunu `func()`-a ötürə
+bilərik:
 
 ```python
 def my_decorator(func):
@@ -199,8 +200,8 @@ def divide(num1, num2):
 divide(5, 2)
 ```
 
-Hətta bir neçə dekoratoru bir funksiyanın üzərinə zəncirvari (chaining) şəkildə də
-yazmaq mümkündür:
+Hətta bir neçə dekoratoru bir funksiyanın üzərinə zəncirvari (chaining) şəkildə
+də yazmaq mümkündür:
 
 ```python
 @my_decorator1
@@ -251,9 +252,9 @@ def divide(num1, num2):
 print(divide.__name__)
 ```
 
-Daxili funksiya olan `wrapper()` funksiyasının üstünə `@wraps` dekoratorunu yazıb,
-parametr kimi də `func` dəyərini verdikdən sonra `divide.__name__` artıq doğru
-şəkildə `"divide"` qaytaracaq.
+Daxili funksiya olan `wrapper()` funksiyasının üstünə `@wraps` dekoratorunu
+yazıb, parametr kimi də `func` dəyərini verdikdən sonra `divide.__name__` artıq
+doğru şəkildə `"divide"` qaytaracaq.
 
 ## Yekun həll
 

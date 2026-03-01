@@ -103,8 +103,7 @@ export const glossary: GlossaryTerm[] = [
     az: "gecikmiş hesablama",
     en: "lazy evaluation",
     aliases: ["gecikmiş qiymətləndirilmə", "tənbəl qiymətləndirmə"],
-    description:
-      "İfadələri yalnız ehtiyac olduqda qiymətləndirmək prinsipi.",
+    description: "İfadələri yalnız ehtiyac olduqda qiymətləndirmək prinsipi.",
     link: "https://en.wikipedia.org/wiki/Lazy_evaluation",
   },
   {

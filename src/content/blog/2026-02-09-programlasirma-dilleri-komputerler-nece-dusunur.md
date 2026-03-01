@@ -60,8 +60,8 @@ misal dillərdən bəhs edək:
   Əsasən interpret olaraq maşın dilinə çevrilir. Bu onun sürətli işə salınmasına
   yardım etsə də, performans baxımından zəiflədir. Bir çox [[paradiqma]]ları
   etməyə çalışır və buna görə də geniş istifadə oluna da bilinir. Lakin, onu
-  fərqləndirən cəhətləri həm də onu geri salır. Proqramçıya rahat dillər maşın dilindən
-  çox uzaq olduğu üçün maşına əlavə yük salır. Buna görə də performans
+  fərqləndirən cəhətləri həm də onu geri salır. Proqramçıya rahat dillər maşın
+  dilindən çox uzaq olduğu üçün maşına əlavə yük salır. Buna görə də performans
   tələb edən işlərdə yalnız daha sürətli [[kitabxana]]lara qoşulub işlədilə
   bilər.
 - PHP: Server tərəfli scripting dilidir. Əsas məğzi server appləri üçün asan,
@@ -87,24 +87,25 @@ misal dillərdən bəhs edək:
   Çıxdıqda əsas məqsədi ola bildiyincə ingilis dilinə bənzəməsi və kompüter
   bilməyənlərin belə istifadə edə biləcəyi dil olması idi. Əsasən finans
   sistemləri üçün inkişaf etdirilib. Bu dil bizim bildiyimiz proqramlaşdırma
-  dili anlayışından olduqca uzaqdır və ən sadə [[alqoritm]]lər belə çox uzun kodlara
-  çevrilə bilər. Olduqca riskli və qarmaşıq olan bu dil sadəcə standartların
-  olmadığı dövrü əla ifadə edən tarixi fakt olaraq yaşayır ancaq.
+  dili anlayışından olduqca uzaqdır və ən sadə [[alqoritm]]lər belə çox uzun
+  kodlara çevrilə bilər. Olduqca riskli və qarmaşıq olan bu dil sadəcə
+  standartların olmadığı dövrü əla ifadə edən tarixi fakt olaraq yaşayır ancaq.
 - Java: Bu dil müasir dövrün ən çox istifadə edilən və
   [[Obyekt-yönümlü proqramlaşdırma]] ən güclü dillərindən biridir. Java çıxdığı
   zaman _"Bir dəfə yaz, hər yerdə işlət!"_ mottosu ilə populyar idi. Əsasən həm
   kompilyator, həm də interpretator metodlarının müsbət cəhətlərini hibrit
-  birləşdirən JIT [[virtual maşın]] məntiqi ilə işləyir. Onu populyar edən bir digər
-  nöqtəsi isə, zəngin və müasir kitabxana ekosistemidir. Lakin indiki dövrdə, ən
-  böyük məqsədi istənilən sistemin asan və tez tətbiq oluna bilməsidir və bu da
-  onu performans cəhətdən geriyə salır. Hər nə qədər Python kimi dillərdən daha
-  sürətli olsa da, onun hər yerdə OOP paradiqmasını istifadə qanunu, prosessorun
-  işləmə məntiqinə biraz zidd olduğu üçün yavaşladır. Həmçinin nəticədə birbaşa
-  maşın dilinə çevrilməyən bir dildir. Əlavə olaraq, Java proqramçı üçün kəskin
-  bəzi qaydalar qoyur. Bu qaydalarla kodu daha təhlükəsiz etməyə çalışsa da, bu
-  həm də proqramçını limitləyir. Misal, [[avtomatik yaddaş idarəsi]] metodunu istifadə
-  etməsi onun aşağı səviyyə işlərdə istifadəsini bağlayır. Sonda, PHP-də qeyd
-  edilən versiya probleminə də sahibdir.
+  birləşdirən JIT [[virtual maşın]] məntiqi ilə işləyir. Onu populyar edən bir
+  digər nöqtəsi isə, zəngin və müasir kitabxana ekosistemidir. Lakin indiki
+  dövrdə, ən böyük məqsədi istənilən sistemin asan və tez tətbiq oluna
+  bilməsidir və bu da onu performans cəhətdən geriyə salır. Hər nə qədər Python
+  kimi dillərdən daha sürətli olsa da, onun hər yerdə OOP paradiqmasını istifadə
+  qanunu, prosessorun işləmə məntiqinə biraz zidd olduğu üçün yavaşladır.
+  Həmçinin nəticədə birbaşa maşın dilinə çevrilməyən bir dildir. Əlavə olaraq,
+  Java proqramçı üçün kəskin bəzi qaydalar qoyur. Bu qaydalarla kodu daha
+  təhlükəsiz etməyə çalışsa da, bu həm də proqramçını limitləyir. Misal,
+  [[avtomatik yaddaş idarəsi]] metodunu istifadə etməsi onun aşağı səviyyə
+  işlərdə istifadəsini bağlayır. Sonda, PHP-də qeyd edilən versiya probleminə də
+  sahibdir.
 
 Əlavə olaraq daha yaxşı anlamaq üçün, _Haskell_ və _Scala_ kimi dilləri də
 araşdırmağınız tövsiyə olunur.
@@ -124,7 +125,8 @@ Niyə C/C++ çətin adlandırılır? Çünki C/C++ orta səviyyə proqramlaşdı
 Proqramlaşdırma dilləri səviyyələrinə görə 3 hissəyə ayrılır: Aşağı, Orta və
 Yuxarı. Bu səviyyələr əslində kompüterlərin inkişafı ilə yaranıb. İnsanların
 proqramlaşdırma dillərini ilk ixtirası zamanı, təbii ki də yaranan ilk dillər də
-maşın dilinə çox bənzəyirdi ( Məsələn Assembly ). Dillər nə qədər çox maşın dilinə oxşasa, bu o qədər aşağı olduğunu göstərir. Eyni zamanda, əgər dil insan
+maşın dilinə çox bənzəyirdi ( Məsələn Assembly ). Dillər nə qədər çox maşın
+dilinə oxşasa, bu o qədər aşağı olduğunu göstərir. Eyni zamanda, əgər dil insan
 dilinə daha çox oxşasa, bu da onu yuxarı səviyyə dil edir. C/C++ orta səviyyə
 bir dil olduğu üçün həm maşın dilinə həm də insan dilinə daha yatqındır. Bəzi
 yuxarı səviyyə dillərə nəzərən daha qarmaşıq sayılsa da kompüterləri anlamaq

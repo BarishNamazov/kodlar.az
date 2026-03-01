@@ -1,7 +1,7 @@
 ---
-title: "TCP-də Tıxac Nəzarəti: Qısa və Praktik Giriş"
+title: "TCP-də Tıxanma Nəzarəti: Qısa və Praktik Giriş"
 author: eldar-hasanov
-description: "Tıxac Nəzarəti Nədir və TCP bunu necə edir?"
+description: "Tıxanma Nəzarəti Nədir və TCP bunu necə edir?"
 date: 2026-02-10
 categories: [Şəbəkə]
 ---
@@ -13,27 +13,28 @@ kompüteriniz [[paket]]ləri ortaq qlobal şəbəkəyə göndərməyə başlayı
 milyonlarla başqa cihaz da tam olaraq bunu edir. Buna baxmayaraq, bir çox
 səviyyədə ucuz, kütləvi istehsal olunan avadanlıqlardan ibarət olan İnternet
 sabit qalır və istifadəçilərinə xidmət etməyə davam edir. Təsəvvür etdiyiniz
-kimi, bu, heç də sehr deyil, [[marşrutlaşdırıcı]]lərin dolub-daşmasının dolub-daşmasının və
-şəbəkənin yüklənib iflic olmasının qarşısını alan düşünülmüş və ağıllı
-mexanizmlərin nəticəsidir.
+kimi, bu, heç də sehr deyil, [[marşrutlaşdırıcı]]ların dolub-daşmasının
+dolub-daşmasının və şəbəkənin yüklənib iflic olmasının qarşısını alan düşünülmüş
+və ağıllı mexanizmlərin nəticəsidir.
 
 1980-ci illərin sonlarında İnternetin bəzi hissələrində bu gün “tıxac çöküşü”
 adlandırılan vəziyyət yaşanmışdı. Şəbəkələr yenidən göndərilən paketlərlə o
 qədər yüklənmişdi ki, faydalı ötürmə sürəti mövcud tutumun çox kiçik bir
 hissəsinə düşmüşdü. Xətlər dolu idi, amma demək olar ki, heç bir real məlumat
 qarşı tərəfə çatmırdı. Bu böhranın həlli TCP-nin ən vacib xüsusiyyətlərindən
-birinə çevrildi: [[tıxanma nəzarəti]]. Bu gün hər bir TCP bağlantısı (istər kiçik
-bir [[API]] sorğusu, istərsə də çox-giqabaytlıq fayl yükləməsi) məlumatı hansı
-sürətlə göndərməli olduğunu müəyyən etmək üçün bu [[alqoritm]]lərə güvənir.
+birinə çevrildi: [[tıxanma nəzarəti]]. Bu gün hər bir TCP bağlantısı (istər
+kiçik bir [[API]] sorğusu, istərsə də çox-giqabaytlıq fayl yükləməsi) məlumatı
+hansı sürətlə göndərməli olduğunu müəyyən etmək üçün bu [[alqoritm]]lərə
+güvənir.
 
 Hazırda Imperial College-də şəbəkə sistemləri üzrə tezis üzərində işləyərkən,
 son iki il ərzində bu mövzunu yaxından öyrənmişəm. Bu bloq yazısı isə mövzu ilə
 bağlı bəzi bilikləri paylaşmaq və oxucunu bu sahəni daha dərindən araşdırmağa
 həvəsləndirmək cəhdimdir.
 
-## Tıxac nəzarəti nədir?
+## Tıxanma nəzarəti nədir?
 
-**tıxanma nəzarəti (CC)** şəbəkədə yaranan tıxacların qarşısını alan, onları
+**Tıxanma Nəzarəti (CC)** şəbəkədə yaranan tıxacların qarşısını alan, onları
 aşkar edən və idarə edən mexanizmdir. Bu mexanizmin vacib olmasının səbəbi odur
 ki, tıxaclı şəbəkələrdə performans qeyri-sabit və proqnozlaşdırılması çətin
 olur, üstəlik məlumat itkisi baş verə bilər. Daha ağır hallarda isə tıxac hətta
@@ -70,12 +71,12 @@ həddən artıq uzun gözləmiş oluruq — bu da əslində itki deməkdir.
 
 Amma paketlər tam itməzdən əvvəl də erkən tıxac siqnallarını müşahidə etmək
 mümkündür. Bunun üçün [[RTT]], yəni gediş-gəliş vaxtının artmasına baxırıq —
-başqa sözlə, çatdırılma [[gecikmə]]si böyüyür. Avtomobillərlə dolu bir yolda olduğu
-kimi, tıxaclı linklərdən keçmək də daha çox vaxt aparır.
+başqa sözlə, çatdırılma [[gecikmə]]si böyüyür. Avtomobillərlə dolu bir yolda
+olduğu kimi, tıxaclı linklərdən keçmək də daha çox vaxt aparır.
 
 ## CC-yə əsas yanaşmalar
 
-TCP tıxac nəzarəti üçün müxtəlif alqoritmik yanaşmalar mövcuddur. Onların əsas
+TCP tıxanma nəzarəti üçün müxtəlif alqoritmik yanaşmalar mövcuddur. Onların əsas
 fərqi tıxac siqnalını necə aşkar etmələri və göndərmə sürətini necə
 tənzimləmələridir.
 
@@ -98,8 +99,8 @@ dizaynının əsas prinsiplərinə uyğundur.
 
 Əsas çatışmazlıq isə ondan ibarətdir ki, itki yalnız şəbəkə artıq tıxaclı
 vəziyyətə düşəndə baş verir, yəni infrastruktur artıq yüklənmiş olur. Bu
-mexanizm işə düşəndə, switch-lərdəki [[bufer]]lər artıq dolmuş olur və
-gecikmə bir müddətdir artmaqda davam edir.
+mexanizm işə düşəndə, switch-lərdəki [[bufer]]lər artıq dolmuş olur və gecikmə
+bir müddətdir artmaqda davam edir.
 
 ### [[ECN]]-ə əsaslanan CC
 
@@ -126,9 +127,9 @@ bilmədiyimiz bir çox ssenaridə bu yanaşmanı tətbiq etmək mümkün olmur.
 
 ### [[BBR]]
 
-Tıxac nəzarətinə müasir yanaşmalardan biri Google tərəfindən təqdim olunub: BBR
-(Bottleneck Bandwidth and Round-trip propagation time). Bu, Google-ın bu gün də
-öz infrastrukturunda istifadə etdiyi alqoritmlərdən biridir.
+Tıxanma nəzarətinə müasir yanaşmalardan biri Google tərəfindən təqdim olunub:
+BBR (Bottleneck Bandwidth and Round-trip propagation time). Bu, Google-ın bu gün
+də öz infrastrukturunda istifadə etdiyi alqoritmlərdən biridir.
 
 Əsas ideya ondan ibarətdir ki, itkiyə və ya switch bildirişlərinə əsaslanmaq
 əvəzinə, şəbəkə haqqında model qurmaq üçün müxtəlif metrikləri davamlı şəkildə
@@ -155,7 +156,7 @@ paylaşanda davranış problemləri müşahidə oluna bilir.
 
 ## Nəticə
 
-Ümid edirəm bu yazı sizin üçün maraqlı oldu. Bu bloqa tıxac nəzarəti mövzuları
+Ümid edirəm bu yazı sizin üçün maraqlı oldu. Bu bloqa tıxanma nəzarəti mövzuları
 üçün bir növ “menyu” kimi baxa bilərsiniz — qısa icmal verərək mövzunu daha
 dərindən araşdırmağa həvəsləndirmək məqsədi daşıyır. Məncə bu, kompüter
 sistemlərinin ən maraqlı sahələrindən biridir, çünki real həyatda da oxşar

@@ -146,8 +146,8 @@ tələbələri üçün əlçatan etmək istəyən iki Dartmouth professoru, Con 
 Kemeny) və Tom Kurts (Tom Kurtz) tərəfindən icad edilmişdir. O,
 minikompüterlərdə geniş yayılmışdı və universitet riyaziyyat dərslərində
 populyar idi. Daha sonra Bill Qeyts və Pol Allen Altair üçün MicroSoft BASIC
-[[interpretator]]unu yazdıqdan sonra mikrokompüterlərdə standart halına gəldi. Amma
-təlimat bunların heç birini izah etmir və sən bunları yalnız illər sonra
+[[interpretator]]unu yazdıqdan sonra mikrokompüterlərdə standart halına gəldi.
+Amma təlimat bunların heç birini izah etmir və sən bunları yalnız illər sonra
 öyrənəcəksən
 
 Təlimatın yoxlamağı təklif etdiyi ilk BASIC əmrlərindən biri `PRINT` əmridir.

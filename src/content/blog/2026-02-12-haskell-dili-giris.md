@@ -12,18 +12,19 @@ categories: [Proqram Dilləri]
 > müəyyən edir".
 
 Benjamin Lee Whorf-un bu fikri proqramlaşdırma dünyasında bəlkə də ən çox
-**Haskell** dilinə yaraşır. Deyə bilərəm ki, Haskell sadəcə yeni bir [[sintaksis]]
-öyrənmək deyil, həm də hesablama prosesinə tamamilə fərqli bir rakursdan
-baxmaqdır. Əgər siz dəyişənlərin daim dəyişdiyi, dövrlərin hər addımda vəziyyəti
-yenilədiyi dünyadan gəlirsinizsə, Haskell sizə başlanğıcda bir az sirli, lakin
-inanılmaz dərəcədə güclü kainat vəd edir.
+**Haskell** dilinə yaraşır. Deyə bilərəm ki, Haskell sadəcə yeni bir
+[[sintaksis]] öyrənmək deyil, həm də hesablama prosesinə tamamilə fərqli bir
+rakursdan baxmaqdır. Əgər siz dəyişənlərin daim dəyişdiyi, dövrlərin hər addımda
+vəziyyəti yenilədiyi dünyadan gəlirsinizsə, Haskell sizə başlanğıcda bir az
+sirli, lakin inanılmaz dərəcədə güclü kainat vəd edir.
 
 ## Haskell-in Mahiyyəti: Funksional Yanaşma
 
 Haskell təmiz **[[funksional proqramlaşdırma]]** (FP) dilidir. Yəni burada biz
-kompüterə addım-addım nə edəcəyini ([[imperativ proqramlaşdırma]]) demirik, sadəcə problemin özünü
-([[deklarativ proqramlaşdırma]]) təsvir edirik. FP dili proqramçını məlumatlara bütöv bir obyekt
-kimi baxmağa sövq edir, onu hissə-hissə emal etməyə yox.
+kompüterə addım-addım nə edəcəyini ([[imperativ proqramlaşdırma]]) demirik,
+sadəcə problemin özünü ([[deklarativ proqramlaşdırma]]) təsvir edirik. FP dili
+proqramçını məlumatlara bütöv bir obyekt kimi baxmağa sövq edir, onu hissə-hissə
+emal etməyə yox.
 
 Haskell-in sənayedəki tətbiqi də az deyil. Facebook-un
 [Haxl](https://github.com/facebook/Haxl) [[kitabxana]]sından tutmuş,
@@ -37,17 +38,17 @@ kimi nüfuzlu universitetlərdə proqramlaşdırmanın ilk olaraq Haskell ilə
 
 Haskell-i fərqləndirən bir neçə məqam var:
 
-1.  **Güclü [[Tip sistemi]]:** Haskell-də hər bir dəyərin bir tipi var (`v :: t`).
-    Məsələn, `42 :: Int` və ya `sqrt :: Float -> Float`. Bu tip sistemi
-    proqram hələ işə düşmədən bir çox xətaları tutur.
-2.  **Gecikmiş hesablama:** Haskell bir ifadənin nəticəsinə ehtiyac
-    duyulmayana qədər onu hesablamır. Bu xüsusiyyət bizə **sonsuz siyahılarla**
-    işləmək imkanı verir. Məsələn, `[0..]` yazaraq sıfırdan sonsuzluğa qədər
-    uzanan bir siyahı yarada bilərsiniz, lakin Haskell ondan yalnız sizə lazım
-    olan hissəni götürəcək.
+1.  **Güclü [[Tip sistemi]]:** Haskell-də hər bir dəyərin bir tipi var
+    (`v :: t`). Məsələn, `42 :: Int` və ya `sqrt :: Float -> Float`. Bu tip
+    sistemi proqram hələ işə düşmədən bir çox xətaları tutur.
+2.  **Gecikmiş hesablama:** Haskell bir ifadənin nəticəsinə ehtiyac duyulmayana
+    qədər onu hesablamır. Bu xüsusiyyət bizə **sonsuz siyahılarla** işləmək
+    imkanı verir. Məsələn, `[0..]` yazaraq sıfırdan sonsuzluğa qədər uzanan bir
+    siyahı yarada bilərsiniz, lakin Haskell ondan yalnız sizə lazım olan hissəni
+    götürəcək.
 3.  **[[Rekursiya]]:** Haskell-də `for` və ya `while` dövrləri yoxdur. Hər şey
-    rekursiya üzərində qurulub. Bir siyahını emal etmək üçün onu boş siyahı
-    `[]` və ya "baş" və "quyruq" hissələrinə `(x:xs)` (x -> head & xs -> tail)
+    rekursiya üzərində qurulub. Bir siyahını emal etmək üçün onu boş siyahı `[]`
+    və ya "baş" və "quyruq" hissələrinə `(x:xs)` (x -> head & xs -> tail)
     parçalayırıq.
 
 ## Tip Təhlükəsizliyi və Cəbri Məlumat Tipləri
@@ -104,12 +105,12 @@ sumSqPositive :: [Int] -> Int
 sumSqPositive = foldr (+) 0 . map (^ 2) . filter (> 0)
 ```
 
-Burada `.` simvolu [[funksiya kompozisiyası]]nı bildirir: məlumat filtrdən keçir, map
-olunur və sonda foldr ilə toplanır. Bu kompozisiya məktəb riyaziyyatında
-öyrəndiyimiz `f(g(h(x)))` kimi bir ifadəyə bənzəyir.
+Burada `.` simvolu [[funksiya kompozisiyası]]nı bildirir: məlumat filtrdən
+keçir, map olunur və sonda foldr ilə toplanır. Bu kompozisiya məktəb
+riyaziyyatında öyrəndiyimiz `f(g(h(x)))` kimi bir ifadəyə bənzəyir.
 
-2. ADT ilə Strukturlaşdırılmış Yanaşma: Bu üslub [[OOP]]-dəki siniflərə bənzəyir,
-   lakin daha zəngindir.
+2. ADT ilə Strukturlaşdırılmış Yanaşma: Bu üslub [[OOP]]-dəki siniflərə
+   bənzəyir, lakin daha zəngindir.
 
 ```haskell
 data Shape = Circle Float | Rect Float Float deriving (Show)

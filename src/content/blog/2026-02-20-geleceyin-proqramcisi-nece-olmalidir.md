@@ -41,8 +41,8 @@ effektiv [[OOP]] dillərindən olduğundan və ən əsası çox geniş topluluğ
 olduqlarından xüsusilə bunları vurğulamaq istədim.
 
 **Java:** Onilliklərdir sənayenin "bel sütunu"dur. "Bir dəfə yaz, hər yerdə
-işlət" fəlsəfəsi ilə həm böyük [[backend]] sistemlərdə, həm də Android dünyasında
-(Kotlin) sənayedə çox böyük paya sahibdir.
+işlət" fəlsəfəsi ilə həm böyük [[backend]] sistemlərdə, həm də Android
+dünyasında (Kotlin) sənayedə çox böyük paya sahibdir.
 
 **C# (.NET):** Microsoft-un bəlkə də gördüyü ən doğru iş 😀. Son illərdə .NET
 Core ilə birlikdə inanılmaz dərəcədə sürətlənib və modernləşib. Enterprise

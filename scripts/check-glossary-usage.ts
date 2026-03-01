@@ -1,6 +1,10 @@
 import { readFileSync, readdirSync, writeFileSync } from "node:fs";
-import { join, basename, resolve } from "node:path";
-import { glossary, normalize, type GlossaryTerm } from "../src/data/glossary.ts";
+import { join, resolve } from "node:path";
+import {
+  glossary,
+  normalize,
+  type GlossaryTerm,
+} from "../src/data/glossary.ts";
 
 const GLOSSARY_LINK = /\[\[([^\]]+)\]\]/g;
 
@@ -128,7 +132,9 @@ function findUnlinkedUsages(
       // Compare positions in the raw body (approximate: use line number)
       const lineNum = plainText.slice(0, firstUnlinkedPos).split("\n").length;
       if (firstLinkedPos !== -1) {
-        const linkedLineNum = rawBody.slice(0, firstLinkedPos).split("\n").length;
+        const linkedLineNum = rawBody
+          .slice(0, firstLinkedPos)
+          .split("\n").length;
         if (lineNum < linkedLineNum) {
           firstInstanceWarnings.push({
             file,
@@ -161,10 +167,7 @@ function findFirstLinkedPosition(rawBody: string, g: GlossaryTerm): number {
   const allForms = [g.az, ...(g.aliases ?? [])];
   let earliest = -1;
   for (const form of allForms) {
-    const regex = new RegExp(
-      `\\[\\[${escapeRegex(form)}\\]\\]`,
-      "iu",
-    );
+    const regex = new RegExp(`\\[\\[${escapeRegex(form)}\\]\\]`, "iu");
     const m = regex.exec(rawBody);
     if (m && (earliest === -1 || m.index < earliest)) {
       earliest = m.index;
@@ -307,7 +310,11 @@ for (const file of files) {
   const plainText = stripNonProse(stripLinkedTerms(noCode));
 
   const { errors, firstInstanceWarnings } = findUnlinkedUsages(
-    plainText, noCode, searchEntries, linkedTerms, file,
+    plainText,
+    noCode,
+    searchEntries,
+    linkedTerms,
+    file,
   );
   allErrors.push(...errors);
   allFirstInstanceWarnings.push(...firstInstanceWarnings);
@@ -333,13 +340,13 @@ if (fixDuplicates && allDuplicateWarnings.length > 0) {
   for (const file of filesWithDups) {
     const fixed = fixDuplicateLinks(join(blogDir, file));
     if (fixed > 0) {
-      console.log(
+      console.warn(
         `${green}FIXED${reset}  ${file} — removed ${fixed} duplicate link(s)`,
       );
       totalFixed += fixed;
     }
   }
-  console.log(
+  console.warn(
     `\n${green}Fixed ${totalFixed} duplicate link(s) across ${filesWithDups.size} file(s).${reset}`,
   );
   // Skip printing duplicate warnings since we just fixed them
@@ -349,28 +356,29 @@ if (fixDuplicates && allDuplicateWarnings.length > 0) {
 // ── Output ───────────────────────────────────────────────────────────
 
 for (const w of allWarnings) {
-  console.log(
+  console.warn(
     `${yellow}WARN${reset}   ${w.file} — alias [[${w.alias}]] is used but main term [[${w.mainTerm}]] is never linked`,
   );
 }
 
 for (const w of allFirstInstanceWarnings) {
-  console.log(
+  console.warn(
     `${yellow}WARN${reset}   ${w.file}:${w.line} — "${w.term}" first appears unlinked (linked later); consider linking the first occurrence`,
   );
-  console.log(`${dim}       > ${w.context}${reset}`);
+  console.warn(`${dim}       > ${w.context}${reset}`);
 }
 
 for (const w of allDuplicateWarnings) {
-  console.log(
+  console.warn(
     `${yellow}WARN${reset}   ${w.file} — [[${w.term}]] is linked ${w.count} times (lines ${w.lines.join(", ")}); only the first occurrence needs [[...]]`,
   );
 }
 
 if (allErrors.length > 0) {
-  console.log("");
+  console.warn("");
   for (const e of allErrors) {
-    const termLabel = e.term === e.mainTerm ? e.term : `${e.term} → ${e.mainTerm}`;
+    const termLabel =
+      e.term === e.mainTerm ? e.term : `${e.term} → ${e.mainTerm}`;
     console.error(
       `${red}ERROR${reset}  ${e.file}:${e.line} — "${termLabel}" appears without [[...]] linking`,
     );
@@ -383,6 +391,6 @@ if (allErrors.length > 0) {
   process.exit(1);
 }
 
-console.log(
+console.warn(
   `\n${green}Glossary check passed.${reset} (${files.length} files, ${searchEntries.length} terms checked)`,
 );
