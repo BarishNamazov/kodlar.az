@@ -41,12 +41,12 @@ effektiv OOP dillərindən olduğundan və ən əsası çox geniş topluluğa sa
 olduqlarından xüsusilə bunları vurğulamaq istədim.
 
 **Java:** Onilliklərdir sənayenin "bel sütunu"dur. "Bir dəfə yaz, hər yerdə
-işlət" fəlsəfəsi ilə həm böyük [[arxa plan]] sistemlərdə, həm də Android
-dünyasında (Kotlin) sənayedə çox böyük paya sahibdir.
+işlət" fəlsəfəsi ilə həm böyük [[bekend]] sistemlərdə, həm də Android dünyasında
+(Kotlin) sənayedə çox böyük paya sahibdir.
 
 **C# (.NET):** Microsoft-un bəlkə də gördüyü ən doğru iş 😀. Son illərdə .NET
 Core ilə birlikdə inanılmaz dərəcədə sürətlənib və modernləşib. Enterprise
-dünyasında ən təmiz [[çərçivə]]lərdən biri sayılır. Son versiyalarında əldə
+dünyasında ən təmiz [[freymvörk]]lərdən biri sayılır. Son versiyalarında əldə
 etdikləri çox ciddi performans artımı və əsas rəqibi Javadan bəzi
 xüsusiyyətlərdə qabağa düşməsi və ən əsas da çox yaxşı [[ekosistem]]ə sahib
 olması bu dili çox güclü bir alət edir.
@@ -67,10 +67,10 @@ sahələrində Python-dan başqa ciddi alternativ yox kimidir.
 
 ### D) Performans, aşağı səviyyə proqamlaşdırma, gömülü və təchizat bazalı: C++, Go, Rust
 
-Əgər sistemlərin alt qatları, "bulud" texnologiyaları (Cloud Native) və ya
+Əgər sistemlərin alt qatları, "bulud" texnologiyaları ([[bulud-doğma]]) və ya
 yüksək performanslı oyun mühərrikləri sizi maraqlandırırsa, bu dillərə
-baxmalısınız. Go (Golang) xüsusilə Google-un dəstəyi ilə arxa plan dünyasında
-çox sürətlə yayılır. Həmçinin C++, C çox böyük və yüksək təzyiqli sistemlərdə
+baxmalısınız. Go (Golang) xüsusilə Google-un dəstəyi ilə bekend dünyasında çox
+sürətlə yayılır. Həmçinin C++, C çox böyük və yüksək təzyiqli sistemlərdə
 (finans, brija, OS və s.) ən çox istifadə edilən dillərdəndir.
 
 ---

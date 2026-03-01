@@ -1,6 +1,7 @@
 export interface GlossaryTerm {
   az: string;
   en: string;
+  aliases?: string[];
   description?: string;
   link?: string;
 }
@@ -78,6 +79,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "obyekt-yönümlü proqramlaşdırma",
     en: "object-oriented programming",
+    aliases: ["OYP"],
     description:
       "Məlumatı və davranışı obyektlər daxilində birləşdirən proqramlaşdırma paradiqması.",
     link: "https://en.wikipedia.org/wiki/Object-oriented_programming",
@@ -92,6 +94,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "funksional proqramlaşdırma",
     en: "functional programming",
+    aliases: ["FP"],
     description:
       "Hesablamanı əsasən funksiyaların birləşməsi kimi modelləşdirən paradiqma.",
     link: "https://en.wikipedia.org/wiki/Functional_programming",
@@ -162,13 +165,15 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "tətbiq proqramlaşdırma interfeysi",
     en: "application programming interface",
+    aliases: ["API"],
     description:
       "Sistem və kitabxanaların başqa proqramlar üçün təqdim etdiyi funksional interfeys.",
     link: "https://en.wikipedia.org/wiki/API",
   },
   {
-    az: "çərçivə",
+    az: "freymvörk",
     en: "framework",
+    aliases: ["çərçivə"],
     description:
       "Tətbiq inkişafını sürətləndirmək üçün əvvəlcədən qurulmuş struktur və alətlər toplusu.",
     link: "https://en.wikipedia.org/wiki/Software_framework",
@@ -345,24 +350,50 @@ export const glossary: GlossaryTerm[] = [
     link: "https://en.wikipedia.org/wiki/Spaghetti_code",
   },
   {
-    az: "arxa plan",
+    az: "bekend",
     en: "backend",
+    aliases: ["arxa plan", "back-end", "bek-end"],
     description:
       "Tətbiqin istifadəçiyə görünməyən server tərəfi — məlumat emalı, məntiq və verilənlər bazası əməliyyatları.",
     link: "https://en.wikipedia.org/wiki/Frontend_and_backend",
   },
   {
-    az: "ön plan",
+    az: "frantend",
     en: "frontend",
+    aliases: ["ön plan", "front-end", "frant-end"],
     description:
       "Tətbiqin istifadəçiyə birbaşa görünən hissəsi — interfeys, vizual təqdimat.",
     link: "https://en.wikipedia.org/wiki/Frontend_and_backend",
   },
   {
-    az: "marşrutlaşdırıcı",
+    az: "ruter",
     en: "router",
+    aliases: ["marşrutlaşdırıcı"],
     description: "Şəbəkədə paketləri müvafiq istiqamətə yönləndirən cihaz.",
     link: "https://en.wikipedia.org/wiki/Router_(computing)",
+  },
+  {
+    az: "bölünmüş sistemlər",
+    en: "distributed systems",
+    aliases: ["paylanmış sistemlər"],
+    description:
+      "Şəbəkə üzərində bir neçə kompüter arasında bölünərək işləyən sistem arxitekturası.",
+    link: "https://en.wikipedia.org/wiki/Distributed_computing",
+  },
+  {
+    az: "bulud-doğma",
+    en: "cloud native",
+    description:
+      "Bulud mühitləri üçün xüsusi dizayn edilmiş, adətən konteyner və mikroservis memarlığına əsaslanan yanaşma.",
+    link: "https://en.wikipedia.org/wiki/Cloud-native_computing",
+  },
+  {
+    az: "yerli tətbiq",
+    en: "native app",
+    aliases: ["native apps"],
+    description:
+      "Müəyyən əməliyyat sistemi və platforma üçün birbaşa hazırlanmış tətbiq.",
+    link: "https://en.wikipedia.org/wiki/Mobile_app#Native_apps",
   },
   {
     az: "bant genişliyi",
@@ -479,17 +510,10 @@ const lookupMap = new Map<string, GlossaryTerm>();
 for (const term of glossary) {
   lookupMap.set(term.en.toLowerCase(), term);
   lookupMap.set(term.az.toLowerCase(), term);
+  for (const alias of term.aliases || []) {
+    lookupMap.set(alias.toLowerCase(), term);
+  }
 }
-
-// Common abbreviation aliases
-const apiTerm = lookupMap.get("tətbiq proqramlaşdırma interfeysi");
-if (apiTerm) lookupMap.set("api", apiTerm);
-
-const oopTerm = lookupMap.get("obyekt-yönümlü proqramlaşdırma");
-if (oopTerm) lookupMap.set("oyp", oopTerm);
-
-const fpTerm = lookupMap.get("funksional proqramlaşdırma");
-if (fpTerm) lookupMap.set("fp", fpTerm);
 
 export function lookupTerm(key: string): GlossaryTerm | undefined {
   return lookupMap.get(key.toLowerCase());

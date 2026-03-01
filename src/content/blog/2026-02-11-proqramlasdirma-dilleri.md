@@ -413,7 +413,7 @@ asanlıqla öyrənə bilərdi. İllər sonra, xüsusən 2010-cu illərdə məlum
 süni intellekt dalğası gəldikdə, Python özünün zəngin riyazi kitabxanaları
 sayəsində bu sahənin mütləq hakiminə çevrildi.
 
-İnternetin ilk vaxtlarında [[arxa plan]]ı ayaqda tutan **PHP**, **Ruby** və
+İnternetin ilk vaxtlarında [[bekend]]i ayaqda tutan **PHP**, **Ruby** və
 **Perl** kimi dillər də bu dövrün vacib aktyorlarından oldu. Ruby zərif veb
 inkişafında (Rails vasitəsilə), Perl mətn emalı və sistem inzibatçılığında, PHP
 isə WordPress və Facebook-un ilk versiyaları daxil olmaqla, erkən dinamik vebin
@@ -749,7 +749,7 @@ asanlaşdırmaq üçün bir neçə əsas meyara ardıcıllıqla diqqət yetirmə
 
 - **Problem sahəsindən başlayın.** Hər dilin özünü daha "rahat hiss etdiyi" və
   standart qəbul olunduğu sahələr var. Əgər veb səhifənin istifadəçi
-  interfeysini ([[ön plan]]) qurursunuzsa, JavaScript və ya TypeScript demək
+  interfeysini ([[frantend]]) qurursunuzsa, JavaScript və ya TypeScript demək
   olar ki, qaçılmazdır. Əgər məlumat təhlili, statistika və ya süni intellektlə
   məşğul olacaqsınızsa, Python sənayenin qızıl standartıdır. Yox əgər əməliyyat
   sistemi komponenti və ya saniyənin mində biri qədər sürətlə işləməli olan

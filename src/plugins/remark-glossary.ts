@@ -22,6 +22,7 @@ function visitTextNodes(
 const remarkGlossary: Plugin<[], Root> = () => {
   return (tree: Root) => {
     const usedTerms = new Map<string, GlossaryTerm>();
+    const missingTerms = new Set<string>();
 
     visitTextNodes(tree, (node, index, parent) => {
       const text = node.value;
@@ -65,7 +66,7 @@ const remarkGlossary: Plugin<[], Root> = () => {
 
           usedTerms.set(term.az.toLowerCase(), term);
         } else {
-          console.warn(`[remark-glossary] Term not found: "${termKey}"`);
+          missingTerms.add(termKey);
           children.push({
             type: "text",
             value: match[0],
@@ -86,6 +87,13 @@ const remarkGlossary: Plugin<[], Root> = () => {
         parent.children.splice(index, 1, ...(children as PhrasingContent[]));
       }
     });
+
+    if (missingTerms.size > 0) {
+      const terms = [...missingTerms].sort((a, b) => a.localeCompare(b, "az"));
+      throw new Error(
+        `[remark-glossary] Term not found for: ${terms.map((t) => `"${t}"`).join(", ")}`,
+      );
+    }
 
     // Append a "Terminlər" section at the end of the post
     if (usedTerms.size > 0) {

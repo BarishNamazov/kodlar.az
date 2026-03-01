@@ -13,9 +13,9 @@ kompüteriniz [[paket]]ləri ortaq qlobal şəbəkəyə göndərməyə başlayı
 milyonlarla başqa cihaz da tam olaraq bunu edir. Buna baxmayaraq, bir çox
 səviyyədə ucuz, kütləvi istehsal olunan avadanlıqlardan ibarət olan İnternet
 sabit qalır və istifadəçilərinə xidmət etməyə davam edir. Təsəvvür etdiyiniz
-kimi, bu, heç də sehr deyil, [[marşrutlaşdırıcı]]ların dolub-daşmasının
-dolub-daşmasının və şəbəkənin yüklənib iflic olmasının qarşısını alan düşünülmüş
-və ağıllı mexanizmlərin nəticəsidir.
+kimi, bu, heç də sehr deyil, [[ruter]]lərin dolub-daşmasının dolub-daşmasının və
+şəbəkənin yüklənib iflic olmasının qarşısını alan düşünülmüş və ağıllı
+mexanizmlərin nəticəsidir.
 
 1980-ci illərin sonlarında İnternetin bəzi hissələrində bu gün “tıxac çöküşü”
 adlandırılan vəziyyət yaşanmışdı. Şəbəkələr yenidən göndərilən paketlərlə o
@@ -107,12 +107,12 @@ Bəzi hallarda tıxac haqqında siqnalı mümkün qədər tez almaq faydalı olu
 görə də bəzi infrastruktur mühitlərində şəbəkədaxili (in-network) mexanizmlərə
 üstünlük verilir.
 
-Xüsusilə, [[ECN]] şəbəkə üzərində tıxac yaranmağa yaxınlaşanda marşrutlaşdırıcı
-və ya switch-lərin paketləri atmaq əvəzinə onları işarələməsi mexanizmidir.
-Adətən şəbəkə inzibatçıları bufer doluluğu üçün müəyyən hədd təyin edirlər
-(məsələn, 70%). Bu hədd keçildikdə, paketlər ECN ilə işarələnir. Qəbul edən
-tərəf bu işarəni gördükdə, bunu göndərənə bildirir və göndərən də göndərmə
-pəncərəsini azaldaraq sürətini uyğunlaşdırır.
+Xüsusilə, [[ECN]] şəbəkə üzərində tıxac yaranmağa yaxınlaşanda ruter və ya
+switch-lərin paketləri atmaq əvəzinə onları işarələməsi mexanizmidir. Adətən
+şəbəkə inzibatçıları bufer doluluğu üçün müəyyən hədd təyin edirlər (məsələn,
+70%). Bu hədd keçildikdə, paketlər ECN ilə işarələnir. Qəbul edən tərəf bu
+işarəni gördükdə, bunu göndərənə bildirir və göndərən də göndərmə pəncərəsini
+azaldaraq sürətini uyğunlaşdırır.
 
 Əsas üstünlüyü ondan ibarətdir ki, bu yanaşma heç bir məlumat itirilmədən əvvəl
 göndərmə sürətini azaltmağa imkan verir və beləliklə tıxacın qarşısını almaq

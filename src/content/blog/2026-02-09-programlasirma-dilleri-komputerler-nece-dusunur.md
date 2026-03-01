@@ -71,13 +71,13 @@ misal dillərdən bəhs edək:
   və versiyaları müasir tutulur. Lakin, onu fərqləndirən bir çox cəhət onun hər
   yerdə istifadə oluna bilməməsinə də nəticələnir. Hər nə qədər Turing-complete
   dil olmasına baxmayaraq, bu dil əsasında sadəcə serverlər üçün nəzərdə
-  tutulub. Yəni, native applər hazırlanması uyğun deyil. Bundan əlavə olaraq,
-  PHP mənbə kodları sadəcə düz mətn olaraq yadda saxlanıldığı üçün də bir çox
-  təhlükəsizlik problemlərinə açıqdır. Son olaraq, inkişafa açıq olması onu öz
-  versiyaları arasında böyük fərqləndirir. Bu da köhnəlmiş PHP kodlarının
+  tutulub. Yəni, [[yerli tətbiq]]lər hazırlanması uyğun deyil. Bundan əlavə
+  olaraq, PHP mənbə kodları sadəcə düz mətn olaraq yadda saxlanıldığı üçün də
+  bir çox təhlükəsizlik problemlərinə açıqdır. Son olaraq, inkişafa açıq olması
+  onu öz versiyaları arasında böyük fərqləndirir. Bu da köhnəlmiş PHP kodlarının
   [[geriyə uyğunluq]]unu qırır.
-- Elixir: Paylanmış sistemlər üçün optimallaşdırılmış bir dildir. Köhnəlmiş olan
-  Erlang/BEAM [[ekosistem]]inin müasir halı kimi ortaya çıxıb. Əsasən
+- Elixir: [[bölünmüş sistemlər]] üçün optimallaşdırılmış bir dildir. Köhnəlmiş
+  olan Erlang/BEAM [[ekosistem]]inin müasir halı kimi ortaya çıxıb. Əsasən
   telekomunikasiya sistemlərində istifadə olunur. Bu dil həmişə çalışdırdığı
   kodları qarşılaşdığı xətalara baxmayaraq davamlı olaraq aktual tutmağa
   çalışır. Bir çox proqramçı üçün öyrənməsi çətindir və digər dillər kimi geniş
