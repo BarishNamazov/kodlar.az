@@ -87,12 +87,12 @@ prinsipinə görə əsasən üç kateqoriyaya bölünür:
 
 3. **Hibrid dillər:** Bu yanaşmada kod həm interpretasiya olunur, həm də icra
    zamanı əlavə optimizasiya üçün _[[JIT kompilyasiyası]] (Just-In-Time - anında
-   kompilyasiya)_ kompilyasiyası kimi texnologiyalardan istifadə edilir. Adətən,
-   kod əvvəlcə maşın dilindən daha sadə, amma daha primitiv olan "[[baytkod]]"
-   adlanan aralıq dilə çevrilir. Təsəvvür edin ki, sinxron tərcüməçi sizin
-   tez-tez təkrar etdiyiniz cümlələri əzbərləyir və növbəti dəfə onları dərhal
-   (tərcümə etmədən) səsləndirərək prosesi xeyli sürətləndirir. Bir çox hallarda
-   bir dilin həm tam interpretasiya olunan, həm də hibrid versiyası olur. Bu
+   kompilyasiya)_ kimi texnologiyalardan istifadə edilir. Adətən, kod əvvəlcə
+   maşın dilindən daha sadə, amma daha primitiv olan "[[baytkod]]" adlanan
+   aralıq dilə çevrilir. Təsəvvür edin ki, sinxron tərcüməçi sizin tez-tez
+   təkrar etdiyiniz cümlələri əzbərləyir və növbəti dəfə onları dərhal (tərcümə
+   etmədən) səsləndirərək prosesi xeyli sürətləndirir. Bir çox hallarda bir
+   dilin həm tam interpretasiya olunan, həm də hibrid versiyası olur. Bu
    kateqoriyaya bu mühitlər və dillər daxildir: Java (JVM), C# (.NET),
    JavaScript və Python (PyPy kimi alternativ mühitlərdə).
 

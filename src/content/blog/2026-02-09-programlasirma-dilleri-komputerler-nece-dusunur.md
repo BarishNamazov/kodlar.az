@@ -112,7 +112,7 @@ misal dillərdən bəhs edək:
 araşdırmağınız tövsiyə olunur.
 
 Bütün bu fərqlərə görə də mükəmməl dil ola bilməz. Tövsiyə olunan ilk başda
-öyrənməyə başlayan zaman ümumi məqsədli (**General Purpose**) dillərdən birini
+öyrənməyə başlayan zaman ümumi məqsədli (**general purpose**) dillərdən birini
 öyrənməkdir. Buna misal olaraq bu dillərdən biri olan C/C++ dilindən
 danışacağıq. Bu dil bütün məqsədlər üçün istifadə oluna bilər, amma hər məqsəd
 üçün səmərəli deyildir. Məqsəd giriş səviyyəsidirsə bizə yetərlidir. Lakin, bu
