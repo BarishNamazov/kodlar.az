@@ -75,7 +75,7 @@ Haskell-in gücü yalnız dizayndan yox, dərin elmi köklərdən gəlir.
    `add :: Int -> Int -> Int` Əslində isə: `Int -> (Int -> Int)` Funksiyaların
    arqumentlərini hissə-hissə ötürmək texnikası "[[karriləmə]]" adlanır.
 
-   > **Maraqlı Fakt:** Bu gün Haskell-də təbii qəbul etdiyimiz "karriləmə"
+   > **Maraqlı Fakt:** Bu gün Haskell-də təbii qəbul etdiyimiz "[[karriləmə]]"
    > ideyası yarananda ortada nə müasir proqramlaşdırma dilləri var idi, nə də
    > kompüterlər. Bu yanaşma XX əsrin əvvəllərində insanın məntiqi düşüncə
    > tərzini modelləşdirmək üçün irəli sürülmüşdü. Dilin adını aldığı Haskell
@@ -93,9 +93,9 @@ Haskell-in gücü yalnız dizayndan yox, dərin elmi köklərdən gəlir.
 
 Gəlin Haskell-də kodun necə göründüyünü iki nümunə ilə araşdıraq.
 
-1. Tam Funksional Üslub (Karriləmə və Kompozisiya): Burada funksiyaları silsilə
+1. Tam Funksional Üslub ([[Karriləmə]] və Kompozisiya): Burada funksiyaları silsilə
    şəklində birləşdirilir. Bu yanaşma Haskell Curry-nin şərəfinə adlandırılan
-   "karriləmə" prinsipini — yəni hər funksiyanın əslində bir arqument alaraq
+   "[[karriləmə]]" prinsipini — yəni hər funksiyanın əslində bir arqument alaraq
    yeni bir funksiya qaytarmasını nümayiş etdirir.
 
 ```haskell

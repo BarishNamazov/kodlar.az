@@ -210,7 +210,7 @@ def divide(num1, num2):
     print(num1 / num2)
 ```
 
-## @wraps dekoratoru
+## @wraps [[dekorator]]u
 
 Python-da `__name__`, `__doc__` və s. kimi daxili sehrli (magic) dəyişənlər var.
 Məsələn:
