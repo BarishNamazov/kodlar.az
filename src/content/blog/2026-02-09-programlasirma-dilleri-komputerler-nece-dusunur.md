@@ -24,8 +24,8 @@ bildiyi bir məlumat var: kompüterlər sıfırlar (**0**) və birlərlə (**1**
 işləyir. Həqiqətən də kompüterlər özündə yalnız bitlərlə hesablama edə və
 məlumat saxlaya bilir. Eyni zamanda, yazılan proqramlar da bu şəkildə olmalıdır
 ki, kompüter onu anlaya bilsin. Bu kompüterin anladığı bir dil olduğu üçün biz
-buna [[maşın dili]] deyirik. İstifadə etdiyimiz bütün proqram təminatı
-sistemləri kompüterdə maşın dilində olur. Amma proqramların bitlərlə yazılması
+buna [[maşın dili]] deyirik. İstifadə etdiyimiz bütün [[proqram təminatı]]
+sistemləri kompüterdə [[maşın dili]]ndə olur. Amma proqramların bitlərlə yazılması
 düşüncəsi çox qorxunc səslənir. Təsəvvür edin ki, yazmaq istədiyiniz proqram
 üçün yalnızca 0 və 1 düymələrinə basırsınız. Bu həm çox qarmaşıq görünər, həm də
 çox uzun vaxt aparar. Bu problemə həll üçün insanların daha yaxşı anlaya
@@ -37,13 +37,13 @@ mürəkkəb əmrlər lazım olur. Bu mürəkkəb əmrləri də müəyyən qramma
 işlətməliyik ki, yazılan kod mənalı və anlaşılan olsun. Bu şəkildə düşündükdə
 kod yazmaq daha asan hala gəlir. Sanki kompüterlə söhbət edirmişik kimi düşünülə
 bilər. Lakin unutmamaq lazımdır ki, kompüterlər bu dilləri anlamır, onlar sadəcə
-maşın dilini bilirlər. Bu zaman bizim köməyimizə tərcüməçi proqramlar gəlir. Bu
+[[maşın dili]]ni bilirlər. Bu zaman bizim köməyimizə tərcüməçi proqramlar gəlir. Bu
 tərcüməçi proqramlar proqramlaşdırma dillərinə görə fərqlənir, lakin hər birinin
-məqsədi maşın dilinə çevirməkdir. Onlar kodları çevirmə metodlarına görə iki
+məqsədi [[maşın dili]]nə çevirməkdir. Onlar kodları çevirmə metodlarına görə iki
 hissəyə ayrılır: [[interpretator]] və [[kompilyator]]. Əslində bu çevirmələrə
 daha da çox metodlar vardır, amma biz hələlik işləri sadə tutmaq üçün bunları
 bilsək yetərlidir. Bu proqramlarla biz bizim proqramlaşdırdığımız
-[[mənbə kodu]]nu maşın dilinin anlaya bildiyi vəziyyətə gətirə bilərik.
+[[mənbə kodu]]nu [[maşın dili]]nin anlaya bildiyi vəziyyətə gətirə bilərik.
 
 ## Niyə fərqli və çoxlu proqramlaşdırma dillərinə sahibik?
 
@@ -57,7 +57,7 @@ misal dillərdən bəhs edək:
 - Python: Ümumi məqsədli proqramlaşdırma dilidir. Əsas məğzi sadə, rahat və
   aydın olmasıdır. Proqramçını yormayan və kiçik sadə scripting kimi işlərdə
   mükəmməldir. Yeni başlayanların çox asanlıqla öyrənə biləcəyi bir dildir.
-  Əsasən interpret olaraq maşın dilinə çevrilir. Bu onun sürətli işə salınmasına
+  Əsasən interpret olaraq [[maşın dili]]nə çevrilir. Bu onun sürətli işə salınmasına
   yardım etsə də, performans baxımından zəiflədir. Bir çox [[paradiqma]]ları
   etməyə çalışır və buna görə də geniş istifadə oluna da bilinir. Lakin, onu
   fərqləndirən cəhətləri həm də onu geri salır. Proqramçıya rahat dillər maşın
@@ -71,12 +71,12 @@ misal dillərdən bəhs edək:
   və versiyaları müasir tutulur. Lakin, onu fərqləndirən bir çox cəhət onun hər
   yerdə istifadə oluna bilməməsinə də nəticələnir. Hər nə qədər Turing-complete
   dil olmasına baxmayaraq, bu dil əsasında sadəcə serverlər üçün nəzərdə
-  tutulub. Yəni, [[yerli tətbiq]]lər hazırlanması uyğun deyil. Bundan əlavə
+  tutulub. Yəni, [[nativ tətbiq]]lər hazırlanması uyğun deyil. Bundan əlavə
   olaraq, PHP mənbə kodları sadəcə düz mətn olaraq yadda saxlanıldığı üçün də
   bir çox təhlükəsizlik problemlərinə açıqdır. Son olaraq, inkişafa açıq olması
   onu öz versiyaları arasında böyük fərqləndirir. Bu da köhnəlmiş PHP kodlarının
   [[geriyə uyğunluq]]unu qırır.
-- Elixir: [[Bölünmüş sistemlər]] üçün optimallaşdırılmış bir dildir. Köhnəlmiş
+- Elixir: [[Paylanmış sistemlər]] üçün optimallaşdırılmış bir dildir. Köhnəlmiş
   olan Erlang/BEAM [[ekosistem]]inin müasir halı kimi ortaya çıxıb. Əsasən
   telekomunikasiya sistemlərində istifadə olunur. Bu dil həmişə çalışdırdığı
   kodları qarşılaşdığı xətalara baxmayaraq davamlı olaraq aktual tutmağa
@@ -87,20 +87,20 @@ misal dillərdən bəhs edək:
   Çıxdıqda əsas məqsədi ola bildiyincə ingilis dilinə bənzəməsi və kompüter
   bilməyənlərin belə istifadə edə biləcəyi dil olması idi. Əsasən finans
   sistemləri üçün inkişaf etdirilib. Bu dil bizim bildiyimiz proqramlaşdırma
-  dili anlayışından olduqca uzaqdır və ən sadə alqoritmlər belə çox uzun kodlara
+  dili anlayışından olduqca uzaqdır və ən sadə [[alqoritm]]lər belə çox uzun kodlara
   çevrilə bilər. Olduqca riskli və qarmaşıq olan bu dil sadəcə standartların
   olmadığı dövrü əla ifadə edən tarixi fakt olaraq yaşayır ancaq.
 - Java: Bu dil müasir dövrün ən çox istifadə edilən və
   [[Obyekt-yönümlü proqramlaşdırma]] ən güclü dillərindən biridir. Java çıxdığı
   zaman _"Bir dəfə yaz, hər yerdə işlət!"_ mottosu ilə populyar idi. Əsasən həm
-  kompilyator, həm də interpretator metodlarının müsbət cəhətlərini hibrit
-  birləşdirən JIT virtual maşın məntiqi ilə işləyir. Onu populyar edən bir digər
-  nöqtəsi isə, zəngin və müasir kitabxana ekosistemidir. Lakin indiki dövrdə, ən
+  [[kompilyator]], həm də [[interpretator]] metodlarının müsbət cəhətlərini hibrit
+  birləşdirən JIT [[virtual maşın]] məntiqi ilə işləyir. Onu populyar edən bir digər
+  nöqtəsi isə, zəngin və müasir [[kitabxana]] [[ekosistem]]idir. Lakin indiki dövrdə, ən
   böyük məqsədi istənilən sistemin asan və tez tətbiq oluna bilməsidir və bu da
   onu performans cəhətdən geriyə salır. Hər nə qədər Python kimi dillərdən daha
-  sürətli olsa da, onun hər yerdə OOP paradiqmasını istifadə qanunu, prosessorun
+  sürətli olsa da, onun hər yerdə [[OOP]] [[paradiqma]]sını istifadə qanunu, prosessorun
   işləmə məntiqinə biraz zidd olduğu üçün yavaşladır. Həmçinin nəticədə birbaşa
-  maşın dilinə çevrilməyən bir dildir. Əlavə olaraq, Java proqramçı üçün kəskin
+  [[maşın dili]]nə çevrilməyən bir dildir. Əlavə olaraq, Java proqramçı üçün kəskin
   bəzi qaydalar qoyur. Bu qaydalarla kodu daha təhlükəsiz etməyə çalışsa da, bu
   həm də proqramçını limitləyir. Misal, [[avtomatik yaddaş idarəsi]] metodunu istifadə
   etməsi onun aşağı səviyyə işlərdə istifadəsini bağlayır. Sonda, PHP-də qeyd
@@ -124,10 +124,9 @@ Niyə C/C++ çətin adlandırılır? Çünki C/C++ orta səviyyə proqramlaşdı
 Proqramlaşdırma dilləri səviyyələrinə görə 3 hissəyə ayrılır: Aşağı, Orta və
 Yuxarı. Bu səviyyələr əslində kompüterlərin inkişafı ilə yaranıb. İnsanların
 proqramlaşdırma dillərini ilk ixtirası zamanı, təbii ki də yaranan ilk dillər də
-maşın dilinə çox bənzəyirdi ( Məsələn Assembly ). Dillər nə qədər çox maşın
-dilinə oxşasa, bu o qədər aşağı olduğunu göstərir. Eyni zamanda, əgər dil insan
+[[maşın dili]]nə çox bənzəyirdi ( Məsələn Assembly ). Dillər nə qədər çox [[maşın dili]]nə oxşasa, bu o qədər aşağı olduğunu göstərir. Eyni zamanda, əgər dil insan
 dilinə daha çox oxşasa, bu da onu yuxarı səviyyə dil edir. C/C++ orta səviyyə
-bir dil olduğu üçün həm maşın dilinə həm də insan dilinə daha yatqındır. Bəzi
+bir dil olduğu üçün həm [[maşın dili]]nə həm də insan dilinə daha yatqındır. Bəzi
 yuxarı səviyyə dillərə nəzərən daha qarmaşıq sayılsa da kompüterləri anlamaq
 üçün ən sadə dil də məhz bu dildir.
 

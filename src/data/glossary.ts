@@ -8,10 +8,10 @@ export interface GlossaryTerm {
 
 export const glossary: GlossaryTerm[] = [
   {
-    az: "tıxac nəzarəti",
+    az: "tıxanma nəzarəti",
     en: "congestion control",
     description:
-      "Şəbəkədə tıxanmanın qarşısını almaq üçün istifadə edilən mexanizmlər.",
+      "Şəbəkə tıxanmasını aşkar edib idarə etmək üçün istifadə edilən mexanizmlər.",
     link: "https://en.wikipedia.org/wiki/Network_congestion#Congestion_control",
   },
   {
@@ -31,14 +31,14 @@ export const glossary: GlossaryTerm[] = [
     az: "ECN",
     en: "explicit congestion notification",
     description:
-      "Paket itirmədən öncə şəbəkədə tıxac siqnalını işarələməklə verən mexanizm.",
+      "Paket itkisinə keçməzdən əvvəl şəbəkədə tıxanma siqnalını işarələyən mexanizm.",
     link: "https://datatracker.ietf.org/doc/html/rfc3168",
   },
   {
     az: "BBR",
     en: "bottleneck bandwidth and round-trip propagation time",
     description:
-      "Ötürmə sürətini itkiyə yox, bant genişliyi və gecikmə modelinə görə tənzimləyən TCP alqoritmi.",
+      "Ötürmə sürətini itkiyə deyil, bant genişliyi və RTT modelinə əsasən tənzimləyən TCP alqoritmi.",
     link: "https://research.google/pubs/bbr-congestion-based-congestion-control-2/",
   },
   {
@@ -59,7 +59,7 @@ export const glossary: GlossaryTerm[] = [
     az: "interpretator",
     en: "interpreter",
     description:
-      "Kodu adətən sətir-sətir və ya blok-blok oxuyub icra edən tərcüməçi mühit.",
+      "Kodu adətən sətir-sətir və ya blok-blok oxuyub icra edən proqram.",
     link: "https://en.wikipedia.org/wiki/Interpreter_(computing)",
   },
   {
@@ -70,7 +70,7 @@ export const glossary: GlossaryTerm[] = [
     link: "https://en.wikipedia.org/wiki/Bytecode",
   },
   {
-    az: "ani kompilyasiya",
+    az: "icra zamanı kompilyasiya",
     en: "just-in-time compilation",
     description:
       "Kodu icra zamanı dinamik şəkildə kompilyasiya edib performansı artıran yanaşma.",
@@ -79,7 +79,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "obyekt-yönümlü proqramlaşdırma",
     en: "object-oriented programming",
-    aliases: ["OYP"],
+    aliases: ["OYP", "OOP"],
     description:
       "Məlumatı və davranışı obyektlər daxilində birləşdirən proqramlaşdırma paradiqması.",
     link: "https://en.wikipedia.org/wiki/Object-oriented_programming",
@@ -100,14 +100,15 @@ export const glossary: GlossaryTerm[] = [
     link: "https://en.wikipedia.org/wiki/Functional_programming",
   },
   {
-    az: "gecikmiş hesablama",
+    az: "gecikdirilmiş hesablama",
     en: "lazy evaluation",
+    aliases: ["gecikmiş qiymətləndirilmə", "tənbəl qiymətləndirmə"],
     description:
-      "İfadələrin nəticəsini yalnız ehtiyac yarandıqda hesablamaq prinsipi.",
+      "İfadələri yalnız ehtiyac olduqda qiymətləndirmək prinsipi.",
     link: "https://en.wikipedia.org/wiki/Lazy_evaluation",
   },
   {
-    az: "cəbri məlumat tipi",
+    az: "cəbrəvi məlumat tipi",
     en: "algebraic data type",
     description:
       "Tipi bir neçə konstruktorun cəmi və ya hasilı kimi modelləşdirən tip yanaşması.",
@@ -135,8 +136,9 @@ export const glossary: GlossaryTerm[] = [
     link: "https://en.wikipedia.org/wiki/Syntactic_sugar",
   },
   {
-    az: "örtük",
+    az: "dekorator",
     en: "decorator",
+    aliases: ["örtük"],
     description:
       "Funksiya və ya metodun davranışını onu dəyişmədən genişləndirən quruluş.",
     link: "https://en.wikipedia.org/wiki/Decorator_pattern",
@@ -163,7 +165,7 @@ export const glossary: GlossaryTerm[] = [
     link: "https://en.wikipedia.org/wiki/Concurrency_(computer_science)",
   },
   {
-    az: "tətbiq proqramlaşdırma interfeysi",
+    az: "tətbiqi proqramlaşdırma interfeysi",
     en: "application programming interface",
     aliases: ["API"],
     description:
@@ -173,7 +175,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "freymvörk",
     en: "framework",
-    aliases: ["çərçivə"],
+    aliases: ["çərçivə", "freymvork"],
     description:
       "Tətbiq inkişafını sürətləndirmək üçün əvvəlcədən qurulmuş struktur və alətlər toplusu.",
     link: "https://en.wikipedia.org/wiki/Software_framework",
@@ -212,7 +214,7 @@ export const glossary: GlossaryTerm[] = [
     link: "https://en.wikipedia.org/wiki/Monad_(functional_programming)",
   },
   {
-    az: "nümunə uyğunlaşdırma",
+    az: "şablon uyğunlaşdırma",
     en: "pattern matching",
     description:
       "Məlumatın quruluşuna görə avtomatik parçalanması və uyğun kod budağının seçilməsi.",
@@ -308,8 +310,9 @@ export const glossary: GlossaryTerm[] = [
     link: "https://en.wikipedia.org/wiki/Debugging",
   },
   {
-    az: "perfokart",
+    az: "deşikli kart",
     en: "punched card",
+    aliases: ["perfokart"],
     description:
       "Erkən kompüterlərdə məlumat daxil etmək üçün deşiklər açılmış karton vərəq.",
     link: "https://en.wikipedia.org/wiki/Punched_card",
@@ -350,32 +353,32 @@ export const glossary: GlossaryTerm[] = [
     link: "https://en.wikipedia.org/wiki/Spaghetti_code",
   },
   {
-    az: "bekend",
+    az: "backend",
     en: "backend",
-    aliases: ["server tərəf", "back-end", "bek-end"],
+    aliases: ["server tərəfi", "back-end", "bek-end", "bekend"],
     description:
       "Tətbiqin istifadəçiyə görünməyən server tərəfi — məlumat emalı, məntiq və verilənlər bazası əməliyyatları.",
     link: "https://en.wikipedia.org/wiki/Frontend_and_backend",
   },
   {
-    az: "frantend",
+    az: "frontend",
     en: "frontend",
-    aliases: ["görünüş tərəf", "front-end", "frant-end"],
+    aliases: ["görünüş tərəfi", "front-end", "frant-end", "frantend"],
     description:
       "Tətbiqin istifadəçiyə birbaşa görünən hissəsi — interfeys, vizual təqdimat.",
     link: "https://en.wikipedia.org/wiki/Frontend_and_backend",
   },
   {
-    az: "ruter",
+    az: "marşrutlaşdırıcı",
     en: "router",
-    aliases: ["marşrutlaşdırıcı"],
+    aliases: ["ruter"],
     description: "Şəbəkədə paketləri müvafiq istiqamətə yönləndirən cihaz.",
     link: "https://en.wikipedia.org/wiki/Router_(computing)",
   },
   {
-    az: "bölünmüş sistemlər",
+    az: "paylanmış sistemlər",
     en: "distributed systems",
-    aliases: ["paylanmış sistemlər"],
+    aliases: ["bölünmüş sistemlər"],
     description:
       "Şəbəkə üzərində bir neçə kompüter arasında bölünərək işləyən sistem arxitekturası.",
     link: "https://en.wikipedia.org/wiki/Distributed_computing",
@@ -388,9 +391,9 @@ export const glossary: GlossaryTerm[] = [
     link: "https://en.wikipedia.org/wiki/Cloud-native_computing",
   },
   {
-    az: "yerli tətbiq",
+    az: "nativ tətbiq",
     en: "native app",
-    aliases: ["native apps"],
+    aliases: ["native apps", "yerli tətbiq"],
     description:
       "Müəyyən əməliyyat sistemi və platforma üçün birbaşa hazırlanmış tətbiq.",
     link: "https://en.wikipedia.org/wiki/Mobile_app#Native_apps",
@@ -479,7 +482,7 @@ export const glossary: GlossaryTerm[] = [
     az: "virtual maşın",
     en: "virtual machine",
     description:
-      "Fiziki kompüteri təqlid edən proqram mühiti; baytkodu icra etmək üçün istifadə olunur.",
+      "Fiziki kompüteri təqlid edən proqram mühiti; baytkodu icra edə bilən mühitdir.",
     link: "https://en.wikipedia.org/wiki/Virtual_machine",
   },
   {
@@ -505,16 +508,25 @@ export const glossary: GlossaryTerm[] = [
   },
 ];
 
+export function normalize(s: string): string {
+  return s
+    .replace(/İ/g, "i")
+    .replace(/I/g, "ı")
+    .toLocaleLowerCase("az")
+    .replace(/[-_\s]+/g, " ")
+    .trim();
+}
+
 const lookupMap = new Map<string, GlossaryTerm>();
 
 for (const term of glossary) {
-  lookupMap.set(term.en.toLowerCase(), term);
-  lookupMap.set(term.az.toLowerCase(), term);
+  lookupMap.set(normalize(term.en), term);
+  lookupMap.set(normalize(term.az), term);
   for (const alias of term.aliases || []) {
-    lookupMap.set(alias.toLowerCase(), term);
+    lookupMap.set(normalize(alias), term);
   }
 }
 
 export function lookupTerm(key: string): GlossaryTerm | undefined {
-  return lookupMap.get(key.toLowerCase());
+  return lookupMap.get(normalize(key));
 }

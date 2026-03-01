@@ -12,7 +12,7 @@ Salam dostlar!
 
 Bu yazıda səmimi bir söhbət edəcəyik. Proqramlaşdırma dünyasına yeni addım atan
 hər kəsin ağlında eyni suallar dönür: "Hansı dili seçməliyəm?", "Bazar nə
-istəyir?", "Mən öyrənənə qədər süni intellekt hər şeyi əlimdən alacaq?". Bir
+istəyir?", "Mən öyrənənə qədər [[süni intellekt]] hər şeyi əlimdən alacaq?". Bir
 neçə ilini bu sahəyə vermiş, həm .NET, həm də fərqli texnologiyalarla işləmiş
 bir həmkarınız kimi, istərdim ki, bu suallar barədə öz şəxsi fikirlərimi və
 sənayedə gördüyüm reallıqları bu məqalədə sizlərlə bölüşüm.
@@ -37,11 +37,11 @@ var ona baxaq.
 Əgər sizin hədəfiniz banklar, sığorta şirkətləri, dövlət sistemləri və ya
 minlərlə işçisi olan beynəlxalq şirkətlərdirsə, seçiminiz ya Java, ya da C#
 olmalıdır. Əslində digər dillər də ola bilər amma xüsusi olaraq bu iki dil ən
-effektiv OOP dillərindən olduğundan və ən əsası çox geniş topluluğa sahib
+effektiv [[OOP]] dillərindən olduğundan və ən əsası çox geniş topluluğa sahib
 olduqlarından xüsusilə bunları vurğulamaq istədim.
 
 **Java:** Onilliklərdir sənayenin "bel sütunu"dur. "Bir dəfə yaz, hər yerdə
-işlət" fəlsəfəsi ilə həm böyük [[bekend]] sistemlərdə, həm də Android dünyasında
+işlət" fəlsəfəsi ilə həm böyük [[backend]] sistemlərdə, həm də Android dünyasında
 (Kotlin) sənayedə çox böyük paya sahibdir.
 
 **C# (.NET):** Microsoft-un bəlkə də gördüyü ən doğru iş 😀. Son illərdə .NET
@@ -69,7 +69,7 @@ sahələrində Python-dan başqa ciddi alternativ yox kimidir.
 
 Əgər sistemlərin alt qatları, "bulud" texnologiyaları ([[bulud-doğma]]) və ya
 yüksək performanslı oyun mühərrikləri sizi maraqlandırırsa, bu dillərə
-baxmalısınız. Go (Golang) xüsusilə Google-un dəstəyi ilə bekend dünyasında çox
+baxmalısınız. Go (Golang) xüsusilə Google-un dəstəyi ilə [[backend]] dünyasında çox
 sürətlə yayılır. Həmçinin C++, C çox böyük və yüksək təzyiqli sistemlərdə
 (finans, brija, OS və s.) ən çox istifadə edilən dillərdəndir.
 
@@ -85,8 +85,8 @@ rəhbərlərin) masasında yüzlərlə CV var. Onlar fərqlənmək üçün sizd�
 tələb edir:
 
 - **Problem Həll Etmə Bacarığı (Tənqidi Düşüncə):** Sizə bir problem veriləndə
-  onu neçə hissəyə bölə bilirsiniz? Hansı alqoritm daha effektivdir? Hansı
-  dizayn, kodlaşdırma paradiqması kontekstə daha uyğundur və s.
+  onu neçə hissəyə bölə bilirsiniz? Hansı [[alqoritm]] daha effektivdir? Hansı
+  dizayn, kodlaşdırma [[paradiqma]]sı kontekstə daha uyğundur və s.
 - **Soft Skills:** Proqramçılar tək işləmir. Komanda ilə necə ünsiyyət
   qurursunuz? Başqasının koduna necə [[kodun nəzərdən keçirilməsi]] verirsiniz?
 - **Davamlı Öyrənmə:** Bu sahədə "mən artıq öyrəndim, bitdi" dediyiniz gün,
@@ -99,7 +99,7 @@ tələb edir:
 Buranı çox diqqətlə oxuyun. AI proqramlaşdırmanı öldürmür, onu dəyişdirir.
 
 Məsələn, çoxları deyir ki, AI artıq React kodunu çox yaxşı yazır, buna görə də
-React öyrənməyə dəyməz. Bu, kökündən yanlışdır. AI-nin bir dili və ya çərçivəni
+React öyrənməyə dəyməz. Bu, kökündən yanlışdır. AI-nin bir dili və ya [[freymvörk]]ü
 yaxşı yazması, o sahədəki mütəxəssisə olan tələbi artırır, çünki məhsul yaratmaq
 sürətlənir. Amma ast hədd yuxarı qalxır.
 
@@ -115,13 +115,13 @@ dil üçün bu belədir).
 
 Dili seçdiniz, amma o dili öyrənməyə başlamazdan əvvəl (və ya paralel olaraq)
 proqramlaşdırmanın fundamentlərini öyrənməlisiniz. Bunlar olmadan siz sadəcə
-"sintaksis təkrarçısı" olacaqsınız.
+"[[sintaksis]] təkrarçısı" olacaqsınız.
 
 - **[[verilənlər strukturu]]:** Array, Linked List, Tree, Graph, Hash Table.
   Verilənləri harada və necə saxlamaq lazım olduğunu bilməsəniz, yazdığınız
   proqram tısbağa sürəti ilə işləyəcək.
 - **[[alqoritm]]lər:** Sıralama, axtarış, [[rekursiya]]. Google niyə sürətlidir?
-  Çünki arxasında nəhəng alqoritmlər dayanır.
+  Çünki arxasında nəhəng [[alqoritm]]lər dayanır.
 - **Şəbəkə və HTTP:** Brauzer serverlə necə danışır? Status kodları (200,
   404, 500) nə deməkdir?
 - **[[Verilənlər bazası]]:** SQL nədir? Verilənlər bir-biri ilə necə əlaqələnir?
@@ -136,26 +136,26 @@ kimi təməl biliklərlə uzatmaq olar.
 Bir dili seçdiniz (məsələn, .NET və ya Java). İndi nə etməlisiniz? Dili necə və
 hansı yol ilə öyrənməlisiniz?
 
-### Mərhələ 1: "Hello World" və Sintaksis
+### Mərhələ 1: "Hello World" və [[Sintaksis]]
 
 Burada məqsəd dilin "dilini" anlamaqdır. Dəyişənlər, şərt operatorları
 (if/else), dövrlər (loops). Bu mərhələdə AI-dən (ChatGPT, Claude) repetitor kimi
 istifadə edin. "Mənə for loop-u bir uşaq üçün izah edə bilərsən?" tipli suallar
 verin.
 
-### Mərhələ 2: Obyekt-yönümlü Proqramlaşdırma və Fundamentlər
+### Mərhələ 2: [[Obyekt-yönümlü proqramlaşdırma]] və Fundamentlər
 
 Hər şeyin "obyekt" olduğu bir dünyadır. Klasslar, [[varislik]], [[polimorfizm]].
 Bu mərhələdə artıq özünüz kod yazmağa başlayın. AI-yə sadəcə xətalarınızı
 tapmaqda ([[sazlama]]) icazə verin.
 
-### Mərhələ 3: Versiya Nəzarəti və Git
+### Mərhələ 3: [[Versiya nəzarəti]] və Git
 
 Kodunuzu necə qoruyursunuz? git commit, git push, git pull – bunlar sizin
 gündəlik rutinləriniz olmalıdır. GitHub-da bir profil açın və yazdığınız hər bir
 kiçik kodu oraya yükləyin.
 
-### Mərhələ 4: Çərçivə və Layihə
+### Mərhələ 4: [[Freymvörk]] və Layihə
 
 İndi artıq real oyuncaqlarla oynamaq vaxtıdır. Əgər C# seçmisinizsə ASP.NET
 Core, Java seçmisinizsə Spring Boot, JavaScript seçmisinizsə React/Next.js. Bir

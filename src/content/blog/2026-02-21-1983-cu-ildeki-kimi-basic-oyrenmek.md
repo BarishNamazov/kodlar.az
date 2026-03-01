@@ -21,13 +21,13 @@ olduğu vaxtlarda tanış olanlar böyük üstünlüyə malikdirlər.
 Bu gün, demək olar ki, hər kəs kompüterdən necə istifadə edəcəyini bilir, lakin
 çox az adam, hətta kompüter sənayesində belə, hər hansı bir maşının daxilində
 nələrin baş verdiyini tam anlayır. İndi o qədər fərqli işlər görən
-[o qədər çox proqram təminatı təbəqəsi var ki](https://www.youtube.com/watch?v=kZRE7HIO3vk),
+[o qədər çox [[proqram təminatı]] təbəqəsi var ki](https://www.youtube.com/watch?v=kZRE7HIO3vk),
 insan hansı hissələrin əsas olduğunu müəyyən etməkdə çətinlik çəkir. 1983-cü
 ildə isə ev kompüterləri o qədər də mürəkkəb deyildi və çalışqan bir insan
 müəyyən bir kompüterin başdan-ayağa necə işlədiyini öyrənə bilərdi. Həmin şəxs,
 yəqin ki, bu gün müasir əməliyyat sistemlərinin aparat təminatının üzərinə
-yığdığı bütün bu abstraksiyalardan mənim qədər çaşqınlıq yaşamır. Elə hesab
-edirəm ki, bu abstraksiya təbəqələri tətbiq edildikcə onları bir-bir anlamaq
+yığdığı bütün bu [[abstraksiya]]lardan mənim qədər çaşqınlıq yaşamır. Elə hesab
+edirəm ki, bu [[abstraksiya]] təbəqələri tətbiq edildikcə onları bir-bir anlamaq
 asan idi; bu gün isə yeni proqramçılar onları yuxarıdan aşağıya və zamanda
 geriyə doğru işləyərək anlamağa çalışmalıdırlar.
 
@@ -100,7 +100,7 @@ görüntü görə bildin.
 sınamağa səni təşviq etdi. Sən də hər hərfi diqqətlə axtararaq `HELLO` yazdın.
 Kompüterin cavabı çaşdırıcı idi.
 
-![Commodore 64 sintaksis xətası](https://twobithistory.org/images/c64_error.png)
+![Commodore 64 [[sintaksis]] xətası](https://twobithistory.org/images/c64_error.png)
 
 Bir neçə fərqli söz yazmağa çalışdın, lakin cavab həmişə eyni idi. Atan dedi ki,
 təlimatın qalan hissəsini oxusan yaxşı olar. Bu asan iş olmazdı — Commodore 64
@@ -146,7 +146,7 @@ tələbələri üçün əlçatan etmək istəyən iki Dartmouth professoru, Con 
 Kemeny) və Tom Kurts (Tom Kurtz) tərəfindən icad edilmişdir. O,
 minikompüterlərdə geniş yayılmışdı və universitet riyaziyyat dərslərində
 populyar idi. Daha sonra Bill Qeyts və Pol Allen Altair üçün MicroSoft BASIC
-interpretatorunu yazdıqdan sonra mikrokompüterlərdə standart halına gəldi. Amma
+[[interpretator]]unu yazdıqdan sonra mikrokompüterlərdə standart halına gəldi. Amma
 təlimat bunların heç birini izah etmir və sən bunları yalnız illər sonra
 öyrənəcəksən
 
@@ -317,13 +317,13 @@ görünə biləcəyi hər yer üçün bir qutu. Altıncı fəsildə, "Sprayt Qra
 sən ətrafda hərəkət etdirilə bilən, hətta böyüdülüb-kiçildilə bilən şəkillər
 yaratmağa imkan verən xüsusi təyinatlı qutular haqqında öyrənirsən. Yeddinci
 fəsildə, "Səs Yaratmaq"da, Commodore 64-ün musiqi ifa etməsi üçün yaza biləcəyin
-qutuları öyrənirsən. Məlum olur ki, Commodore 64-də sonradan API
+qutuları öyrənirsən. Məlum olur ki, Commodore 64-də sonradan [[API]]
 adlandırılacağını öyrənəcəyin şeylərdən çox az var. Commodore 64-ü idarə etmək
 əsasən sxem tərəfindən xüsusi məna verilmiş yaddaş ünvanlarına yazmağı əhatə
 edir.
 
 Nəhayət, o xüsusi qutulara yazmaqla keçirdiyin o uzun illər səninlə qalır.
-Hətta, onilliklər sonra belə, geniş qrafik və ya səs API-si olan bir maşını
+Hətta, onilliklər sonra belə, geniş qrafik və ya səs [[API]]-si olan bir maşını
 proqramlaşdırarkən bilirsən ki, sistemdə API sonda o qutulara və ya onlara
 bənzər nələrəsə yazır. Bəzən yalnız API-lərdən istifadə edən daha gənc
 proqramçılar haqqında düşünəcək və onların API-nin onlar üçün nə etdiyini
