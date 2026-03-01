@@ -324,10 +324,10 @@ edir.
 
 Nəhayət, o xüsusi qutulara yazmaqla keçirdiyin o uzun illər səninlə qalır.
 Hətta, onilliklər sonra belə, geniş qrafik və ya səs [[API]]-si olan bir maşını
-proqramlaşdırarkən bilirsən ki, sistemdə API sonda o qutulara və ya onlara
-bənzər nələrəsə yazır. Bəzən yalnız API-lərdən istifadə edən daha gənc
-proqramçılar haqqında düşünəcək və onların API-nin onlar üçün nə etdiyini
-düşündükləri ilə maraqlanacaqsan. Bəlkə də onlar API-nin başqa bir gizli API-ni
-çağırdığını düşünürlər. Bəs o zaman onlar gizli API-nin nəyi çağırdığını
+proqramlaşdırarkən bilirsən ki, sistemdə [[API]] sonda o qutulara və ya onlara
+bənzər nələrəsə yazır. Bəzən yalnız [[API]]-lərdən istifadə edən daha gənc
+proqramçılar haqqında düşünəcək və onların [[API]]-nin onlar üçün nə etdiyini
+düşündükləri ilə maraqlanacaqsan. Bəlkə də onlar [[API]]-nin başqa bir gizli [[API]]-ni
+çağırdığını düşünürlər. Bəs o zaman onlar gizli [[API]]-nin nəyi çağırdığını
 düşünürlər? Sən o gənc proqramçılara acıyırsan, çünki onlar, yəqin ki, çox
 çaşqınlıq içindədirlər.

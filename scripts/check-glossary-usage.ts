@@ -19,6 +19,14 @@ function stripCodeBlocks(body: string): string {
   return result;
 }
 
+function stripNonProse(body: string): string {
+  // markdown links like [label](url)
+  let result = body.replace(/\[[^\]]+\]\([^)]+\)/g, "");
+  // html/jsx quoted attributes (e.g. alt="perfokart")
+  result = result.replace(/\b[\w:-]+=(?:"[^"]*"|'[^']*')/g, "");
+  return result;
+}
+
 function extractLinkedTerms(body: string): Set<string> {
   const linked = new Set<string>();
   let m: RegExpExecArray | null;
@@ -149,7 +157,7 @@ for (const file of files) {
   const body = stripFrontmatter(content);
   const noCode = stripCodeBlocks(body);
   const linkedTerms = extractLinkedTerms(noCode);
-  const plainText = stripLinkedTerms(noCode);
+  const plainText = stripNonProse(stripLinkedTerms(noCode));
 
   allErrors.push(...findUnlinkedUsages(plainText, searchEntries, file));
   allWarnings.push(...findAliasOnlyUsage(linkedTerms, file));

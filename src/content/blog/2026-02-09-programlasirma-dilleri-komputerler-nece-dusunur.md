@@ -60,8 +60,8 @@ misal dillərdən bəhs edək:
   Əsasən interpret olaraq [[maşın dili]]nə çevrilir. Bu onun sürətli işə salınmasına
   yardım etsə də, performans baxımından zəiflədir. Bir çox [[paradiqma]]ları
   etməyə çalışır və buna görə də geniş istifadə oluna da bilinir. Lakin, onu
-  fərqləndirən cəhətləri həm də onu geri salır. Proqramçıya rahat dillər maşın
-  dilindən çox uzaq olduğu üçün maşına əlavə yük salır. Buna görə də performans
+  fərqləndirən cəhətləri həm də onu geri salır. Proqramçıya rahat dillər [[maşın dili]]ndən
+  çox uzaq olduğu üçün maşına əlavə yük salır. Buna görə də performans
   tələb edən işlərdə yalnız daha sürətli [[kitabxana]]lara qoşulub işlədilə
   bilər.
 - PHP: Server tərəfli scripting dilidir. Əsas məğzi server appləri üçün asan,
