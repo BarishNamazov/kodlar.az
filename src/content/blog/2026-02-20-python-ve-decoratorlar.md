@@ -14,7 +14,7 @@ title: Python və Dekoratorlar
 özəllikdir. Hər hansı metodu istifadə etməzdən qabaq görüləcək işləri özündə
 ehtiva edir.
 
-**Nümunə:** Məsələn, Django [[freymvörk]]ündə hansısa spesifik bir URL-də
+**Nümunə:** Məsələn, Django freymvörkündə hansısa spesifik bir URL-də
 istifadəçinin öz hesabına daxil olub-olmadığını yoxlayırıq. Gəlin birlikdə
 öyrənək.
 
@@ -24,7 +24,7 @@ def account_view(request):
     return HttpResponse('Çox gizli səhifə ;)')
 ```
 
-`account_view` funksiyasının üzərinə yazılan [[dekorator]] ora sorğu göndərməzdən qabaq
+`account_view` funksiyasının üzərinə yazılan dekorator ora sorğu göndərməzdən qabaq
 hesaba daxil olub-olmadığını yoxlayır. Əgər daxil olubsa, cavab qaytarır, yoxsa
 login səhifəsinə yönləndirir.
 
@@ -45,7 +45,7 @@ divider(5, 0)
 ```
 
 İkinci çağırılmada 5 və 0 ötürdük və 0-a bölmə olmadığından Python bizə
-`ZeroDivisionError` qaytardı. [[Dekorator]] vasitəsilə biz çıxa biləcək xətaları
+`ZeroDivisionError` qaytardı. Dekorator vasitəsilə biz çıxa biləcək xətaları
 əvvəlcədən idarə edə bilərik.
 
 İlk öncə sadə bir misala baxaq:
@@ -91,9 +91,9 @@ kimi ötürdüyümüz `my_decorator` funksiyasına mənimsətdik.
 Göründüyü kimi, çox sadə məntiqlə -- bir funksiyanı digərinə ötürməklə --
 istənilən funksiyadan qabaq hər hansısa bir əməliyyat etmək mümkündür.
 
-## [[Dekorator]]lar və arqumentlər
+## Dekoratorlar və arqumentlər
 
-Əgər bizim [[dekorator]] ilə istifadə edəcəyimiz funksiyamız (`divide`) parametr qəbul
+Əgər bizim dekorator ilə istifadə edəcəyimiz funksiyamız (`divide`) parametr qəbul
 edəcəksə, o zaman belə bir xəta ilə qarşılaşa bilərik:
 
 ```python
@@ -125,7 +125,7 @@ Bu xətanı biz ona görə aldıq ki, daxili `wrapper` içində çağırılan `f
 metoduna heç bir arqument verməmişik. Halbuki `divide()` bizdən `num1` və `num2`
 dəyərlərini gözləyir.
 
-[[Dekorator]]larda daxili funksiyamız olan `wrapper()`, əsas funksiyamızın (`divide()`)
+Dekoratorlarda daxili funksiyamız olan `wrapper()`, əsas funksiyamızın (`divide()`)
 parametrlərini qəbul edə bilir. Biz də bunu `func()`-a ötürə bilərik:
 
 ```python
@@ -147,7 +147,7 @@ Bununla da xəta aradan qalxmış olur.
 
 Əgər funksiya 2 yox, daha çox parametr qəbul etsə, hər dəfə bunları yazmaq o
 qədər də ağlabatan deyil. Üstəlik, hər funksiya üçün eyni işi görən ayrı-ayrı
-[[dekorator]]lar yazmalı olacağıq.
+dekoratorlar yazmalı olacağıq.
 
 Bunun həll yolu `*args` və `**kwargs` ikilisidir.
 
@@ -173,9 +173,9 @@ foo = my_decorator(divide)
 foo(5, 2)
 ```
 
-## [[Sintaktik şəkər]]
+## Sintaktik şəkər
 
-[[Dekorator]]u
+Dekoratoru
 
 ```python
 foo = my_decorator(divide)
@@ -199,7 +199,7 @@ def divide(num1, num2):
 divide(5, 2)
 ```
 
-Hətta bir neçə [[dekorator]]u bir funksiyanın üzərinə zəncirvari (chaining) şəkildə də
+Hətta bir neçə dekoratoru bir funksiyanın üzərinə zəncirvari (chaining) şəkildə də
 yazmaq mümkündür:
 
 ```python
@@ -210,7 +210,7 @@ def divide(num1, num2):
     print(num1 / num2)
 ```
 
-## @wraps [[dekorator]]u
+## @wraps dekoratoru
 
 Python-da `__name__`, `__doc__` və s. kimi daxili sehrli (magic) dəyişənlər var.
 Məsələn:
@@ -230,7 +230,7 @@ Səbəb odur ki, biz `divide`-ı `my_decorator`-a mənimsətmişik. O da bizə
 daxilindəki `wrapper()` metodunu qaytarır.
 
 Bu problemi həll etmək və əsas funksiyanın kimliyini (meta məlumatlarını)
-qorumaq üçün Python-un `functools` [[kitabxana]]sındakı `@wraps` [[dekorator]]undan
+qorumaq üçün Python-un `functools` kitabxanasındakı `@wraps` dekoratorundan
 istifadə edəcəyik:
 
 ```python
@@ -251,7 +251,7 @@ def divide(num1, num2):
 print(divide.__name__)
 ```
 
-Daxili funksiya olan `wrapper()` funksiyasının üstünə `@wraps` [[dekorator]]unu yazıb,
+Daxili funksiya olan `wrapper()` funksiyasının üstünə `@wraps` dekoratorunu yazıb,
 parametr kimi də `func` dəyərini verdikdən sonra `divide.__name__` artıq doğru
 şəkildə `"divide"` qaytaracaq.
 

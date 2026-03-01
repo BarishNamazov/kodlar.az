@@ -20,9 +20,9 @@ inanılmaz dərəcədə güclü kainat vəd edir.
 
 ## Haskell-in Mahiyyəti: Funksional Yanaşma
 
-Haskell təmiz **[[funksional proqramlaşdırma]]** ([[FP]]) dilidir. Yəni burada biz
+Haskell təmiz **[[funksional proqramlaşdırma]]** (FP) dilidir. Yəni burada biz
 kompüterə addım-addım nə edəcəyini ([[imperativ proqramlaşdırma]]) demirik, sadəcə problemin özünü
-([[deklarativ proqramlaşdırma]]) təsvir edirik. [[FP]] dili proqramçını məlumatlara bütöv bir obyekt
+([[deklarativ proqramlaşdırma]]) təsvir edirik. FP dili proqramçını məlumatlara bütöv bir obyekt
 kimi baxmağa sövq edir, onu hissə-hissə emal etməyə yox.
 
 Haskell-in sənayedəki tətbiqi də az deyil. Facebook-un
@@ -38,7 +38,7 @@ kimi nüfuzlu universitetlərdə proqramlaşdırmanın ilk olaraq Haskell ilə
 Haskell-i fərqləndirən bir neçə məqam var:
 
 1.  **Güclü [[Tip sistemi]]:** Haskell-də hər bir dəyərin bir tipi var (`v :: t`).
-    Məsələn, `42 :: Int` və ya `sqrt :: Float -> Float`. Bu [[tip sistemi]]
+    Məsələn, `42 :: Int` və ya `sqrt :: Float -> Float`. Bu tip sistemi
     proqram hələ işə düşmədən bir çox xətaları tutur.
 2.  **Gecikmiş hesablama:** Haskell bir ifadənin nəticəsinə ehtiyac
     duyulmayana qədər onu hesablamır. Bu xüsusiyyət bizə **sonsuz siyahılarla**
@@ -46,7 +46,7 @@ Haskell-i fərqləndirən bir neçə məqam var:
     uzanan bir siyahı yarada bilərsiniz, lakin Haskell ondan yalnız sizə lazım
     olan hissəni götürəcək.
 3.  **[[Rekursiya]]:** Haskell-də `for` və ya `while` dövrləri yoxdur. Hər şey
-    [[rekursiya]] üzərində qurulub. Bir siyahını emal etmək üçün onu boş siyahı
+    rekursiya üzərində qurulub. Bir siyahını emal etmək üçün onu boş siyahı
     `[]` və ya "baş" və "quyruq" hissələrinə `(x:xs)` (x -> head & xs -> tail)
     parçalayırıq.
 
@@ -67,15 +67,15 @@ ifadələr və ya riyazi ifadə ağacları kimi mürəkkəb strukturlar qura bil
 
 Haskell-in gücü yalnız dizayndan yox, dərin elmi köklərdən gəlir.
 
-1. **[[lambda hesablaması]]:** Haskell-in nəzəri əsası [[lambda hesablaması]]dır. Bu
+1. **[[lambda hesablaması]]:** Haskell-in nəzəri əsası lambda hesablamasıdır. Bu
    sistem 1930-cu illərdə Alonzo Church tərəfindən yaradılıb. `\x -> x * 2`:
    Buradakı `\` simvolu əslində **λ** (lambda) hərfinin klaviatura versiyasıdır.
-2. **[[karriləmə]] və Funksional Məntiq:** Haskell-də funksiyalar [[karriləmə]]
+2. **[[karriləmə]] və Funksional Məntiq:** Haskell-də funksiyalar karriləmə
    prinsipi ilə işləyir. Funksiyanın işləyişi belədir:
    `add :: Int -> Int -> Int` Əslində isə: `Int -> (Int -> Int)` Funksiyaların
-   arqumentlərini hissə-hissə ötürmək texnikası "[[karriləmə]]" adlanır.
+   arqumentlərini hissə-hissə ötürmək texnikası "karriləmə" adlanır.
 
-   > **Maraqlı Fakt:** Bu gün Haskell-də təbii qəbul etdiyimiz "[[karriləmə]]"
+   > **Maraqlı Fakt:** Bu gün Haskell-də təbii qəbul etdiyimiz "karriləmə"
    > ideyası yarananda ortada nə müasir proqramlaşdırma dilləri var idi, nə də
    > kompüterlər. Bu yanaşma XX əsrin əvvəllərində insanın məntiqi düşüncə
    > tərzini modelləşdirmək üçün irəli sürülmüşdü. Dilin adını aldığı Haskell
@@ -93,9 +93,9 @@ Haskell-in gücü yalnız dizayndan yox, dərin elmi köklərdən gəlir.
 
 Gəlin Haskell-də kodun necə göründüyünü iki nümunə ilə araşdıraq.
 
-1. Tam Funksional Üslub ([[Karriləmə]] və Kompozisiya): Burada funksiyaları silsilə
+1. Tam Funksional Üslub (Karriləmə və Kompozisiya): Burada funksiyaları silsilə
    şəklində birləşdirilir. Bu yanaşma Haskell Curry-nin şərəfinə adlandırılan
-   "[[karriləmə]]" prinsipini — yəni hər funksiyanın əslində bir arqument alaraq
+   "karriləmə" prinsipini — yəni hər funksiyanın əslində bir arqument alaraq
    yeni bir funksiya qaytarmasını nümayiş etdirir.
 
 ```haskell
@@ -143,20 +143,20 @@ digər dillərdə (Java, Python və s.) daha təmiz və xətasız kod yazmağı 
 
 ## Yeni Başlayanlara Tövsiyələr
 
-1.  **Kiçik addımlarla başlayın:** Əvvəlcə siyahılar və [[rekursiya]]nı mənimsəyin.
+1.  **Kiçik addımlarla başlayın:** Əvvəlcə siyahılar və rekursiyanı mənimsəyin.
 2.  **GHCi-dən bol istifadə edin:** GHC Hasell üçün [[kompilyator]]dur. Onun
     interaktiv versiyası GHCi adlanır. Burada "canlı" nümunələr yoxlayaraq
     funksional ideyalarımızı təsdiq edə bilərik. Bu interaktiv mühit sizin ən
     yaxın dostunuzdur, hər n kiçik funksiyanı orada yoxlayın.
 3.  **Tipləri yaxşı öyrənin:** Əgər kodunuz kompilyasiya olunmursa, çox gümman
     ki, tiplərdə uyğunsuzluq var. Haskell-in xəta mesajlarını oxumağı öyrənin.
-4.  **[[Monad]]lara fokuslanmayın:** Başlanğıcda [[monad]]ların riyazi nəzəriyyəsini
+4.  **Monadlara fokuslanmayın:** Başlanğıcda monadların riyazi nəzəriyyəsini
     deyil, onların praktik olaraq proqramın axınını necə idarə etdiyini
     (məsələn, `do` notasiyası ilə) öyrənin.
 
 ## Yekun
 
-[[Funksional proqramlaşdırma]]ya yeni başlayırsınızsa Haskell sizin üçün sadəcə bir
+Funksional proqramlaşdırmaya yeni başlayırsınızsa Haskell sizin üçün sadəcə bir
 dil deyil, bir az qəribə, bir az da maraqlı bir təcrübə olacaq. Amma Haskell
 kimi dillər problemlərə daha diqqətlə yanaşmağı, yazdığın kodun arxasında nə baş
 verdiyini düşünməyi vadar edir. Bu da uzun müddətdə proqramlaşdırmaya baxışını

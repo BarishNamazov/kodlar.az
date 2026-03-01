@@ -18,7 +18,7 @@ kimi, bu, heç də sehr deyil, [[marşrutlaşdırıcı]]lərin dolub-daşmasın�
 mexanizmlərin nəticəsidir.
 
 1980-ci illərin sonlarında İnternetin bəzi hissələrində bu gün “tıxac çöküşü”
-adlandırılan vəziyyət yaşanmışdı. Şəbəkələr yenidən göndərilən [[paket]]lərlə o
+adlandırılan vəziyyət yaşanmışdı. Şəbəkələr yenidən göndərilən paketlərlə o
 qədər yüklənmişdi ki, faydalı ötürmə sürəti mövcud tutumun çox kiçik bir
 hissəsinə düşmüşdü. Xətlər dolu idi, amma demək olar ki, heç bir real məlumat
 qarşı tərəfə çatmırdı. Bu böhranın həlli TCP-nin ən vacib xüsusiyyətlərindən
@@ -33,7 +33,7 @@ həvəsləndirmək cəhdimdir.
 
 ## Tıxac nəzarəti nədir?
 
-**[[tıxanma nəzarəti]] (CC)** şəbəkədə yaranan tıxacların qarşısını alan, onları
+**tıxanma nəzarəti (CC)** şəbəkədə yaranan tıxacların qarşısını alan, onları
 aşkar edən və idarə edən mexanizmdir. Bu mexanizmin vacib olmasının səbəbi odur
 ki, tıxaclı şəbəkələrdə performans qeyri-sabit və proqnozlaşdırılması çətin
 olur, üstəlik məlumat itkisi baş verə bilər. Daha ağır hallarda isə tıxac hətta
@@ -44,15 +44,15 @@ olur, üstəlik məlumat itkisi baş verə bilər. Daha ağır hallarda isə tı
 Aşağıdakı müzakirəni başa düşmək üçün
 [TCP protokolunu](https://az.wikipedia.org/wiki/TCP) qısa şəkildə anlamaq
 vacibdir. Əsasən, TCP etibarlı və bağlantıya əsaslanan nəqliyyat səviyyəli
-protokoldur. Burada “etibarlı” anlayışı çox önəmlidir: TCP məlumatı [[paket]]lərə
-bölür, [[paket]]lərin təyinat nöqtəsinə çatmasını və düzgün ardıcıllıqla qəbul
-olunmasını təmin edir. UDP kimi alternativlərdən fərqli olaraq, TCP [[paket]]lərin
+protokoldur. Burada “etibarlı” anlayışı çox önəmlidir: TCP məlumatı paketlərə
+bölür, paketlərin təyinat nöqtəsinə çatmasını və düzgün ardıcıllıqla qəbul
+olunmasını təmin edir. UDP kimi alternativlərdən fərqli olaraq, TCP paketlərin
 etibarlı çatdırılması və düzgün sıralanması üçün mexanizmlər təqdim edir. Bu
 proses [[ACK]] adlanan təsdiq mesajları vasitəsilə həyata keçirilir. Qəbul edən
-tərəf müəyyən bir [[paket]]i aldığını bildirmək üçün göndərənə [[ACK]] göndərir.
-Göndərən bütün [[ACK]]-ləri aldıqdan sonra həmin “pəncərə” daxilindəki bütün
+tərəf müəyyən bir paketi aldığını bildirmək üçün göndərənə ACK göndərir.
+Göndərən bütün ACK-ləri aldıqdan sonra həmin “pəncərə” daxilindəki bütün
 məlumatın çatdırıldığını hesab edə bilər. Burada “pəncərə” anlayışı vacibdir:
-göndərən tərəf göndərmə pəncərəsini təyin edir və bu, eyni anda (hamısı [[ACK]]
+göndərən tərəf göndərmə pəncərəsini təyin edir və bu, eyni anda (hamısı ACK
 olunana qədər) nə qədər məlumatın göndəriləcəyini müəyyənləşdirir. Pəncərənin
 ölçüsünə təsir edən başqa faktorlar da var, məsələn, göndərənin imkanları və
 [[axın nəzarəti]] mexanizmləri. Amma CC bu ölçünü müəyyən edən əsas
@@ -62,33 +62,33 @@ bu da şəbəkənin eyni anda daşıya biləcəyi maksimum məlumat həcmini mü
 ## Şəbəkənin tıxaclı olduğunu necə anlayırıq?
 
 Tıxacı idarə etmək üçün əvvəlcə onu aşkar etməyi bacarmalıyıq. Tıxacın əsas
-əlamətlərindən biri [[paket]] itkisidir. [[Paket]]lərin itirildiyini, müəyyən bir [[paket]]
-üçün [[ACK]] almadıqda başa düşə bilərik (ya [[paket]], ya da [[ACK]] özü itmiş ola bilər),
+əlamətlərindən biri paket itkisidir. Paketlərin itirildiyini, müəyyən bir paket
+üçün ACK almadıqda başa düşə bilərik (ya paket, ya da ACK özü itmiş ola bilər),
 bəzən bu hal bir neçə dəfə təkrarlana bilər. TCP bağlantısı həmçinin
-[[vaxt aşımı]] verə bilər, yəni bütün [[paket]]lərin çatdırıldığını təsdiqləmək üçün
+[[vaxt aşımı]] verə bilər, yəni bütün paketlərin çatdırıldığını təsdiqləmək üçün
 həddən artıq uzun gözləmiş oluruq — bu da əslində itki deməkdir.
 
-Amma [[paket]]lər tam itməzdən əvvəl də erkən tıxac siqnallarını müşahidə etmək
+Amma paketlər tam itməzdən əvvəl də erkən tıxac siqnallarını müşahidə etmək
 mümkündür. Bunun üçün [[RTT]], yəni gediş-gəliş vaxtının artmasına baxırıq —
 başqa sözlə, çatdırılma [[gecikmə]]si böyüyür. Avtomobillərlə dolu bir yolda olduğu
 kimi, tıxaclı linklərdən keçmək də daha çox vaxt aparır.
 
 ## CC-yə əsas yanaşmalar
 
-TCP tıxac nəzarəti üçün müxtəlif [[alqoritm]]ik yanaşmalar mövcuddur. Onların əsas
+TCP tıxac nəzarəti üçün müxtəlif alqoritmik yanaşmalar mövcuddur. Onların əsas
 fərqi tıxac siqnalını necə aşkar etmələri və göndərmə sürətini necə
 tənzimləmələridir.
 
 ### İtkiyə əsaslanan CC
 
 İtkiyə əsaslanan CC ən fundamental və adətən ən geniş yayılmış yanaşmadır. Əsas
-ideya [[paket]] itkisini aşkar etmək və göndərmə pəncərəsini azaltmaqdır. Bu yanaşma
+ideya paket itkisini aşkar etmək və göndərmə pəncərəsini azaltmaqdır. Bu yanaşma
 Reno, NewReno, Tahoe və CUBIC (Linux-da standart) kimi klassik TCP
 variantlarında tətbiq olunur.
 
 Adətən itkiyə əsaslanan nəzarət aşağı göndərmə sürəti ilə başlayıb onu additiv
 şəkildə artırmaq prinsipinə əsaslanır. Əgər itki aşkar edilərsə (bu, adətən eyni
-[[paket]] üçün 3 təkrarlanan [[ACK]] vasitəsilə başa düşülür) göndərmə sürəti
+paket üçün 3 təkrarlanan ACK vasitəsilə başa düşülür) göndərmə sürəti
 multiplikativ şəkildə azaldılır. Bu texnika Additiv Artım, Multiplikativ Azalma
 (AIMD) adlanır.
 
@@ -99,7 +99,7 @@ dizaynının əsas prinsiplərinə uyğundur.
 Əsas çatışmazlıq isə ondan ibarətdir ki, itki yalnız şəbəkə artıq tıxaclı
 vəziyyətə düşəndə baş verir, yəni infrastruktur artıq yüklənmiş olur. Bu
 mexanizm işə düşəndə, switch-lərdəki [[bufer]]lər artıq dolmuş olur və
-[[gecikmə]] bir müddətdir artmaqda davam edir.
+gecikmə bir müddətdir artmaqda davam edir.
 
 ### [[ECN]]-ə əsaslanan CC
 
@@ -107,10 +107,10 @@ Bəzi hallarda tıxac haqqında siqnalı mümkün qədər tez almaq faydalı olu
 görə də bəzi infrastruktur mühitlərində şəbəkədaxili (in-network) mexanizmlərə
 üstünlük verilir.
 
-Xüsusilə, [[ECN]] şəbəkə üzərində tıxac yaranmağa yaxınlaşanda [[ruter]] və ya
-switch-lərin [[paket]]ləri atmaq əvəzinə onları işarələməsi mexanizmidir. Adətən
-şəbəkə inzibatçıları [[bufer]] doluluğu üçün müəyyən hədd təyin edirlər (məsələn,
-70%). Bu hədd keçildikdə, [[paket]]lər [[ECN]] ilə işarələnir. Qəbul edən tərəf bu
+Xüsusilə, ECN şəbəkə üzərində tıxac yaranmağa yaxınlaşanda ruter və ya
+switch-lərin paketləri atmaq əvəzinə onları işarələməsi mexanizmidir. Adətən
+şəbəkə inzibatçıları bufer doluluğu üçün müəyyən hədd təyin edirlər (məsələn,
+70%). Bu hədd keçildikdə, paketlər ECN ilə işarələnir. Qəbul edən tərəf bu
 işarəni gördükdə, bunu göndərənə bildirir və göndərən də göndərmə pəncərəsini
 azaldaraq sürətini uyğunlaşdırır.
 
@@ -126,27 +126,27 @@ bilmədiyimiz bir çox ssenaridə bu yanaşmanı tətbiq etmək mümkün olmur.
 
 ### [[BBR]]
 
-Tıxac nəzarətinə müasir yanaşmalardan biri Google tərəfindən təqdim olunub: [[BBR]]
+Tıxac nəzarətinə müasir yanaşmalardan biri Google tərəfindən təqdim olunub: BBR
 (Bottleneck Bandwidth and Round-trip propagation time). Bu, Google-ın bu gün də
-öz infrastrukturunda istifadə etdiyi [[alqoritm]]lərdən biridir.
+öz infrastrukturunda istifadə etdiyi alqoritmlərdən biridir.
 
 Əsas ideya ondan ibarətdir ki, itkiyə və ya switch bildirişlərinə əsaslanmaq
 əvəzinə, şəbəkə haqqında model qurmaq üçün müxtəlif metrikləri davamlı şəkildə
 ölçürük. Bu model əsasən iki vacib göstəriciyə əsaslanır:
 
 1. Bottleneck bandwidth — marşrut üzərindəki ən zəif linkin [[bant genişliyi]]
-2. Minimum [[RTT]] — [[paket]]in ən kiçik gediş-gəliş vaxtı
+2. Minimum RTT — paketin ən kiçik gediş-gəliş vaxtı
 
 Sadə bir bənzətmə ilə desək, sanki məlumat yox, su ötürürük. Birinci metrik
 borunun ən dar hissəsinin enini, ikinci metrik isə uzunluğunu göstərir. Təbii
-olaraq, biz Bandwidth × [[RTT]] sürəti ilə göndərmək istəyərik. Bu, borunun
+olaraq, biz Bandwidth × RTT sürəti ilə göndərmək istəyərik. Bu, borunun
 “həcmi”nə, yəni şəbəkənin eyni anda daşıya biləcəyi maksimum məlumat miqdarına
 uyğun gəlir.
 
 Nəticədə, əsas üstünlük ondan ibarətdir ki, yüksək ötürmə sürəti və aşağı
-[[gecikmə]] əldə olunur, yəni tıxacın özü demək olar ki, ümumiyyətlə yaranmır.
-[[BBR]]-in başqa bir yaxşı xüsusiyyəti də ədalətli paylaşmadır: əgər eyni linki
-bölüşən bir neçə axın varsa və onların hamısı [[BBR]] istifadə edirsə, onlar
+gecikmə əldə olunur, yəni tıxacın özü demək olar ki, ümumiyyətlə yaranmır.
+BBR-in başqa bir yaxşı xüsusiyyəti də ədalətli paylaşmadır: əgər eyni linki
+bölüşən bir neçə axın varsa və onların hamısı BBR istifadə edirsə, onlar
 arasında nisbətən ədalətli paylaşma müşahidə olunur.
 
 Çatışmazlığı isə odur ki, bu yanaşma hələ də geniş yayılma və inkişaf

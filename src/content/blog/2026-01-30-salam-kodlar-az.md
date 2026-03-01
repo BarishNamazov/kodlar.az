@@ -74,7 +74,7 @@ Kompüter sənayesinin ilk illərində (1950-60-cı illər) əsas dəyər "dəmi
 işlətmək üçün bir vasitə sayılırdı və mühəndislər arasında resept kimi sərbəst
 mübadilə olunurdu. Heç kimin ağlına gəlmirdi ki, kodu gizlətsin.
 
-Lakin 70-80-ci illərdə [[proqram təminatı]] kommersiyalaşmağa başladıqda, buna qarşı
+Lakin 70-80-ci illərdə proqram təminatı kommersiyalaşmağa başladıqda, buna qarşı
 bir reaksiya yarandı. MIT-dəki Süni İntellekt laboratoriyasından Richard
 Stallman və sonradan Linux kernelini yaradan Linus Torvalds kimi insanlar başa
 düşdülər ki, bilik qapalı qalsa, inkişaf dayanacaq.

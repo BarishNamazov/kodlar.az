@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join, basename, resolve } from "node:path";
 import { glossary, normalize, type GlossaryTerm } from "../src/data/glossary.ts";
 
@@ -200,7 +200,95 @@ function findAliasOnlyUsage(
   return warnings;
 }
 
+// ── Duplicate-link check ─────────────────────────────────────────────
+
+interface DuplicateLinkWarning {
+  file: string;
+  term: string;
+  count: number;
+  lines: number[];
+}
+
+function findDuplicateLinks(
+  body: string,
+  file: string,
+): DuplicateLinkWarning[] {
+  const warnings: DuplicateLinkWarning[] = [];
+
+  // Count [[...]] occurrences grouped by normalized glossary term
+  const counts = new Map<string, { term: string; lines: number[] }>();
+  let m: RegExpExecArray | null;
+  const re = /\[\[([^\]]+)\]\]/g;
+  while ((m = re.exec(body)) !== null) {
+    const raw = m[1];
+    const norm = normalize(raw);
+    // Only care about terms that are in the glossary
+    const g = glossary.find(
+      (g) =>
+        normalize(g.az) === norm ||
+        (g.aliases ?? []).some((a) => normalize(a) === norm),
+    );
+    if (!g) continue;
+
+    const key = normalize(g.az);
+    const entry = counts.get(key) ?? { term: g.az, lines: [] };
+    const lineNum = body.slice(0, m.index).split("\n").length;
+    entry.lines.push(lineNum);
+    counts.set(key, entry);
+  }
+
+  for (const [, entry] of counts) {
+    if (entry.lines.length > 1) {
+      warnings.push({
+        file,
+        term: entry.term,
+        count: entry.lines.length,
+        lines: entry.lines,
+      });
+    }
+  }
+
+  return warnings;
+}
+
+function fixDuplicateLinks(filePath: string): number {
+  const content = readFileSync(filePath, "utf-8");
+  const frontmatterMatch = content.match(/^---\r?\n[\s\S]*?\r?\n---\r?\n/);
+  const prefix = frontmatterMatch ? frontmatterMatch[0] : "";
+  const body = frontmatterMatch ? content.slice(prefix.length) : content;
+
+  // Track which glossary terms we've already seen (by normalized main term key)
+  const seen = new Set<string>();
+  let fixed = 0;
+
+  const result = body.replace(/\[\[([^\]]+)\]\]/g, (match, term) => {
+    const norm = normalize(term);
+    const g = glossary.find(
+      (g) =>
+        normalize(g.az) === norm ||
+        (g.aliases ?? []).some((a) => normalize(a) === norm),
+    );
+    if (!g) return match; // not a glossary term, leave as-is
+
+    const key = normalize(g.az);
+    if (seen.has(key)) {
+      fixed++;
+      return term; // strip the [[ ]]
+    }
+    seen.add(key);
+    return match; // keep the first occurrence
+  });
+
+  if (fixed > 0) {
+    writeFileSync(filePath, prefix + result);
+  }
+  return fixed;
+}
+
 // ── Main ─────────────────────────────────────────────────────────────
+
+const checkDuplicates = process.argv.includes("--check-duplicates");
+const fixDuplicates = process.argv.includes("--fix-duplicates");
 
 const blogDir = resolve(import.meta.dirname!, "../src/content/blog");
 const files = readdirSync(blogDir).filter((f) => f.endsWith(".md"));
@@ -209,6 +297,7 @@ const searchEntries = buildSearchEntries();
 let allErrors: UnlinkedUsage[] = [];
 let allWarnings: AliasWarning[] = [];
 let allFirstInstanceWarnings: FirstInstanceWarning[] = [];
+let allDuplicateWarnings: DuplicateLinkWarning[] = [];
 
 for (const file of files) {
   const content = readFileSync(join(blogDir, file), "utf-8");
@@ -223,15 +312,41 @@ for (const file of files) {
   allErrors.push(...errors);
   allFirstInstanceWarnings.push(...firstInstanceWarnings);
   allWarnings.push(...findAliasOnlyUsage(linkedTerms, file));
+  if (checkDuplicates || fixDuplicates) {
+    allDuplicateWarnings.push(...findDuplicateLinks(noCode, file));
+  }
 }
 
-// ── Output ───────────────────────────────────────────────────────────
+// ── Output helpers ───────────────────────────────────────────────────
 
 const yellow = "\x1b[33m";
 const red = "\x1b[31m";
 const green = "\x1b[32m";
 const dim = "\x1b[2m";
 const reset = "\x1b[0m";
+
+// ── Fix duplicates ──────────────────────────────────────────────────
+
+if (fixDuplicates && allDuplicateWarnings.length > 0) {
+  const filesWithDups = new Set(allDuplicateWarnings.map((w) => w.file));
+  let totalFixed = 0;
+  for (const file of filesWithDups) {
+    const fixed = fixDuplicateLinks(join(blogDir, file));
+    if (fixed > 0) {
+      console.log(
+        `${green}FIXED${reset}  ${file} — removed ${fixed} duplicate link(s)`,
+      );
+      totalFixed += fixed;
+    }
+  }
+  console.log(
+    `\n${green}Fixed ${totalFixed} duplicate link(s) across ${filesWithDups.size} file(s).${reset}`,
+  );
+  // Skip printing duplicate warnings since we just fixed them
+  allDuplicateWarnings = [];
+}
+
+// ── Output ───────────────────────────────────────────────────────────
 
 for (const w of allWarnings) {
   console.log(
@@ -244,6 +359,12 @@ for (const w of allFirstInstanceWarnings) {
     `${yellow}WARN${reset}   ${w.file}:${w.line} — "${w.term}" first appears unlinked (linked later); consider linking the first occurrence`,
   );
   console.log(`${dim}       > ${w.context}${reset}`);
+}
+
+for (const w of allDuplicateWarnings) {
+  console.log(
+    `${yellow}WARN${reset}   ${w.file} — [[${w.term}]] is linked ${w.count} times (lines ${w.lines.join(", ")}); only the first occurrence needs [[...]]`,
+  );
 }
 
 if (allErrors.length > 0) {
