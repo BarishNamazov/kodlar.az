@@ -20,7 +20,7 @@ bir az sirli, lakin inanılmaz dərəcədə güclü kainat vəd edir.
 
 ## Haskell-in Mahiyyəti: Funksional Yanaşma
 
-Haskell təmiz **funksional proqramlaşdırma** (FP) dilidir. Yəni burada biz
+Haskell təmiz **[[funksional proqramlaşdırma]]** (FP) dilidir. Yəni burada biz
 kompüterə addım-addım nə edəcəyini (imperativ) demirik, sadəcə problemin özünü
 (deklarativ) təsvir edirik. FP dili proqramçını məlumatlara bütöv bir obyekt
 kimi baxmağa sövq edir, onu hissə-hissə emal etməyə yox.
@@ -40,11 +40,11 @@ Haskell-i fərqləndirən bir neçə məqam var:
 1.  **Güclü Tip Sistemi:** Haskell-də hər bir dəyərin bir tipi var (`v :: t`).
     Məsələn, `42 :: Int` və ya `sqrt :: Float -> Float`. Bu tip sistemi proqram
     hələ işə düşmədən bir çox xətaları tutur.
-2.  **Gecikmiş Hesablama (Lazy Evaluation):** Haskell bir ifadənin nəticəsinə
-    ehtiyac duyulmayana qədər onu hesablamır. Bu xüsusiyyət bizə **sonsuz
-    siyahılarla** (infinite lists) işləmək imkanı verir. Məsələn, `[0..]`
-    yazaraq sıfırdan sonsuzluğa qədər uzanan bir siyahı yarada bilərsiniz, lakin
-    Haskell ondan yalnız sizə lazım olan hissəni götürəcək.
+2.  **[[gecikmiş hesablama]] (Lazy Evaluation):** Haskell bir ifadənin
+    nəticəsinə ehtiyac duyulmayana qədər onu hesablamır. Bu xüsusiyyət bizə
+    **sonsuz siyahılarla** (infinite lists) işləmək imkanı verir. Məsələn,
+    `[0..]` yazaraq sıfırdan sonsuzluğa qədər uzanan bir siyahı yarada
+    bilərsiniz, lakin Haskell ondan yalnız sizə lazım olan hissəni götürəcək.
 3.  **Rekursiya:** Haskell-də `for` və ya `while` dövrləri yoxdur. Hər şey
     rekursiya üzərində qurulub. Bir siyahını emal etmək üçün onu boş siyahı `[]`
     və ya "baş" (head) və "quyruq" (tail) hissələrinə `(x:xs)` (x -> head & xs
@@ -52,7 +52,7 @@ Haskell-i fərqləndirən bir neçə məqam var:
 
 ## Tip Təhlükəsizliyi və Cəbri Məlumat Tipləri
 
-Mənim üçün Haskell-in ən gözəl tərəfi **Cəbri Məlumat Tipləridir** (ADT -
+Mənim üçün Haskell-in ən gözəl tərəfi **[[cəbri məlumat tipi]]**dir (ADT -
 Algebraic Data Type)[^burada "cəbri" sözü bu tiplərin üzərində apa bildiyimiz
 riyazi əməllərdən gəlir]. Biz öz dünyamızı çox dəqiq modelləşdirə bilirik.
 Məsələn, bir proqramda dəyərin olub-olmaması (null problemi) bir çox dildə
@@ -67,13 +67,13 @@ ifadələr və ya riyazi ifadə ağacları kimi mürəkkəb strukturlar qura bil
 
 Haskell-in gücü yalnız dizayndan yox, dərin elmi köklərdən gəlir.
 
-1. **Lambda Kalkulusu:** Haskell-in nəzəri əsası lambda kalkulusudur. Bu sistem
-   1930-cu illərdə Alonzo Church tərəfindən yaradılıb. `\x -> x * 2`: Buradakı
-   `\` simvolu əslində **λ** (lambda) hərfinin klaviatura versiyasıdır.
-2. **Currying və Funksional Məntiq:** Haskell-də funksiyalar currying prinsipi
-   ilə işləyir. Funksiyanın işləyişi belədir: `add :: Int -> Int -> Int` Əslində
-   isə: `Int -> (Int -> Int)` Funksiyaların arqumentlərini hissə-hissə ötürmək
-   texnikası "currying" adlanır.
+1. **[[lambda kalkulusu]]:** Haskell-in nəzəri əsası lambda kalkulusudur. Bu
+   sistem 1930-cu illərdə Alonzo Church tərəfindən yaradılıb. `\x -> x * 2`:
+   Buradakı `\` simvolu əslində **λ** (lambda) hərfinin klaviatura versiyasıdır.
+2. **[[currying]] və Funksional Məntiq:** Haskell-də funksiyalar currying
+   prinsipi ilə işləyir. Funksiyanın işləyişi belədir:
+   `add :: Int -> Int -> Int` Əslində isə: `Int -> (Int -> Int)` Funksiyaların
+   arqumentlərini hissə-hissə ötürmək texnikası "currying" adlanır.
 
    > **Maraqlı Fakt:** Bu gün Haskell-də təbii qəbul etdiyimiz "currying"
    > ideyası yarananda ortada nə müasir proqramlaşdırma dilləri var idi, nə də

@@ -46,7 +46,7 @@ işlət" fəlsəfəsi ilə həm böyük backend sistemlərdə, həm də Android 
 
 **C# (.NET):** Microsoft-un bəlkə də gördüyü ən doğru iş 😀. Son illərdə .NET
 Core ilə birlikdə inanılmaz dərəcədə sürətlənib və modernləşib. Enterprise
-dünyasında ən təmiz "framework"lardan biri sayılır. Son versiyalarında əldə
+dünyasında ən təmiz [[çərçivə]]lərdən biri sayılır. Son versiyalarında əldə
 etdikləri çox ciddi performans artımı və əsas rəqibi Javadan bəzi
 xüsusiyyətlərdə qabağa düşməsi və ən əsas da çox yaxşı ekosistemə sahib olması
 bu dili çox güclü bir alət edir.
@@ -99,9 +99,9 @@ tələb edir:
 Buranı çox diqqətlə oxuyun. AI proqramlaşdırmanı öldürmür, onu dəyişdirir.
 
 Məsələn, çoxları deyir ki, AI artıq React kodunu çox yaxşı yazır, buna görə də
-React öyrənməyə dəyməz. Bu, kökündən yanlışdır. AI-nin bir dili və ya
-framework-ü yaxşı yazması, o sahədəki mütəxəssisə olan tələbi artırır, çünki
-məhsul yaratmaq sürətlənir. Amma threshold\* yuxarı qalxır.
+React öyrənməyə dəyməz. Bu, kökündən yanlışdır. AI-nin bir dili və ya çərçivəni
+yaxşı yazması, o sahədəki mütəxəssisə olan tələbi artırır, çünki məhsul yaratmaq
+sürətlənir. Amma threshold\* yuxarı qalxır.
 
 AI-nin yazdığı React kodunda bəzən performans problemləri, bəzən isə ciddi
 təhlükəsizlik boşluqları olur. Sizin işiniz AI-nin yazdığı 100 sətirlik kodu
@@ -117,18 +117,18 @@ Dili seçdiniz, amma o dili öyrənməyə başlamazdan əvvəl (və ya paralel o
 proqramlaşdırmanın fundamentlərini öyrənməlisiniz. Bunlar olmadan siz sadəcə
 "sintaksis təkrarçısı" olacaqsınız.
 
-- **Verilənlər Strukturları (Data Structures):** Array, Linked List, Tree,
+- **[[verilənlər strukturu]] (Data Structures):** Array, Linked List, Tree,
   Graph, Hash Table. Verilənləri harada və necə saxlamaq lazım olduğunu
   bilməsəniz, yazdığınız proqram tısbağa sürəti ilə işləyəcək.
-- **Alqoritmlər:** Sıralama, axtarış, rekursiya. Google niyə sürətlidir? Çünki
-  arxasında nəhəng alqoritmlər dayanır.
+- **[[algoritm]]lər:** Sıralama, axtarış, rekursiya. Google niyə sürətlidir?
+  Çünki arxasında nəhəng alqoritmlər dayanır.
 - **Şəbəkə (Networking) və HTTP:** Brauzer serverlə necə danışır? Status kodları
   (200, 404, 500) nə deməkdir?
 - **Verilənlər Bazası (Database):** SQL nədir? Verilənlər bir-biri ilə necə
   əlaqələnir?
 
-Bu siyahını kompüterlər necə işləyir, compiler, interpreter və s. kimi təməl
-biliklərlə uzatmaq olar.
+Bu siyahını kompüterlər necə işləyir, [[kompilyator]], [[interpretator]] və s.
+kimi təməl biliklərlə uzatmaq olar.
 
 ---
 
@@ -156,7 +156,7 @@ Kodunuzu necə qoruyursunuz? git commit, git push, git pull – bunlar sizin
 gündəlik rutinləriniz olmalıdır. GitHub-da bir profil açın və yazdığınız hər bir
 kiçik kodu oraya yükləyin.
 
-### Mərhələ 4: Framework və Layihə
+### Mərhələ 4: Çərçivə (Framework) və Layihə
 
 İndi artıq real oyuncaqlarla oynamaq vaxtıdır. Əgər C# seçmisinizsə ASP.NET
 Core, Java seçmisinizsə Spring Boot, JavaScript seçmisinizsə React/Next.js. Bir

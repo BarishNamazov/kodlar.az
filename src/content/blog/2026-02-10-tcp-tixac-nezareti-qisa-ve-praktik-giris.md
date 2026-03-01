@@ -49,8 +49,8 @@ protokoldur. Burada “etibarlı” anlayışı çox önəmlidir: TCP məlumatı
 bölür, paketlərin təyinat nöqtəsinə çatmasını və düzgün ardıcıllıqla qəbul
 olunmasını təmin edir. UDP kimi alternativlərdən fərqli olaraq, TCP paketlərin
 etibarlı çatdırılması və düzgün sıralanması üçün mexanizmlər təqdim edir. Bu
-proses “ACK” adlanan təsdiq mesajları vasitəsilə həyata keçirilir. Qəbul edən
-tərəf müəyyən bir paketi aldığını bildirmək üçün göndərənə ACK göndərir.
+proses [[ACK]] adlanan təsdiq mesajları vasitəsilə həyata keçirilir. Qəbul edən
+tərəf müəyyən bir paketi aldığını bildirmək üçün göndərənə [[ACK]] göndərir.
 Göndərən bütün ACK-ləri aldıqdan sonra həmin “pəncərə” daxilindəki bütün
 məlumatın çatdırıldığını hesab edə bilər. Burada “pəncərə” anlayışı vacibdir:
 göndərən tərəf göndərmə pəncərəsini təyin edir və bu, eyni anda (hamısı ACK
@@ -70,9 +70,9 @@ verə bilər, yəni bütün paketlərin çatdırıldığını təsdiqləmək ü�
 uzun gözləmiş oluruq — bu da əslində itki deməkdir.
 
 Amma paketlər tam itməzdən əvvəl də erkən tıxac siqnallarını müşahidə etmək
-mümkündür. Bunun üçün Round Trip Time (RTT), yəni gediş-gəliş vaxtının artmasına
-baxırıq — başqa sözlə, çatdırılma gecikməsi böyüyür. Avtomobillərlə dolu bir
-yolda olduğu kimi, tıxaclı linklərdən keçmək də daha çox vaxt aparır.
+mümkündür. Bunun üçün [[RTT]], yəni gediş-gəliş vaxtının artmasına baxırıq —
+başqa sözlə, çatdırılma gecikməsi böyüyür. Avtomobillərlə dolu bir yolda olduğu
+kimi, tıxaclı linklərdən keçmək də daha çox vaxt aparır.
 
 ## CC-yə əsas yanaşmalar
 
@@ -108,12 +108,13 @@ Bəzi hallarda tıxac haqqında siqnalı mümkün qədər tez almaq faydalı olu
 görə də bəzi infrastruktur mühitlərində şəbəkədaxili (in-network) mexanizmlərə
 üstünlük verilir.
 
-Xüsusilə, Explicit Congestion Notification (ECN) şəbəkə üzərində tıxac yaranmağa
-yaxınlaşanda marşrutlaşdırıcı və ya switch-lərin paketləri atmaq əvəzinə onları
-işarələməsi mexanizmidir. Adətən şəbəkə inzibatçıları bufer doluluğu üçün
-müəyyən hədd təyin edirlər (məsələn, 70%). Bu hədd keçildikdə, paketlər ECN ilə
-işarələnir. Qəbul edən tərəf bu işarəni gördükdə, bunu göndərənə bildirir və
-göndərən də göndərmə pəncərəsini azaldaraq sürətini uyğunlaşdırır.
+Xüsusilə, [[ECN]] (Explicit Congestion Notification) şəbəkə üzərində tıxac
+yaranmağa yaxınlaşanda marşrutlaşdırıcı və ya switch-lərin paketləri atmaq
+əvəzinə onları işarələməsi mexanizmidir. Adətən şəbəkə inzibatçıları bufer
+doluluğu üçün müəyyən hədd təyin edirlər (məsələn, 70%). Bu hədd keçildikdə,
+paketlər ECN ilə işarələnir. Qəbul edən tərəf bu işarəni gördükdə, bunu
+göndərənə bildirir və göndərən də göndərmə pəncərəsini azaldaraq sürətini
+uyğunlaşdırır.
 
 Əsas üstünlüyü ondan ibarətdir ki, bu yanaşma heç bir məlumat itirilmədən əvvəl
 göndərmə sürətini azaltmağa imkan verir və beləliklə tıxacın qarşısını almaq
@@ -125,7 +126,7 @@ olunmayan əlavə funksionallıq tam şəkildə son nöqtələrdə (yəni gönd�
 edən tərəfdə) həyata keçirilməlidir. Buna görə də, şəbəkə üzərində nəzarət edə
 bilmədiyimiz bir çox ssenaridə bu yanaşmanı tətbiq etmək mümkün olmur.
 
-### BBR
+### [[BBR]]
 
 Congestion control-a müasir yanaşmalardan biri Google tərəfindən təqdim olunub:
 Bottleneck Bandwidth and Round-trip propagation time (BBR). Bu, Google-ın bu gün

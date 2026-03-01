@@ -24,10 +24,10 @@ bildiyi bir məlumat var: kompüterlər sıfırlar (**0**) və birlərlə (**1**
 işləyir. Həqiqətən də kompüterlər özündə yalnız bitlərlə hesablama edə və
 məlumat saxlaya bilir. Eyni zamanda, yazılan proqramlar da bu şəkildə olmalıdır
 ki, kompüter onu anlaya bilsin. Bu kompüterin anladığı bir dil olduğu üçün biz
-buna maşın dili deyirik. İstifadə etdiyimiz bütün software sistemləri kompüterdə
-maşın dilində olur. Amma proqramların bitlərlə yazılması düşüncəsi çox qorxunc
-səslənir. Təsəvvür edin ki, yazmaq istədiyiniz proqram üçün yalnızca 0 və 1
-düymələrinə basırsınız. Bu həm çox qarmaşıq görünər, həm də çox uzun vaxt
+buna [[maşın dili]] deyirik. İstifadə etdiyimiz bütün software sistemləri
+kompüterdə maşın dilində olur. Amma proqramların bitlərlə yazılması düşüncəsi
+çox qorxunc səslənir. Təsəvvür edin ki, yazmaq istədiyiniz proqram üçün yalnızca
+0 və 1 düymələrinə basırsınız. Bu həm çox qarmaşıq görünər, həm də çox uzun vaxt
 aparar. Bu problemə həll üçün insanların daha yaxşı anlaya biləcəkləri bir üsul
 olaraq proqramlaşdırma dilləri ixtira olunmuşdur. Proqramlaşdırma dilləri özündə
 sadəcə yazıdan (**text**) ibarət olub əmrləri sözlərlə ifadə edib yazmaqdır. Biz
@@ -39,11 +39,11 @@ söhbət edirmişik kimi düşünülə bilər. Lakin unutmamaq lazımdır ki, ko
 bu dilləri anlamır, onlar sadəcə maşın dilini bilirlər. Bu zaman bizim
 köməyimizə tərcüməçi proqramlar gəlir. Bu tərcüməçi proqramlar proqramlaşdırma
 dillərinə görə fərqlənir, lakin hər birinin məqsədi maşın dilinə çevirməkdir.
-Onlar kodları çevirmə metodlarına görə iki hissəyə ayrılır: Interpreter və
-Compiler. Əslində bu çevirmələrə daha da çox metodlar vardır, amma biz hələlik
-işləri sadə tutmaq üçün bunları bilsək yetərlidir. Bu proqramlarla biz bizim
-proqramlaşdırdığımız mənbə (**source**) kodunu maşın dilinin anlaya bildiyi
-vəziyyətə gətirə bilərik.
+Onlar kodları çevirmə metodlarına görə iki hissəyə ayrılır: [[interpretator]] və
+[[kompilyator]]. Əslində bu çevirmələrə daha da çox metodlar vardır, amma biz
+hələlik işləri sadə tutmaq üçün bunları bilsək yetərlidir. Bu proqramlarla biz
+bizim proqramlaşdırdığımız mənbə (**source**) kodunu maşın dilinin anlaya
+bildiyi vəziyyətə gətirə bilərik.
 
 ## Niyə fərqli və çoxlu proqramlaşdırma dillərinə sahibik?
 
@@ -90,28 +90,29 @@ misal dillərdən bəhs edək:
   dili anlayışından olduqca uzaqdır və ən sadə alqoritmlər belə çox uzun kodlara
   çevrilə bilər. Olduqca riskli və qarmaşıq olan bu dil sadəcə standartların
   olmadığı dövrü əla ifadə edən tarixi fakt olaraq yaşayır ancaq.
-- Java: Bu dil müasir dövrün ən çox istifadə edilən və obyekt-yönümlü
-  proqramlaşdırmanın (**Object Oriented Proqramming**) ən güclü dillərindən
-  biridir. Java çıxdığı zaman _"Bir dəfə yaz, hər yerdə işlət!"_ mottosu ilə
-  populyar idi. Əsasən həm compiler, həm də interpreter metodlarının müsbət
-  cəhətlərini hibrit birləşdirən JIT virtual maşın məntiqi ilə işləyir. Onu
-  populyar edən bir digər nöqtəsi isə, zəngin və müasir kitabxana ekosistemidir.
-  Lakin indiki dövrdə, ən böyük məqsədi istənilən sistemin asan və tez tətbiq
-  (**implement**) oluna bilməsidir və bu da onu performans cəhətdən geriyə
-  salır. Hər nə qədər Python kimi dillərdən daha sürətli olsa da, onun hər yerdə
-  OOP paradiqmasını istifadə qanunu, prosessorun işləmə məntiqinə biraz zidd
-  olduğu üçün yavaşladır. Həmçinin nəticədə birbaşa maşın dilinə çevrilməyən bir
-  dildir. Əlavə olaraq, Java proqramçı üçün kəskin bəzi qaydalar qoyur. Bu
-  qaydalarla kodu daha təhlükəsiz etməyə çalışsa da, bu həm də proqramçını
-  limitləyir. Misal, zibil qutusu (**Garbage Collector**) metodunu istifadə
-  etməsi onun aşağı səviyyə işlərdə istifadəsini bağlayır. Sonda, PHP-də qeyd
-  edilən versiya probleminə də sahibdir.
+- Java: Bu dil müasir dövrün ən çox istifadə edilən və
+  [[obyekt-yönümlü proqramlaşdırma]] (**Object Oriented Programming**) ən güclü
+  dillərindən biridir. Java çıxdığı zaman _"Bir dəfə yaz, hər yerdə işlət!"_
+  mottosu ilə populyar idi. Əsasən həm compiler, həm də interpreter metodlarının
+  müsbət cəhətlərini hibrit birləşdirən JIT virtual maşın məntiqi ilə işləyir.
+  Onu populyar edən bir digər nöqtəsi isə, zəngin və müasir kitabxana
+  ekosistemidir. Lakin indiki dövrdə, ən böyük məqsədi istənilən sistemin asan
+  və tez tətbiq (**implement**) oluna bilməsidir və bu da onu performans
+  cəhətdən geriyə salır. Hər nə qədər Python kimi dillərdən daha sürətli olsa
+  da, onun hər yerdə OOP paradiqmasını istifadə qanunu, prosessorun işləmə
+  məntiqinə biraz zidd olduğu üçün yavaşladır. Həmçinin nəticədə birbaşa maşın
+  dilinə çevrilməyən bir dildir. Əlavə olaraq, Java proqramçı üçün kəskin bəzi
+  qaydalar qoyur. Bu qaydalarla kodu daha təhlükəsiz etməyə çalışsa da, bu həm
+  də proqramçını limitləyir. Misal, [[yaddaşın avtomatik təmizlənməsi]]
+  (**Garbage Collector**) metodunu istifadə etməsi onun aşağı səviyyə işlərdə
+  istifadəsini bağlayır. Sonda, PHP-də qeyd edilən versiya probleminə də
+  sahibdir.
 
 Əlavə olaraq daha yaxşı anlamaq üçün, _Haskell_ və _Scala_ kimi dilləri də
 araşdırmağınız tövsiyə olunur.
 
 Bütün bu fərqlərə görə də mükəmməl dil ola bilməz. Tövsiyə olunan ilk başda
-öyrənməyə başlayan zaman ümumi məqsədli (**general purpose**) dillərdən birini
+öyrənməyə başlayan zaman ümumi məqsədli (**General Purpose**) dillərdən birini
 öyrənməkdir. Buna misal olaraq bu dillərdən biri olan C/C++ dilindən
 danışacağıq. Bu dil bütün məqsədlər üçün istifadə oluna bilər, amma hər məqsəd
 üçün səmərəli deyildir. Məqsəd giriş səviyyəsidirsə bizə yetərlidir. Lakin, bu

@@ -10,9 +10,9 @@ description:
 title: Python və 'Decorator'lar
 ---
 
-"Decorator"lar bir çox Python kitabxanası və çərçivələrində (framework) istifadə
-olunan özəllikdir. Tərcümədə "örtük" deməkdir. Hər hansı metodu istifadə
-etməzdən qabaq görüləcək işləri özündə ehtiva edir.
+[[örtük]]lər (decoratorlar) bir çox Python kitabxanası və çərçivələrində
+istifadə olunan özəllikdir. Hər hansı metodu istifadə etməzdən qabaq görüləcək
+işləri özündə ehtiva edir.
 
 **Nümunə:** Məsələn, Django çərçivəsində hansısa spesifik bir URL-də
 istifadəçinin öz hesabına daxil olub-olmadığını yoxlayırıq. Gəlin birlikdə
@@ -30,7 +30,7 @@ olubsa, cavab qaytarır, yoxsa login səhifəsinə yönləndirir.
 
 Bəs bunun işləmə prinsipi nədir? Necə olur ki, həmin funksiya çağırılmamışdan
 qabaq `login_required` işə düşür? Əslində işləmə prinsipi çox sadədir. İşin
-sehri sadəcə "syntactic sugar"dadır (bundan sonra _sintaktik şəkər_).
+sehri sadəcə [[sintaktik şəkər]]dədir.
 
 ## İlk addımlar
 

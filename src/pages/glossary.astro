@@ -1,0 +1,127 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { glossary } from "@/data/glossary";
+
+const sortedTerms = [...glossary].sort((a, b) =>
+  a.az.localeCompare(b.az, "az", { sensitivity: "base" }),
+);
+---
+
+<BaseLayout
+  title="Termin lüğəti"
+  description="kodlar.az üçün termin lüğəti"
+  currentPath="/glossary"
+>
+  <section class="glossary-page">
+    <div class="container">
+      <h1>Termin lüğəti</h1>
+      <p class="subtitle">
+        Məqalələrdə istifadə olunan terminlərin standart izahları.
+      </p>
+
+      <input
+        id="glossary-search"
+        class="search-input"
+        type="search"
+        placeholder="termin axtar..."
+        aria-label="Termin axtar"
+      />
+
+      <ul id="glossary-list" class="glossary-list">
+        {
+          sortedTerms.map((term) => (
+            <li
+              class="term-card"
+              data-az={term.az.toLowerCase()}
+              data-en={term.en.toLowerCase()}
+              data-desc={(term.description || "").toLowerCase()}
+            >
+              <h2>{term.az}</h2>
+              <p class="term-en">{term.en}</p>
+              {term.description && <p>{term.description}</p>}
+              {term.link && (
+                <a href={term.link} target="_blank" rel="noopener noreferrer">
+                  Mənbə
+                </a>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .subtitle {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 0.7rem 0.85rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    color: var(--color-text);
+  }
+
+  .glossary-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.85rem;
+  }
+
+  .term-card {
+    padding: 0.9rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+  }
+
+  .term-card h2 {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .term-en {
+    font-family: var(--font-mono);
+    color: var(--color-cyan);
+    margin-bottom: 0.35rem;
+  }
+
+  .term-card p {
+    margin-bottom: 0.35rem;
+  }
+</style>
+
+<script>
+  const search = document.getElementById("glossary-search");
+  const terms = document.querySelectorAll(".term-card");
+
+  search?.addEventListener("input", (event) => {
+    const query = (event.target as HTMLInputElement).value.toLowerCase().trim();
+
+    terms.forEach((item) => {
+      const az = item.getAttribute("data-az") || "";
+      const en = item.getAttribute("data-en") || "";
+      const desc = item.getAttribute("data-desc") || "";
+      const visible =
+        !query ||
+        az.includes(query) ||
+        en.includes(query) ||
+        desc.includes(query);
+
+      (item as HTMLElement).style.display = visible ? "" : "none";
+    });
+  });
+</script>

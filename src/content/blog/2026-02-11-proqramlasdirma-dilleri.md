@@ -86,13 +86,13 @@ prinsipinə görə əsasən üç kateqoriyaya bölünür:
    işləyir. Belə dillərə Python, Ruby və PHP daxildir.
 
 3. **Hibrid dillər:** Bu yanaşmada kod həm interpretasiya olunur, həm də icra
-   zamanı əlavə optimizasiya üçün _JIT (Just-In-Time - anında kompilyasiya)_
-   kompilyasiyası kimi texnologiyalardan istifadə edilir. Adətən, kod əvvəlcə
-   maşın dilindən daha sadə, amma daha primitiv olan "bytecode" adlanan aralıq
-   dilə çevrilir. Təsəvvür edin ki, sinxron tərcüməçi sizin tez-tez təkrar
-   etdiyiniz cümlələri əzbərləyir və növbəti dəfə onları dərhal (tərcümə
-   etmədən) səsləndirərək prosesi xeyli sürətləndirir. Bir çox hallarda bir
-   dilin həm tam interpretasiya olunan, həm də hibrid versiyası olur. Bu
+   zamanı əlavə optimizasiya üçün _[[JIT kompilyasiyası]] (Just-In-Time - anında
+   kompilyasiya)_ kompilyasiyası kimi texnologiyalardan istifadə edilir. Adətən,
+   kod əvvəlcə maşın dilindən daha sadə, amma daha primitiv olan "[[baytkod]]"
+   adlanan aralıq dilə çevrilir. Təsəvvür edin ki, sinxron tərcüməçi sizin
+   tez-tez təkrar etdiyiniz cümlələri əzbərləyir və növbəti dəfə onları dərhal
+   (tərcümə etmədən) səsləndirərək prosesi xeyli sürətləndirir. Bir çox hallarda
+   bir dilin həm tam interpretasiya olunan, həm də hibrid versiyası olur. Bu
    kateqoriyaya bu mühitlər və dillər daxildir: Java (JVM), C# (.NET),
    JavaScript və Python (PyPy kimi alternativ mühitlərdə).
 
@@ -231,8 +231,8 @@ qətiyyən işləmirdi.
 
 1950-ci illərdə inqilabi bir sual ortaya atıldı: bəs əgər biz addım-addım maşına
 nə edəcəyini deyil, sadəcə nə hesablamaq _istədiyimizi_ riyazi tənliklər kimi
-yaza bilsək və xüsusi bir proqram — yəni **kompilyator** — bunu bizim əvəzimizə
-o qəliz maşın koduna tərcümə etsə necə olar?
+yaza bilsək və xüsusi bir proqram — yəni **[[kompilyator]]** — bunu bizim
+əvəzimizə o qəliz maşın koduna tərcümə etsə necə olar?
 
 Beləliklə, **FORTRAN** (1957) yarandı. Elmi və riyazi hesablamalar üçün qurulmuş
 bu dil böyük səs-küyə səbəb oldu. Mühəndislər artıq maşın təlimatları deyil,
@@ -371,7 +371,7 @@ qrammatikası birbaşa C-dən miras qalıb.
 ### Obyektlərin Yüksəlişi
 
 1980-ci illərdə kod bazaları daha da böyüdükcə, məlumatları təşkil etmək üçün
-yeni bir fəlsəfə meydana çıxdı: **Obyekt-yönümlü proqramlaşdırma (OOP)**.
+yeni bir fəlsəfə meydana çıxdı: **[[obyekt-yönümlü proqramlaşdırma]] (OOP)**.
 
 Əvvəllər proqramçılar məlumatları (məsələn, bank hesabının balansı) ayrı, o
 məlumatları dəyişən funksiyaları (pulu artırıb-azaltmaq) ayrı yazırdılar. Sistem
@@ -467,8 +467,8 @@ Bu, hamımız üçün ən intuitiv və təbii yanaşmadır, çünki gündəlik h
 yol salarkən və ya təlimat verərkən məhz bu üsuldan istifadə edirik: _Bunu et.
 Sonra onu et. Əgər bu şərt ödənirsə, fərqli bir şey et. Bitənə qədər təkrarla._
 
-**İmperativ proqramlaşdırma** proqramın mövcud "vəziyyətini" dəyişdirən əmrlər
-ardıcıllığıdır. (Proqramlaşdırmada **vəziyyət** dedikdə, o anda yaddaşda
+**[[imperativ proqramlaşdırma]]** proqramın mövcud "vəziyyətini" dəyişdirən
+əmrlər ardıcıllığıdır. (Proqramlaşdırmada **vəziyyət** dedikdə, o anda yaddaşda
 saxlanılan bütün məlumatlar, dəyişənlərin o anki dəyərləri nəzərdə tutulur).
 Kompüterə addım-addım bu vəziyyəti necə dəyişəcəyini deyirsiniz.
 
@@ -512,7 +512,7 @@ oldu, çünki bu model real dünyanı kodda təsvir etmək üçün çox təbiidi
 gün həddindən artıq dərinləşmiş mirasalma zəncirləri kodu kövrəkləşdirdiyi üçün
 sənaye sırf OOP-dən daha qarışıq dizayn nümunələrinə doğru meyl edir.
 
-### 4.3 Funksional Proqramlaşdırma
+### 4.3 [[Funksional Proqramlaşdırma]]
 
 Funksional proqramlaşdırma tamamilə fərqli və daha sərt bir fəlsəfəyə əsaslanır:
 bəs əgər proqramın vəziyyətini (state) dəyişdirmək qəti qadağan olsaydı necə
@@ -542,7 +542,7 @@ qalsa da, bu gün çoxnüvəli prosessorların yüksəlişi ilə demək olar ki,
 populyar dil (Java, Python, C++, JavaScript) funksional proqramlaşdırmanın
 gücünü özünə inteqrasiya edib.
 
-### 4.4 Deklarativ Proqramlaşdırma
+### 4.4 [[Deklarativ proqramlaşdırma]]
 
 Deklarativ proqramlaşdırma insan və kompüter arasındakı ənənəvi rolları tərsinə
 çevirir. Bir işin addım-addım _necə_ yerinə yetiriləcəyini kompüterə diktə etmək
@@ -723,9 +723,9 @@ Lakin Kotlin, Rust, Swift və TypeScript kimi yeni nəsil dillər bu problemi
 kökündən həll edir. Onlar hər hansı bir məlumatın null (boş) olma ehtimalını
 qabaqcadan, kod hələ kompilyasiya olunarkən proqramçıya məcburi şəkildə
 yoxlatdırırlar. Həmçinin, əvvəllər çox qəliz və xətaya meylli olan
-**eşzamanlılıq** (eyni anda bir neçə işi təhlükəsiz görmək məntiqi) artıq müasir
-dillərdə xüsusi əmrlər və məlumat kanalları vasitəsilə asan anlaşılan, standart
-bir dil xüsusiyyətinə çevrilib.
+**[[eşzamanlılıq]]** (eyni anda bir neçə işi təhlükəsiz görmək məntiqi) artıq
+müasir dillərdə xüsusi əmrlər və məlumat kanalları vasitəsilə asan anlaşılan,
+standart bir dil xüsusiyyətinə çevrilib.
 
 Nəhayət, bugünkü mühitdə bir dilin təkbaşına güclü olması kifayət deyil;
 **alətlər ekosistemi** hər zamankindən daha vacibdir. Müasir tərtibatçılar yeni
@@ -777,7 +777,7 @@ asanlaşdırmaq üçün bir neçə əsas meyara ardıcıllıqla diqqət yetirmə
   tapmaq həmişə daha asandır.
 
 * **Ekosistemin gücünü dəyərləndirin.** Bir proqramlaşdırma dili yalnız onun
-  ətrafında formalaşmış kitabxanalar, freymvorklar və ona dəstək olan icma qədər
+  ətrafında formalaşmış kitabxanalar, çərçivələr və ona dəstək olan icma qədər
   güclüdür. Bir dili layihənizə tətbiq etməzdən əvvəl, sizin xüsusi
   ehtiyaclarınız üçün mövcud hazır paketlərə mütləq baxın. Yaxşı
   sənədləşdirilmiş və minlərlə insanın istifadə etdiyi bir kitabxana sizi
@@ -809,7 +809,7 @@ Tələbələr və bu sahəyə böyük həvəslə yanaşanlar üçün kiçik bir 
 bəhs etdiyimiz **4 əsas paradiqmanın hər birini mütləq sınaqdan keçirin**. Bu
 fərqli fəlsəfələrlə yaxından tanış olmaq sizə proqramlaşdırma haqqında çox
 zəngin və dərin bir anlayış verəcək. Nəticədə, karyeranız boyu qarşınıza çıxacaq
-istənilən yeni dilə, texnologiyaya və ya freymvorka qat-qat sürətli uyğunlaşa
+istənilən yeni dilə, texnologiyaya və ya çərçivəyə qat-qat sürətli uyğunlaşa
 biləcəksiniz.
 
 ---
