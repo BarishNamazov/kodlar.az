@@ -1374,9 +1374,20 @@ const authorData = await getAuthor(frontmatter.author);
     border-top: 1px solid var(--color-border);
   }
 
-  .prose :global(.glossary-terms-section h2) {
+  .prose :global(.glossary-terms-title) {
+    font-family: var(--font-mono);
     font-size: 1.125rem;
-    margin-bottom: 0.75rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem;
+    color: var(--color-text);
+  }
+
+  .prose :global(.glossary-terms-title)::before {
+    content: none;
+  }
+
+  .prose :global(.glossary-terms-title .comment) {
+    color: var(--color-text-muted);
   }
 
   .prose :global(.glossary-terms-list) {

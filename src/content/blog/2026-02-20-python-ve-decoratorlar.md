@@ -10,7 +10,7 @@ description:
 title: Python və 'Decorator'lar
 ---
 
-[[örtük]]lər bir çox Python kitabxanası və çərçivələrində istifadə olunan
+[[Örtük]]lər bir çox Python kitabxanası və çərçivələrində istifadə olunan
 özəllikdir. Hər hansı metodu istifadə etməzdən qabaq görüləcək işləri özündə
 ehtiva edir.
 

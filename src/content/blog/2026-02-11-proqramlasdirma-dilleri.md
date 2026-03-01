@@ -371,7 +371,7 @@ qrammatikası birbaşa C-dən miras qalıb.
 ### Obyektlərin Yüksəlişi
 
 1980-ci illərdə kod bazaları daha da böyüdükcə, məlumatları təşkil etmək üçün
-yeni bir fəlsəfə meydana çıxdı: **[[obyekt-yönümlü proqramlaşdırma]] (OOP)**.
+yeni bir fəlsəfə meydana çıxdı: **[[Obyekt-yönümlü proqramlaşdırma]] (OOP)**.
 
 Əvvəllər proqramçılar məlumatları (məsələn, bank hesabının balansı) ayrı, o
 məlumatları dəyişən funksiyaları (pulu artırıb-azaltmaq) ayrı yazırdılar. Sistem
@@ -541,7 +541,7 @@ qalsa da, bu gün çoxnüvəli prosessorların yüksəlişi ilə demək olar ki,
 populyar dil (Java, Python, C++, JavaScript) funksional proqramlaşdırmanın
 gücünü özünə inteqrasiya edib.
 
-### 4.4 [[Deklarativ proqramlaşdırma]]
+### 4.4 [[Deklarativ Proqramlaşdırma]]
 
 Deklarativ proqramlaşdırma insan və kompüter arasındakı ənənəvi rolları tərsinə
 çevirir. Bir işin addım-addım _necə_ yerinə yetiriləcəyini kompüterə diktə etmək

@@ -85,7 +85,7 @@ export const glossary: GlossaryTerm[] = [
     link: "https://en.wikipedia.org/wiki/Object-oriented_programming",
   },
   {
-    az: "zibil yığımı",
+    az: "avtomatik yaddaş idarəsi",
     en: "garbage collection",
     description:
       "İstifadə olunmayan yaddaş sahələrinin avtomatik azad edilməsi mexanizmi.",
@@ -352,7 +352,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "bekend",
     en: "backend",
-    aliases: ["arxa plan", "back-end", "bek-end"],
+    aliases: ["server tərəf", "back-end", "bek-end"],
     description:
       "Tətbiqin istifadəçiyə görünməyən server tərəfi — məlumat emalı, məntiq və verilənlər bazası əməliyyatları.",
     link: "https://en.wikipedia.org/wiki/Frontend_and_backend",
@@ -360,7 +360,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "frantend",
     en: "frontend",
-    aliases: ["ön plan", "front-end", "frant-end"],
+    aliases: ["görünüş tərəf", "front-end", "frant-end"],
     description:
       "Tətbiqin istifadəçiyə birbaşa görünən hissəsi — interfeys, vizual təqdimat.",
     link: "https://en.wikipedia.org/wiki/Frontend_and_backend",

@@ -143,13 +143,13 @@ Burada məqsəd dilin "dilini" anlamaqdır. Dəyişənlər, şərt operatorları
 istifadə edin. "Mənə for loop-u bir uşaq üçün izah edə bilərsən?" tipli suallar
 verin.
 
-### Mərhələ 2: Obyekt-yönümlü proqramlaşdırma və Fundamentlər
+### Mərhələ 2: Obyekt-yönümlü Proqramlaşdırma və Fundamentlər
 
 Hər şeyin "obyekt" olduğu bir dünyadır. Klasslar, [[varislik]], [[polimorfizm]].
 Bu mərhələdə artıq özünüz kod yazmağa başlayın. AI-yə sadəcə xətalarınızı
 tapmaqda ([[sazlama]]) icazə verin.
 
-### Mərhələ 3: Versiya nəzarəti və Git
+### Mərhələ 3: Versiya Nəzarəti və Git
 
 Kodunuzu necə qoruyursunuz? git commit, git push, git pull – bunlar sizin
 gündəlik rutinləriniz olmalıdır. GitHub-da bir profil açın və yazdığınız hər bir

@@ -70,7 +70,7 @@ populyar olmuş "sistemləri sındıran" mənasında yox, kompüterlərin dərin
 gedən maraqlılar mənasındadır] mədəniyyətinin köklərində yatır.
 
 Kompüter sənayesinin ilk illərində (1950-60-cı illər) əsas dəyər "dəmir"də
-([[aparat təchizatı]]nda) idi. [[proqram təminatı]] isə sadəcə həmin dəmiri
+([[aparat təchizatı]]nda) idi. [[Proqram təminatı]] isə sadəcə həmin dəmiri
 işlətmək üçün bir vasitə sayılırdı və mühəndislər arasında resept kimi sərbəst
 mübadilə olunurdu. Heç kimin ağlına gəlmirdi ki, kodu gizlətsin.
 

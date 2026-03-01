@@ -102,7 +102,7 @@ const remarkGlossary: Plugin<[], Root> = () => {
       );
 
       let html = `<section class="glossary-terms-section" aria-label="Terminlər">`;
-      html += `<h2>Terminlər</h2>`;
+      html += `<h2 class="glossary-terms-title"><span class="comment">// </span>terminlər</h2>`;
       html += `<dl class="glossary-terms-list">`;
       for (const t of sorted) {
         const desc = t.description ? t.description.replace(/"/g, "&quot;") : "";

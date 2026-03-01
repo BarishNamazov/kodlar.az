@@ -76,7 +76,7 @@ misal dillərdən bəhs edək:
   bir çox təhlükəsizlik problemlərinə açıqdır. Son olaraq, inkişafa açıq olması
   onu öz versiyaları arasında böyük fərqləndirir. Bu da köhnəlmiş PHP kodlarının
   [[geriyə uyğunluq]]unu qırır.
-- Elixir: [[bölünmüş sistemlər]] üçün optimallaşdırılmış bir dildir. Köhnəlmiş
+- Elixir: [[Bölünmüş sistemlər]] üçün optimallaşdırılmış bir dildir. Köhnəlmiş
   olan Erlang/BEAM [[ekosistem]]inin müasir halı kimi ortaya çıxıb. Əsasən
   telekomunikasiya sistemlərində istifadə olunur. Bu dil həmişə çalışdırdığı
   kodları qarşılaşdığı xətalara baxmayaraq davamlı olaraq aktual tutmağa
@@ -91,7 +91,7 @@ misal dillərdən bəhs edək:
   çevrilə bilər. Olduqca riskli və qarmaşıq olan bu dil sadəcə standartların
   olmadığı dövrü əla ifadə edən tarixi fakt olaraq yaşayır ancaq.
 - Java: Bu dil müasir dövrün ən çox istifadə edilən və
-  [[obyekt-yönümlü proqramlaşdırma]] ən güclü dillərindən biridir. Java çıxdığı
+  [[Obyekt-yönümlü proqramlaşdırma]] ən güclü dillərindən biridir. Java çıxdığı
   zaman _"Bir dəfə yaz, hər yerdə işlət!"_ mottosu ilə populyar idi. Əsasən həm
   kompilyator, həm də interpretator metodlarının müsbət cəhətlərini hibrit
   birləşdirən JIT virtual maşın məntiqi ilə işləyir. Onu populyar edən bir digər
@@ -102,7 +102,7 @@ misal dillərdən bəhs edək:
   işləmə məntiqinə biraz zidd olduğu üçün yavaşladır. Həmçinin nəticədə birbaşa
   maşın dilinə çevrilməyən bir dildir. Əlavə olaraq, Java proqramçı üçün kəskin
   bəzi qaydalar qoyur. Bu qaydalarla kodu daha təhlükəsiz etməyə çalışsa da, bu
-  həm də proqramçını limitləyir. Misal, [[zibil yığımı]] metodunu istifadə
+  həm də proqramçını limitləyir. Misal, [[avtomatik yaddaş idarəsi]] metodunu istifadə
   etməsi onun aşağı səviyyə işlərdə istifadəsini bağlayır. Sonda, PHP-də qeyd
   edilən versiya probleminə də sahibdir.
 
