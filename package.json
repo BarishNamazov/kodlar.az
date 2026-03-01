@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "bun scripts/check-glossary-usage.ts && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "check": "eslint . --fix --max-warnings 0 && prettier --write ."

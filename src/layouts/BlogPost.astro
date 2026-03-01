@@ -491,6 +491,101 @@ const authorData = await getAuthor(frontmatter.author);
   }
 </script>
 
+<script>
+  // Glossary tooltip
+  let activeTooltip: HTMLElement | null = null;
+
+  function removeTooltip() {
+    if (activeTooltip) {
+      activeTooltip.remove();
+      activeTooltip = null;
+    }
+  }
+
+  function showTooltip(term: HTMLElement) {
+    removeTooltip();
+
+    const en = term.dataset.termEn;
+    const desc = term.dataset.termDesc;
+    const link = term.dataset.termLink;
+
+    const tooltip = document.createElement("div");
+    tooltip.className = "glossary-tooltip";
+
+    let html = `<div class="glossary-tooltip-en">${en}</div>`;
+    if (desc) html += `<div class="glossary-tooltip-desc">${desc}</div>`;
+    if (link)
+      html += `<a class="glossary-tooltip-link" href="${link}" target="_blank" rel="noopener">↗ Ətraflı</a>`;
+
+    tooltip.innerHTML = html;
+    document.body.appendChild(tooltip);
+
+    const rect = term.getBoundingClientRect();
+    const tooltipRect = tooltip.getBoundingClientRect();
+
+    let top = rect.top - tooltipRect.height - 8;
+    let left = rect.left + rect.width / 2 - tooltipRect.width / 2;
+
+    // If tooltip goes above viewport, show below
+    if (top < 8) {
+      top = rect.bottom + 8;
+    }
+
+    // Keep within horizontal bounds
+    if (left < 8) left = 8;
+    if (left + tooltipRect.width > window.innerWidth - 8) {
+      left = window.innerWidth - tooltipRect.width - 8;
+    }
+
+    tooltip.style.top = `${top}px`;
+    tooltip.style.left = `${left}px`;
+    tooltip.addEventListener("mouseleave", scheduleRemove);
+    activeTooltip = tooltip;
+  }
+
+  function scheduleRemove() {
+    setTimeout(() => {
+      const termHovered = document.querySelector(".glossary-term:hover");
+      const tooltipHovered = activeTooltip?.matches(":hover");
+      if (!termHovered && !tooltipHovered) {
+        removeTooltip();
+      }
+    }, 200);
+  }
+
+  let activeTerm: HTMLElement | null = null;
+
+  document.querySelectorAll(".glossary-term").forEach((term) => {
+    term.addEventListener("mouseenter", () => showTooltip(term as HTMLElement));
+    term.addEventListener("mouseleave", scheduleRemove);
+    term.addEventListener("focus", () => showTooltip(term as HTMLElement));
+    term.addEventListener("blur", removeTooltip);
+    term.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (activeTerm === term) {
+        removeTooltip();
+        activeTerm = null;
+      } else {
+        showTooltip(term as HTMLElement);
+        activeTerm = term as HTMLElement;
+      }
+    });
+    (term as HTMLElement).tabIndex = 0;
+  });
+
+  document.addEventListener("click", (e) => {
+    if (
+      activeTooltip &&
+      !(e.target as Element).closest(".glossary-term, .glossary-tooltip")
+    ) {
+      removeTooltip();
+      activeTerm = null;
+    }
+  });
+
+  document.addEventListener("scroll", removeTooltip, { passive: true });
+</script>
+
 <style>
   .post-layout {
     max-width: 1120px;
@@ -1213,5 +1308,144 @@ const authorData = await getAuthor(frontmatter.author);
   /* Hide print footnotes section on screen */
   :global(#print-footnotes) {
     display: none;
+  }
+
+  /* Glossary Terms */
+  .prose :global(.glossary-term) {
+    color: var(--color-cyan);
+    text-decoration: underline dotted var(--color-cyan);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    cursor: help;
+    position: relative;
+  }
+
+  :global(.glossary-tooltip) {
+    position: fixed;
+    z-index: 1000;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 0.625rem 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    max-width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    pointer-events: auto;
+    animation: glossaryFadeIn 0.15s ease;
+  }
+
+  :global(.glossary-tooltip-en) {
+    color: var(--color-cyan);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  :global(.glossary-tooltip-desc) {
+    color: var(--color-text-secondary);
+  }
+
+  :global(.glossary-tooltip-link) {
+    display: inline-block;
+    margin-top: 0.375rem;
+    color: var(--color-primary);
+  }
+
+  :global(.glossary-tooltip-link:hover) {
+    text-decoration: underline;
+  }
+
+  @keyframes glossaryFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Terminlər section at end of blog */
+  .prose :global(.glossary-terms-section) {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .prose :global(.glossary-terms-title) {
+    font-family: var(--font-mono);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem;
+    color: var(--color-text);
+  }
+
+  .prose :global(.glossary-terms-title)::before {
+    content: none;
+  }
+
+  .prose :global(.glossary-terms-title .comment) {
+    color: var(--color-text-muted);
+  }
+
+  .prose :global(.glossary-terms-list) {
+    margin: 0;
+  }
+
+  .prose :global(.glossary-terms-entry) {
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--color-border-muted);
+  }
+
+  .prose :global(.glossary-terms-entry:last-child) {
+    border-bottom: none;
+  }
+
+  .prose :global(.glossary-terms-entry dt) {
+    font-size: 0.9375rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .prose :global(.glossary-terms-en) {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-cyan);
+    margin-left: 0.35rem;
+  }
+
+  .prose :global(.glossary-terms-entry dd) {
+    margin: 0;
+    padding-left: 0;
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  .prose :global(.glossary-terms-entry dd a) {
+    font-size: 0.75rem;
+  }
+
+  @media print {
+    .prose :global(.glossary-term) {
+      color: #000;
+      text-decoration: none;
+      cursor: default;
+    }
+
+    .prose :global(.glossary-term::after) {
+      content: " (" attr(data-term-en) ")";
+      font-style: italic;
+      color: #555;
+    }
+
+    :global(.glossary-tooltip) {
+      display: none !important;
+    }
+
+    .prose :global(.glossary-terms-section) {
+      break-inside: avoid;
+    }
   }
 </style>

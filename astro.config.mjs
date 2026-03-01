@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import remarkGlossary from "./src/plugins/remark-glossary.ts";
 
 export default defineConfig({
   site: "https://kodlar.az",
@@ -7,6 +8,7 @@ export default defineConfig({
     format: "directory",
   },
   markdown: {
+    remarkPlugins: [remarkGlossary],
     shikiConfig: {
       theme: "github-dark",
       wrap: true,
