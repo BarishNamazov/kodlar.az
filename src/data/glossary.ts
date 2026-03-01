@@ -100,7 +100,7 @@ export const glossary: GlossaryTerm[] = [
     link: "https://en.wikipedia.org/wiki/Functional_programming",
   },
   {
-    az: "gecikdirilmiş hesablama",
+    az: "gecikmiş hesablama",
     en: "lazy evaluation",
     aliases: ["gecikmiş qiymətləndirilmə", "tənbəl qiymətləndirmə"],
     description:
@@ -108,10 +108,10 @@ export const glossary: GlossaryTerm[] = [
     link: "https://en.wikipedia.org/wiki/Lazy_evaluation",
   },
   {
-    az: "cəbrəvi məlumat tipi",
+    az: "cəbri məlumat tipi",
     en: "algebraic data type",
     description:
-      "Tipi bir neçə konstruktorun cəmi və ya hasilı kimi modelləşdirən tip yanaşması.",
+      "Tipi bir neçə konstruktorun cəmi və ya hasili kimi modelləşdirən tip yanaşması.",
     link: "https://en.wikipedia.org/wiki/Algebraic_data_type",
   },
   {

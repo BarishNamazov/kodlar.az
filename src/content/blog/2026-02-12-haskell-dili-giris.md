@@ -33,14 +33,14 @@ sistemlərin təhlükəsizliyi üçün bu dili seçir. Edinburgh, Oxford və Cam
 kimi nüfuzlu universitetlərdə proqramlaşdırmanın ilk olaraq Haskell ilə
 öyrədilməsi, tələbələri ən başından analitik düşünməyə alışdırır.
 
-## Əsas Xüsusiyyətlər: Gecikmiş Hesablama və Güclü Tiplər
+## Əsas Xüsusiyyətlər: [[Gecikmiş Hesablama]] və Güclü Tiplər
 
 Haskell-i fərqləndirən bir neçə məqam var:
 
 1.  **Güclü [[Tip sistemi]]:** Haskell-də hər bir dəyərin bir tipi var (`v :: t`).
     Məsələn, `42 :: Int` və ya `sqrt :: Float -> Float`. Bu [[tip sistemi]]
     proqram hələ işə düşmədən bir çox xətaları tutur.
-2.  **[[Gecikmiş hesablama]]:** Haskell bir ifadənin nəticəsinə ehtiyac
+2.  **Gecikmiş hesablama:** Haskell bir ifadənin nəticəsinə ehtiyac
     duyulmayana qədər onu hesablamır. Bu xüsusiyyət bizə **sonsuz siyahılarla**
     işləmək imkanı verir. Məsələn, `[0..]` yazaraq sıfırdan sonsuzluğa qədər
     uzanan bir siyahı yarada bilərsiniz, lakin Haskell ondan yalnız sizə lazım
@@ -52,7 +52,7 @@ Haskell-i fərqləndirən bir neçə məqam var:
 
 ## Tip Təhlükəsizliyi və Cəbri Məlumat Tipləri
 
-Mənim üçün Haskell-in ən gözəl tərəfi **[[cəbrəvi məlumat tipi]]**dir
+Mənim üçün Haskell-in ən gözəl tərəfi **[[cəbri məlumat tipi]]**dir
 (ADT)[^burada "cəbri" sözü bu tiplərin üzərində apa bildiyimiz riyazi əməllərdən
 gəlir]. Biz öz dünyamızı çox dəqiq modelləşdirə bilirik. Məsələn, bir proqramda
 dəyərin olub-olmaması (null problemi) bir çox dildə işgəncədir. Haskell-də isə

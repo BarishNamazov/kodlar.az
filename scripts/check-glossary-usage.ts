@@ -89,18 +89,59 @@ interface UnlinkedUsage {
   context: string;
 }
 
+interface FirstInstanceWarning {
+  file: string;
+  term: string;
+  mainTerm: string;
+  line: number;
+  context: string;
+}
+
 function findUnlinkedUsages(
   plainText: string,
+  rawBody: string,
   entries: SearchEntry[],
+  linkedTerms: Set<string>,
   file: string,
-): UnlinkedUsage[] {
+): { errors: UnlinkedUsage[]; firstInstanceWarnings: FirstInstanceWarning[] } {
   const errors: UnlinkedUsage[] = [];
+  const firstInstanceWarnings: FirstInstanceWarning[] = [];
   const lines = plainText.split("\n");
 
   for (const entry of entries) {
     const regex = makeTermRegex(entry.term);
     const m = regex.exec(plainText);
     if (!m) continue;
+
+    // Check if this term (or any alias / main term of the same glossary entry)
+    // is already linked at least once in this file.
+    const g = entry.glossaryTerm;
+    const isLinked =
+      linkedTerms.has(normalize(g.az)) ||
+      (g.aliases ?? []).some((a) => linkedTerms.has(normalize(a)));
+
+    if (isLinked) {
+      // Term is linked elsewhere — check if the first plain-text occurrence
+      // appears before the first [[...]] link for this term in the raw body.
+      const firstLinkedPos = findFirstLinkedPosition(rawBody, g);
+      const firstUnlinkedPos = m.index;
+      // Compare positions in the raw body (approximate: use line number)
+      const lineNum = plainText.slice(0, firstUnlinkedPos).split("\n").length;
+      if (firstLinkedPos !== -1) {
+        const linkedLineNum = rawBody.slice(0, firstLinkedPos).split("\n").length;
+        if (lineNum < linkedLineNum) {
+          firstInstanceWarnings.push({
+            file,
+            term: entry.term,
+            mainTerm: g.az,
+            line: lineNum,
+            context: lines[lineNum - 1]?.trim() ?? "",
+          });
+        }
+      }
+      // Either way, not an error — term is linked at least once
+      continue;
+    }
 
     const linesBefore = plainText.slice(0, m.index).split("\n");
     const lineNum = linesBefore.length;
@@ -113,7 +154,23 @@ function findUnlinkedUsages(
     });
   }
 
-  return errors;
+  return { errors, firstInstanceWarnings };
+}
+
+function findFirstLinkedPosition(rawBody: string, g: GlossaryTerm): number {
+  const allForms = [g.az, ...(g.aliases ?? [])];
+  let earliest = -1;
+  for (const form of allForms) {
+    const regex = new RegExp(
+      `\\[\\[${escapeRegex(form)}\\]\\]`,
+      "iu",
+    );
+    const m = regex.exec(rawBody);
+    if (m && (earliest === -1 || m.index < earliest)) {
+      earliest = m.index;
+    }
+  }
+  return earliest;
 }
 
 interface AliasWarning {
@@ -151,6 +208,7 @@ const searchEntries = buildSearchEntries();
 
 let allErrors: UnlinkedUsage[] = [];
 let allWarnings: AliasWarning[] = [];
+let allFirstInstanceWarnings: FirstInstanceWarning[] = [];
 
 for (const file of files) {
   const content = readFileSync(join(blogDir, file), "utf-8");
@@ -159,7 +217,11 @@ for (const file of files) {
   const linkedTerms = extractLinkedTerms(noCode);
   const plainText = stripNonProse(stripLinkedTerms(noCode));
 
-  allErrors.push(...findUnlinkedUsages(plainText, searchEntries, file));
+  const { errors, firstInstanceWarnings } = findUnlinkedUsages(
+    plainText, noCode, searchEntries, linkedTerms, file,
+  );
+  allErrors.push(...errors);
+  allFirstInstanceWarnings.push(...firstInstanceWarnings);
   allWarnings.push(...findAliasOnlyUsage(linkedTerms, file));
 }
 
@@ -175,6 +237,13 @@ for (const w of allWarnings) {
   console.log(
     `${yellow}WARN${reset}   ${w.file} — alias [[${w.alias}]] is used but main term [[${w.mainTerm}]] is never linked`,
   );
+}
+
+for (const w of allFirstInstanceWarnings) {
+  console.log(
+    `${yellow}WARN${reset}   ${w.file}:${w.line} — "${w.term}" first appears unlinked (linked later); consider linking the first occurrence`,
+  );
+  console.log(`${dim}       > ${w.context}${reset}`);
 }
 
 if (allErrors.length > 0) {
