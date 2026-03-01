@@ -10,7 +10,7 @@ description:
 title: Python və 'Decorator'lar
 ---
 
-[[örtük]]lər (decoratorlar) bir çox Python kitabxanası və çərçivələrində
+[[örtük]]lər bir çox Python kitabxanası və çərçivələrində
 istifadə olunan özəllikdir. Hər hansı metodu istifadə etməzdən qabaq görüləcək
 işləri özündə ehtiva edir.
 
@@ -24,7 +24,7 @@ def account_view(request):
     return HttpResponse('Çox gizli səhifə ;)')
 ```
 
-`account_view` funksiyasının üzərinə yazılan decorator (bundan sonra _örtük_)
+`account_view` funksiyasının üzərinə yazılan örtük
 ora sorğu göndərməzdən qabaq hesaba daxil olub-olmadığını yoxlayır. Əgər daxil
 olubsa, cavab qaytarır, yoxsa login səhifəsinə yönləndirir.
 
@@ -230,7 +230,7 @@ Səbəb odur ki, biz `divide`-ı `my_decorator`-a mənimsətmişik. O da bizə
 daxilindəki `wrapper()` metodunu qaytarır.
 
 Bu problemi həll etmək və əsas funksiyanın kimliyini (meta məlumatlarını)
-qorumaq üçün Python-un `functools` kitabxanasındakı `@wraps` örtüyündən istifadə
+qorumaq üçün Python-un `functools` [[kitabxana]]sındakı `@wraps` örtüyündən istifadə
 edəcəyik:
 
 ```python
