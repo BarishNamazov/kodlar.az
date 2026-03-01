@@ -28,7 +28,7 @@ Barışın daha öncə paylaşdığı
 haqqında ümumi texniki məlumatlar verilib. Mən isə sizə bu dillərin sənayedəki
 "xarakterindən" danışmaq istəyirəm. Əgər bu gün yeni bir proqramlaşdırma dili
 öyrənmək qərarına gəlmisinizsə və ya proqrmalaşdırmaya yeni başlayıb özünüzə bir
-“starting point” seçmək istəyirsinizsə o zaman bəzi məqamları bilməyinizdə fayda
+“başlanğıc nöqtəsi” seçmək istəyirsinizsə o zaman bəzi məqamları bilməyinizdə fayda
 var. Gəlin sənaye dedikdə ilk öncə hansı növ kateqoriyalar və “bazar”lar var ona
 baxaq.
 
@@ -62,7 +62,7 @@ qoymur, səhvlərinizi kodu yazarkən göstərir. Bu arada TS dizayn olarkən C#
 ### C) Data və AI: Python (tək bu dil olmasa da yeni başlayanlar üçün ideal seçimdir)
 
 Python bu gün proqramlaşdırmaya ən asan giriş qapısıdır. Amma aldanmayın, o həm
-də ən güclü alətdir. Data Analitikası, Süni İntellekt və Machine Learning
+də ən güclü alətdir. Data Analitikası, Süni İntellekt və maşın öyrənməsi
 sahələrində Python-dan başqa ciddi alternativ yox kimidir.
 
 ### D) Performans, aşağı səviyyə proqamlaşdırma, gömülü və təchizat bazalı: C++, Go, Rust
@@ -84,11 +84,11 @@ olar ki, bu dilləri məsləhət olunan dillər kimi görəcəksiniz. Bəs əsas
 rəhbərlərin) masasında yüzlərlə CV var. Onlar fərqlənmək üçün sizdən bunları
 tələb edir:
 
-- **Problem Həll Etmə Bacarığı (Critical Thinking):** Sizə bir problem veriləndə
+- **Problem Həll Etmə Bacarığı (Tənqidi Düşüncə):** Sizə bir problem veriləndə
   onu neçə hissəyə bölə bilirsiniz? Hansı alqoritm daha effektivdir? Hansı
   dizayn, kodlaşdırma paradiqması kontekstə daha uyğundur və s.
 - **Soft Skills:** Proqramçılar tək işləmir. Komanda ilə necə ünsiyyət
-  qurursunuz? Başqasının koduna necə rəy (code review) verirsiniz?
+  qurursunuz? Başqasının koduna necə [[kodun nəzərdən keçirilməsi]] verirsiniz?
 - **Davamlı Öyrənmə:** Bu sahədə "mən artıq öyrəndim, bitdi" dediyiniz gün,
   karyeranızın sonu başlayır.
 
@@ -101,7 +101,7 @@ Buranı çox diqqətlə oxuyun. AI proqramlaşdırmanı öldürmür, onu dəyiş
 Məsələn, çoxları deyir ki, AI artıq React kodunu çox yaxşı yazır, buna görə də
 React öyrənməyə dəyməz. Bu, kökündən yanlışdır. AI-nin bir dili və ya çərçivəni
 yaxşı yazması, o sahədəki mütəxəssisə olan tələbi artırır, çünki məhsul yaratmaq
-sürətlənir. Amma threshold\* yuxarı qalxır.
+sürətlənir. Amma ast hədd yuxarı qalxır.
 
 AI-nin yazdığı React kodunda bəzən performans problemləri, bəzən isə ciddi
 təhlükəsizlik boşluqları olur. Sizin işiniz AI-nin yazdığı 100 sətirlik kodu
@@ -117,10 +117,10 @@ Dili seçdiniz, amma o dili öyrənməyə başlamazdan əvvəl (və ya paralel o
 proqramlaşdırmanın fundamentlərini öyrənməlisiniz. Bunlar olmadan siz sadəcə
 "sintaksis təkrarçısı" olacaqsınız.
 
-- **[[verilənlər strukturu]] (Data Structures):** Array, Linked List, Tree,
+- **[[verilənlər strukturu]]:** Array, Linked List, Tree,
   Graph, Hash Table. Verilənləri harada və necə saxlamaq lazım olduğunu
   bilməsəniz, yazdığınız proqram tısbağa sürəti ilə işləyəcək.
-- **[[algoritm]]lər:** Sıralama, axtarış, rekursiya. Google niyə sürətlidir?
+- **[[alqoritm]]lər:** Sıralama, axtarış, rekursiya. Google niyə sürətlidir?
   Çünki arxasında nəhəng alqoritmlər dayanır.
 - **Şəbəkə (Networking) və HTTP:** Brauzer serverlə necə danışır? Status kodları
   (200, 404, 500) nə deməkdir?
@@ -148,7 +148,7 @@ verin.
 
 Hər şeyin "obyekt" olduğu bir dünyadır. Klasslar, miras alma (inheritance),
 polimorfizm. Bu mərhələdə artıq özünüz kod yazmağa başlayın. AI-yə sadəcə
-xətalarınızı tapmaqda (debugging) icazə verin.
+xətalarınızı tapmaqda ([[sazlama]]) icazə verin.
 
 ### Mərhələ 3: Versiya İdarəetməsi və Git
 
@@ -156,7 +156,7 @@ Kodunuzu necə qoruyursunuz? git commit, git push, git pull – bunlar sizin
 gündəlik rutinləriniz olmalıdır. GitHub-da bir profil açın və yazdığınız hər bir
 kiçik kodu oraya yükləyin.
 
-### Mərhələ 4: Çərçivə (Framework) və Layihə
+### Mərhələ 4: Çərçivə və Layihə
 
 İndi artıq real oyuncaqlarla oynamaq vaxtıdır. Əgər C# seçmisinizsə ASP.NET
 Core, Java seçmisinizsə Spring Boot, JavaScript seçmisinizsə React/Next.js. Bir
@@ -185,7 +185,7 @@ sabah bazar Python tələb edə bilər. Əgər fundamentləriniz (Mərhələ 2 v
 güclüdürsə, bir dildən digərinə keçmək cəmi bir neçə həftənizi alacaq.
 
 Sənaye mühəndisləri sevir. Mühəndis odur ki, sistemin necə işlədiyini bilir,
-AI-ni özünə tool edir və hər zaman yeni şeylər öyrənməyə acdır.
+AI-ni özünə alət edir və hər zaman yeni şeylər öyrənməyə acdır.
 
 ---
 
@@ -200,7 +200,7 @@ fərqləndirəcək bəzi əlavə addımlar da var:
 - **Mühəndislik Bloqlarını Oxuyun:** HackerNews kimi platformaları, fərqli
   mühəndislərin bloqlarını izləyin. Amma oxuduğunuz hər şeyi olduğu kimi qəbul
   etməyin — kritik düşünün, məntiqli və praktik olan hissələri götürün.
-- **Kitab Oxuyun:** Yalnız tutorial-larla kifayətlənməyin. Proqramlaşdırma və
+- **Kitab Oxuyun:** Yalnız dərsliklərlə kifayətlənməyin. Proqramlaşdırma və
   mühəndisliyə aid kitablar sizə daha dərin perspektiv qazandırır.
 - **roadmap.sh-dən istifadə edin:** Hansı sahəyə yönəlmək istədiyinizi
   bilmirsinizsə və ya strukturlaşdırılmış plan axtarırsınızsa, roadmap.sh pis
