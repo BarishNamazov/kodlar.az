@@ -4,15 +4,17 @@ categories:
   - Proqram Dilləri
   - Python
 date: 2026-02-20
-description: Python proqramlaşdırma dilində "decorator"lar nədir və onlardan necə istifadə edilir?
-title: Python və 'Decorator'lar
+description:
+  Python proqramlaşdırma dilində "decorator"lar nədir və onlardan necə istifadə
+  edilir?
+title: Python və Dekoratorlar
 ---
 
-"Decorator"lar bir çox Python kitabxanası və çərçivələrində (framework) istifadə
-olunan özəllikdir. Tərcümədə "örtük" deməkdir. Hər hansı metodu istifadə
-etməzdən qabaq görüləcək işləri özündə ehtiva edir.
+[[Dekorator]]lar bir çox Python [[kitabxana]]sı və [[freymvörk]]lərində istifadə
+olunan özəllikdir. Hər hansı metodu istifadə etməzdən qabaq görüləcək işləri
+özündə ehtiva edir.
 
-**Nümunə:** Məsələn, Django çərçivəsində hansısa spesifik bir URL-də
+**Nümunə:** Məsələn, Django freymvörkündə hansısa spesifik bir URL-də
 istifadəçinin öz hesabına daxil olub-olmadığını yoxlayırıq. Gəlin birlikdə
 öyrənək.
 
@@ -22,13 +24,13 @@ def account_view(request):
     return HttpResponse('Çox gizli səhifə ;)')
 ```
 
-`account_view` funksiyasının üzərinə yazılan decorator (bundan sonra _örtük_)
-ora sorğu göndərməzdən qabaq hesaba daxil olub-olmadığını yoxlayır. Əgər daxil
-olubsa, cavab qaytarır, yoxsa login səhifəsinə yönləndirir.
+`account_view` funksiyasının üzərinə yazılan dekorator ora sorğu göndərməzdən
+qabaq hesaba daxil olub-olmadığını yoxlayır. Əgər daxil olubsa, cavab qaytarır,
+yoxsa login səhifəsinə yönləndirir.
 
 Bəs bunun işləmə prinsipi nədir? Necə olur ki, həmin funksiya çağırılmamışdan
 qabaq `login_required` işə düşür? Əslində işləmə prinsipi çox sadədir. İşin
-sehri sadəcə "syntactic sugar"dadır (bundan sonra _sintaktik şəkər_).
+sehri sadəcə [[sintaktik şəkər]]dədir.
 
 ## İlk addımlar
 
@@ -43,7 +45,7 @@ divider(5, 0)
 ```
 
 İkinci çağırılmada 5 və 0 ötürdük və 0-a bölmə olmadığından Python bizə
-`ZeroDivisionError` qaytardı. Örtük vasitəsilə biz çıxa biləcək xətaları
+`ZeroDivisionError` qaytardı. Dekorator vasitəsilə biz çıxa biləcək xətaları
 əvvəlcədən idarə edə bilərik.
 
 İlk öncə sadə bir misala baxaq:
@@ -89,10 +91,10 @@ kimi ötürdüyümüz `my_decorator` funksiyasına mənimsətdik.
 Göründüyü kimi, çox sadə məntiqlə -- bir funksiyanı digərinə ötürməklə --
 istənilən funksiyadan qabaq hər hansısa bir əməliyyat etmək mümkündür.
 
-## Örtüklər və arqumentlər
+## Dekoratorlar və arqumentlər
 
-Əgər bizim örtük ilə istifadə edəcəyimiz funksiyamız (`divide`) parametr qəbul
-edəcəksə, o zaman belə bir xəta ilə qarşılaşa bilərik:
+Əgər bizim dekorator ilə istifadə edəcəyimiz funksiyamız (`divide`) parametr
+qəbul edəcəksə, o zaman belə bir xəta ilə qarşılaşa bilərik:
 
 ```python
 def my_decorator(func):
@@ -123,8 +125,9 @@ Bu xətanı biz ona görə aldıq ki, daxili `wrapper` içində çağırılan `f
 metoduna heç bir arqument verməmişik. Halbuki `divide()` bizdən `num1` və `num2`
 dəyərlərini gözləyir.
 
-Örtüklərdə daxili funksiyamız olan `wrapper()`, əsas funksiyamızın (`divide()`)
-parametrlərini qəbul edə bilir. Biz də bunu `func()`-a ötürə bilərik:
+Dekoratorlarda daxili funksiyamız olan `wrapper()`, əsas funksiyamızın
+(`divide()`) parametrlərini qəbul edə bilir. Biz də bunu `func()`-a ötürə
+bilərik:
 
 ```python
 def my_decorator(func):
@@ -145,7 +148,7 @@ Bununla da xəta aradan qalxmış olur.
 
 Əgər funksiya 2 yox, daha çox parametr qəbul etsə, hər dəfə bunları yazmaq o
 qədər də ağlabatan deyil. Üstəlik, hər funksiya üçün eyni işi görən ayrı-ayrı
-örtüklər yazmalı olacağıq.
+dekoratorlar yazmalı olacağıq.
 
 Bunun həll yolu `*args` və `**kwargs` ikilisidir.
 
@@ -173,13 +176,13 @@ foo(5, 2)
 
 ## Sintaktik şəkər
 
-Örtüyü
+Dekoratoru
 
 ```python
 foo = my_decorator(divide)
 ```
 
-kimi istifadə etmək əvəzinə, daha qısa və oxunaqlı bir sintaksis var.
+kimi istifadə etmək əvəzinə, daha qısa və oxunaqlı bir [[sintaksis]] var.
 Funksiyanın adının önünə `@` işarəsi qoyaraq istifadə edə bilərik:
 
 ```python
@@ -197,8 +200,8 @@ def divide(num1, num2):
 divide(5, 2)
 ```
 
-Hətta bir neçə örtüyü bir funksiyanın üzərinə zəncirvari (chaining) şəkildə də
-yazmaq mümkündür:
+Hətta bir neçə dekoratoru bir funksiyanın üzərinə zəncirvari (chaining) şəkildə
+də yazmaq mümkündür:
 
 ```python
 @my_decorator1
@@ -208,7 +211,7 @@ def divide(num1, num2):
     print(num1 / num2)
 ```
 
-## @wraps örtüyü
+## @wraps dekoratoru
 
 Python-da `__name__`, `__doc__` və s. kimi daxili sehrli (magic) dəyişənlər var.
 Məsələn:
@@ -228,8 +231,8 @@ Səbəb odur ki, biz `divide`-ı `my_decorator`-a mənimsətmişik. O da bizə
 daxilindəki `wrapper()` metodunu qaytarır.
 
 Bu problemi həll etmək və əsas funksiyanın kimliyini (meta məlumatlarını)
-qorumaq üçün Python-un `functools` kitabxanasındakı `@wraps` örtüyündən istifadə
-edəcəyik:
+qorumaq üçün Python-un `functools` kitabxanasındakı `@wraps` dekoratorundan
+istifadə edəcəyik:
 
 ```python
 from functools import wraps
@@ -249,9 +252,9 @@ def divide(num1, num2):
 print(divide.__name__)
 ```
 
-Daxili funksiya olan `wrapper()` funksiyasının üstünə `@wraps` örtüyünü yazıb,
-parametr kimi də `func` dəyərini verdikdən sonra `divide.__name__` artıq doğru
-şəkildə `"divide"` qaytaracaq.
+Daxili funksiya olan `wrapper()` funksiyasının üstünə `@wraps` dekoratorunu
+yazıb, parametr kimi də `func` dəyərini verdikdən sonra `divide.__name__` artıq
+doğru şəkildə `"divide"` qaytaracaq.
 
 ## Yekun həll
 

@@ -238,84 +238,59 @@ const authorData = await getAuthor(frontmatter.author);
     }
 
     function processFootnotes(container) {
-      const footnoteRegex = /\[\^([^\]]+)\]/g;
-      const walker = document.createTreeWalker(
-        container,
-        NodeFilter.SHOW_TEXT,
-        null,
+      // Match [^...] in innerHTML, allowing HTML tags inside the footnote content
+      const footnoteRegex = /\[\^((?:[^\]<]|<[^>]*>)*)\]/g;
+
+      // Process all <p> and similar elements that may contain footnotes
+      const elements = container.querySelectorAll(
+        "p, li, td, th, dd, dt, blockquote > *",
       );
+      elements.forEach((el) => {
+        // Check textContent first as a quick filter
+        if (!el.textContent.includes("[^")) return;
+        // Skip if already processed or is a footnote itself
+        if (el.querySelector(".footnote-container")) return;
 
-      const nodesToProcess = [];
-      let node;
-      while ((node = walker.nextNode())) {
-        if (footnoteRegex.test(node.textContent)) {
-          nodesToProcess.push(node);
-        }
+        const html = el.innerHTML;
         footnoteRegex.lastIndex = 0;
-      }
-
-      nodesToProcess.forEach((textNode) => {
-        const parent = textNode.parentNode;
-        const text = textNode.textContent;
-        const fragment = document.createDocumentFragment();
-        let lastIndex = 0;
-        let match;
+        if (!footnoteRegex.test(html)) return;
 
         footnoteRegex.lastIndex = 0;
-        while ((match = footnoteRegex.exec(text)) !== null) {
-          // Add text before the footnote
-          if (match.index > lastIndex) {
-            fragment.appendChild(
-              document.createTextNode(text.slice(lastIndex, match.index)),
-            );
-          }
+        el.innerHTML = html.replace(footnoteRegex, (_, innerHtml) => {
+          const container = document.createElement("span");
+          container.className = "footnote-container";
 
-          // Create footnote element
-          const footnote = createFootnote(match[1]);
-          fragment.appendChild(footnote);
+          const trigger = document.createElement("sup");
+          trigger.className = "footnote-trigger";
+          trigger.textContent = "[*]";
 
-          lastIndex = match.index + match[0].length;
-        }
+          const expansion = document.createElement("span");
+          expansion.className = "footnote-expansion";
+          expansion.innerHTML = innerHtml;
 
-        // Add remaining text
-        if (lastIndex < text.length) {
-          fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
-        }
+          container.appendChild(trigger);
+          container.appendChild(expansion);
 
-        parent.replaceChild(fragment, textNode);
-      });
-    }
-
-    function createFootnote(content) {
-      const container = document.createElement("span");
-      container.className = "footnote-container";
-
-      const trigger = document.createElement("sup");
-      trigger.className = "footnote-trigger";
-      trigger.textContent = "[*]";
-
-      const expansion = document.createElement("span");
-      expansion.className = "footnote-expansion";
-      expansion.textContent = content;
-
-      container.appendChild(trigger);
-      container.appendChild(expansion);
-
-      trigger.addEventListener("click", (e) => {
-        e.preventDefault();
-        container.classList.toggle("active");
-
-        // Close other open footnotes
-        document
-          .querySelectorAll(".footnote-container.active")
-          .forEach((fn) => {
-            if (fn !== container) {
-              fn.classList.remove("active");
-            }
-          });
+          return container.outerHTML;
+        });
       });
 
-      return container;
+      // Re-attach click listeners for the newly created footnotes
+      container.querySelectorAll(".footnote-trigger").forEach((trigger) => {
+        trigger.addEventListener("click", (e) => {
+          e.preventDefault();
+          const fnContainer = trigger.closest(".footnote-container");
+          fnContainer.classList.toggle("active");
+
+          document
+            .querySelectorAll(".footnote-container.active")
+            .forEach((fn) => {
+              if (fn !== fnContainer) {
+                fn.classList.remove("active");
+              }
+            });
+        });
+      });
     }
 
     // Close footnotes when clicking outside
@@ -489,6 +464,147 @@ const authorData = await getAuthor(frontmatter.author);
   if (container) {
     container.appendChild(script);
   }
+</script>
+
+<script>
+  // Glossary tooltip
+  let activeTooltip: HTMLElement | null = null;
+
+  function removeTooltip() {
+    if (activeTooltip) {
+      activeTooltip.remove();
+      activeTooltip = null;
+    }
+  }
+
+  function showTooltip(term: HTMLElement) {
+    removeTooltip();
+
+    const en = term.dataset.termEn;
+    const desc = term.dataset.termDesc;
+    const link = term.dataset.termLink;
+
+    const tooltip = document.createElement("div");
+    tooltip.className = "glossary-tooltip";
+
+    let html = `<div class="glossary-tooltip-en">${en}</div>`;
+    if (desc) html += `<div class="glossary-tooltip-desc">${desc}</div>`;
+    if (link)
+      html += `<a class="glossary-tooltip-link" href="${link}" target="_blank" rel="noopener">↗ Ətraflı</a>`;
+
+    tooltip.innerHTML = html;
+    document.body.appendChild(tooltip);
+
+    const rect = term.getBoundingClientRect();
+    const tooltipRect = tooltip.getBoundingClientRect();
+
+    let top = rect.top - tooltipRect.height - 8;
+    let left = rect.left + rect.width / 2 - tooltipRect.width / 2;
+
+    // If tooltip goes above viewport, show below
+    if (top < 8) {
+      top = rect.bottom + 8;
+    }
+
+    // Keep within horizontal bounds
+    if (left < 8) left = 8;
+    if (left + tooltipRect.width > window.innerWidth - 8) {
+      left = window.innerWidth - tooltipRect.width - 8;
+    }
+
+    tooltip.style.top = `${top}px`;
+    tooltip.style.left = `${left}px`;
+    tooltip.addEventListener("mouseleave", scheduleRemove);
+    activeTooltip = tooltip;
+  }
+
+  function scheduleRemove() {
+    setTimeout(() => {
+      const termHovered = document.querySelector(".glossary-term:hover");
+      const tooltipHovered = activeTooltip?.matches(":hover");
+      if (!termHovered && !tooltipHovered) {
+        removeTooltip();
+      }
+    }, 200);
+  }
+
+  let activeTerm: HTMLElement | null = null;
+
+  // Use event delegation so dynamically inserted glossary terms (e.g. inside
+  // footnotes rebuilt via innerHTML) still get tooltip behaviour.
+  document.addEventListener(
+    "mouseenter",
+    (e) => {
+      const term = (e.target as Element).closest?.(
+        ".glossary-term",
+      ) as HTMLElement | null;
+      if (term) showTooltip(term);
+    },
+    true,
+  );
+
+  document.addEventListener(
+    "mouseleave",
+    (e) => {
+      const term = (e.target as Element).closest?.(".glossary-term");
+      if (term) scheduleRemove();
+    },
+    true,
+  );
+
+  document.addEventListener("focusin", (e) => {
+    const term = (e.target as Element).closest?.(
+      ".glossary-term",
+    ) as HTMLElement | null;
+    if (term) showTooltip(term);
+  });
+
+  document.addEventListener("focusout", (e) => {
+    const term = (e.target as Element).closest?.(".glossary-term");
+    if (term) removeTooltip();
+  });
+
+  document.addEventListener("click", (e) => {
+    const term = (e.target as Element).closest?.(
+      ".glossary-term",
+    ) as HTMLElement | null;
+    if (term) {
+      e.preventDefault();
+      if (activeTerm === term) {
+        removeTooltip();
+        activeTerm = null;
+      } else {
+        showTooltip(term);
+        activeTerm = term;
+      }
+    } else if (
+      activeTooltip &&
+      !(e.target as Element).closest(".glossary-tooltip")
+    ) {
+      removeTooltip();
+      activeTerm = null;
+    }
+  });
+
+  document.addEventListener("scroll", removeTooltip, { passive: true });
+
+  // Set tabIndex on existing and future glossary terms
+  document.querySelectorAll(".glossary-term").forEach((term) => {
+    (term as HTMLElement).tabIndex = 0;
+  });
+  // Also observe for dynamically added glossary terms
+  new MutationObserver((mutations) => {
+    for (const m of mutations) {
+      for (const node of m.addedNodes) {
+        if (node instanceof HTMLElement) {
+          if (node.classList?.contains("glossary-term")) node.tabIndex = 0;
+          node.querySelectorAll?.(".glossary-term").forEach((t) => {
+            (t as HTMLElement).tabIndex = 0;
+          });
+        }
+      }
+    }
+  }).observe(document.body, { childList: true, subtree: true });
 </script>
 
 <style>
@@ -1213,5 +1329,144 @@ const authorData = await getAuthor(frontmatter.author);
   /* Hide print footnotes section on screen */
   :global(#print-footnotes) {
     display: none;
+  }
+
+  /* Glossary Terms */
+  .prose :global(.glossary-term) {
+    color: var(--color-cyan);
+    text-decoration: underline dotted var(--color-cyan);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    cursor: help;
+    position: relative;
+  }
+
+  :global(.glossary-tooltip) {
+    position: fixed;
+    z-index: 1000;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 0.625rem 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    max-width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    pointer-events: auto;
+    animation: glossaryFadeIn 0.15s ease;
+  }
+
+  :global(.glossary-tooltip-en) {
+    color: var(--color-cyan);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  :global(.glossary-tooltip-desc) {
+    color: var(--color-text-secondary);
+  }
+
+  :global(.glossary-tooltip-link) {
+    display: inline-block;
+    margin-top: 0.375rem;
+    color: var(--color-primary);
+  }
+
+  :global(.glossary-tooltip-link:hover) {
+    text-decoration: underline;
+  }
+
+  @keyframes glossaryFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Terminlər section at end of blog */
+  .prose :global(.glossary-terms-section) {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .prose :global(.glossary-terms-title) {
+    font-family: var(--font-mono);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem;
+    color: var(--color-text);
+  }
+
+  .prose :global(.glossary-terms-title)::before {
+    content: none;
+  }
+
+  .prose :global(.glossary-terms-title .comment) {
+    color: var(--color-text-muted);
+  }
+
+  .prose :global(.glossary-terms-list) {
+    margin: 0;
+  }
+
+  .prose :global(.glossary-terms-entry) {
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--color-border-muted);
+  }
+
+  .prose :global(.glossary-terms-entry:last-child) {
+    border-bottom: none;
+  }
+
+  .prose :global(.glossary-terms-entry dt) {
+    font-size: 0.9375rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .prose :global(.glossary-terms-en) {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-cyan);
+    margin-left: 0.35rem;
+  }
+
+  .prose :global(.glossary-terms-entry dd) {
+    margin: 0;
+    padding-left: 0;
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  .prose :global(.glossary-terms-entry dd a) {
+    font-size: 0.75rem;
+  }
+
+  @media print {
+    .prose :global(.glossary-term) {
+      color: #000;
+      text-decoration: none;
+      cursor: default;
+    }
+
+    .prose :global(.glossary-term::after) {
+      content: " (" attr(data-term-en) ")";
+      font-style: italic;
+      color: #555;
+    }
+
+    :global(.glossary-tooltip) {
+      display: none !important;
+    }
+
+    .prose :global(.glossary-terms-section) {
+      break-inside: avoid;
+    }
   }
 </style>
