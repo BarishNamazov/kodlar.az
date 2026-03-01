@@ -17,8 +17,8 @@ kimi, bu, heç də sehr deyil, router-ların dolub-daşmasının dolub-daşması
 şəbəkənin yüklənib iflic olmasının qarşısını alan düşünülmüş və ağıllı
 mexanizmlərin nəticəsidir.
 
-1980-ci illərin sonlarında İnternetin bəzi hissələrində bu gün “congestion
-collapse” adlandırılan vəziyyət yaşanmışdı. Şəbəkələr yenidən göndərilən
+1980-ci illərin sonlarında İnternetin bəzi hissələrində bu gün “tıxac
+çöküşü” adlandırılan vəziyyət yaşanmışdı. Şəbəkələr yenidən göndərilən
 paketlərlə o qədər yüklənmişdi ki, faydalı ötürmə sürəti mövcud tutumun çox
 kiçik bir hissəsinə düşmüşdü. Xətlər dolu idi, amma demək olar ki, heç bir real
 məlumat qarşı tərəfə çatmırdı. Bu böhranın həlli TCP-nin ən vacib
@@ -32,9 +32,9 @@ son iki il ərzində bu mövzunu yaxından öyrənmişəm. Bu bloq yazısı isə
 bağlı bəzi bilikləri paylaşmaq və oxucunu bu sahəni daha dərindən araşdırmağa
 həvəsləndirmək cəhdimdir.
 
-## Tıxac nəzarəti (Congestion Control) nədir?
+## Tıxac nəzarəti nədir?
 
-**Tıxac nəzarəti (Congestion Control, CC)** şəbəkədə yaranan tıxacların
+**[[tıxac nəzarəti]] (CC)** şəbəkədə yaranan tıxacların
 qarşısını alan, onları aşkar edən və idarə edən mexanizmdir. Bu mexanizmin vacib
 olmasının səbəbi odur ki, tıxaclı şəbəkələrdə performans qeyri-sabit və
 proqnozlaşdırılması çətin olur, üstəlik məlumat itkisi baş verə bilər. Daha ağır
@@ -56,8 +56,8 @@ məlumatın çatdırıldığını hesab edə bilər. Burada “pəncərə” anl
 göndərən tərəf göndərmə pəncərəsini təyin edir və bu, eyni anda (hamısı ACK
 olunana qədər) nə qədər məlumatın göndəriləcəyini müəyyənləşdirir. Pəncərənin
 ölçüsünə təsir edən başqa faktorlar da var, məsələn, göndərənin imkanları və
-flow control mexanizmləri. Amma CC bu ölçünü müəyyən edən əsas komponentlərdən
-biridir. Xüsusilə, congestion window (cong_wnd) anlayışı var ki, bu da şəbəkənin
+axın nəzarəti mexanizmləri. Amma CC bu ölçünü müəyyən edən əsas komponentlərdən
+biridir. Xüsusilə, tıxac pəncərəsi (cong_wnd) anlayışı var ki, bu da şəbəkənin
 eyni anda daşıya biləcəyi maksimum məlumat həcmini müəyyən edir.
 
 ## Şəbəkənin tıxaclı olduğunu necə anlayırıq?
@@ -65,7 +65,7 @@ eyni anda daşıya biləcəyi maksimum məlumat həcmini müəyyən edir.
 Tıxacı idarə etmək üçün əvvəlcə onu aşkar etməyi bacarmalıyıq. Tıxacın əsas
 əlamətlərindən biri paket itkisidir. Paketlərin itirildiyini, müəyyən bir paket
 üçün ACK almadıqda başa düşə bilərik (ya paket, ya da ACK özü itmiş ola bilər),
-bəzən bu hal bir neçə dəfə təkrarlana bilər. TCP bağlantısı həmçinin timeout
+bəzən bu hal bir neçə dəfə təkrarlana bilər. TCP bağlantısı həmçinin vaxt aşımı
 verə bilər, yəni bütün paketlərin çatdırıldığını təsdiqləmək üçün həddən artıq
 uzun gözləmiş oluruq — bu da əslində itki deməkdir.
 
@@ -90,8 +90,7 @@ variantlarında tətbiq olunur.
 Adətən itkiyə əsaslanan nəzarət aşağı göndərmə sürəti ilə başlayıb onu additiv
 şəkildə artırmaq prinsipinə əsaslanır. Əgər itki aşkar edilərsə (bu, adətən eyni
 paket üçün 3 təkrarlanan ACK vasitəsilə başa düşülür) göndərmə sürəti
-multiplikativ şəkildə azaldılır. Bu texnika Additive Increase, Multiplicative
-Decrease (AIMD) — Additiv Artım, Multiplikativ Azalma adlanır.
+multiplikativ şəkildə azaldılır. Bu texnika Additiv Artım, Multiplikativ Azalma (AIMD) adlanır.
 
 Əsas üstünlüyü ondadır ki, bu yanaşma bir çox ənənəvi şəbəkə quruluşlarında
 kifayət qədər yaxşı işləyir. Həm də nisbətən sadə implementasiya olunur və
@@ -108,7 +107,7 @@ Bəzi hallarda tıxac haqqında siqnalı mümkün qədər tez almaq faydalı olu
 görə də bəzi infrastruktur mühitlərində şəbəkədaxili (in-network) mexanizmlərə
 üstünlük verilir.
 
-Xüsusilə, [[ECN]] (Explicit Congestion Notification) şəbəkə üzərində tıxac
+Xüsusilə, [[ECN]] şəbəkə üzərində tıxac
 yaranmağa yaxınlaşanda marşrutlaşdırıcı və ya switch-lərin paketləri atmaq
 əvəzinə onları işarələməsi mexanizmidir. Adətən şəbəkə inzibatçıları bufer
 doluluğu üçün müəyyən hədd təyin edirlər (məsələn, 70%). Bu hədd keçildikdə,
@@ -120,7 +119,7 @@ uyğunlaşdırır.
 göndərmə sürətini azaltmağa imkan verir və beləliklə tıxacın qarşısını almaq
 mümkün olur. Yəni şəbəkə tıxacı məlumat itirmədən siqnal verə bilir.
 
-Bu yanaşmanın əsas problemi isə məşhur end-to-end prinsipi ilə müəyyən dərəcədə
+Bu yanaşmanın əsas problemi isə məşhur uçdan-uca prinsipi ilə müəyyən dərəcədə
 ziddiyyət təşkil etməsidir. Bu prinsipə görə, şəbəkənin özü tərəfindən təmin
 olunmayan əlavə funksionallıq tam şəkildə son nöqtələrdə (yəni göndərən və qəbul
 edən tərəfdə) həyata keçirilməlidir. Buna görə də, şəbəkə üzərində nəzarət edə
@@ -128,8 +127,8 @@ bilmədiyimiz bir çox ssenaridə bu yanaşmanı tətbiq etmək mümkün olmur.
 
 ### [[BBR]]
 
-Congestion control-a müasir yanaşmalardan biri Google tərəfindən təqdim olunub:
-Bottleneck Bandwidth and Round-trip propagation time (BBR). Bu, Google-ın bu gün
+Tıxac nəzarətinə müasir yanaşmalardan biri Google tərəfindən təqdim olunub:
+BBR (Bottleneck Bandwidth and Round-trip propagation time). Bu, Google-ın bu gün
 də öz infrastrukturunda istifadə etdiyi alqoritmlərdən biridir.
 
 Əsas ideya ondan ibarətdir ki, itkiyə və ya switch bildirişlərinə əsaslanmaq
@@ -157,7 +156,7 @@ paylaşanda davranış problemləri müşahidə oluna bilir.
 
 ## Nəticə
 
-Ümid edirəm bu yazı sizin üçün maraqlı oldu. Bu bloqa congestion control
+Ümid edirəm bu yazı sizin üçün maraqlı oldu. Bu bloqa tıxac nəzarəti
 mövzuları üçün bir növ “menyu” kimi baxa bilərsiniz — qısa icmal verərək mövzunu
 daha dərindən araşdırmağa həvəsləndirmək məqsədi daşıyır. Məncə bu, kompüter
 sistemlərinin ən maraqlı sahələrindən biridir, çünki real həyatda da oxşar
