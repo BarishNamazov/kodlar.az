@@ -75,7 +75,7 @@ misal dillərdən bəhs edək:
   olaraq, PHP mənbə kodları sadəcə düz mətn olaraq yadda saxlanıldığı üçün də
   bir çox təhlükəsizlik problemlərinə açıqdır. Son olaraq, inkişafa açıq olması
   onu öz versiyaları arasında böyük fərqləndirir. Bu da köhnəlmiş PHP kodlarının
-  [[geriyə uyğunluq]]unu qırır.
+  [[geriyə uyğunluq]] prinsipini qırır.
 - Elixir: [[Paylanmış sistemlər]] üçün optimallaşdırılmış bir dildir. Köhnəlmiş
   olan Erlang/BEAM [[ekosistem]]inin müasir halı kimi ortaya çıxıb. Əsasən
   telekomunikasiya sistemlərində istifadə olunur. Bu dil həmişə çalışdırdığı

@@ -549,7 +549,7 @@ Deklarativ proqramlaşdırma insan və kompüter arasındakı ənənəvi rollar�
 əvəzinə, siz yalnız yekunda _nə_ istədiyinizi təsvir edirsiniz. Sistem isə
 məqsədə necə çatacağını, öz daxilindəki işləri necə quracağını özü həll edir.
 
-[[Verilənlər bazası]]ları üçün istifadə edilən **SQL** ən geniş yayılmış
+[[Verilənlər bazası]] sistemləri üçün istifadə edilən **SQL** ən geniş yayılmış
 deklarativ proqramlaşdırma dildir. Siz verilənlər bazasına
 `SELECT name FROM users WHERE age > 30` (Yaşı 30-dan böyük olan istifadəçilərin
 adını seç) yazanda, kompüterə cədvəlin sətirlərini tək-tək necə axtaracağını və
