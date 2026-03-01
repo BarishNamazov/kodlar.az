@@ -70,9 +70,9 @@ populyar olmuş "sistemləri sındıran" mənasında yox, kompüterlərin dərin
 gedən maraqlılar mənasındadır] mədəniyyətinin köklərində yatır.
 
 Kompüter sənayesinin ilk illərində (1950-60-cı illər) əsas dəyər "dəmir"də
-([[aparat təchizatı]]nda) idi. [[proqram təminatı]] isə sadəcə həmin dəmiri işlətmək
-üçün bir vasitə sayılırdı və mühəndislər arasında resept kimi sərbəst mübadilə
-olunurdu. Heç kimin ağlına gəlmirdi ki, kodu gizlətsin.
+([[aparat təchizatı]]nda) idi. [[proqram təminatı]] isə sadəcə həmin dəmiri
+işlətmək üçün bir vasitə sayılırdı və mühəndislər arasında resept kimi sərbəst
+mübadilə olunurdu. Heç kimin ağlına gəlmirdi ki, kodu gizlətsin.
 
 Lakin 70-80-ci illərdə proqram təminatı kommersiyalaşmağa başladıqda, buna qarşı
 bir reaksiya yarandı. MIT-dəki Süni İntellekt laboratoriyasından Richard

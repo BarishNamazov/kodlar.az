@@ -40,10 +40,10 @@ kompüter jurnallarında və
 [kitablarda](https://en.wikipedia.org/wiki/BASIC_Computer_Games) çap olunmuş
 BASIC kod siyahıları kimi mövcud idi. Əgər o oyunlardan birini oynamaq
 istəyirdinsə, bütün proqramı əllə yazmalı idin. Qaçılmaz olaraq nədəsə səhv
-edəcək və proqramını debug etməli olacaqdın. Onu işlək vəziyyətə gətirənə qədər,
-proqramın necə işlədiyi barədə onu özün dəyişdirməyə başlayacaq qədər məlumat
-sahibi olacaqdın. Əgər həvəsli bir oyunçu idinsə, demək olar ki, məcburiyyətdən
-yaxşı bir proqramçıya çevrilirdin.
+edəcək və proqramını [[sazlama]] etməli olacaqdın. Onu işlək vəziyyətə gətirənə
+qədər, proqramın necə işlədiyi barədə onu özün dəyişdirməyə başlayacaq qədər
+məlumat sahibi olacaqdın. Əgər həvəsli bir oyunçu idinsə, demək olar ki,
+məcburiyyətdən yaxşı bir proqramçıya çevrilirdin.
 
 Mən də uşaqlığım boyu kompüter oyunları oynamışam. Amma mənim oynadığım oyunlar
 CD-ROM-larda gəlirdi. Bəzən xətalarla qarşılaşan quraşdırıcını necə

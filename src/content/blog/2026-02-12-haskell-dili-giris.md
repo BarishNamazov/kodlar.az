@@ -14,9 +14,9 @@ categories: [Proqram Dilləri]
 Benjamin Lee Whorf-un bu fikri proqramlaşdırma dünyasında bəlkə də ən çox
 **Haskell** dilinə yaraşır. Deyə bilərəm ki, Haskell sadəcə yeni bir sintaksis
 öyrənmək deyil, həm də hesablama prosesinə tamamilə fərqli bir rakursdan
-baxmaqdır. Əgər siz dəyişənlərin daim dəyişdiyi, dövrlərin
-hər addımda vəziyyəti yenilədiyi dünyadan gəlirsinizsə, Haskell sizə başlanğıcda
-bir az sirli, lakin inanılmaz dərəcədə güclü kainat vəd edir.
+baxmaqdır. Əgər siz dəyişənlərin daim dəyişdiyi, dövrlərin hər addımda vəziyyəti
+yenilədiyi dünyadan gəlirsinizsə, Haskell sizə başlanğıcda bir az sirli, lakin
+inanılmaz dərəcədə güclü kainat vəd edir.
 
 ## Haskell-in Mahiyyəti: Funksional Yanaşma
 
@@ -38,26 +38,27 @@ kimi nüfuzlu universitetlərdə proqramlaşdırmanın ilk olaraq Haskell ilə
 Haskell-i fərqləndirən bir neçə məqam var:
 
 1.  **Güclü Tip Sistemi:** Haskell-də hər bir dəyərin bir tipi var (`v :: t`).
-    Məsələn, `42 :: Int` və ya `sqrt :: Float -> Float`. Bu [[tip sistemi]] proqram
-    hələ işə düşmədən bir çox xətaları tutur.
-2.  **[[gecikmiş hesablama]]:** Haskell bir ifadənin
-    nəticəsinə ehtiyac duyulmayana qədər onu hesablamır. Bu xüsusiyyət bizə
-    **sonsuz siyahılarla** işləmək imkanı verir. Məsələn,
-    `[0..]` yazaraq sıfırdan sonsuzluğa qədər uzanan bir siyahı yarada
-    bilərsiniz, lakin Haskell ondan yalnız sizə lazım olan hissəni götürəcək.
+    Məsələn, `42 :: Int` və ya `sqrt :: Float -> Float`. Bu [[tip sistemi]]
+    proqram hələ işə düşmədən bir çox xətaları tutur.
+2.  **[[gecikmiş hesablama]]:** Haskell bir ifadənin nəticəsinə ehtiyac
+    duyulmayana qədər onu hesablamır. Bu xüsusiyyət bizə **sonsuz siyahılarla**
+    işləmək imkanı verir. Məsələn, `[0..]` yazaraq sıfırdan sonsuzluğa qədər
+    uzanan bir siyahı yarada bilərsiniz, lakin Haskell ondan yalnız sizə lazım
+    olan hissəni götürəcək.
 3.  **Rekursiya:** Haskell-də `for` və ya `while` dövrləri yoxdur. Hər şey
-    [[rekursiya]] üzərində qurulub. Bir siyahını emal etmək üçün onu boş siyahı `[]`
-    və ya "baş" və "quyruq" hissələrinə `(x:xs)` (x -> head & xs
-    -> tail) parçalayırıq.
+    [[rekursiya]] üzərində qurulub. Bir siyahını emal etmək üçün onu boş siyahı
+    `[]` və ya "baş" və "quyruq" hissələrinə `(x:xs)` (x -> head & xs -> tail)
+    parçalayırıq.
 
 ## Tip Təhlükəsizliyi və Cəbri Məlumat Tipləri
 
-Mənim üçün Haskell-in ən gözəl tərəfi **[[cəbri məlumat tipi]]**dir (ADT)[^burada "cəbri" sözü bu tiplərin üzərində apa bildiyimiz
-riyazi əməllərdən gəlir]. Biz öz dünyamızı çox dəqiq modelləşdirə bilirik.
-Məsələn, bir proqramda dəyərin olub-olmaması (null problemi) bir çox dildə
-işgəncədir. Haskell-də isə `Maybe a` tipi var: ya `Just a` (dəyər var), ya da
-`Nothing` (dəyər yoxdur). Bu, sizi hər ehtimalı nəzərə almağa məcbur edir və
-proqramın gözlənilmədən çökməsinin qarşısını alır.
+Mənim üçün Haskell-in ən gözəl tərəfi **[[cəbri məlumat tipi]]**dir
+(ADT)[^burada "cəbri" sözü bu tiplərin üzərində apa bildiyimiz riyazi əməllərdən
+gəlir]. Biz öz dünyamızı çox dəqiq modelləşdirə bilirik. Məsələn, bir proqramda
+dəyərin olub-olmaması (null problemi) bir çox dildə işgəncədir. Haskell-də isə
+`Maybe a` tipi var: ya `Just a` (dəyər var), ya da `Nothing` (dəyər yoxdur). Bu,
+sizi hər ehtimalı nəzərə almağa məcbur edir və proqramın gözlənilmədən
+çökməsinin qarşısını alır.
 
 Həmçinin, `type` və `data` açar sözləri ilə yeni tiplər yarada, hətta məntiqi
 ifadələr və ya riyazi ifadə ağacları kimi mürəkkəb strukturlar qura bilərik.
@@ -94,8 +95,8 @@ Gəlin Haskell-də kodun necə göründüyünü iki nümunə ilə araşdıraq.
 
 1. Tam Funksional Üslub (Karriləmə və Kompozisiya): Burada funksiyaları silsilə
    şəklində birləşdirilir. Bu yanaşma Haskell Curry-nin şərəfinə adlandırılan
-   "karriləmə" prinsipini — yəni hər funksiyanın əslində bir arqument alaraq yeni
-   bir funksiya qaytarmasını nümayiş etdirir.
+   "karriləmə" prinsipini — yəni hər funksiyanın əslində bir arqument alaraq
+   yeni bir funksiya qaytarmasını nümayiş etdirir.
 
 ```haskell
 -- Siyahıdakı müsbət ədədlərin kvadratlarının cəmi
@@ -118,14 +119,14 @@ area (Circle r) = pi * r^2
 area (Rect w h) = w * h
 ```
 
-Bu kodda [[nümunə uyğunlaşdırma]] istifadə olunur; Haskell
-avtomatik olaraq fiqurun tipini təyin edir.
+Bu kodda [[nümunə uyğunlaşdırma]] istifadə olunur; Haskell avtomatik olaraq
+fiqurun tipini təyin edir.
 
 ## Çətinliklər və Yayğın Səhvlər
 
 Əlbəttə, hər şey mükəmməl deyil. Yeni başlayanlar üçün ən böyük çətinliklərdən
-biri **IO (Giriş-Çıxış)** və **[[monad]]lar** mövzusudur. Haskell "təmiz" dildir,
-yəni funksiyalar [[yan təsir]] göstərməməlidir. Bəs onda ekrana necə
+biri **IO (Giriş-Çıxış)** və **[[monad]]lar** mövzusudur. Haskell "təmiz"
+dildir, yəni funksiyalar [[yan təsir]] göstərməməlidir. Bəs onda ekrana necə
 nəsə çap edək? Burada Haskell `main :: IO ()` vasitəsilə "təmiz" dünya ilə
 "çirkli" real dünya arasında körpü yaradır.
 
@@ -137,8 +138,8 @@ O(m^2 _ n)-dən O(m _ n)-ə qədər artıra bilər.
 
 Haskell ilə ilk tanış olduğumda "dəyişənsiz proqram olar?" deyə düşünmüşdüm.
 Lakin zamanla anladım ki, dəyişənlərin vəziyyətini izləmək əvəzinə, məlumatın
-axınını (məlumat axını) düşünmək zehni daha az yorur. Haskell öyrənmək mənə digər
-dillərdə (Java, Python və s.) daha təmiz və xətasız kod yazmağı öyrətdi.
+axınını (məlumat axını) düşünmək zehni daha az yorur. Haskell öyrənmək mənə
+digər dillərdə (Java, Python və s.) daha təmiz və xətasız kod yazmağı öyrətdi.
 
 ## Yeni Başlayanlara Tövsiyələr
 

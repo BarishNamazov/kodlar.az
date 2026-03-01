@@ -196,8 +196,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "rekursiya",
     en: "recursion",
-    description:
-      "Funksiyanın nəticəyə çatana qədər özünü çağırması üsulu.",
+    description: "Funksiyanın nəticəyə çatana qədər özünü çağırması üsulu.",
     link: "https://en.wikipedia.org/wiki/Recursion_(computer_science)",
   },
   {
@@ -245,8 +244,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "dəyişməzlik",
     en: "immutability",
-    description:
-      "Yaradıldıqdan sonra dəyişdirilə bilməyən məlumat yanaşması.",
+    description: "Yaradıldıqdan sonra dəyişdirilə bilməyən məlumat yanaşması.",
     link: "https://en.wikipedia.org/wiki/Immutable_object",
   },
   {
@@ -301,8 +299,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "sazlama",
     en: "debugging",
-    description:
-      "Proqramdakı xətaları aşkar edib aradan qaldırma prosesi.",
+    description: "Proqramdakı xətaları aşkar edib aradan qaldırma prosesi.",
     link: "https://en.wikipedia.org/wiki/Debugging",
   },
   {
@@ -364,8 +361,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "marşrutlaşdırıcı",
     en: "router",
-    description:
-      "Şəbəkədə paketləri müvafiq istiqamətə yönləndirən cihaz.",
+    description: "Şəbəkədə paketləri müvafiq istiqamətə yönləndirən cihaz.",
     link: "https://en.wikipedia.org/wiki/Router_(computing)",
   },
   {
@@ -378,8 +374,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "gecikmə",
     en: "latency",
-    description:
-      "Məlumatın bir nöqtədən digərinə çatması üçün keçən vaxt.",
+    description: "Məlumatın bir nöqtədən digərinə çatması üçün keçən vaxt.",
     link: "https://en.wikipedia.org/wiki/Latency_(engineering)",
   },
   {
@@ -392,22 +387,19 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "bufer",
     en: "buffer",
-    description:
-      "Məlumatın müvəqqəti saxlandığı yaddaş sahəsi.",
+    description: "Məlumatın müvəqqəti saxlandığı yaddaş sahəsi.",
     link: "https://en.wikipedia.org/wiki/Data_buffer",
   },
   {
     az: "icra mühiti",
     en: "runtime",
-    description:
-      "Proqramın işlədiyi zaman kəsiyi və ya onu icra edən mühit.",
+    description: "Proqramın işlədiyi zaman kəsiyi və ya onu icra edən mühit.",
     link: "https://en.wikipedia.org/wiki/Runtime_system",
   },
   {
     az: "kitabxana",
     en: "library",
-    description:
-      "Təkrar istifadə oluna bilən hazır kod modulları toplusu.",
+    description: "Təkrar istifadə oluna bilən hazır kod modulları toplusu.",
     link: "https://en.wikipedia.org/wiki/Library_(computing)",
   },
   {
@@ -488,6 +480,16 @@ for (const term of glossary) {
   lookupMap.set(term.en.toLowerCase(), term);
   lookupMap.set(term.az.toLowerCase(), term);
 }
+
+// Common abbreviation aliases
+const apiTerm = lookupMap.get("tətbiq proqramlaşdırma interfeysi");
+if (apiTerm) lookupMap.set("api", apiTerm);
+
+const oopTerm = lookupMap.get("obyekt-yönümlü proqramlaşdırma");
+if (oopTerm) lookupMap.set("oyp", oopTerm);
+
+const fpTerm = lookupMap.get("funksional proqramlaşdırma");
+if (fpTerm) lookupMap.set("fp", fpTerm);
 
 export function lookupTerm(key: string): GlossaryTerm | undefined {
   return lookupMap.get(key.toLowerCase());

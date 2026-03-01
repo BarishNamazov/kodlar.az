@@ -28,9 +28,9 @@ Barışın daha öncə paylaşdığı
 haqqında ümumi texniki məlumatlar verilib. Mən isə sizə bu dillərin sənayedəki
 "xarakterindən" danışmaq istəyirəm. Əgər bu gün yeni bir proqramlaşdırma dili
 öyrənmək qərarına gəlmisinizsə və ya proqrmalaşdırmaya yeni başlayıb özünüzə bir
-“başlanğıc nöqtəsi” seçmək istəyirsinizsə o zaman bəzi məqamları bilməyinizdə fayda
-var. Gəlin sənaye dedikdə ilk öncə hansı növ kateqoriyalar və “bazar”lar var ona
-baxaq.
+“başlanğıc nöqtəsi” seçmək istəyirsinizsə o zaman bəzi məqamları bilməyinizdə
+fayda var. Gəlin sənaye dedikdə ilk öncə hansı növ kateqoriyalar və “bazar”lar
+var ona baxaq.
 
 ### A) Enterprise (Böyük Korporasiyalar): Java və C# (.NET)
 
@@ -41,15 +41,15 @@ effektiv OOP dillərindən olduğundan və ən əsası çox geniş topluluğa sa
 olduqlarından xüsusilə bunları vurğulamaq istədim.
 
 **Java:** Onilliklərdir sənayenin "bel sütunu"dur. "Bir dəfə yaz, hər yerdə
-işlət" fəlsəfəsi ilə həm böyük [[arxa plan]] sistemlərdə, həm də Android dünyasında
-(Kotlin) sənayedə çox böyük paya sahibdir.
+işlət" fəlsəfəsi ilə həm böyük [[arxa plan]] sistemlərdə, həm də Android
+dünyasında (Kotlin) sənayedə çox böyük paya sahibdir.
 
 **C# (.NET):** Microsoft-un bəlkə də gördüyü ən doğru iş 😀. Son illərdə .NET
 Core ilə birlikdə inanılmaz dərəcədə sürətlənib və modernləşib. Enterprise
 dünyasında ən təmiz [[çərçivə]]lərdən biri sayılır. Son versiyalarında əldə
 etdikləri çox ciddi performans artımı və əsas rəqibi Javadan bəzi
-xüsusiyyətlərdə qabağa düşməsi və ən əsas da çox yaxşı [[ekosistem]]ə sahib olması
-bu dili çox güclü bir alət edir.
+xüsusiyyətlərdə qabağa düşməsi və ən əsas da çox yaxşı [[ekosistem]]ə sahib
+olması bu dili çox güclü bir alət edir.
 
 ### B) Veb Dünyası və Startaplar: JavaScript / TypeScript
 
@@ -69,8 +69,8 @@ sahələrində Python-dan başqa ciddi alternativ yox kimidir.
 
 Əgər sistemlərin alt qatları, "bulud" texnologiyaları (Cloud Native) və ya
 yüksək performanslı oyun mühərrikləri sizi maraqlandırırsa, bu dillərə
-baxmalısınız. Go (Golang) xüsusilə Google-un dəstəyi ilə arxa plan dünyasında çox
-sürətlə yayılır. Həmçinin C++, C çox böyük və yüksək təzyiqli sistemlərdə
+baxmalısınız. Go (Golang) xüsusilə Google-un dəstəyi ilə arxa plan dünyasında
+çox sürətlə yayılır. Həmçinin C++, C çox böyük və yüksək təzyiqli sistemlərdə
 (finans, brija, OS və s.) ən çox istifadə edilən dillərdəndir.
 
 ---
@@ -117,15 +117,14 @@ Dili seçdiniz, amma o dili öyrənməyə başlamazdan əvvəl (və ya paralel o
 proqramlaşdırmanın fundamentlərini öyrənməlisiniz. Bunlar olmadan siz sadəcə
 "sintaksis təkrarçısı" olacaqsınız.
 
-- **[[verilənlər strukturu]]:** Array, Linked List, Tree,
-  Graph, Hash Table. Verilənləri harada və necə saxlamaq lazım olduğunu
-  bilməsəniz, yazdığınız proqram tısbağa sürəti ilə işləyəcək.
+- **[[verilənlər strukturu]]:** Array, Linked List, Tree, Graph, Hash Table.
+  Verilənləri harada və necə saxlamaq lazım olduğunu bilməsəniz, yazdığınız
+  proqram tısbağa sürəti ilə işləyəcək.
 - **[[alqoritm]]lər:** Sıralama, axtarış, [[rekursiya]]. Google niyə sürətlidir?
   Çünki arxasında nəhəng alqoritmlər dayanır.
-- **Şəbəkə və HTTP:** Brauzer serverlə necə danışır? Status kodları
-  (200, 404, 500) nə deməkdir?
-- **[[Verilənlər bazası]]:** SQL nədir? Verilənlər bir-biri ilə necə
-  əlaqələnir?
+- **Şəbəkə və HTTP:** Brauzer serverlə necə danışır? Status kodları (200,
+  404, 500) nə deməkdir?
+- **[[Verilənlər bazası]]:** SQL nədir? Verilənlər bir-biri ilə necə əlaqələnir?
 
 Bu siyahını kompüterlər necə işləyir, [[kompilyator]], [[interpretator]] və s.
 kimi təməl biliklərlə uzatmaq olar.
@@ -146,9 +145,9 @@ verin.
 
 ### Mərhələ 2: Obyekt-yönümlü proqramlaşdırma və Fundamentlər
 
-Hər şeyin "obyekt" olduğu bir dünyadır. Klasslar, [[varislik]],
-[[polimorfizm]]. Bu mərhələdə artıq özünüz kod yazmağa başlayın. AI-yə sadəcə
-xətalarınızı tapmaqda ([[sazlama]]) icazə verin.
+Hər şeyin "obyekt" olduğu bir dünyadır. Klasslar, [[varislik]], [[polimorfizm]].
+Bu mərhələdə artıq özünüz kod yazmağa başlayın. AI-yə sadəcə xətalarınızı
+tapmaqda ([[sazlama]]) icazə verin.
 
 ### Mərhələ 3: Versiya nəzarəti və Git
 

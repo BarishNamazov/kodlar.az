@@ -13,19 +13,18 @@ kompüteriniz [[paket]]ləri ortaq qlobal şəbəkəyə göndərməyə başlayı
 milyonlarla başqa cihaz da tam olaraq bunu edir. Buna baxmayaraq, bir çox
 səviyyədə ucuz, kütləvi istehsal olunan avadanlıqlardan ibarət olan İnternet
 sabit qalır və istifadəçilərinə xidmət etməyə davam edir. Təsəvvür etdiyiniz
-kimi, bu, heç də sehr deyil, [[marşrutlaşdırıcı]]ların dolub-daşmasının dolub-daşmasının və
-şəbəkənin yüklənib iflic olmasının qarşısını alan düşünülmüş və ağıllı
-mexanizmlərin nəticəsidir.
+kimi, bu, heç də sehr deyil, [[marşrutlaşdırıcı]]ların dolub-daşmasının
+dolub-daşmasının və şəbəkənin yüklənib iflic olmasının qarşısını alan düşünülmüş
+və ağıllı mexanizmlərin nəticəsidir.
 
-1980-ci illərin sonlarında İnternetin bəzi hissələrində bu gün “tıxac
-çöküşü” adlandırılan vəziyyət yaşanmışdı. Şəbəkələr yenidən göndərilən
-paketlərlə o qədər yüklənmişdi ki, faydalı ötürmə sürəti mövcud tutumun çox
-kiçik bir hissəsinə düşmüşdü. Xətlər dolu idi, amma demək olar ki, heç bir real
-məlumat qarşı tərəfə çatmırdı. Bu böhranın həlli TCP-nin ən vacib
-xüsusiyyətlərindən birinə çevrildi: [[tıxac nəzarəti]]. Bu gün hər bir TCP
-bağlantısı (istər kiçik bir API sorğusu, istərsə də çox-giqabaytlıq fayl
-yükləməsi) məlumatı hansı sürətlə göndərməli olduğunu müəyyən etmək üçün bu
-alqoritmlərə güvənir.
+1980-ci illərin sonlarında İnternetin bəzi hissələrində bu gün “tıxac çöküşü”
+adlandırılan vəziyyət yaşanmışdı. Şəbəkələr yenidən göndərilən paketlərlə o
+qədər yüklənmişdi ki, faydalı ötürmə sürəti mövcud tutumun çox kiçik bir
+hissəsinə düşmüşdü. Xətlər dolu idi, amma demək olar ki, heç bir real məlumat
+qarşı tərəfə çatmırdı. Bu böhranın həlli TCP-nin ən vacib xüsusiyyətlərindən
+birinə çevrildi: [[tıxac nəzarəti]]. Bu gün hər bir TCP bağlantısı (istər kiçik
+bir API sorğusu, istərsə də çox-giqabaytlıq fayl yükləməsi) məlumatı hansı
+sürətlə göndərməli olduğunu müəyyən etmək üçün bu alqoritmlərə güvənir.
 
 Hazırda Imperial College-də şəbəkə sistemləri üzrə tezis üzərində işləyərkən,
 son iki il ərzində bu mövzunu yaxından öyrənmişəm. Bu bloq yazısı isə mövzu ilə
@@ -34,11 +33,11 @@ həvəsləndirmək cəhdimdir.
 
 ## Tıxac nəzarəti nədir?
 
-**[[tıxac nəzarəti]] (CC)** şəbəkədə yaranan tıxacların
-qarşısını alan, onları aşkar edən və idarə edən mexanizmdir. Bu mexanizmin vacib
-olmasının səbəbi odur ki, tıxaclı şəbəkələrdə performans qeyri-sabit və
-proqnozlaşdırılması çətin olur, üstəlik məlumat itkisi baş verə bilər. Daha ağır
-hallarda isə tıxac hətta şəbəkənin tam çökməsinə səbəb ola bilər.
+**[[tıxac nəzarəti]] (CC)** şəbəkədə yaranan tıxacların qarşısını alan, onları
+aşkar edən və idarə edən mexanizmdir. Bu mexanizmin vacib olmasının səbəbi odur
+ki, tıxaclı şəbəkələrdə performans qeyri-sabit və proqnozlaşdırılması çətin
+olur, üstəlik məlumat itkisi baş verə bilər. Daha ağır hallarda isə tıxac hətta
+şəbəkənin tam çökməsinə səbəb ola bilər.
 
 ## CC necə həyata keçirilir?
 
@@ -56,18 +55,18 @@ məlumatın çatdırıldığını hesab edə bilər. Burada “pəncərə” anl
 göndərən tərəf göndərmə pəncərəsini təyin edir və bu, eyni anda (hamısı ACK
 olunana qədər) nə qədər məlumatın göndəriləcəyini müəyyənləşdirir. Pəncərənin
 ölçüsünə təsir edən başqa faktorlar da var, məsələn, göndərənin imkanları və
-[[axın nəzarəti]] mexanizmləri. Amma CC bu ölçünü müəyyən edən əsas komponentlərdən
-biridir. Xüsusilə, tıxac pəncərəsi (cong_wnd) anlayışı var ki, bu da şəbəkənin
-eyni anda daşıya biləcəyi maksimum məlumat həcmini müəyyən edir.
+[[axın nəzarəti]] mexanizmləri. Amma CC bu ölçünü müəyyən edən əsas
+komponentlərdən biridir. Xüsusilə, tıxac pəncərəsi (cong_wnd) anlayışı var ki,
+bu da şəbəkənin eyni anda daşıya biləcəyi maksimum məlumat həcmini müəyyən edir.
 
 ## Şəbəkənin tıxaclı olduğunu necə anlayırıq?
 
 Tıxacı idarə etmək üçün əvvəlcə onu aşkar etməyi bacarmalıyıq. Tıxacın əsas
 əlamətlərindən biri paket itkisidir. Paketlərin itirildiyini, müəyyən bir paket
 üçün ACK almadıqda başa düşə bilərik (ya paket, ya da ACK özü itmiş ola bilər),
-bəzən bu hal bir neçə dəfə təkrarlana bilər. TCP bağlantısı həmçinin [[vaxt aşımı]]
-verə bilər, yəni bütün paketlərin çatdırıldığını təsdiqləmək üçün həddən artıq
-uzun gözləmiş oluruq — bu da əslində itki deməkdir.
+bəzən bu hal bir neçə dəfə təkrarlana bilər. TCP bağlantısı həmçinin
+[[vaxt aşımı]] verə bilər, yəni bütün paketlərin çatdırıldığını təsdiqləmək üçün
+həddən artıq uzun gözləmiş oluruq — bu da əslində itki deməkdir.
 
 Amma paketlər tam itməzdən əvvəl də erkən tıxac siqnallarını müşahidə etmək
 mümkündür. Bunun üçün [[RTT]], yəni gediş-gəliş vaxtının artmasına baxırıq —
@@ -90,16 +89,17 @@ variantlarında tətbiq olunur.
 Adətən itkiyə əsaslanan nəzarət aşağı göndərmə sürəti ilə başlayıb onu additiv
 şəkildə artırmaq prinsipinə əsaslanır. Əgər itki aşkar edilərsə (bu, adətən eyni
 paket üçün 3 təkrarlanan ACK vasitəsilə başa düşülür) göndərmə sürəti
-multiplikativ şəkildə azaldılır. Bu texnika Additiv Artım, Multiplikativ Azalma (AIMD) adlanır.
+multiplikativ şəkildə azaldılır. Bu texnika Additiv Artım, Multiplikativ Azalma
+(AIMD) adlanır.
 
 Əsas üstünlüyü ondadır ki, bu yanaşma bir çox ənənəvi şəbəkə quruluşlarında
-kifayət qədər yaxşı işləyir. Həm də nisbətən sadə tətbiq olunur və
-şəbəkə dizaynının əsas prinsiplərinə uyğundur.
+kifayət qədər yaxşı işləyir. Həm də nisbətən sadə tətbiq olunur və şəbəkə
+dizaynının əsas prinsiplərinə uyğundur.
 
 Əsas çatışmazlıq isə ondan ibarətdir ki, itki yalnız şəbəkə artıq tıxaclı
 vəziyyətə düşəndə baş verir, yəni infrastruktur artıq yüklənmiş olur. Bu
-mexanizm işə düşəndə, switch-lərdəki [[bufer]]lər artıq dolmuş olur və [[gecikmə]] bir
-müddətdir artmaqda davam edir.
+mexanizm işə düşəndə, switch-lərdəki [[bufer]]lər artıq dolmuş olur və
+[[gecikmə]] bir müddətdir artmaqda davam edir.
 
 ### ECN-ə əsaslanan CC
 
@@ -107,13 +107,12 @@ Bəzi hallarda tıxac haqqında siqnalı mümkün qədər tez almaq faydalı olu
 görə də bəzi infrastruktur mühitlərində şəbəkədaxili (in-network) mexanizmlərə
 üstünlük verilir.
 
-Xüsusilə, [[ECN]] şəbəkə üzərində tıxac
-yaranmağa yaxınlaşanda marşrutlaşdırıcı və ya switch-lərin paketləri atmaq
-əvəzinə onları işarələməsi mexanizmidir. Adətən şəbəkə inzibatçıları bufer
-doluluğu üçün müəyyən hədd təyin edirlər (məsələn, 70%). Bu hədd keçildikdə,
-paketlər ECN ilə işarələnir. Qəbul edən tərəf bu işarəni gördükdə, bunu
-göndərənə bildirir və göndərən də göndərmə pəncərəsini azaldaraq sürətini
-uyğunlaşdırır.
+Xüsusilə, [[ECN]] şəbəkə üzərində tıxac yaranmağa yaxınlaşanda marşrutlaşdırıcı
+və ya switch-lərin paketləri atmaq əvəzinə onları işarələməsi mexanizmidir.
+Adətən şəbəkə inzibatçıları bufer doluluğu üçün müəyyən hədd təyin edirlər
+(məsələn, 70%). Bu hədd keçildikdə, paketlər ECN ilə işarələnir. Qəbul edən
+tərəf bu işarəni gördükdə, bunu göndərənə bildirir və göndərən də göndərmə
+pəncərəsini azaldaraq sürətini uyğunlaşdırır.
 
 Əsas üstünlüyü ondan ibarətdir ki, bu yanaşma heç bir məlumat itirilmədən əvvəl
 göndərmə sürətini azaltmağa imkan verir və beləliklə tıxacın qarşısını almaq
@@ -127,9 +126,9 @@ bilmədiyimiz bir çox ssenaridə bu yanaşmanı tətbiq etmək mümkün olmur.
 
 ### [[BBR]]
 
-Tıxac nəzarətinə müasir yanaşmalardan biri Google tərəfindən təqdim olunub:
-BBR (Bottleneck Bandwidth and Round-trip propagation time). Bu, Google-ın bu gün
-də öz infrastrukturunda istifadə etdiyi alqoritmlərdən biridir.
+Tıxac nəzarətinə müasir yanaşmalardan biri Google tərəfindən təqdim olunub: BBR
+(Bottleneck Bandwidth and Round-trip propagation time). Bu, Google-ın bu gün də
+öz infrastrukturunda istifadə etdiyi alqoritmlərdən biridir.
 
 Əsas ideya ondan ibarətdir ki, itkiyə və ya switch bildirişlərinə əsaslanmaq
 əvəzinə, şəbəkə haqqında model qurmaq üçün müxtəlif metrikləri davamlı şəkildə
@@ -156,9 +155,9 @@ paylaşanda davranış problemləri müşahidə oluna bilir.
 
 ## Nəticə
 
-Ümid edirəm bu yazı sizin üçün maraqlı oldu. Bu bloqa tıxac nəzarəti
-mövzuları üçün bir növ “menyu” kimi baxa bilərsiniz — qısa icmal verərək mövzunu
-daha dərindən araşdırmağa həvəsləndirmək məqsədi daşıyır. Məncə bu, kompüter
+Ümid edirəm bu yazı sizin üçün maraqlı oldu. Bu bloqa tıxac nəzarəti mövzuları
+üçün bir növ “menyu” kimi baxa bilərsiniz — qısa icmal verərək mövzunu daha
+dərindən araşdırmağa həvəsləndirmək məqsədi daşıyır. Məncə bu, kompüter
 sistemlərinin ən maraqlı sahələrindən biridir, çünki real həyatda da oxşar
 prinsiplərlə işləyən çoxlu analoqlar görmək mümkündür. Bu mövzu həm də istifadə
 ssenarisindən çox asılıdır: ənənəvi şəbəkələr, simsiz mühitlər, AI data

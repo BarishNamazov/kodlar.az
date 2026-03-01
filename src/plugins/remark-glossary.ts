@@ -97,9 +97,7 @@ const remarkGlossary: Plugin<[], Root> = () => {
       html += `<h2>Terminlər</h2>`;
       html += `<dl class="glossary-terms-list">`;
       for (const t of sorted) {
-        const desc = t.description
-          ? t.description.replace(/"/g, "&quot;")
-          : "";
+        const desc = t.description ? t.description.replace(/"/g, "&quot;") : "";
         const link = t.link ? t.link.replace(/"/g, "&quot;") : "";
         html += `<div class="glossary-terms-entry">`;
         html += `<dt><strong>${t.az}</strong> <span class="glossary-terms-en">${t.en}</span></dt>`;
