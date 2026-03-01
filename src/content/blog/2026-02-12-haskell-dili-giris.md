@@ -38,7 +38,7 @@ kimi nüfuzlu universitetlərdə proqramlaşdırmanın ilk olaraq Haskell ilə
 Haskell-i fərqləndirən bir neçə məqam var:
 
 1.  **Güclü Tip Sistemi:** Haskell-də hər bir dəyərin bir tipi var (`v :: t`).
-    Məsələn, `42 :: Int` və ya `sqrt :: Float -> Float`. Bu tip sistemi proqram
+    Məsələn, `42 :: Int` və ya `sqrt :: Float -> Float`. Bu [[tip sistemi]] proqram
     hələ işə düşmədən bir çox xətaları tutur.
 2.  **[[gecikmiş hesablama]]:** Haskell bir ifadənin
     nəticəsinə ehtiyac duyulmayana qədər onu hesablamır. Bu xüsusiyyət bizə
@@ -46,7 +46,7 @@ Haskell-i fərqləndirən bir neçə məqam var:
     `[0..]` yazaraq sıfırdan sonsuzluğa qədər uzanan bir siyahı yarada
     bilərsiniz, lakin Haskell ondan yalnız sizə lazım olan hissəni götürəcək.
 3.  **Rekursiya:** Haskell-də `for` və ya `while` dövrləri yoxdur. Hər şey
-    rekursiya üzərində qurulub. Bir siyahını emal etmək üçün onu boş siyahı `[]`
+    [[rekursiya]] üzərində qurulub. Bir siyahını emal etmək üçün onu boş siyahı `[]`
     və ya "baş" və "quyruq" hissələrinə `(x:xs)` (x -> head & xs
     -> tail) parçalayırıq.
 
