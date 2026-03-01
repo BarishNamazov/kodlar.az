@@ -9,11 +9,11 @@ categories: [Şəbəkə]
 ## Giriş
 
 Hər dəfə bir veb-səhifə açanda, video yayımlayanda və ya fayl endirəndə,
-kompüteriniz paketləri ortaq qlobal şəbəkəyə göndərməyə başlayır. Eyni anda
+kompüteriniz [[paket]]ləri ortaq qlobal şəbəkəyə göndərməyə başlayır. Eyni anda
 milyonlarla başqa cihaz da tam olaraq bunu edir. Buna baxmayaraq, bir çox
 səviyyədə ucuz, kütləvi istehsal olunan avadanlıqlardan ibarət olan İnternet
 sabit qalır və istifadəçilərinə xidmət etməyə davam edir. Təsəvvür etdiyiniz
-kimi, bu, heç də sehr deyil, router-ların dolub-daşmasının dolub-daşmasının və
+kimi, bu, heç də sehr deyil, [[marşrutlaşdırıcı]]ların dolub-daşmasının dolub-daşmasının və
 şəbəkənin yüklənib iflic olmasının qarşısını alan düşünülmüş və ağıllı
 mexanizmlərin nəticəsidir.
 
@@ -56,7 +56,7 @@ məlumatın çatdırıldığını hesab edə bilər. Burada “pəncərə” anl
 göndərən tərəf göndərmə pəncərəsini təyin edir və bu, eyni anda (hamısı ACK
 olunana qədər) nə qədər məlumatın göndəriləcəyini müəyyənləşdirir. Pəncərənin
 ölçüsünə təsir edən başqa faktorlar da var, məsələn, göndərənin imkanları və
-axın nəzarəti mexanizmləri. Amma CC bu ölçünü müəyyən edən əsas komponentlərdən
+[[axın nəzarəti]] mexanizmləri. Amma CC bu ölçünü müəyyən edən əsas komponentlərdən
 biridir. Xüsusilə, tıxac pəncərəsi (cong_wnd) anlayışı var ki, bu da şəbəkənin
 eyni anda daşıya biləcəyi maksimum məlumat həcmini müəyyən edir.
 
@@ -65,7 +65,7 @@ eyni anda daşıya biləcəyi maksimum məlumat həcmini müəyyən edir.
 Tıxacı idarə etmək üçün əvvəlcə onu aşkar etməyi bacarmalıyıq. Tıxacın əsas
 əlamətlərindən biri paket itkisidir. Paketlərin itirildiyini, müəyyən bir paket
 üçün ACK almadıqda başa düşə bilərik (ya paket, ya da ACK özü itmiş ola bilər),
-bəzən bu hal bir neçə dəfə təkrarlana bilər. TCP bağlantısı həmçinin vaxt aşımı
+bəzən bu hal bir neçə dəfə təkrarlana bilər. TCP bağlantısı həmçinin [[vaxt aşımı]]
 verə bilər, yəni bütün paketlərin çatdırıldığını təsdiqləmək üçün həddən artıq
 uzun gözləmiş oluruq — bu da əslində itki deməkdir.
 
@@ -93,12 +93,12 @@ paket üçün 3 təkrarlanan ACK vasitəsilə başa düşülür) göndərmə sü
 multiplikativ şəkildə azaldılır. Bu texnika Additiv Artım, Multiplikativ Azalma (AIMD) adlanır.
 
 Əsas üstünlüyü ondadır ki, bu yanaşma bir çox ənənəvi şəbəkə quruluşlarında
-kifayət qədər yaxşı işləyir. Həm də nisbətən sadə implementasiya olunur və
+kifayət qədər yaxşı işləyir. Həm də nisbətən sadə tətbiq olunur və
 şəbəkə dizaynının əsas prinsiplərinə uyğundur.
 
 Əsas çatışmazlıq isə ondan ibarətdir ki, itki yalnız şəbəkə artıq tıxaclı
 vəziyyətə düşəndə baş verir, yəni infrastruktur artıq yüklənmiş olur. Bu
-mexanizm işə düşəndə, switch-lərdəki buferlər artıq dolmuş olur və gecikmə bir
+mexanizm işə düşəndə, switch-lərdəki [[bufer]]lər artıq dolmuş olur və [[gecikmə]] bir
 müddətdir artmaqda davam edir.
 
 ### ECN-ə əsaslanan CC
@@ -135,7 +135,7 @@ də öz infrastrukturunda istifadə etdiyi alqoritmlərdən biridir.
 əvəzinə, şəbəkə haqqında model qurmaq üçün müxtəlif metrikləri davamlı şəkildə
 ölçürük. Bu model əsasən iki vacib göstəriciyə əsaslanır:
 
-1. Bottleneck bandwidth — marşrut üzərindəki ən zəif linkin bant genişliyi
+1. Bottleneck bandwidth — marşrut üzərindəki ən zəif linkin [[bant genişliyi]]
 2. Minimum RTT — paketin ən kiçik gediş-gəliş vaxtı
 
 Sadə bir bənzətmə ilə desək, sanki məlumat yox, su ötürürük. Birinci metrik

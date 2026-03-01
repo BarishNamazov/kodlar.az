@@ -347,6 +347,139 @@ export const glossary: GlossaryTerm[] = [
       "İdarəetmə axınının dolaşıq və izlənilməsi çətin olduğu kod strukturu.",
     link: "https://en.wikipedia.org/wiki/Spaghetti_code",
   },
+  {
+    az: "arxa plan",
+    en: "backend",
+    description:
+      "Tətbiqin istifadəçiyə görünməyən server tərəfi — məlumat emalı, məntiq və verilənlər bazası əməliyyatları.",
+    link: "https://en.wikipedia.org/wiki/Frontend_and_backend",
+  },
+  {
+    az: "ön plan",
+    en: "frontend",
+    description:
+      "Tətbiqin istifadəçiyə birbaşa görünən hissəsi — interfeys, vizual təqdimat.",
+    link: "https://en.wikipedia.org/wiki/Frontend_and_backend",
+  },
+  {
+    az: "marşrutlaşdırıcı",
+    en: "router",
+    description:
+      "Şəbəkədə paketləri müvafiq istiqamətə yönləndirən cihaz.",
+    link: "https://en.wikipedia.org/wiki/Router_(computing)",
+  },
+  {
+    az: "bant genişliyi",
+    en: "bandwidth",
+    description:
+      "Şəbəkə kanalının vahid zamanda ötürə biləcəyi maksimum məlumat həcmi.",
+    link: "https://en.wikipedia.org/wiki/Bandwidth_(computing)",
+  },
+  {
+    az: "gecikmə",
+    en: "latency",
+    description:
+      "Məlumatın bir nöqtədən digərinə çatması üçün keçən vaxt.",
+    link: "https://en.wikipedia.org/wiki/Latency_(engineering)",
+  },
+  {
+    az: "paket",
+    en: "packet",
+    description:
+      "Şəbəkədə ötürülən məlumatın kiçik, idarə olunan hissələrə bölünmüş vahidi.",
+    link: "https://en.wikipedia.org/wiki/Network_packet",
+  },
+  {
+    az: "bufer",
+    en: "buffer",
+    description:
+      "Məlumatın müvəqqəti saxlandığı yaddaş sahəsi.",
+    link: "https://en.wikipedia.org/wiki/Data_buffer",
+  },
+  {
+    az: "icra mühiti",
+    en: "runtime",
+    description:
+      "Proqramın işlədiyi zaman kəsiyi və ya onu icra edən mühit.",
+    link: "https://en.wikipedia.org/wiki/Runtime_system",
+  },
+  {
+    az: "kitabxana",
+    en: "library",
+    description:
+      "Təkrar istifadə oluna bilən hazır kod modulları toplusu.",
+    link: "https://en.wikipedia.org/wiki/Library_(computing)",
+  },
+  {
+    az: "maşın öyrənməsi",
+    en: "machine learning",
+    description:
+      "Kompüterlərin açıq proqramlaşdırma olmadan məlumatlardan öyrənməsi sahəsi.",
+    link: "https://en.wikipedia.org/wiki/Machine_learning",
+  },
+  {
+    az: "süni intellekt",
+    en: "artificial intelligence",
+    description:
+      "İnsan zəkasına xas olan vəzifələri yerinə yetirmək üçün maşınları hazırlayan elm sahəsi.",
+    link: "https://en.wikipedia.org/wiki/Artificial_intelligence",
+  },
+  {
+    az: "geriyə uyğunluq",
+    en: "backward compatibility",
+    description:
+      "Yeni versiyaların köhnə versiyanın məlumatları və davranışı ilə uyğun işləmə qabiliyyəti.",
+    link: "https://en.wikipedia.org/wiki/Backward_compatibility",
+  },
+  {
+    az: "paradiqma",
+    en: "paradigm",
+    description:
+      "Proqramlaşdırmada problemlərin həlli üçün istifadə olunan fundamental yanaşma və düşüncə modeli.",
+    link: "https://en.wikipedia.org/wiki/Programming_paradigm",
+  },
+  {
+    az: "sintaksis",
+    en: "syntax",
+    description:
+      "Proqramlaşdırma dilinin qrammatik qaydaları — kodun necə yazılmalı olduğunu müəyyən edən struktur.",
+    link: "https://en.wikipedia.org/wiki/Syntax_(programming_languages)",
+  },
+  {
+    az: "ekosistem",
+    en: "ecosystem",
+    description:
+      "Bir dilin və ya platformanın ətrafındakı kitabxanalar, alətlər və icma toplusu.",
+    link: "https://en.wikipedia.org/wiki/Software_ecosystem",
+  },
+  {
+    az: "virtual maşın",
+    en: "virtual machine",
+    description:
+      "Fiziki kompüteri təqlid edən proqram mühiti; baytkodu icra etmək üçün istifadə olunur.",
+    link: "https://en.wikipedia.org/wiki/Virtual_machine",
+  },
+  {
+    az: "mənbə kodu",
+    en: "source code",
+    description:
+      "Proqramçının yazdığı, insan tərəfindən oxuna bilən proqram mətni.",
+    link: "https://en.wikipedia.org/wiki/Source_code",
+  },
+  {
+    az: "vaxt aşımı",
+    en: "timeout",
+    description:
+      "Gözlənilən cavab müəyyən müddətdə alınmadıqda əməliyyatın dayandırılması.",
+    link: "https://en.wikipedia.org/wiki/Timeout_(computing)",
+  },
+  {
+    az: "axın nəzarəti",
+    en: "flow control",
+    description:
+      "Göndərənin qəbul edənin emal sürətinə uyğunlaşdırılması mexanizmi.",
+    link: "https://en.wikipedia.org/wiki/Flow_control_(data)",
+  },
 ];
 
 const lookupMap = new Map<string, GlossaryTerm>();
