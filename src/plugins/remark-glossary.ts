@@ -1,6 +1,6 @@
 import type { Root, Text, Html, Parent, PhrasingContent } from "mdast";
 import type { Plugin } from "unified";
-import { lookupTerm } from "../data/glossary.ts";
+import { lookupTerm, type GlossaryTerm } from "../data/glossary.ts";
 
 const GLOSSARY_PATTERN = /\[\[([^\]]+)\]\]/g;
 
@@ -21,6 +21,9 @@ function visitTextNodes(
 
 const remarkGlossary: Plugin<[], Root> = () => {
   return (tree: Root) => {
+    const usedTerms = new Map<string, GlossaryTerm>();
+    const missingTerms = new Set<string>();
+
     visitTextNodes(tree, (node, index, parent) => {
       const text = node.value;
       if (!text.includes("[[")) return;
@@ -42,6 +45,9 @@ const remarkGlossary: Plugin<[], Root> = () => {
         const term = lookupTerm(termKey);
 
         if (term) {
+          // Preserve the original casing from the markdown source
+          const displayText = termKey;
+
           const attrs: Record<string, string> = {
             "data-term-az": term.az,
             "data-term-en": term.en,
@@ -55,10 +61,12 @@ const remarkGlossary: Plugin<[], Root> = () => {
 
           children.push({
             type: "html",
-            value: `<span class="glossary-term" ${attrStr}>${term.az}</span>`,
+            value: `<span class="glossary-term" ${attrStr}>${displayText}</span>`,
           });
+
+          usedTerms.set(term.az.toLowerCase(), term);
         } else {
-          console.warn(`[remark-glossary] Term not found: "${termKey}"`);
+          missingTerms.add(termKey);
           children.push({
             type: "text",
             value: match[0],
@@ -79,6 +87,37 @@ const remarkGlossary: Plugin<[], Root> = () => {
         parent.children.splice(index, 1, ...(children as PhrasingContent[]));
       }
     });
+
+    if (missingTerms.size > 0) {
+      const terms = [...missingTerms].sort((a, b) => a.localeCompare(b, "az"));
+      throw new Error(
+        `[remark-glossary] Term not found for: ${terms.map((t) => `"${t}"`).join(", ")}`,
+      );
+    }
+
+    // Append a "Terminlər" section at the end of the post
+    if (usedTerms.size > 0) {
+      const sorted = [...usedTerms.values()].sort((a, b) =>
+        a.az.localeCompare(b.az, "az", { sensitivity: "base" }),
+      );
+
+      let html = `<section class="glossary-terms-section" aria-label="Terminlər">`;
+      html += `<h2>Terminlər</h2>`;
+      html += `<dl class="glossary-terms-list">`;
+      for (const t of sorted) {
+        const desc = t.description ? t.description.replace(/"/g, "&quot;") : "";
+        const link = t.link ? t.link.replace(/"/g, "&quot;") : "";
+        html += `<div class="glossary-terms-entry">`;
+        html += `<dt><strong>${t.az}</strong> <span class="glossary-terms-en">${t.en}</span></dt>`;
+        if (desc) html += `<dd>${t.description}</dd>`;
+        if (link)
+          html += `<dd><a href="${link}" target="_blank" rel="noopener noreferrer">↗ Ətraflı</a></dd>`;
+        html += `</div>`;
+      }
+      html += `</dl></section>`;
+
+      tree.children.push({ type: "html", value: html });
+    }
   };
 };
 

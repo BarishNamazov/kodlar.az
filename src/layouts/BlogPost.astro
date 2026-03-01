@@ -1367,6 +1367,55 @@ const authorData = await getAuthor(frontmatter.author);
     }
   }
 
+  /* Terminlər section at end of blog */
+  .prose :global(.glossary-terms-section) {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .prose :global(.glossary-terms-section h2) {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose :global(.glossary-terms-list) {
+    margin: 0;
+  }
+
+  .prose :global(.glossary-terms-entry) {
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--color-border-muted);
+  }
+
+  .prose :global(.glossary-terms-entry:last-child) {
+    border-bottom: none;
+  }
+
+  .prose :global(.glossary-terms-entry dt) {
+    font-size: 0.9375rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .prose :global(.glossary-terms-en) {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-cyan);
+    margin-left: 0.35rem;
+  }
+
+  .prose :global(.glossary-terms-entry dd) {
+    margin: 0;
+    padding-left: 0;
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  .prose :global(.glossary-terms-entry dd a) {
+    font-size: 0.75rem;
+  }
+
   @media print {
     .prose :global(.glossary-term) {
       color: #000;
@@ -1378,6 +1427,14 @@ const authorData = await getAuthor(frontmatter.author);
       content: " (" attr(data-term-en) ")";
       font-style: italic;
       color: #555;
+    }
+
+    :global(.glossary-tooltip) {
+      display: none !important;
+    }
+
+    .prose :global(.glossary-terms-section) {
+      break-inside: avoid;
     }
   }
 </style>

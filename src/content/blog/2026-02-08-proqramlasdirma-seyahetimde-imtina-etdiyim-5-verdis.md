@@ -95,7 +95,7 @@ həll etməyin ən güclü yollarındandır. Bir problemin neçə fərqli həlli
 biləcəyini görmək, səhvləri daha tez tutmaq və daha sağlam qərarlar vermək üçün
 fikir mübadiləsi vacibdir.
 
-Açıq kod və bilik paylaşımı mövzusunda Barışın
+[[Açıq mənbə]] və bilik paylaşımı mövzusunda Barışın
 [Salam, kodlar.az](https://kodlar.az/blogs/salam-kodlar-az/) yazısını oxumağı
 tövsiyə edirəm.
 

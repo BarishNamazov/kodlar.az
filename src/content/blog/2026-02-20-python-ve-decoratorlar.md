@@ -10,9 +10,9 @@ description:
 title: Python və 'Decorator'lar
 ---
 
-"Decorator"lar bir çox Python kitabxanası və çərçivələrində (framework) istifadə
-olunan özəllikdir. Tərcümədə "örtük" deməkdir. Hər hansı metodu istifadə
-etməzdən qabaq görüləcək işləri özündə ehtiva edir.
+[[örtük]]lər bir çox Python kitabxanası və çərçivələrində istifadə olunan
+özəllikdir. Hər hansı metodu istifadə etməzdən qabaq görüləcək işləri özündə
+ehtiva edir.
 
 **Nümunə:** Məsələn, Django çərçivəsində hansısa spesifik bir URL-də
 istifadəçinin öz hesabına daxil olub-olmadığını yoxlayırıq. Gəlin birlikdə
@@ -24,13 +24,13 @@ def account_view(request):
     return HttpResponse('Çox gizli səhifə ;)')
 ```
 
-`account_view` funksiyasının üzərinə yazılan decorator (bundan sonra _örtük_)
-ora sorğu göndərməzdən qabaq hesaba daxil olub-olmadığını yoxlayır. Əgər daxil
-olubsa, cavab qaytarır, yoxsa login səhifəsinə yönləndirir.
+`account_view` funksiyasının üzərinə yazılan örtük ora sorğu göndərməzdən qabaq
+hesaba daxil olub-olmadığını yoxlayır. Əgər daxil olubsa, cavab qaytarır, yoxsa
+login səhifəsinə yönləndirir.
 
 Bəs bunun işləmə prinsipi nədir? Necə olur ki, həmin funksiya çağırılmamışdan
 qabaq `login_required` işə düşür? Əslində işləmə prinsipi çox sadədir. İşin
-sehri sadəcə "syntactic sugar"dadır (bundan sonra _sintaktik şəkər_).
+sehri sadəcə [[sintaktik şəkər]]dədir.
 
 ## İlk addımlar
 
@@ -230,8 +230,8 @@ Səbəb odur ki, biz `divide`-ı `my_decorator`-a mənimsətmişik. O da bizə
 daxilindəki `wrapper()` metodunu qaytarır.
 
 Bu problemi həll etmək və əsas funksiyanın kimliyini (meta məlumatlarını)
-qorumaq üçün Python-un `functools` kitabxanasındakı `@wraps` örtüyündən istifadə
-edəcəyik:
+qorumaq üçün Python-un `functools` [[kitabxana]]sındakı `@wraps` örtüyündən
+istifadə edəcəyik:
 
 ```python
 from functools import wraps

@@ -24,26 +24,26 @@ bildiyi bir məlumat var: kompüterlər sıfırlar (**0**) və birlərlə (**1**
 işləyir. Həqiqətən də kompüterlər özündə yalnız bitlərlə hesablama edə və
 məlumat saxlaya bilir. Eyni zamanda, yazılan proqramlar da bu şəkildə olmalıdır
 ki, kompüter onu anlaya bilsin. Bu kompüterin anladığı bir dil olduğu üçün biz
-buna maşın dili deyirik. İstifadə etdiyimiz bütün software sistemləri kompüterdə
-maşın dilində olur. Amma proqramların bitlərlə yazılması düşüncəsi çox qorxunc
-səslənir. Təsəvvür edin ki, yazmaq istədiyiniz proqram üçün yalnızca 0 və 1
-düymələrinə basırsınız. Bu həm çox qarmaşıq görünər, həm də çox uzun vaxt
-aparar. Bu problemə həll üçün insanların daha yaxşı anlaya biləcəkləri bir üsul
-olaraq proqramlaşdırma dilləri ixtira olunmuşdur. Proqramlaşdırma dilləri özündə
-sadəcə yazıdan (**text**) ibarət olub əmrləri sözlərlə ifadə edib yazmaqdır. Biz
-onsuz da bu əmrlərin sadə olmasından, çoxlu təkrarlanması gərəkdiyini bilirik və
-qarmaşıq sistemlərdə artıq bizə daha mürəkkəb əmrlər lazım olur. Bu mürəkkəb
-əmrləri də müəyyən qrammatikada işlətməliyik ki, yazılan kod mənalı və anlaşılan
-olsun. Bu şəkildə düşündükdə kod yazmaq daha asan hala gəlir. Sanki kompüterlə
-söhbət edirmişik kimi düşünülə bilər. Lakin unutmamaq lazımdır ki, kompüterlər
-bu dilləri anlamır, onlar sadəcə maşın dilini bilirlər. Bu zaman bizim
-köməyimizə tərcüməçi proqramlar gəlir. Bu tərcüməçi proqramlar proqramlaşdırma
-dillərinə görə fərqlənir, lakin hər birinin məqsədi maşın dilinə çevirməkdir.
-Onlar kodları çevirmə metodlarına görə iki hissəyə ayrılır: Interpreter və
-Compiler. Əslində bu çevirmələrə daha da çox metodlar vardır, amma biz hələlik
-işləri sadə tutmaq üçün bunları bilsək yetərlidir. Bu proqramlarla biz bizim
-proqramlaşdırdığımız mənbə (**source**) kodunu maşın dilinin anlaya bildiyi
-vəziyyətə gətirə bilərik.
+buna [[maşın dili]] deyirik. İstifadə etdiyimiz bütün proqram təminatı
+sistemləri kompüterdə maşın dilində olur. Amma proqramların bitlərlə yazılması
+düşüncəsi çox qorxunc səslənir. Təsəvvür edin ki, yazmaq istədiyiniz proqram
+üçün yalnızca 0 və 1 düymələrinə basırsınız. Bu həm çox qarmaşıq görünər, həm də
+çox uzun vaxt aparar. Bu problemə həll üçün insanların daha yaxşı anlaya
+biləcəkləri bir üsul olaraq proqramlaşdırma dilləri ixtira olunmuşdur.
+Proqramlaşdırma dilləri özündə sadəcə yazıdan (mətn) ibarət olub əmrləri
+sözlərlə ifadə edib yazmaqdır. Biz onsuz da bu əmrlərin sadə olmasından, çoxlu
+təkrarlanması gərəkdiyini bilirik və qarmaşıq sistemlərdə artıq bizə daha
+mürəkkəb əmrlər lazım olur. Bu mürəkkəb əmrləri də müəyyən qrammatikada
+işlətməliyik ki, yazılan kod mənalı və anlaşılan olsun. Bu şəkildə düşündükdə
+kod yazmaq daha asan hala gəlir. Sanki kompüterlə söhbət edirmişik kimi düşünülə
+bilər. Lakin unutmamaq lazımdır ki, kompüterlər bu dilləri anlamır, onlar sadəcə
+maşın dilini bilirlər. Bu zaman bizim köməyimizə tərcüməçi proqramlar gəlir. Bu
+tərcüməçi proqramlar proqramlaşdırma dillərinə görə fərqlənir, lakin hər birinin
+məqsədi maşın dilinə çevirməkdir. Onlar kodları çevirmə metodlarına görə iki
+hissəyə ayrılır: [[interpretator]] və [[kompilyator]]. Əslində bu çevirmələrə
+daha da çox metodlar vardır, amma biz hələlik işləri sadə tutmaq üçün bunları
+bilsək yetərlidir. Bu proqramlarla biz bizim proqramlaşdırdığımız
+[[mənbə kodu]]nu maşın dilinin anlaya bildiyi vəziyyətə gətirə bilərik.
 
 ## Niyə fərqli və çoxlu proqramlaşdırma dillərinə sahibik?
 
@@ -54,16 +54,16 @@ bir-birlərindən bəzi üstünlükləri ilə fərqlənir. Amma bəzi üstünlü
 zamanda başqa problemlər də yaradır. Bu fərqlilikləri anlamağınız üçün bəzi
 misal dillərdən bəhs edək:
 
-- Python: Ümumi məqsəd (**General Purpose**) proqramlaşdırma dilidir. Əsas məğzi
-  sadə, rahat və aydın olmasıdır. Proqramçını yormayan və kiçik sadə scripting
-  kimi işlərdə mükəmməldir. Yeni başlayanların çox asanlıqla öyrənə biləcəyi bir
-  dildir. Əsasən interpret olaraq maşın dilinə çevrilir. Bu onun sürətli işə
-  salınmasına yardım etsə də, performans baxımından zəiflədir. Bir çox
-  paradiqmaları etməyə çalışır və buna görə də geniş istifadə oluna da bilinir.
-  Lakin, onu fərqləndirən cəhətləri həm də onu geri salır. Proqramçıya rahat
-  dillər maşın dilindən çox uzaq olduğu üçün maşına əlavə yük salır. Buna görə
-  də performans tələb edən işlərdə yalnız daha sürətli kitabxanalara qoşulub
-  işlədilə bilər.
+- Python: Ümumi məqsədli proqramlaşdırma dilidir. Əsas məğzi sadə, rahat və
+  aydın olmasıdır. Proqramçını yormayan və kiçik sadə scripting kimi işlərdə
+  mükəmməldir. Yeni başlayanların çox asanlıqla öyrənə biləcəyi bir dildir.
+  Əsasən interpret olaraq maşın dilinə çevrilir. Bu onun sürətli işə salınmasına
+  yardım etsə də, performans baxımından zəiflədir. Bir çox [[paradiqma]]ları
+  etməyə çalışır və buna görə də geniş istifadə oluna da bilinir. Lakin, onu
+  fərqləndirən cəhətləri həm də onu geri salır. Proqramçıya rahat dillər maşın
+  dilindən çox uzaq olduğu üçün maşına əlavə yük salır. Buna görə də performans
+  tələb edən işlərdə yalnız daha sürətli [[kitabxana]]lara qoşulub işlədilə
+  bilər.
 - PHP: Server tərəfli scripting dilidir. Əsas məğzi server appləri üçün asan,
   sürətli və dinamik kodlar yazmağa kömək etməsidir. Asanlıqla, HTML koduna
   inteqrasiya olur və çox sadə şəkildə dinamik səhifələr yaradır. Vebin çox
@@ -71,18 +71,18 @@ misal dillərdən bəhs edək:
   və versiyaları müasir tutulur. Lakin, onu fərqləndirən bir çox cəhət onun hər
   yerdə istifadə oluna bilməməsinə də nəticələnir. Hər nə qədər Turing-complete
   dil olmasına baxmayaraq, bu dil əsasında sadəcə serverlər üçün nəzərdə
-  tutulub. Yəni, native applər hazırlanması uyğun deyil. Bundan əlavə olaraq,
-  PHP mənbə kodları sadəcə düz mətn olaraq yadda saxlanıldığı üçün də bir çox
-  təhlükəsizlik problemlərinə açıqdır. Son olaraq, inkişafa açıq olması onu öz
-  versiyaları arasında böyük fərqləndirir. Bu da köhnəlmiş PHP kodlarının geriyə
-  uyğunluğunu qırır.
-- Elixir: Bölüşdürülmüş sistemlər (**Distributed Systems**) üçün
-  optimallaşdırılmış bir dildir. Köhnəlmiş olan Erlang/BEAM ekosisteminin müasir
-  halı kimi ortaya çıxıb. Əsasən telekomunikasiya sistemlərində istifadə olunur.
-  Bu dil həmişə çalışdırdığı kodları qarşılaşdığı xətalara baxmayaraq davamlı
-  olaraq aktual tutmağa çalışır. Bir çox proqramçı üçün öyrənməsi çətindir və
-  digər dillər kimi geniş istifadəyə açıq deyil. Paralel sistemlər üçün mükəmməl
-  olsa da, prosessor-ağırlıqlı işlərdə çətinlik çəkir.
+  tutulub. Yəni, [[yerli tətbiq]]lər hazırlanması uyğun deyil. Bundan əlavə
+  olaraq, PHP mənbə kodları sadəcə düz mətn olaraq yadda saxlanıldığı üçün də
+  bir çox təhlükəsizlik problemlərinə açıqdır. Son olaraq, inkişafa açıq olması
+  onu öz versiyaları arasında böyük fərqləndirir. Bu da köhnəlmiş PHP kodlarının
+  [[geriyə uyğunluq]]unu qırır.
+- Elixir: [[bölünmüş sistemlər]] üçün optimallaşdırılmış bir dildir. Köhnəlmiş
+  olan Erlang/BEAM [[ekosistem]]inin müasir halı kimi ortaya çıxıb. Əsasən
+  telekomunikasiya sistemlərində istifadə olunur. Bu dil həmişə çalışdırdığı
+  kodları qarşılaşdığı xətalara baxmayaraq davamlı olaraq aktual tutmağa
+  çalışır. Bir çox proqramçı üçün öyrənməsi çətindir və digər dillər kimi geniş
+  istifadəyə açıq deyil. Paralel sistemlər üçün mükəmməl olsa da,
+  prosessor-ağırlıqlı işlərdə çətinlik çəkir.
 - Cobol: Ən qədimi dillərdən biridir və artıq istifadəsi demək olaraq yoxdur.
   Çıxdıqda əsas məqsədi ola bildiyincə ingilis dilinə bənzəməsi və kompüter
   bilməyənlərin belə istifadə edə biləcəyi dil olması idi. Əsasən finans
@@ -90,20 +90,19 @@ misal dillərdən bəhs edək:
   dili anlayışından olduqca uzaqdır və ən sadə alqoritmlər belə çox uzun kodlara
   çevrilə bilər. Olduqca riskli və qarmaşıq olan bu dil sadəcə standartların
   olmadığı dövrü əla ifadə edən tarixi fakt olaraq yaşayır ancaq.
-- Java: Bu dil müasir dövrün ən çox istifadə edilən və obyekt-yönümlü
-  proqramlaşdırmanın (**Object Oriented Proqramming**) ən güclü dillərindən
-  biridir. Java çıxdığı zaman _"Bir dəfə yaz, hər yerdə işlət!"_ mottosu ilə
-  populyar idi. Əsasən həm compiler, həm də interpreter metodlarının müsbət
-  cəhətlərini hibrit birləşdirən JIT virtual maşın məntiqi ilə işləyir. Onu
-  populyar edən bir digər nöqtəsi isə, zəngin və müasir kitabxana ekosistemidir.
-  Lakin indiki dövrdə, ən böyük məqsədi istənilən sistemin asan və tez tətbiq
-  (**implement**) oluna bilməsidir və bu da onu performans cəhətdən geriyə
-  salır. Hər nə qədər Python kimi dillərdən daha sürətli olsa da, onun hər yerdə
-  OOP paradiqmasını istifadə qanunu, prosessorun işləmə məntiqinə biraz zidd
-  olduğu üçün yavaşladır. Həmçinin nəticədə birbaşa maşın dilinə çevrilməyən bir
-  dildir. Əlavə olaraq, Java proqramçı üçün kəskin bəzi qaydalar qoyur. Bu
-  qaydalarla kodu daha təhlükəsiz etməyə çalışsa da, bu həm də proqramçını
-  limitləyir. Misal, zibil qutusu (**Garbage Collector**) metodunu istifadə
+- Java: Bu dil müasir dövrün ən çox istifadə edilən və
+  [[obyekt-yönümlü proqramlaşdırma]] ən güclü dillərindən biridir. Java çıxdığı
+  zaman _"Bir dəfə yaz, hər yerdə işlət!"_ mottosu ilə populyar idi. Əsasən həm
+  kompilyator, həm də interpretator metodlarının müsbət cəhətlərini hibrit
+  birləşdirən JIT virtual maşın məntiqi ilə işləyir. Onu populyar edən bir digər
+  nöqtəsi isə, zəngin və müasir kitabxana ekosistemidir. Lakin indiki dövrdə, ən
+  böyük məqsədi istənilən sistemin asan və tez tətbiq oluna bilməsidir və bu da
+  onu performans cəhətdən geriyə salır. Hər nə qədər Python kimi dillərdən daha
+  sürətli olsa da, onun hər yerdə OOP paradiqmasını istifadə qanunu, prosessorun
+  işləmə məntiqinə biraz zidd olduğu üçün yavaşladır. Həmçinin nəticədə birbaşa
+  maşın dilinə çevrilməyən bir dildir. Əlavə olaraq, Java proqramçı üçün kəskin
+  bəzi qaydalar qoyur. Bu qaydalarla kodu daha təhlükəsiz etməyə çalışsa da, bu
+  həm də proqramçını limitləyir. Misal, [[zibil yığımı]] metodunu istifadə
   etməsi onun aşağı səviyyə işlərdə istifadəsini bağlayır. Sonda, PHP-də qeyd
   edilən versiya probleminə də sahibdir.
 
@@ -111,14 +110,13 @@ misal dillərdən bəhs edək:
 araşdırmağınız tövsiyə olunur.
 
 Bütün bu fərqlərə görə də mükəmməl dil ola bilməz. Tövsiyə olunan ilk başda
-öyrənməyə başlayan zaman ümumi məqsədli (**general purpose**) dillərdən birini
-öyrənməkdir. Buna misal olaraq bu dillərdən biri olan C/C++ dilindən
-danışacağıq. Bu dil bütün məqsədlər üçün istifadə oluna bilər, amma hər məqsəd
-üçün səmərəli deyildir. Məqsəd giriş səviyyəsidirsə bizə yetərlidir. Lakin, bu
-dil bəzən digərlərindən daha çətin anlaşıla bilər. Bu biraz da mifdən ibarətdir,
-çünki bu dili ilk öyrənən bir çox insan vardır və əslində başqa dillər də bu
-dili təməl olaraq hazırlandığı üçün C/C++ öyrənməklə bir çox dili də öyrənmiş
-olursunuz.
+öyrənməyə başlayan zaman ümumi məqsədli dillərdən birini öyrənməkdir. Buna misal
+olaraq bu dillərdən biri olan C/C++ dilindən danışacağıq. Bu dil bütün məqsədlər
+üçün istifadə oluna bilər, amma hər məqsəd üçün səmərəli deyildir. Məqsəd giriş
+səviyyəsidirsə bizə yetərlidir. Lakin, bu dil bəzən digərlərindən daha çətin
+anlaşıla bilər. Bu biraz da mifdən ibarətdir, çünki bu dili ilk öyrənən bir çox
+insan vardır və əslində başqa dillər də bu dili təməl olaraq hazırlandığı üçün
+C/C++ öyrənməklə bir çox dili də öyrənmiş olursunuz.
 
 ## Proqramlaşdırma dillərində səviyyələr nələrdir və bəzi dillər niyə çətin adlanır?
 
