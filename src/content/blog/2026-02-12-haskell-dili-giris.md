@@ -20,8 +20,8 @@ sirli, lakin inanılmaz dərəcədə güclü kainat vəd edir.
 
 ## Haskell-in Mahiyyəti: Funksional Yanaşma
 
-Haskell təmiz **[[funksional proqramlaşdırma]]** (FP) dilidir. Yəni burada biz
-kompüterə addım-addım nə edəcəyini ([[imperativ proqramlaşdırma]]) demirik,
+Haskell təmiz **[[funksional proqramlaşdırma]]** ([[FP]]) dilidir. Yəni burada
+biz kompüterə addım-addım nə edəcəyini ([[imperativ proqramlaşdırma]]) demirik,
 sadəcə problemin özünü ([[deklarativ proqramlaşdırma]]) təsvir edirik. FP dili
 proqramçını məlumatlara bütöv bir obyekt kimi baxmağa sövq edir, onu hissə-hissə
 emal etməyə yox.
@@ -68,10 +68,10 @@ ifadələr və ya riyazi ifadə ağacları kimi mürəkkəb strukturlar qura bil
 
 Haskell-in gücü yalnız dizayndan yox, dərin elmi köklərdən gəlir.
 
-1. **[[lambda hesablaması]]:** Haskell-in nəzəri əsası lambda hesablamasıdır. Bu
+1. **[[Lambda hesablaması]]:** Haskell-in nəzəri əsası lambda hesablamasıdır. Bu
    sistem 1930-cu illərdə Alonzo Church tərəfindən yaradılıb. `\x -> x * 2`:
    Buradakı `\` simvolu əslində **λ** (lambda) hərfinin klaviatura versiyasıdır.
-2. **[[karriləmə]] və Funksional Məntiq:** Haskell-də funksiyalar karriləmə
+2. **[[Karriləmə]] və Funksional Məntiq:** Haskell-də funksiyalar karriləmə
    prinsipi ilə işləyir. Funksiyanın işləyişi belədir:
    `add :: Int -> Int -> Int` Əslində isə: `Int -> (Int -> Int)` Funksiyaların
    arqumentlərini hissə-hissə ötürmək texnikası "karriləmə" adlanır.

@@ -88,7 +88,8 @@ tələb edir:
   onu neçə hissəyə bölə bilirsiniz? Hansı [[alqoritm]] daha effektivdir? Hansı
   dizayn, kodlaşdırma [[paradiqma]]sı kontekstə daha uyğundur və s.
 - **Soft Skills:** Proqramçılar tək işləmir. Komanda ilə necə ünsiyyət
-  qurursunuz? Başqasının koduna necə [[kodun nəzərdən keçirilməsi]] verirsiniz?
+  qurursunuz? Başqasının koduna necə [[kodun nəzərdən keçirilməsi]] rəyi
+  verirsiniz?
 - **Davamlı Öyrənmə:** Bu sahədə "mən artıq öyrəndim, bitdi" dediyiniz gün,
   karyeranızın sonu başlayır.
 
@@ -117,10 +118,10 @@ Dili seçdiniz, amma o dili öyrənməyə başlamazdan əvvəl (və ya paralel o
 proqramlaşdırmanın fundamentlərini öyrənməlisiniz. Bunlar olmadan siz sadəcə
 "[[sintaksis]] təkrarçısı" olacaqsınız.
 
-- **[[verilənlər strukturu]]:** Array, Linked List, Tree, Graph, Hash Table.
+- **[[Verilənlər strukturu]]:** Array, Linked List, Tree, Graph, Hash Table.
   Verilənləri harada və necə saxlamaq lazım olduğunu bilməsəniz, yazdığınız
   proqram tısbağa sürəti ilə işləyəcək.
-- **alqoritmlər:** Sıralama, axtarış, [[rekursiya]]. Google niyə sürətlidir?
+- **Alqoritmlər:** Sıralama, axtarış, [[rekursiya]]. Google niyə sürətlidir?
   Çünki arxasında nəhəng alqoritmlər dayanır.
 - **Şəbəkə və HTTP:** Brauzer serverlə necə danışır? Status kodları (200,
   404, 500) nə deməkdir?

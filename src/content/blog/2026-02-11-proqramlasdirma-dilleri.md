@@ -468,7 +468,7 @@ Bu, hamımız üçün ən intuitiv və təbii yanaşmadır, çünki gündəlik h
 yol salarkən və ya təlimat verərkən məhz bu üsuldan istifadə edirik: _Bunu et.
 Sonra onu et. Əgər bu şərt ödənirsə, fərqli bir şey et. Bitənə qədər təkrarla._
 
-**[[imperativ proqramlaşdırma]]** proqramın mövcud "vəziyyətini" dəyişdirən
+**[[İmperativ proqramlaşdırma]]** proqramın mövcud "vəziyyətini" dəyişdirən
 əmrlər ardıcıllığıdır. (Proqramlaşdırmada **vəziyyət** dedikdə, o anda yaddaşda
 saxlanılan bütün məlumatlar, dəyişənlərin o anki dəyərləri nəzərdə tutulur).
 Kompüterə addım-addım bu vəziyyəti necə dəyişəcəyini deyirsiniz.

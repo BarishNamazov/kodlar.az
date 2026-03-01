@@ -6,10 +6,10 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "bun scripts/check-glossary-usage.ts && astro build",
+    "build": "bun check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "check": "eslint . --fix --max-warnings 0 && prettier --write ."
+    "check": "eslint . --fix --max-warnings 0 && prettier --log-level error --write . && bun scripts/check-glossary-usage.ts"
   },
   "keywords": [
     "blog",
