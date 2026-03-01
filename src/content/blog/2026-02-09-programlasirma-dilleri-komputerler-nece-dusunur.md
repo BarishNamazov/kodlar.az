@@ -42,7 +42,7 @@ dillərinə görə fərqlənir, lakin hər birinin məqsədi maşın dilinə çe
 Onlar kodları çevirmə metodlarına görə iki hissəyə ayrılır: [[interpretator]] və
 [[kompilyator]]. Əslində bu çevirmələrə daha da çox metodlar vardır, amma biz
 hələlik işləri sadə tutmaq üçün bunları bilsək yetərlidir. Bu proqramlarla biz
-bizim proqramlaşdırdığımız mənbə kodunu maşın dilinin anlaya
+bizim proqramlaşdırdığımız [[mənbə kodu]]nu maşın dilinin anlaya
 bildiyi vəziyyətə gətirə bilərik.
 
 ## Niyə fərqli və çoxlu proqramlaşdırma dillərinə sahibik?
@@ -59,10 +59,10 @@ misal dillərdən bəhs edək:
   kimi işlərdə mükəmməldir. Yeni başlayanların çox asanlıqla öyrənə biləcəyi bir
   dildir. Əsasən interpret olaraq maşın dilinə çevrilir. Bu onun sürətli işə
   salınmasına yardım etsə də, performans baxımından zəiflədir. Bir çox
-  paradiqmaları etməyə çalışır və buna görə də geniş istifadə oluna da bilinir.
+  [[paradiqma]]ları etməyə çalışır və buna görə də geniş istifadə oluna da bilinir.
   Lakin, onu fərqləndirən cəhətləri həm də onu geri salır. Proqramçıya rahat
   dillər maşın dilindən çox uzaq olduğu üçün maşına əlavə yük salır. Buna görə
-  də performans tələb edən işlərdə yalnız daha sürətli kitabxanalara qoşulub
+  də performans tələb edən işlərdə yalnız daha sürətli [[kitabxana]]lara qoşulub
   işlədilə bilər.
 - PHP: Server tərəfli scripting dilidir. Əsas məğzi server appləri üçün asan,
   sürətli və dinamik kodlar yazmağa kömək etməsidir. Asanlıqla, HTML koduna
@@ -74,10 +74,10 @@ misal dillərdən bəhs edək:
   tutulub. Yəni, native applər hazırlanması uyğun deyil. Bundan əlavə olaraq,
   PHP mənbə kodları sadəcə düz mətn olaraq yadda saxlanıldığı üçün də bir çox
   təhlükəsizlik problemlərinə açıqdır. Son olaraq, inkişafa açıq olması onu öz
-  versiyaları arasında böyük fərqləndirir. Bu da köhnəlmiş PHP kodlarının geriyə
-  uyğunluğunu qırır.
+  versiyaları arasında böyük fərqləndirir. Bu da köhnəlmiş PHP kodlarının [[geriyə uyğunluq]]unu
+  qırır.
 - Elixir: Paylanmış sistemlər üçün
-  optimallaşdırılmış bir dildir. Köhnəlmiş olan Erlang/BEAM ekosisteminin müasir
+  optimallaşdırılmış bir dildir. Köhnəlmiş olan Erlang/BEAM [[ekosistem]]inin müasir
   halı kimi ortaya çıxıb. Əsasən telekomunikasiya sistemlərində istifadə olunur.
   Bu dil həmişə çalışdırdığı kodları qarşılaşdığı xətalara baxmayaraq davamlı
   olaraq aktual tutmağa çalışır. Bir çox proqramçı üçün öyrənməsi çətindir və
@@ -93,7 +93,7 @@ misal dillərdən bəhs edək:
 - Java: Bu dil müasir dövrün ən çox istifadə edilən və
   [[obyekt-yönümlü proqramlaşdırma]] ən güclü
   dillərindən biridir. Java çıxdığı zaman _"Bir dəfə yaz, hər yerdə işlət!"_
-  mottosu ilə populyar idi. Əsasən həm compiler, həm də interpreter metodlarının
+  mottosu ilə populyar idi. Əsasən həm kompilyator, həm də interpretator metodlarının
   müsbət cəhətlərini hibrit birləşdirən JIT virtual maşın məntiqi ilə işləyir.
   Onu populyar edən bir digər nöqtəsi isə, zəngin və müasir kitabxana
   ekosistemidir. Lakin indiki dövrdə, ən böyük məqsədi istənilən sistemin asan
