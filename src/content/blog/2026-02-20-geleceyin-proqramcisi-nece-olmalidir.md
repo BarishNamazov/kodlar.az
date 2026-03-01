@@ -41,14 +41,14 @@ effektiv OOP dillərindən olduğundan və ən əsası çox geniş topluluğa sa
 olduqlarından xüsusilə bunları vurğulamaq istədim.
 
 **Java:** Onilliklərdir sənayenin "bel sütunu"dur. "Bir dəfə yaz, hər yerdə
-işlət" fəlsəfəsi ilə həm böyük backend sistemlərdə, həm də Android dünyasında
+işlət" fəlsəfəsi ilə həm böyük [[arxa plan]] sistemlərdə, həm də Android dünyasında
 (Kotlin) sənayedə çox böyük paya sahibdir.
 
 **C# (.NET):** Microsoft-un bəlkə də gördüyü ən doğru iş 😀. Son illərdə .NET
 Core ilə birlikdə inanılmaz dərəcədə sürətlənib və modernləşib. Enterprise
 dünyasında ən təmiz [[çərçivə]]lərdən biri sayılır. Son versiyalarında əldə
 etdikləri çox ciddi performans artımı və əsas rəqibi Javadan bəzi
-xüsusiyyətlərdə qabağa düşməsi və ən əsas da çox yaxşı ekosistemə sahib olması
+xüsusiyyətlərdə qabağa düşməsi və ən əsas da çox yaxşı [[ekosistem]]ə sahib olması
 bu dili çox güclü bir alət edir.
 
 ### B) Veb Dünyası və Startaplar: JavaScript / TypeScript
@@ -62,14 +62,14 @@ qoymur, səhvlərinizi kodu yazarkən göstərir. Bu arada TS dizayn olarkən C#
 ### C) Data və AI: Python (tək bu dil olmasa da yeni başlayanlar üçün ideal seçimdir)
 
 Python bu gün proqramlaşdırmaya ən asan giriş qapısıdır. Amma aldanmayın, o həm
-də ən güclü alətdir. Data Analitikası, Süni İntellekt və maşın öyrənməsi
+də ən güclü alətdir. Data Analitikası, [[Süni intellekt]] və [[maşın öyrənməsi]]
 sahələrində Python-dan başqa ciddi alternativ yox kimidir.
 
 ### D) Performans, aşağı səviyyə proqamlaşdırma, gömülü və təchizat bazalı: C++, Go, Rust
 
 Əgər sistemlərin alt qatları, "bulud" texnologiyaları (Cloud Native) və ya
 yüksək performanslı oyun mühərrikləri sizi maraqlandırırsa, bu dillərə
-baxmalısınız. Go (Golang) xüsusilə Google-un dəstəyi ilə backend dünyasında çox
+baxmalısınız. Go (Golang) xüsusilə Google-un dəstəyi ilə arxa plan dünyasında çox
 sürətlə yayılır. Həmçinin C++, C çox böyük və yüksək təzyiqli sistemlərdə
 (finans, brija, OS və s.) ən çox istifadə edilən dillərdəndir.
 
@@ -120,11 +120,11 @@ proqramlaşdırmanın fundamentlərini öyrənməlisiniz. Bunlar olmadan siz sad
 - **[[verilənlər strukturu]]:** Array, Linked List, Tree,
   Graph, Hash Table. Verilənləri harada və necə saxlamaq lazım olduğunu
   bilməsəniz, yazdığınız proqram tısbağa sürəti ilə işləyəcək.
-- **[[alqoritm]]lər:** Sıralama, axtarış, rekursiya. Google niyə sürətlidir?
+- **[[alqoritm]]lər:** Sıralama, axtarış, [[rekursiya]]. Google niyə sürətlidir?
   Çünki arxasında nəhəng alqoritmlər dayanır.
-- **Şəbəkə (Networking) və HTTP:** Brauzer serverlə necə danışır? Status kodları
+- **Şəbəkə və HTTP:** Brauzer serverlə necə danışır? Status kodları
   (200, 404, 500) nə deməkdir?
-- **Verilənlər Bazası (Database):** SQL nədir? Verilənlər bir-biri ilə necə
+- **[[Verilənlər bazası]]:** SQL nədir? Verilənlər bir-biri ilə necə
   əlaqələnir?
 
 Bu siyahını kompüterlər necə işləyir, [[kompilyator]], [[interpretator]] və s.
@@ -144,13 +144,13 @@ Burada məqsəd dilin "dilini" anlamaqdır. Dəyişənlər, şərt operatorları
 istifadə edin. "Mənə for loop-u bir uşaq üçün izah edə bilərsən?" tipli suallar
 verin.
 
-### Mərhələ 2: Obyekt Yönlü Proqramlaşdırma (OOP) və Fundamentlər
+### Mərhələ 2: Obyekt-yönümlü proqramlaşdırma və Fundamentlər
 
-Hər şeyin "obyekt" olduğu bir dünyadır. Klasslar, miras alma (inheritance),
-polimorfizm. Bu mərhələdə artıq özünüz kod yazmağa başlayın. AI-yə sadəcə
+Hər şeyin "obyekt" olduğu bir dünyadır. Klasslar, [[varislik]],
+[[polimorfizm]]. Bu mərhələdə artıq özünüz kod yazmağa başlayın. AI-yə sadəcə
 xətalarınızı tapmaqda ([[sazlama]]) icazə verin.
 
-### Mərhələ 3: Versiya İdarəetməsi və Git
+### Mərhələ 3: Versiya nəzarəti və Git
 
 Kodunuzu necə qoruyursunuz? git commit, git push, git pull – bunlar sizin
 gündəlik rutinləriniz olmalıdır. GitHub-da bir profil açın və yazdığınız hər bir
