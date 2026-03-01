@@ -30,7 +30,7 @@ peşəkar səviyyədə məşğul olanlar və sair. Əgər indiyə kimi yalnızca
 istifadə etmisinizsə, onda sizin üçün lap maraqlı olacaq.
 
 Bu xəritəni oxuduqca qarşınıza sizə tanış olmayan yeni terminlər, fərqli düşüncə
-tərzləri və paradiqmalar çıxa bilər. Bu zaman ağlınızda çoxlu sualların
+tərzləri və [[paradiqma]]lar çıxa bilər. Bu zaman ağlınızda çoxlu sualların
 yaranması tamamilə normaldır və məhz mənim də gözləntim budur! Sizi bu sualların
 ardınca getməyə və mövzular barədə öz müstəqil araşdırmanızı aparmağa təşviq
 edirəm.
@@ -142,9 +142,9 @@ yaranmasına səbəb olan və onları fərqli istiqamətlərə çəkən əsas am
 
 * **Ekosistem və Alətlərin gücü:** Heç bir dil təcrid olunmuş halda böyük uğur
   qazana bilməz. Dillərin dəyəri çox vaxt onların ətrafında yaranan hazır
-  kitabxanalar, paket menecerləri, çərçivələr və geniş icma ilə ölçülür.
+  [[kitabxana]]lar, paket menecerləri, çərçivələr və geniş icma ilə ölçülür.
   Məsələn, Python nə ən sürətli, nə də ən təhlükəsiz dildir. Lakin verilənlər
-  elmi və maşın öyrənməsi sahələrindəki ekosistemi o qədər zəngin və yetkindir
+  elmi və [[maşın öyrənməsi]] sahələrindəki [[ekosistem]]i o qədər zəngin və yetkindir
   ki, bu işlər üçün başqa dil seçmək çox vaxt "təkəri yenidən kəşf etmək"
   mənasına gəlir. Hətta, C və Assembly kimi dillər də saneyədən və icmadan
   gördükləri dəstək sahəsində uğur qazana biliblər.
@@ -197,7 +197,7 @@ yaranıb.
 ### Maşınla Birbaşa Danışmaq
 
 Başlanğıcda heç bir "dil" yox idi — yalnız nəhəng, otaq boyda fiziki qurğular
-var idi. İlk proqramçılar maşınlarla **perfokartlar** vasitəsilə ünsiyyət
+var idi. İlk proqramçılar maşınlarla **[[perfokart]]lar** vasitəsilə ünsiyyət
 qururdular.
 
 <Image src="https://static.vecteezy.com/system/resources/previews/023/583/060/original/pure-ibm-punch-card-for-electronic-calculated-data-processing-machines-retro-punchcard-for-input-and-storage-in-automated-technology-information-processing-systems-illustration-isolated-vector.jpg" alt="perfokart" />
@@ -317,7 +317,7 @@ işlədiyi yerdəcə yeni kod yaza bilər (sanki adi bir rəqəm siyahısını r
 edirmiş kimi).
 
 Kompüterə öz kodunu dəyişdirmək və "düşünmək" imkanı verən bu misilsiz çeviklik
-Lisp-i onilliklər boyu süni intellekt tədqiqatlarının bir nömrəli dilinə
+Lisp-i onilliklər boyu [[süni intellekt]] tədqiqatlarının bir nömrəli dilinə
 çevirmişdi. Lisp həmçinin avtomatik yaddaş təmizlənməsi kimi qabaqcıl ideyaları
 sənayeyə gətirən ilk dildir.
 
@@ -413,7 +413,7 @@ asanlıqla öyrənə bilərdi. İllər sonra, xüsusən 2010-cu illərdə məlum
 süni intellekt dalğası gəldikdə, Python özünün zəngin riyazi kitabxanaları
 sayəsində bu sahənin mütləq hakiminə çevrildi.
 
-İnternetin ilk vaxtlarında server tərəfini ayaqda tutan **PHP**, **Ruby** və
+İnternetin ilk vaxtlarında [[arxa plan]]ı ayaqda tutan **PHP**, **Ruby** və
 **Perl** kimi dillər də bu dövrün vacib aktyorlarından oldu. Ruby zərif veb
 inkişafında (Rails vasitəsilə), Perl mətn emalı və sistem inzibatçılığında, PHP
 isə WordPress və Facebook-un ilk versiyaları daxil olmaqla, erkən dinamik vebin
@@ -492,17 +492,17 @@ birləşdirməkdir.
 
 Bunu anlamaq üçün OOP-nin üç əsas sütununa baxaq:
 
-- **Enkapsulyasiya (Gizlətmə):** Bir obyektin daxili işləməsinin kənar kodlardan
+- **[[Enkapsulyasiya]] (Gizlətmə):** Bir obyektin daxili işləməsinin kənar kodlardan
   gizlədilməsidir. Təsəvvür edin ki, avtomobil sürürsünüz. Siz sadəcə qaz
   pedalına basırsınız (bu sizin istifadə etdiyiniz interfeysdir), amma içəridə
   motorun necə işlədiyini, yanacağın necə yandığını bilmək məcburiyyətində
   deyilsiniz. Bu detallar sizdən "enkapsulyasiya" olunub.
-- **Mirasalma:** Bir obyektin başqa bir obyektin xüsusiyyətlərini
+- **[[Varislik]]:** Bir obyektin başqa bir obyektin xüsusiyyətlərini
   özünə götürə bilməsidir. Məsələn, bir `BankHesabı` obyektiniz var. Siz yeni
   bir `KreditHesabı` yaradarkən hər şeyi sıfırdan yazmırsınız; sadəcə adi bank
   hesabının xüsusiyyətlərini "miras alıb", üzərinə faiz hesablama məntiqini
   əlavə edirsiniz.
-- **Polimorfizm (Çoxformluluq):** Eyni əmrin fərqli obyektlər tərəfindən
+- **[[Polimorfizm]] (Çoxformluluq):** Eyni əmrin fərqli obyektlər tərəfindən
   özlərinə məxsus şəkildə icra edilməsidir. Məsələn, itə və pişiyə eyni "Səs
   ver" əmrini versəniz, it hürəcək, pişik isə miyovlayacaq. Əmr eynidir, amma
   nəticə obyektin kimliyindən asılı olaraq dəyişir.
@@ -520,7 +520,7 @@ olardı?
 
 Bu paradiqmanı anlamaq üçün iki vacib anlayışı bilmək lazımdır:
 
-- **Dəyişməzlik:** Saf funksional üslubda məlumatlar dəyişməzdir.
+- **[[Dəyişməzlik]]:** Saf funksional üslubda məlumatlar dəyişməzdir.
   Bir ədəd, siyahı və ya obyekt yaradıldıqdan sonra onun üzərində heç bir
   dəyişiklik edilə bilməz. Əgər 5 elementli siyahıya yeni bir element əlavə
   etmək istəyirsinizsə, köhnə siyahını dəyişdirmirsiniz; əvəzində içində 6
@@ -549,7 +549,7 @@ Deklarativ proqramlaşdırma insan və kompüter arasındakı ənənəvi rollar�
 əvəzinə, siz yalnız yekunda _nə_ istədiyinizi təsvir edirsiniz. Sistem isə
 məqsədə necə çatacağını, öz daxilindəki işləri necə quracağını özü həll edir.
 
-Məlumat bazaları (database) üçün istifadə edilən **SQL** ən geniş yayılmış
+[[Verilənlər bazası]]ları üçün istifadə edilən **SQL** ən geniş yayılmış
 deklarativ dildir. Siz verilənlər bazasına
 `SELECT name FROM users WHERE age > 30` (Yaşı 30-dan böyük olan istifadəçilərin
 adını seç) yazanda, kompüterə cədvəlin sətirlərini tək-tək necə axtaracağını və
@@ -579,7 +579,7 @@ proqramlaşdırmağa imkan verir.
 
 **Scratch** və **Blockly** kimi **blok əsaslı dillər** xüsusilə uşaqlara və bu
 sahəyə yeni başlayanlara proqramlaşdırmanın təməl anlayışlarını öyrətmək üçün
-dizayn edilib. Burada klaviatura ilə qəliz qrammatika (sintaksis) yazmaq və ya
+dizayn edilib. Burada klaviatura ilə qəliz qrammatika ([[sintaksis]]) yazmaq və ya
 kiçik bir hərf səhvinə görə saatlarla xəta axtarmaq dərdi yoxdur. Əvəzində,
 dövrləri, şərtləri və dəyişənləri təmsil edən rəngli, pazl parçalarına bənzəyən
 blokları sadəcə sürüşdürüb bir-birinə keçirirsiniz. Bu yanaşma öyrənmə baryerini
@@ -607,7 +607,7 @@ görülməsini təmin edir. Lakin onun da çox aydın məhdudiyyətləri var:
 - **Abstraksiya çətinliyi:** Vizual sistemlərdə mürəkkəb riyazi və ya məntiqi
   abstraksiyalar qurmaq mətnə nisbətən daha çətindir.
 - **Komanda işi və izləmə:** Komanda işində zamanla edilən dəyişiklikləri
-  izləmək (versiya nəzarəti) problem yaradır, çünki "mənbə kodu" sadə,
+  izləmək (versiya nəzarəti) problem yaradır, çünki "[[mənbə kodu]]" sadə,
   sətir-sətir müqayisə edilə bilən mətn deyil, qəliz bir qrafik faylıdır.
 
 Müəyyən bir böyüklükdən və mürəkkəblikdən sonra mətn, şəkillərdən daha yığcam və
@@ -750,7 +750,7 @@ asanlaşdırmaq üçün bir neçə əsas meyara ardıcıllıqla diqqət yetirmə
 
 - **Problem sahəsindən başlayın.** Hər dilin özünü daha "rahat hiss etdiyi" və
   standart qəbul olunduğu sahələr var. Əgər veb səhifənin istifadəçi
-  interfeysini (frontend) qurursunuzsa, JavaScript və ya TypeScript demək olar
+  interfeysini ([[ön plan]]) qurursunuzsa, JavaScript və ya TypeScript demək olar
   ki, qaçılmazdır. Əgər məlumat təhlili, statistika və ya süni intellektlə
   məşğul olacaqsınızsa, Python sənayenin qızıl standartıdır. Yox əgər əməliyyat
   sistemi komponenti və ya saniyənin mində biri qədər sürətlə işləməli olan
