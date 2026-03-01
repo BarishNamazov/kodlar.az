@@ -27,91 +27,125 @@ const sortedTerms = [...glossary].sort((a, b) =>
         aria-label="Termin axtar"
       />
 
-      <ul id="glossary-list" class="glossary-list">
+      <dl id="glossary-list" class="glossary-dict">
         {
           sortedTerms.map((term) => (
-            <li
-              class="term-card"
+            <div
+              class="dict-entry"
               data-az={term.az.toLowerCase()}
               data-en={term.en.toLowerCase()}
               data-desc={(term.description || "").toLowerCase()}
             >
-              <h2>{term.az}</h2>
-              <p class="term-en">{term.en}</p>
-              {term.description && <p>{term.description}</p>}
-              {term.link && (
-                <a href={term.link} target="_blank" rel="noopener noreferrer">
-                  Mənbə
-                </a>
-              )}
-            </li>
+              <dt>
+                <span class="dict-az">{term.az}</span>
+                <span class="dict-en">{term.en}</span>
+              </dt>
+              <dd>
+                {term.description && (
+                  <span class="dict-desc">{term.description}</span>
+                )}
+                {term.link && (
+                  <a
+                    class="dict-link"
+                    href={term.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    ↗ Mənbə
+                  </a>
+                )}
+              </dd>
+            </div>
           ))
         }
-      </ul>
+      </dl>
     </div>
   </section>
 </BaseLayout>
 
 <style>
   .container {
-    max-width: 960px;
+    max-width: 760px;
     margin: 0 auto;
     padding: 0 1rem;
   }
 
   .subtitle {
     margin-top: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
   }
 
   .search-input {
     width: 100%;
     padding: 0.7rem 0.85rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     background: var(--color-surface);
     color: var(--color-text);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
   }
 
-  .glossary-list {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 0.85rem;
+  .glossary-dict {
+    margin: 0;
   }
 
-  .term-card {
-    padding: 0.9rem;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    background: var(--color-surface);
+  .dict-entry {
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--color-border-muted);
   }
 
-  .term-card h2 {
-    font-size: 1rem;
+  .dict-entry:last-child {
+    border-bottom: none;
+  }
+
+  .dict-entry dt {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
     margin-bottom: 0.2rem;
   }
 
-  .term-en {
-    font-family: var(--font-mono);
-    color: var(--color-cyan);
-    margin-bottom: 0.35rem;
+  .dict-az {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-text);
   }
 
-  .term-card p {
-    margin-bottom: 0.35rem;
+  .dict-en {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-cyan);
+  }
+
+  .dict-entry dd {
+    margin: 0;
+    padding-left: 0;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  .dict-desc {
+    margin-right: 0.5rem;
+  }
+
+  .dict-link {
+    font-size: 0.8125rem;
+    white-space: nowrap;
   }
 </style>
 
 <script>
   const search = document.getElementById("glossary-search");
-  const terms = document.querySelectorAll(".term-card");
+  const entries = document.querySelectorAll(".dict-entry");
 
   search?.addEventListener("input", (event) => {
     const query = (event.target as HTMLInputElement).value.toLowerCase().trim();
 
-    terms.forEach((item) => {
+    entries.forEach((item) => {
       const az = item.getAttribute("data-az") || "";
       const en = item.getAttribute("data-en") || "";
       const desc = item.getAttribute("data-desc") || "";

@@ -69,7 +69,7 @@ export const glossary: GlossaryTerm[] = [
     link: "https://en.wikipedia.org/wiki/Bytecode",
   },
   {
-    az: "JIT kompilyasiyası",
+    az: "ani kompilyasiya",
     en: "just-in-time compilation",
     description:
       "Kodu icra zamanı dinamik şəkildə kompilyasiya edib performansı artıran yanaşma.",
@@ -83,7 +83,7 @@ export const glossary: GlossaryTerm[] = [
     link: "https://en.wikipedia.org/wiki/Object-oriented_programming",
   },
   {
-    az: "yaddaşın avtomatik təmizlənməsi",
+    az: "zibil yığımı",
     en: "garbage collection",
     description:
       "İstifadə olunmayan yaddaş sahələrinin avtomatik azad edilməsi mexanizmi.",
@@ -111,14 +111,14 @@ export const glossary: GlossaryTerm[] = [
     link: "https://en.wikipedia.org/wiki/Algebraic_data_type",
   },
   {
-    az: "lambda kalkulusu",
+    az: "lambda hesablaması",
     en: "lambda calculus",
     description:
       "Funksiyaların hesablanmasını formal modelləşdirən riyazi sistem; funksional dillərin nəzəri bazasıdır.",
     link: "https://en.wikipedia.org/wiki/Lambda_calculus",
   },
   {
-    az: "currying",
+    az: "karriləmə",
     en: "currying",
     description:
       "Çoxarqumentli funksiyanı bir arqument qəbul edən funksiyalar zəncirinə çevirmə üsulu.",
@@ -160,7 +160,7 @@ export const glossary: GlossaryTerm[] = [
     link: "https://en.wikipedia.org/wiki/Concurrency_(computer_science)",
   },
   {
-    az: "API",
+    az: "tətbiq proqramlaşdırma interfeysi",
     en: "application programming interface",
     description:
       "Sistem və kitabxanaların başqa proqramlar üçün təqdim etdiyi funksional interfeys.",
@@ -181,7 +181,7 @@ export const glossary: GlossaryTerm[] = [
     link: "https://en.wikipedia.org/wiki/Data_structure",
   },
   {
-    az: "algoritm",
+    az: "alqoritm",
     en: "algorithm",
     description: "Məsələni həll etmək üçün dəqiq, sonlu addımlar ardıcıllığı.",
     link: "https://en.wikipedia.org/wiki/Algorithm",
@@ -192,6 +192,160 @@ export const glossary: GlossaryTerm[] = [
     description:
       "Şəbəkədə məlumat mübadiləsi üçün cihazlar arasında razılaşdırılmış qaydalar toplusu.",
     link: "https://en.wikipedia.org/wiki/Network_protocol",
+  },
+  {
+    az: "rekursiya",
+    en: "recursion",
+    description:
+      "Funksiyanın nəticəyə çatana qədər özünü çağırması üsulu.",
+    link: "https://en.wikipedia.org/wiki/Recursion_(computer_science)",
+  },
+  {
+    az: "monad",
+    en: "monad",
+    description:
+      "Funksional proqramlaşdırmada yan təsirləri və hesablama kontekstini idarə edən abstraksiya.",
+    link: "https://en.wikipedia.org/wiki/Monad_(functional_programming)",
+  },
+  {
+    az: "nümunə uyğunlaşdırma",
+    en: "pattern matching",
+    description:
+      "Məlumatın quruluşuna görə avtomatik parçalanması və uyğun kod budağının seçilməsi.",
+    link: "https://en.wikipedia.org/wiki/Pattern_matching",
+  },
+  {
+    az: "tip sistemi",
+    en: "type system",
+    description:
+      "Proqramdakı dəyərlərə tip təyin edərək xətaları kompilyasiya zamanı aşkar edən qaydalar toplusu.",
+    link: "https://en.wikipedia.org/wiki/Type_system",
+  },
+  {
+    az: "yan təsir",
+    en: "side effect",
+    description:
+      "Funksiyanın nəticə qaytarmaqdan əlavə kənar vəziyyəti dəyişdirən davranışı.",
+    link: "https://en.wikipedia.org/wiki/Side_effect_(computer_science)",
+  },
+  {
+    az: "açıq mənbə",
+    en: "open source",
+    description:
+      "Mənbə kodu ictimaiyyət üçün açıq olan və sərbəst istifadəyə yararlı proqram təminatı modeli.",
+    link: "https://en.wikipedia.org/wiki/Open_source",
+  },
+  {
+    az: "versiya nəzarəti",
+    en: "version control",
+    description:
+      "Faylların dəyişikliklər tarixçəsini izləyən və idarə edən sistem.",
+    link: "https://en.wikipedia.org/wiki/Version_control",
+  },
+  {
+    az: "dəyişməzlik",
+    en: "immutability",
+    description:
+      "Yaradıldıqdan sonra dəyişdirilə bilməyən məlumat yanaşması.",
+    link: "https://en.wikipedia.org/wiki/Immutable_object",
+  },
+  {
+    az: "abstraksiya",
+    en: "abstraction",
+    description:
+      "Mürəkkəb detalları gizlədib daha sadə interfeys təqdim edən dizayn prinsipi.",
+    link: "https://en.wikipedia.org/wiki/Abstraction_(computer_science)",
+  },
+  {
+    az: "paket idarəçisi",
+    en: "package manager",
+    description:
+      "Kitabxana və asılılıqların quraşdırılması, yenilənməsi və silinməsini idarə edən alət.",
+    link: "https://en.wikipedia.org/wiki/Package_manager",
+  },
+  {
+    az: "proqram təminatı",
+    en: "software",
+    description:
+      "Kompüterin icra etdiyi proqramlar və əlaqəli məlumatlar toplusu.",
+    link: "https://en.wikipedia.org/wiki/Software",
+  },
+  {
+    az: "aparat təchizatı",
+    en: "hardware",
+    description:
+      "Kompüterin fiziki komponentləri — prosessor, yaddaş, disk və s.",
+    link: "https://en.wikipedia.org/wiki/Computer_hardware",
+  },
+  {
+    az: "əməliyyat sistemi",
+    en: "operating system",
+    description:
+      "Aparat və proqram təminatı arasında vasitəçi olan sistem proqramı.",
+    link: "https://en.wikipedia.org/wiki/Operating_system",
+  },
+  {
+    az: "verilənlər bazası",
+    en: "database",
+    description:
+      "Məlumatları strukturlaşdırılmış şəkildə saxlayan və sorğulayan sistem.",
+    link: "https://en.wikipedia.org/wiki/Database",
+  },
+  {
+    az: "kodun nəzərdən keçirilməsi",
+    en: "code review",
+    description:
+      "Başqa proqramçının yazdığı kodun keyfiyyətini yoxlamaq prosesi.",
+    link: "https://en.wikipedia.org/wiki/Code_review",
+  },
+  {
+    az: "sazlama",
+    en: "debugging",
+    description:
+      "Proqramdakı xətaları aşkar edib aradan qaldırma prosesi.",
+    link: "https://en.wikipedia.org/wiki/Debugging",
+  },
+  {
+    az: "perfokart",
+    en: "punched card",
+    description:
+      "Erkən kompüterlərdə məlumat daxil etmək üçün deşiklər açılmış karton vərəq.",
+    link: "https://en.wikipedia.org/wiki/Punched_card",
+  },
+  {
+    az: "enkapsulyasiya",
+    en: "encapsulation",
+    description:
+      "Obyektin daxili vəziyyətini kənar koddan gizlədən OOP prinsipi.",
+    link: "https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)",
+  },
+  {
+    az: "varislik",
+    en: "inheritance",
+    description:
+      "Bir sinifin digər sinifin xüsusiyyətlərini miras alması mexanizmi.",
+    link: "https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)",
+  },
+  {
+    az: "polimorfizm",
+    en: "polymorphism",
+    description:
+      "Eyni interfeysin fərqli tiplər tərəfindən fərqli şəkildə həyata keçirilməsi.",
+    link: "https://en.wikipedia.org/wiki/Polymorphism_(computer_science)",
+  },
+  {
+    az: "funksiya kompozisiyası",
+    en: "function composition",
+    description:
+      "Bir funksiyanın nəticəsini digər funksiyanın girişinə ötürərək yeni funksiya yaratma.",
+    link: "https://en.wikipedia.org/wiki/Function_composition_(computer_science)",
+  },
+  {
+    az: "spagetti kodu",
+    en: "spaghetti code",
+    description:
+      "İdarəetmə axınının dolaşıq və izlənilməsi çətin olduğu kod strukturu.",
+    link: "https://en.wikipedia.org/wiki/Spaghetti_code",
   },
 ];
 
