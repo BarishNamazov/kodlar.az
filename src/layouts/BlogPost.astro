@@ -809,6 +809,46 @@ const authorData = await getAuthor(frontmatter.author);
     border: 1px solid var(--color-border);
   }
 
+  /* Tables */
+  .prose :global(table) {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .prose :global(thead) {
+    background: var(--color-bg-secondary);
+  }
+
+  .prose :global(th) {
+    padding: 0.625rem 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-align: left;
+    border-bottom: 2px solid var(--color-border);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+  }
+
+  .prose :global(td) {
+    padding: 0.625rem 1rem;
+    color: var(--color-text-secondary);
+    border-bottom: 1px solid var(--color-border-muted);
+  }
+
+  .prose :global(tbody tr:last-child td) {
+    border-bottom: none;
+  }
+
+  .prose :global(tbody tr:hover) {
+    background: var(--color-surface);
+  }
+
   /* Footnotes */
   .prose :global(.footnote-container) {
     display: inline;
