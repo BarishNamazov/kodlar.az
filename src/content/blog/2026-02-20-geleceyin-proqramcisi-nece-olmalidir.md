@@ -99,10 +99,10 @@ tələb edir:
 
 Buranı çox diqqətlə oxuyun. AI proqramlaşdırmanı öldürmür, onu dəyişdirir.
 
-Məsələn, çoxları deyir ki, AI artıq React kodunu çox yaxşı yazır, buna görə də
-React öyrənməyə dəyməz. Bu, kökündən yanlışdır. AI-nin bir dili və ya freymvörkü
-yaxşı yazması, o sahədəki mütəxəssisə olan tələbi artırır, çünki məhsul yaratmaq
-sürətlənir. Amma ast hədd yuxarı qalxır.
+Məsələn, çoxları deyir ki, AI artıq [[React]] kodunu çox yaxşı yazır, buna görə
+də React öyrənməyə dəyməz. Bu, kökündən yanlışdır. AI-nin bir dili və ya
+freymvörkü yaxşı yazması, o sahədəki mütəxəssisə olan tələbi artırır, çünki
+məhsul yaratmaq sürətlənir. Amma ast hədd yuxarı qalxır.
 
 AI-nin yazdığı React kodunda bəzən performans problemləri, bəzən isə ciddi
 təhlükəsizlik boşluqları olur. Sizin işiniz AI-nin yazdığı 100 sətirlik kodu
@@ -123,7 +123,7 @@ proqramlaşdırmanın fundamentlərini öyrənməlisiniz. Bunlar olmadan siz sad
   proqram tısbağa sürəti ilə işləyəcək.
 - **Alqoritmlər:** Sıralama, axtarış, [[rekursiya]]. Google niyə sürətlidir?
   Çünki arxasında nəhəng alqoritmlər dayanır.
-- **Şəbəkə və HTTP:** Brauzer serverlə necə danışır? Status kodları (200,
+- **Şəbəkə və [[HTTP]]:** Brauzer serverlə necə danışır? Status kodları (200,
   404, 500) nə deməkdir?
 - **[[Verilənlər bazası]]:** SQL nədir? Verilənlər bir-biri ilə necə əlaqələnir?
 
@@ -167,7 +167,7 @@ layihə götürün (məsələn, bir kitab mağazası sistemi) və onu başdan so
 Layihəniz artıq formalaşdıqda, AI-dən məhsuldarlığınızı artırmaq üçün istifadə
 edin.
 
-**Düzgün Prompt Metodikası verməyi bilin:**
+**Düzgün [[Prompt]] Metodikası verməyi bilin:**
 
 AI-yə sadəcə "kod yaz" deməyin. Ona kontekst verin, problemin həll yolunu təqdim
 edin ki, o sadəcə kodunu yazsın. Unutmayın ki, AI alətləri hələ uzun müddət

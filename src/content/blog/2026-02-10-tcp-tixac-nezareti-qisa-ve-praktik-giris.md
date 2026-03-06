@@ -21,7 +21,7 @@ və ağıllı mexanizmlərin nəticəsidir.
 adlandırılan vəziyyət yaşanmışdı. Şəbəkələr yenidən göndərilən paketlərlə o
 qədər yüklənmişdi ki, faydalı ötürmə sürəti mövcud tutumun çox kiçik bir
 hissəsinə düşmüşdü. Xətlər dolu idi, amma demək olar ki, heç bir real məlumat
-qarşı tərəfə çatmırdı. Bu böhranın həlli TCP-nin ən vacib xüsusiyyətlərindən
+qarşı tərəfə çatmırdı. Bu böhranın həlli [[TCP]]-nin ən vacib xüsusiyyətlərindən
 birinə çevrildi: [[tıxanma nəzarəti]]. Bu gün hər bir TCP bağlantısı (istər
 kiçik bir [[API]] sorğusu, istərsə də çox-giqabaytlıq fayl yükləməsi) məlumatı
 hansı sürətlə göndərməli olduğunu müəyyən etmək üçün bu [[alqoritm]]lərə
@@ -47,16 +47,16 @@ Aşağıdakı müzakirəni başa düşmək üçün
 vacibdir. Əsasən, TCP etibarlı və bağlantıya əsaslanan nəqliyyat səviyyəli
 protokoldur. Burada “etibarlı” anlayışı çox önəmlidir: TCP məlumatı paketlərə
 bölür, paketlərin təyinat nöqtəsinə çatmasını və düzgün ardıcıllıqla qəbul
-olunmasını təmin edir. UDP kimi alternativlərdən fərqli olaraq, TCP paketlərin
-etibarlı çatdırılması və düzgün sıralanması üçün mexanizmlər təqdim edir. Bu
-proses [[ACK]] adlanan təsdiq mesajları vasitəsilə həyata keçirilir. Qəbul edən
-tərəf müəyyən bir paketi aldığını bildirmək üçün göndərənə ACK göndərir.
-Göndərən bütün ACK-ləri aldıqdan sonra həmin “pəncərə” daxilindəki bütün
-məlumatın çatdırıldığını hesab edə bilər. Burada “pəncərə” anlayışı vacibdir:
-göndərən tərəf göndərmə pəncərəsini təyin edir və bu, eyni anda (hamısı ACK
-olunana qədər) nə qədər məlumatın göndəriləcəyini müəyyənləşdirir. Pəncərənin
-ölçüsünə təsir edən başqa faktorlar da var, məsələn, göndərənin imkanları və
-[[axın nəzarəti]] mexanizmləri. Amma CC bu ölçünü müəyyən edən əsas
+olunmasını təmin edir. [[UDP]] kimi alternativlərdən fərqli olaraq, TCP
+paketlərin etibarlı çatdırılması və düzgün sıralanması üçün mexanizmlər təqdim
+edir. Bu proses [[ACK]] adlanan təsdiq mesajları vasitəsilə həyata keçirilir.
+Qəbul edən tərəf müəyyən bir paketi aldığını bildirmək üçün göndərənə ACK
+göndərir. Göndərən bütün ACK-ləri aldıqdan sonra həmin “pəncərə” daxilindəki
+bütün məlumatın çatdırıldığını hesab edə bilər. Burada “pəncərə” anlayışı
+vacibdir: göndərən tərəf göndərmə pəncərəsini təyin edir və bu, eyni anda
+(hamısı ACK olunana qədər) nə qədər məlumatın göndəriləcəyini müəyyənləşdirir.
+Pəncərənin ölçüsünə təsir edən başqa faktorlar da var, məsələn, göndərənin
+imkanları və [[axın nəzarəti]] mexanizmləri. Amma CC bu ölçünü müəyyən edən əsas
 komponentlərdən biridir. Xüsusilə, tıxac pəncərəsi (cong_wnd) anlayışı var ki,
 bu da şəbəkənin eyni anda daşıya biləcəyi maksimum məlumat həcmini müəyyən edir.
 
@@ -147,7 +147,7 @@ uyğun gəlir.
 Nəticədə, əsas üstünlük ondan ibarətdir ki, yüksək ötürmə sürəti və aşağı
 gecikmə əldə olunur, yəni tıxacın özü demək olar ki, ümumiyyətlə yaranmır.
 BBR-in başqa bir yaxşı xüsusiyyəti də ədalətli paylaşmadır: əgər eyni linki
-bölüşən bir neçə axın varsa və onların hamısı BBR istifadə edirsə, onlar
+bölüşən bir neçə [[axın]] varsa və onların hamısı BBR istifadə edirsə, onlar
 arasında nisbətən ədalətli paylaşma müşahidə olunur.
 
 Çatışmazlığı isə odur ki, bu yanaşma hələ də geniş yayılma və inkişaf

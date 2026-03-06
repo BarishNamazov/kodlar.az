@@ -139,7 +139,7 @@ O(m^2 _ n)-dən O(m _ n)-ə qədər artıra bilər.
 
 Haskell ilə ilk tanış olduğumda "dəyişənsiz proqram olar?" deyə düşünmüşdüm.
 Lakin zamanla anladım ki, dəyişənlərin vəziyyətini izləmək əvəzinə, məlumatın
-axınını (məlumat axını) düşünmək zehni daha az yorur. Haskell öyrənmək mənə
+[[axın]]ını (məlumat axını) düşünmək zehni daha az yorur. Haskell öyrənmək mənə
 digər dillərdə (Java, Python və s.) daha təmiz və xətasız kod yazmağı öyrətdi.
 
 ## Yeni Başlayanlara Tövsiyələr

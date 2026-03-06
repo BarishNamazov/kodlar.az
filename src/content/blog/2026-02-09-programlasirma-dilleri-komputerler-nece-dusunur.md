@@ -140,7 +140,7 @@ Məsələn,
 
 - **Artıq inkişaf etmir.** Buna səbəb onu hazırlayan insanların və ya şirkətin
   artıq bağlanması və ya ən azından proyektdən çəkilməsi ola bilər.
-- **Müasir tələbləri ödəmir.** Dil hazırlanan zaman əsas məntiqi nüvə və ya
+- **Müasir tələbləri ödəmir.** Dil hazırlanan zaman əsas məntiqi baza və ya
   fundament kimi qoyulur və sonrakı yeniliklər də onun üzərinə yığılır. Əgər bu
   təməl bütövlüklə uymursa, heç bir yenilik bunu dəyişə bilməz və köhnəlmiş dilə
   çevrilir.

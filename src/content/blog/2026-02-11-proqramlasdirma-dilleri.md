@@ -398,8 +398,8 @@ böyük korporasiyaların sevimlisi olan Java-ya rəqib olaraq Microsoft tərəf
 
 1990-cı illərin ortalarında İnternetin və veb brauzerlərin partlayışı yeni bir
 ehtiyac yaratdı: səhifələri hərəkətli və interaktiv etmək. Səhifə yükləndikdən
-sonra hərəkət edən qrafiklər, kliklənən düymələr yaratmaq üçün skript dilləri
-populyarlaşdı.
+sonra hərəkət edən [[qraf]]iklər, kliklənən düymələr yaratmaq üçün skript
+dilləri populyarlaşdı.
 
 Ən məşhur hekayələrdən biri **JavaScript**-in (1995) yaranmasıdır. O, brauzerdə
 işləyən bəsit animasiyalar üçün cəmi on gün ərzində, çox tələsik yazılmışdı. Heç
@@ -422,7 +422,7 @@ arxasındakı işçi qüvvəsi kimi idilər.
 
 ### Müasir Dövr: Təhlükəsizlik, Sürət və [[Eşzamanlılıq]]
 
-Bu gün prosessorların tək bir nüvəsinin sürəti əvvəlki kimi kəskin artmır,
+Bu gün prosessorların tək bir [[nüvə]]sinin sürəti əvvəlki kimi kəskin artmır,
 əvəzində kompüterlərin nüvə sayı çoxalır. Buna görə də müasir dillər çoxnüvəli
 mühitlərdə eyni anda bir neçə işi təhlükəsiz görməyə (eşzamanlılıq) və yaddaş
 təhlükəsizliyinə köklənib.
@@ -573,9 +573,9 @@ yenidən İmperativ proqramlaşdırma dillərə ehtiyac yaranır.
 Bütün proqramlaşdırma mətn yazmaqdan ibarət deyil. Bəzən kod yazmaq kərpiclərdən
 və ya leqolardan nəsə qurmağa bənzəyə bilər. Əhəmiyyətli və sürətlə böyüyən bir
 alətlər ailəsi var ki, onlar insanlara mətn əvəzinə **vizual elementləri
-manipulyasiya edərək** — rəngli blokları birləşdirərək, oxlarla axın diaqramları
-çəkərək və ya qrafik üzərindəki qutuları (düyünləri) bir-birinə bağlayaraq
-proqramlaşdırmağa imkan verir.
+manipulyasiya edərək** — rəngli blokları birləşdirərək, oxlarla [[axın]]
+diaqramları çəkərək və ya qrafik üzərindəki qutuları (düyünləri) bir-birinə
+bağlayaraq proqramlaşdırmağa imkan verir.
 
 **Scratch** və **Blockly** kimi **blok əsaslı dillər** xüsusilə uşaqlara və bu
 sahəyə yeni başlayanlara proqramlaşdırmanın təməl anlayışlarını öyrətmək üçün
@@ -626,8 +626,8 @@ gətirib çıxarır: bəs real dünyada kim nəyi və niyə istifadə edir?
 
 Sahələrə görə dillərin necə bölüşdürüldüyünə nəzər salaq:
 
-- **Sistem proqramlaşdırması:** Bu sahə kompüterin "ürəyi" ilə işləməyi tələb
-  edir -- əməliyyat sistemiləri, cihaz sürücüləri və məlumat bazası
+- **[[Sistem proqramlaşdırması]]:** Bu sahə kompüterin "ürəyi" ilə işləməyi
+  tələb edir -- əməliyyat sistemiləri, cihaz sürücüləri və məlumat bazası
   mühərrikləri. Burada ən vacib amil yüksək performans və təchizat üzərində
   mütləq nəzarətdir. **C** və **C++** onilliklərdir bu sahənin hakimidir. Lakin
   son illərdə **Rust** proqramın çökməsinin qarşısını alan yaddaş təhlükəsizliyi
@@ -664,8 +664,8 @@ Sahələrə görə dillərin necə bölüşdürüldüyünə nəzər salaq:
   istəyirsinizsə, Apple cihazları (iOS) üçün **Swift**, Android cihazları üçün
   isə **Kotlin** öyrənməlisiniz. Lakin hər iki platforma üçün ayrı-ayrı kod
   yazmaq əvəzinə tək bir kodla hər ikisində işləyən tətbiqlər yaratmaq getdikcə
-  populyarlaşır. Bunun üçün JavaScript əsaslı **React Native** və Dart dilini
-  istifadə edən **Flutter** ən çox seçilən alətlərdir.
+  populyarlaşır. Bunun üçün JavaScript əsaslı **[[React]] Native** və Dart
+  dilini istifadə edən **Flutter** ən çox seçilən alətlərdir.
 
 * **Mikrokontrollerlər və Ağıllı Cihazlar:** Ekranı olmayan, lakin içərisində
   "ağıl" olan cihazları təsəvvür edin: ağıllı soyuducular, avtomobillərin beyni,
