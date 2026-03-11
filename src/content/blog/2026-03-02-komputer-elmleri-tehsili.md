@@ -36,7 +36,7 @@ kiminsə mənə izah etməsini istədiklərimdən ibarətdir. Düşünürəm ki,
 Siz hazırda...
 
 Kompüter elmlərini seçməyi düşünən bir yuxarı sinif şagirdi ola bilərsiniz.
-Təhsilinizin ortasında olub, özünüzün də tam inanmadığınız bir axınla
+Təhsilinizin ortasında olub, özünüzün də tam inanmadığınız bir [[axın]]la
 aparıldığınızı hiss edə bilərsiniz. Bu gün işdə yazdığı kodu təhvil vermiş,
 lakin maşının, yəni sistemin bütöv qatlarını tam anlamadığını daxilən hiss edən
 yeni bir məzun ola bilərsiniz. Və ya rəsmi bir təhsilin ona nələr qazandıra
@@ -46,13 +46,13 @@ Bu yazı sizin hamınız üçündür.
 
 Qısaca və aydın desəm, əsas fikrim budur: kompüter elmləri üzrə təhsil sizin edə
 biləcəyiniz ən dəyərli intellektual investisiyalardan biridir, lakin buna necə
-yanaşmağınız demək olar ki, hər şeyi həll edir. Dörd illik təhsilini başa vurub,
-əlində diplomdan və imtahanlardan keçmək üçün yaradılmış yaddaş əzələsindən
-başqa heç nəyi olmayan insanlar var. Amma unutmayaq ki, heç vaxt universitetin
-qapısından belə keçməyib, [[hesablama sistemləri]]nin işləmə mexanizmini
-dərindən anlayan insanlar da var. Buradakı fərq nə zəka ilə, nə də oxuduğunuz
-təhsil ocağı ilə bağlıdır. Əsas fərq öyrəndiyiniz materialla qurduğunuz əlaqənin
-keyfiyyətindədir.
+yanaşmağınız, demək olar ki, hər şeyi həll edir. Dörd illik təhsilini başa
+vurub, əlində diplomdan və imtahanlardan keçmək üçün yaradılmış yaddaş
+əzələsindən başqa heç nəyi olmayan insanlar var. Amma unutmayaq ki, heç vaxt
+universitetin qapısından belə keçməyib, [[hesablama sistemləri]]nin işləmə
+mexanizmini dərindən anlayan insanlar da var. Buradakı fərq nə zəka ilə, nə də
+oxuduğunuz təhsil ocağı ilə bağlıdır. Əsas fərq öyrəndiyiniz materialla
+qurduğunuz əlaqənin keyfiyyətindədir.
 
 Bir məsələyə lap əvvəldən aydınlıq gətirməliyəm: bəli, [[Süni İntellekt]] və
 [[Böyük Dil Modelləri]] mənzərəni dəyişir. Xeyr, bu, kompüter elmləri biliyini
@@ -61,7 +61,7 @@ qayıdacağıq, amma indilik bunu bilmək kifayətdir: alətlərin bəlkə də h
 özünüzün qiymətləndirə bilməyəcəyiniz qədər [[kod generasiya]] etdiyi bir
 dövrdə, maşının necə işlədiyini anlamaq heç vaxt indiki qədər vacib olmamışdı.
 
-Bu yazı silsilə məqalələrin ilkidir. Gələcək yazılarda təcrübə proqramları və iş
+Bu yazı silsilə məqalələrin ilkidir. Gələcək yazılarda [[təcrübə proqramları]] və iş
 yerləri, müsahibələr və karyera qurmaq kimi mövzulara toxunacağıq. Ancaq təməl
 möhkəm deyilsə, bunların heç birinin mənası qalmır. Buna görə də, elə buradan
 başlayırıq.
@@ -78,10 +78,10 @@ başlayırıq.
 
 ## Universitetdə Oxumaq, Əslində, Nə Deməkdir
 
-Kompüter elmləri təhsilində sakit epidemiya hökm sürür və bu, sadəcə bizim
-ölkədə deyil. Tələbələr universitetə orta məktəbin davamı kimi yanaşırlar:
-mühazirələrə gedirsən, imtahanları verirsən, diplomunu alırsan. Dörd il keçib
-gedir. Və ehtimal edilir ki, ortada öyrənilmiş hər şey var.
+Kompüter elmləri təhsilində sakit epidemiya hökm sürür. Bu, sadəcə bizim ölkədə
+deyil. Tələbələr universitetə orta məktəbin davamı kimi yanaşırlar: mühazirələrə
+gedirsən, imtahanları verirsən, diplomunu alırsan. Dörd il keçib gedir. Və
+ehtimal edilir ki, ortada öyrənilmiş hər şey var.
 
 Bu, universitetin əsl məqsədini səhv anlamaqdır.
 
@@ -98,11 +98,11 @@ fərqli, lakin tamamilə məqbul məqsədlərə xidmət edirlər. Ancaq onların
 da fərqlidir. Kurslar sizi bir neçə ay ərzində işə hazır vəziyyətə gətirməyə
 köklənir. Universitet proqramı isə sizə onilliklər boyu xidmət edəcək bir
 [[hesablama düşüncə modeli]] formalaşdırmağı hədəfləyir. Bunlar eyni məqsədlər
-deyil və onları bir-biri ilə səhv salmaq isə, sonda hər ikisindən məyusluqla
+deyil və onları bir-biri ilə səhv salmaq isə sonda hər ikisindən məyusluqla
 ayrılmağınıza səbəb olur.
 
 Universitetə getmək ilə universitetdə oxumaq arasında çox böyük fərq var. Bir
-çox tələbə birincini edir, lakin ikincini etdiyinə inanır.
+çox tələbə birincini edir, lakin ikincini etdiyinə səhv şəkildə inanır.
 
 ### Universitet əslində sizə nələr verir
 
@@ -115,11 +115,11 @@ nəyi birinci öyrətmək, nəyin nəyin üzərində qurulduğu və
 barədə dərindən düşünüb. Bu ardıcıllığı təbii bir şey kimi qəbul etmək asandır,
 amma onu təkbaşına, sıfırdan qurmaq çox çətindir.
 
-İkincisi, **[[geridönüş mexanizmləri]]**. İmtahanlar, layihələr,
-[[müəllim köməkçiləri]] tərəfindən kodların yoxlanılması, müəllimlərin qəbul
-saatları. _Əgər onlardan istifadə etsəniz_, bunlar inanılmaz dərəcədə
-dəyərlidir. Əks halda, onlar sadəcə olaraq gözə görünməyən - sizinlə imtahan
-qiymətləriniz arasında duran bürokratik əngəllərə çevrilir.
+İkincisi, **rəy mexanizmləri**. İmtahanlar, layihələr, [[müəllim köməkçiləri]]
+tərəfindən kodların yoxlanılması, müəllimlərin qəbul saatları. _Əgər onlardan
+istifadə etsəniz_, bunlar inanılmaz dərəcədə dəyərlidir. Əks halda, onlar sadəcə
+olaraq gözə görünməyən - sizinlə imtahan qiymətləriniz arasında duran bürokratik
+əngəllərə çevrilir.
 
 Üçüncüsü, **sahə mütəxəssislərinə çıxış**. Sizin professorlarınız, ən yaxşı
 halda, onilliklərini öz sahələri barədə düşünməyə həsr etmiş və suallarınıza
@@ -140,7 +140,7 @@ bilərsiniz.
 Beşincisi, **yoldaşlar**. Dərs oxuma qrupları, gecə yarılarına qədər davam edən
 xəta axtarışları, dadsız qəhvə arxasında dizayn qərarları ilə bağlı mübahisələr.
 Öyrənmənin sosial tərəfi fövqəladə dərəcədə güclüdür və təkbaşına öyrənən biri
-üçün bunu təkrarlamaq demək olar ki, mümkünsüzdür.
+üçün bunu təkrarlamaq, demək olar ki, mümkünsüzdür.
 
 Və altıncısı, **həyatınızda dərindən öyrənməyin əsas vəzifəniz olduğu bir
 dövr**. Bir çox insan üçün bu, həyatlarında əldə edəcəkləri yeganə belə dövrdür.
@@ -174,7 +174,7 @@ yoldaşlarınız və əmək bazarınız diploma sadəcə bir finiş xətti kimi 
 sırf öyrənməyin özünə əhəmiyyət vermək üçün insandan həqiqi bir iradə tələb
 olunur.
 
-Bu yazı, öyrənməyə dəyər verməyi müdafiə edən bir arqumentdir. Diplom isə sadəcə
+Bu yazı öyrənməyə dəyər verməyi müdafiə edən bir arqumentdir. Diplom isə sadəcə
 formal bir əlavədir. Əgər hədəfinizi yalnız diplom almaq üzrə qursanız, onu
 alacaqsınız, lakin sonrakı illərinizi, əslində, elə başlanğıcda öyrənməli
 olduğunuz şeylərin yerini doldurmağa çalışaraq keçirə bilərsiniz. Və sonradan bu
@@ -195,10 +195,8 @@ mövcuddur və bütün dünyada əksər proqramlar istər açıq, istərsə də 
 yolla onlara istinad edir. Əsaslar - [[məlumat strukturları]], [[alqoritmlər]],
 [[əməliyyat sistemləri]], [[kompüter arxitekturası]], şəbəkələr,
 [[məlumat bazaları]], [[hesablama nəzəriyyəsi]],
-[[proqram təminatı mühəndisliyi]]
-
-- fizika və ya riyaziyyatın təməlləri qədər sabitdir. Onlar onilliklərdir ki,
-  çox dəyişməyiblər, çünki buna ehtiyac yoxdur.
+[[proqram təminatı mühəndisliyi]] - fizika və riyaziyyatın təməlləri qədər
+sabitdir. Onlar onilliklərdir ki, çox dəyişməyiblər, çünki buna ehtiyac yoxdur.
 
 Bu, vacib bir mənanı ifadə edir: Bakıdakı hər hansı bir universitetin tələbəsi
 ilə MIT tələbəsi təməl səviyyədə tamamilə eyni materialla məşğul olur.
@@ -219,7 +217,7 @@ Yalandan bərabərlikçi görünmək istəmirəm. Ortada real fərqlər var və 
 səviyyələrində tədris edilə bilər. Qabaqcıl bir proqramın məsələlər toplusu sizi
 daha çox çətinliyə salacaq və sizdən daha yüksək riyazi yetkinlik tələb edəcək.
 
-**Tədqiqat mühiti.** Aktiv tədqiqat laboratoriyalarına yaxınlıq, bakalavr
+**Tədqiqat mühiti.** Aktiv tədqiqat laboratoriyalarına yaxınlıq, [[bakalavr]]
 səviyyəsində elmi işlərlə məşğul olmaq imkanı, hələ cavabı tapılmamış problemlər
 üzərində işləyən professorlar. Bunu kənarda yaratmaq həqiqətən çox çətindir.
 
@@ -258,7 +256,7 @@ güclü bir anlayışa sahib olacaq. Bu, sadəcə quru motivasiya sözləri deyi
 biliyin necə işlədiyinə dair struktur faktıdır. Material, onu kimin oxuduğuna
 əhəmiyyət vermir.
 
-Unutmayaq ki, İnternet də kompüter elmləri təhsili üçün böyük bir
+Unutmayaq ki, internet də kompüter elmləri təhsili üçün böyük bir
 bərabərləşdirici rolunu oynadı. Qabaqcıl universitetlərin demək olar ki, bütün
 əsas kursları onlayn və pulsuz şəkildə əlçatandır. Universitetlər arasındakı
 bilik fərqi inanılmaz dərəcədə daralıb. Lakin motivasiya fərqi hələ də qalır.
@@ -282,7 +280,7 @@ Toyota-nın sürətlər qutusunu sıfırdan söküb-yığa bilməzlər, lakin bu
 hansı alt sistemin nasaz ola biləcəyini məntiqlə təxmin edə bilərlər.
 
 Bir kompüter elmləri məzunu da kompüter haqqında eyni cür anlayışa sahib
-olmalıdır. [[Tranzistor]]lardan və [[məntiq qapısı]]larından tutmuş arxitektura,
+olmalıdır. [[Tranzistor]]lardan və [[məntiq qapıları]]ndan tutmuş arxitektura,
 əməliyyat sistemləri, şəbəkələr, [[kompilyator]]lar və tətbiqlərə qədər -
 maşının əslində nə etdiyini ən azından kobud şəkildə izləyə bilməlisiniz.
 İşəgötürəninizin spesifik [[kod bazası]]nı əzbər bilməyəcəksiniz, lakin orada öz
@@ -328,9 +326,8 @@ təsdiqləyir? Təhlükəsizlik elə cihazı yandırdığınız andan başlayır
 
 > _[[Əməliyyat sistemi]]nin giriş ekranı görünür._
 
-Nüvə yaddaşın idarə edilməsini başlatdı,
-[virtual yaddaşı](https://en.wikipedia.org/wiki/Virtual_memory) qurdu,
-[[planlaşdırıcı]]nı işə saldı, [[fayl sistemi]]lərini quraşdırdı,
+Nüvə yaddaşın idarə edilməsini başlatdı, [[virtual yaddaş]]ı qurdu,
+[[planlaşdırıcı]]nı işə saldı, [[fayl sistemləri]]ni quraşdırdı,
 [init/systemd](https://systemd.io/)-ni başlatdı. Giriş meneceri özü də bir
 istifadəçi fəzası prosesidir, sizin kimliyinizi təsdiqləyir.
 
@@ -348,7 +345,7 @@ etimadnamələrin saxlanması.
 başlayan tətbiqlər yüklənir. Bunların hər biri əməliyyat sistemi tərəfindən
 idarə olunan və özünün ünvan fəzası olan ayrı-ayrı proseslərdir.
 
-**Nələri bilməlisiniz:** Proseslər və [[axın]]lar.
+**Nələri bilməlisiniz:** Proseslər və axınlar.
 [Proseslərarası əlaqə](https://en.wikipedia.org/wiki/Inter-process_communication).
 Resursların bölüşdürülməsi, [[paralelizm]], icazələr. Niyə bir istifadəçinin
 prosesi digər istifadəçinin yaddaşını oxuya bilmir? Bu heç də təsadüf deyil, bu,
@@ -362,7 +359,7 @@ prosesi digər istifadəçinin yaddaşını oxuya bilmir? Bu heç də təsadüf 
 [[dinamik kitabxana]]ları tapır, yaddaş ayırır və icraya başlayır. Brauzer
 özlüyündə olduqca mürəkkəb bir sistemdir: render mühərriki, JavaScript
 mühərriki, şəbəkə steki,
-[qumqabı proses arxitekturası](https://chromium.googlesource.com/chromium/src/+/main/docs/design/sandbox.md).
+[sandbox proses arxitekturası](https://chromium.googlesource.com/chromium/src/+/main/docs/design/sandbox.md).
 
 **Nələri bilməlisiniz:** Kompilyatorlar və [[əlaqələndirmə]]: [[mənbə kodu]]
 necə bu icra edilə bilən fayla çevrildi? Yaddaşın idarə edilməsi. Tətbiq
@@ -405,8 +402,7 @@ bilməlisiniz.
 emal edir, bəlkə bir tətbiq serverinə müraciət edir, məlumat bazasını sorğulayır
 və bir cavab toplayır. Geri HTML, CSS, JavaScript və şəkillər qayıdır. Siz
 [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)-ni protokol
-səviyyəsində - başlıqlar, metodlar, status kodları olaraq anlamalısınız. Server
-tərəfində isə: o, sizin məlumatınızı necə əldə edir?
+səviyyəsində - başlıqlar, metodlar, status kodları olaraq anlamalısınız. [[Server tərəfi]]ndə isə: o, sizin məlumatınızı necə əldə edir?
 [SQL sorğuları](https://en.wikipedia.org/wiki/SQL),
 [indeksləmə](https://en.wikipedia.org/wiki/Database_index), sorğunun
 optimallaşdırılması. Və ən əsası, server daxil edilən bütün məlumatlara
@@ -416,7 +412,7 @@ potensial təhlükə kimi yanaşmalıdır -
 [CSRF](https://owasp.org/www-community/attacks/csrf), sadəcə, nəzəri problemlər
 deyil.
 
-**Renderinq.** Brauzer HTML-i təhlil edərək
+**[[Renderinq]].** Brauzer HTML-i təhlil edərək
 [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)-a,
 CSS-i isə [[CSSOM]]-a çevirir, onları birləşdirərək [[render ağacı]] yaradır,
 düzülüşü hesablayır, pikselləri rəngləyir, layları birləşdirir. JavaScript icra
@@ -442,7 +438,7 @@ Hər bir təbəqə digərindən asılıdır. Yüklənmə prosesi aparat təminat
 təminatını, əməliyyat sistemini və təhlükəsizliyi əhatə edir. Bir veb-səhifənin
 yüklənməsi isə şəbəkələri, məlumat bazalarını, kompilyatorları, məlumat
 strukturlarını və təhlükəsizliyi özündə birləşdirir. Təməl səviyyədə "sadəcə,
-frontend" və ya "sadəcə, backend" deyə bir şey yoxdur. Bunlar maşının deyil,
+[[frontend]]" və ya "sadəcə, [[backend]]" deyə bir şey yoxdur. Bunlar maşının deyil,
 insanların yaratdığı təşkilati sərhədlərdir.
 
 ### Bu ssenari nələri aşkara çıxarır
@@ -573,12 +569,8 @@ məqamda hər şey alt-üst olana kimi işə yarayır.
 Özünüzü sınayın: öyrəndiyiniz hər bir əsas anlayışı harasa baxmadan tərif edə
 bilərsinizmi? Ümumi sözlərlə deyil, əsl tərifini deyə bilərsinizmi? Riyazi
 mənada funksiya nədir? [[Ekvivalentlik münasibəti]] nədir?
-[[Kontekstdən asılı olmayan qrammatika]] nədir? [[Kilidlənmə]]
-nədir^[Kilidlənmənin yaranması üçün dörd şərt eyni anda ödənməlidir: qarşılıqlı
-inhisar, tutub saxlama və gözləmə, məcburi kəsilmənin olmaması və dairəvi
-gözləmə. Bunları əzbərdən saya bilirsinizsə, lap yaxşı. Əgər *hər birinin niyə
-zəruri olduğunu* izah edə bilirsinizsə, daha da yaxşı.]? Keş uyğunluğu nədir?
-[[Tranzaksiyanın izolyasiya səviyyəsi]] nədir?
+[[Kontekstdən asılı olmayan qrammatika]] nədir? [[Kilidlənmə]] nədir? Keş
+uyğunluğu nədir? [[Tranzaksiyanın izolyasiya səviyyəsi]] nədir?
 
 **Bu vərdişi necə yaratmalı.** Yeni bir anlayışla qarşılaşdıqda, onun tərifini
 yazın: əvvəlcə öz sözlərinizlə, sonra isə formal versiya ilə tutuşdurun.
@@ -721,10 +713,10 @@ bilər.
 
 ### Öz əhatənizi tapın, ancaq təkbaşına işləməyi də öyrənin
 
-Dərs oxuma qrupları, kompüter elmləri klubları, [hakatonlar](https://mlh.io/),
-[[açıq mənbə]]li layihə icmaları öyrənmənin sosial bir proses olduğunu göstərir.
-Bir fincan qəhvə arxasında sizə hansısa anlayışı izah edən bir şəxs, bunu bir
-mühazirənin heç vaxt edə bilməyəcəyi qədər effektiv şəkildə öyrədə bilər.
+Dərs oxuma qrupları, kompüter elmləri klubları, hakatonlar, [[açıq mənbə]]li
+layihə icmaları öyrənmənin sosial bir proses olduğunu göstərir. Bir fincan qəhvə
+arxasında sizə hansısa anlayışı izah edən bir şəxs, bunu bir mühazirənin heç
+vaxt edə bilməyəcəyi qədər effektiv şəkildə öyrədə bilər.
 
 Həmçinin, nələrisə başqalarına izah etmək mövcud olan ən güclü öyrənmə
 üsullarından biridir. Əgər bir anlayışı aydın şəkildə izah edə bilmirsinizsə,
@@ -838,10 +830,10 @@ bir HTTP serveri qurun. Məlumat bazaları barədə sadəcə oxumayın.
 [B-ağacı](https://en.wikipedia.org/wiki/B-tree) tətbiq edin. Yaradaraq öyrənmək,
 oxuyaraq öyrənməkdən keyfiyyətcə tamamilə fərqlidir.
 
-Öyrəndiklərinizi işinizlə əlaqələndirin. Əgər [[backend]] sistemləri üzərində
+Öyrəndiklərinizi işinizlə əlaqələndirin. Əgər backend sistemləri üzərində
 işləyirsinizsə, bunu məlumat bazalarını və əməliyyat sistemlərini dərindən
-öyrənmək üçün bir motivasiya kimi istifadə edin. Əgər [[frontend]]
-tərəfindəsinizsə, brauzerləri, [[renderinq]] ardıcıllığını və şəbəkələri
+öyrənmək üçün bir motivasiya kimi istifadə edin. Əgər frontend
+tərəfindəsinizsə, brauzerləri, renderinq ardıcıllığını və şəbəkələri
 araşdırın. Gündəlik işiniz sizə həm motivasiya, həm də öyrəndiklərinizi sınaqdan
 keçirmək üçün bir meydan verir.
 
@@ -857,7 +849,7 @@ tədqiqat sahəsinə yönləndirmək.
 
 [[Magistr dərəcəsi]] kompüter elmlərini ciddi şəkildə öyrənmək üçün yaxşı bir
 "ikinci şans" ola bilər, xüsusilə də güclü proqramı olan bir universitetdə. Əgər
-[[bakalavr]] təcrübəniz zəif olubsa və indi belə bir imkanınız varsa, bu barədə
+bakalavr təcrübəniz zəif olubsa və indi belə bir imkanınız varsa, bu barədə
 düşünməyə dəyər.
 
 ## [[Böyük Dil Modelləri]] dövründə Kompüter Elmlərinin əsasları niyə daha az yox, daha çox əhəmiyyət daşıyır
@@ -1055,7 +1047,7 @@ Nələri öyrətdiyinə görə qruplaşdırılmış bəzi təkliflər:
 Bunları mühəndisliyin klinik rotasiyaları kimi düşünün: nəzəriyyənin real
 sistemlərin xaotikliyi ilə qarşılaşdığı yer.
 
-Yaxşı [[təcrübə proqramları]] məktəbin öyrədə bilməyəcəyi şeyləri öyrədir: böyük
+Yaxşı təcrübə proqramları məktəbin öyrədə bilməyəcəyi şeyləri öyrədir: böyük
 [[kod bazası]]larında işləmək, [[kod yoxlama]] mədəniyyəti, canlı sistem
 xətaları, növbətçilik qrafikləri, komandalararası əməkdaşlıq, real son tarixlər
 altında prioritetlərin müəyyənləşdirilməsi və kodunuzun gerçək insanlar

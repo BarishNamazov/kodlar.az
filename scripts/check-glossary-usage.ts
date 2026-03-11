@@ -292,6 +292,7 @@ function fixDuplicateLinks(filePath: string): number {
 
 const checkDuplicates = process.argv.includes("--check-duplicates");
 const fixDuplicates = process.argv.includes("--fix-duplicates");
+const warnAliasUsage = process.argv.includes("--warn-alias-usage");
 
 const blogDir = resolve(import.meta.dirname!, "../src/content/blog");
 const files = readdirSync(blogDir).filter((f) => f.endsWith(".md"));
@@ -318,7 +319,9 @@ for (const file of files) {
   );
   allErrors.push(...errors);
   allFirstInstanceWarnings.push(...firstInstanceWarnings);
-  allWarnings.push(...findAliasOnlyUsage(linkedTerms, file));
+  if (warnAliasUsage) {
+    allWarnings.push(...findAliasOnlyUsage(linkedTerms, file));
+  }
   if (checkDuplicates || fixDuplicates) {
     allDuplicateWarnings.push(...findDuplicateLinks(noCode, file));
   }

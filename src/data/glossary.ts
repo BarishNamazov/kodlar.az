@@ -637,6 +637,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "fayl sistemi",
     en: "file system",
+    aliases: ["fayl sistemləri"],
     description:
       "Məlumatların diskdə necə saxlanıldığını, təşkil edildiyini və oxunduğunu idarə edən sistem.",
   },
@@ -830,6 +831,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "məntiq qapısı",
     en: "logic gate",
+    aliases: ["məntiq qapıları"],
     description:
       "Bir və ya daha çox giriş siqnalını alaraq məntiqi əməliyyatla tək çıxış siqnalı verən elektron və ya rəqəmsal sxem.",
   },
