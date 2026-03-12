@@ -10,6 +10,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "tıxanma nəzarəti",
     en: "congestion control",
+    aliases: ["sıxlıq nəzarəti"],
     description:
       "Şəbəkə tıxanmasını aşkar edib idarə etmək üçün istifadə edilən mexanizmlər.",
     link: "https://en.wikipedia.org/wiki/Network_congestion#Congestion_control",
@@ -51,6 +52,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "kompilyator",
     en: "compiler",
+    aliases: ["kompilyatorlar"],
     description:
       "Mənbə kodunu icradan əvvəl maşın koduna və ya aralıq koda çevirən proqram.",
     link: "https://en.wikipedia.org/wiki/Compiler",
@@ -182,6 +184,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "verilənlər strukturu",
     en: "data structure",
+    aliases: ["məlumat strukturları"],
     description:
       "Məlumatın yaddaşda təşkilini və üzərində əməliyyatları müəyyən edən məntiqi model.",
     link: "https://en.wikipedia.org/wiki/Data_structure",
@@ -189,6 +192,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "alqoritm",
     en: "algorithm",
+    aliases: ["alqoritmlər"],
     description: "Məsələni həll etmək üçün dəqiq, sonlu addımlar ardıcıllığı.",
     link: "https://en.wikipedia.org/wiki/Algorithm",
   },
@@ -236,6 +240,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "açıq mənbə",
     en: "open source",
+    aliases: ["açıq mənbəli"],
     description:
       "Mənbə kodu ictimaiyyət üçün açıq olan və sərbəst istifadəyə yararlı proqram təminatı modeli.",
     link: "https://en.wikipedia.org/wiki/Open_source",
@@ -284,6 +289,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "əməliyyat sistemi",
     en: "operating system",
+    aliases: ["əməliyyat sistemləri"],
     description:
       "Aparat və proqram təminatı arasında vasitəçi olan sistem proqramı.",
     link: "https://en.wikipedia.org/wiki/Operating_system",
@@ -291,6 +297,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "verilənlər bazası",
     en: "database",
+    aliases: ["məlumat bazaları"],
     description:
       "Məlumatları strukturlaşdırılmış şəkildə saxlayan və sorğulayan sistem.",
     link: "https://en.wikipedia.org/wiki/Database",
@@ -298,6 +305,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "kodun nəzərdən keçirilməsi",
     en: "code review",
+    aliases: ["kod yoxlama"],
     description:
       "Başqa proqramçının yazdığı kodun keyfiyyətini yoxlamaq prosesi.",
     link: "https://en.wikipedia.org/wiki/Code_review",
@@ -438,6 +446,7 @@ export const glossary: GlossaryTerm[] = [
   {
     az: "maşın öyrənməsi",
     en: "machine learning",
+    aliases: ["ML"],
     description:
       "Kompüterlərin açıq proqramlaşdırma olmadan məlumatlardan öyrənməsi sahəsi.",
     link: "https://en.wikipedia.org/wiki/Machine_learning",
@@ -504,6 +513,581 @@ export const glossary: GlossaryTerm[] = [
     description:
       "Göndərənin qəbul edənin emal sürətinə uyğunlaşdırılması mexanizmi.",
     link: "https://en.wikipedia.org/wiki/Flow_control_(data)",
+  },
+  {
+    az: "acgöz seçim",
+    en: "greedy choice",
+    description:
+      "Hər addımda lokal olaraq ən optimal variantı seçməyə əsaslanan alqoritmik yanaşma.",
+  },
+  {
+    az: "açar-dəyər deposu",
+    en: "key-value store",
+    description:
+      "Məlumatı açar və dəyər cütləri şəklində saxlayan məlumat bazası növü.",
+  },
+  {
+    az: "axın",
+    en: "stream",
+    description:
+      "Məlumatın hissə-hissə və davamlı şəkildə ötürülməsi (və ya icra edilən thread/axın kontekstində fərqli tapşırıq zolağı).",
+  },
+  {
+    az: "asinxron",
+    en: "asynchronous",
+    description:
+      "Əməliyyatların bir-birini gözləmədən, fərqli zamanlarda icra edilməsi.",
+  },
+  {
+    az: "B-ağacı",
+    en: "B-tree",
+    description:
+      "Məlumat bazalarında və fayl sistemlərində geniş istifadə olunan, öz-özünü balanslaşdıran ağac strukturu.",
+  },
+  {
+    az: "bakalavr",
+    en: "bachelor's degree",
+    description: "Ali təhsilin ilk pilləsini bitirənlərə verilən dərəcə.",
+  },
+  {
+    az: "biyeksiya",
+    en: "bijection",
+    description:
+      "İki çoxluq arasında hər bir elementin digər çoxluqdakı yalnız bir elementə uyğun gəldiyi riyazi əlaqə.",
+  },
+  {
+    az: "böyük dil modelləri",
+    en: "large language models",
+    aliases: ["LLM", "Böyük Dil Modelləri"],
+    description:
+      "Böyük həcmdə mətn məlumatları ilə öyrədilmiş, təbii dili anlayan və yaradan süni intellekt modelləri.",
+  },
+  {
+    az: "CRUD",
+    en: "CRUD",
+    description:
+      "Məlumat bazası idarəetməsində dörd əsas əməliyyat: Yaratmaq (Create), Oxumaq (Read), Yeniləmək (Update), Silmək (Delete).",
+  },
+  {
+    az: "CSAPP",
+    en: "Computer Systems: A Programmer's Perspective",
+    description:
+      "Kompüter sistemlərinin iş prinsiplərini proqramçı baxış açısından izah edən məşhur dərslik.",
+  },
+  {
+    az: "CSSOM",
+    en: "CSS Object Model",
+    description:
+      "Brauzerin CSS stillərini oxuyub manipulyasiya etməsi üçün yaratdığı obyekt modeli.",
+  },
+  {
+    az: "Deykstra alqoritmi",
+    en: "Dijkstra's algorithm",
+    description:
+      "Qrafda düyünlər arasındakı ən qısa yolu tapan məşhur alqoritm.",
+  },
+  {
+    az: "dinamik kitabxana",
+    en: "dynamic library",
+    description:
+      "Proqramın icrası zamanı yaddaşa yüklənən və bir neçə tətbiq tərəfindən paylaşıla bilən kod modulu.",
+  },
+  {
+    az: "Diskret riyaziyyat",
+    en: "discrete mathematics",
+    description:
+      "Kəsilməz olmayan, ayrı-ayrı elementlərdən ibarət riyazi strukturları öyrənən sahə.",
+  },
+  {
+    az: "DNS",
+    en: "Domain Name System",
+    description:
+      "Domen adlarını (məs. google.com) şəbəkə IP ünvanlarına çevirən internet xidməti.",
+  },
+  {
+    az: "Dunning-Kruger",
+    en: "Dunning-Kruger effect",
+    description:
+      "Bacarıqsız və ya təcrübəsiz insanların öz qabiliyyətlərini həddindən artıq qiymətləndirməsi psixoloji effekti.",
+  },
+  {
+    az: "ehtimal nəzəriyyəsi",
+    en: "probability theory",
+    description:
+      "Təsadüfi hadisələri və onların baş vermə ehtimalını öyrənən riyaziyyat bölməsi.",
+  },
+  {
+    az: "Ekvivalentlik münasibəti",
+    en: "equivalence relation",
+    description:
+      "Riyaziyyatda refleksiv, simmetrik və tranzitiv xassələrə malik münasibət növü.",
+  },
+  {
+    az: "etibarsızlaşdırma strategiyası",
+    en: "invalidation strategy",
+    description:
+      "Keşdəki (cache) köhnəlmiş məlumatların silinməsi və ya yenilənməsi qaydası.",
+  },
+  {
+    az: "əlaqələndirmə",
+    en: "linking",
+    description:
+      "Kompilyasiya olunmuş obyekt fayllarını bir araya gətirərək icra edilə bilən fayl (executable) yaratmaq prosesi.",
+  },
+  {
+    az: "fayl sistemi",
+    en: "file system",
+    aliases: ["fayl sistemləri"],
+    description:
+      "Məlumatların diskdə necə saxlanıldığını, təşkil edildiyini və oxunduğunu idarə edən sistem.",
+  },
+  {
+    az: "formal dillər",
+    en: "formal languages",
+    description:
+      "Xüsusi sintaktik və semantik qaydalarla yaradılmış, kompüter elmlərində istifadə olunan riyazi dillər.",
+  },
+  {
+    az: "formal qrammatika",
+    en: "formal grammar",
+    description:
+      "Formal dilin sətirlərini yaratmaq və ya tanımaq üçün istifadə olunan qaydalar toplusu.",
+  },
+  {
+    az: "frilans",
+    en: "freelance",
+    description:
+      "Heç bir şirkətə daimi bağlı olmadan müstəqil şəkildə layihələr üzərində işləmək modeli.",
+  },
+  {
+    az: "geridönüş mexanizmləri",
+    en: "fallback mechanisms",
+    description:
+      "Xəta baş verdikdə və ya bir yol uğursuz olduqda sistemi qorumaq üçün alternativ ssenarinin (və ya alqoritmlərdə əvvəlki addımın) işə düşməsi.",
+  },
+  {
+    az: "GPA",
+    en: "Grade Point Average",
+    description:
+      "Tələbənin akademik göstəricilərinin və qiymətlərinin orta statistik göstəricisi.",
+  },
+  {
+    az: "hesablama düşüncə modeli",
+    en: "computational thinking",
+    description:
+      "Problemləri kompüterin həll edə biləcəyi şəkildə formalaşdırmaq bacarığı.",
+  },
+  {
+    az: "hesablama nəzəriyyəsi",
+    en: "theory of computation",
+    aliases: ["hesablanma nəzəriyyəsi"],
+    description:
+      "Hansı problemlərin kompüterlər (alqoritmlər) vasitəsilə həll edilə biləcəyini öyrənən elm sahəsi.",
+  },
+  {
+    az: "hesablama sistemləri",
+    en: "computing systems",
+    description:
+      "Məlumatı emal edən, saxlayan və ötürən aparat və proqram təminatı komponentlərinin toplusu.",
+  },
+  {
+    az: "HTTP",
+    en: "Hypertext Transfer Protocol",
+    description:
+      "Vebdə məlumatların (HTML, şəkillər və s.) ötürülməsi üçün əsas şəbəkə protokolu.",
+  },
+  {
+    az: "Xam soket",
+    en: "raw socket",
+    description:
+      "Proqramçıya şəbəkə paketlərinin başlıqlarını birbaşa idarə etməyə imkan verən aşağı səviyyəli şəbəkə soketi növü.",
+  },
+  {
+    az: "xətti cəbr",
+    en: "linear algebra",
+    description:
+      "Vektorlar, vektor fəzaları və xətti tənliklər sistemlərini öyrənən riyaziyyat sahəsi.",
+  },
+  {
+    az: "idarəetmə axını",
+    en: "control flow",
+    description:
+      "Proqramdakı əmrlərin, şərtlərin və dövrlərin icra edilmə ardıcıllığı.",
+  },
+  {
+    az: "İmposter",
+    en: "imposter syndrome",
+    description:
+      "İnsanın öz uğurlarını şansa bağlaması və əslində kifayət qədər savadlı olmadığı qorxusunu (saxtakar sindromu) yaşaması halı.",
+  },
+  {
+    az: "imtiyazların artırılması",
+    en: "privilege escalation",
+    description:
+      "İstifadəçinin və ya tətbiqin icazəsi olmayan sistem resurslarına (admin hüquqlarına) giriş əldə etməsi.",
+  },
+  {
+    az: "invariant",
+    en: "invariant",
+    description:
+      "Proqramın icrası zamanı və ya müəyyən bir mərhələdə həmişə doğru qalan şərt, məntiqi ifadə.",
+  },
+  {
+    az: "inyeksiya",
+    en: "injection",
+    description:
+      "Zərərli kodun proqrama və ya sorğuya daxil edilərək sistemin manipulyasiya edilməsi kiber hücumu (məs. SQL Injection).",
+  },
+  {
+    az: "izolyasiya",
+    en: "isolation",
+    description:
+      "Proseslərin, yaddaş sahələrinin və ya tranzaksiyaların bir-birinə təsir etmədən ayrılmış şəkildə işləməsi.",
+  },
+  {
+    az: "kardinallıq",
+    en: "cardinality",
+    description:
+      "Riyaziyyatda çoxluqdakı elementlərin sayı; məlumat bazasında isə sütundakı unikal dəyərlərin miqdarı.",
+  },
+  {
+    az: "Keş cədvəli",
+    en: "hash table",
+    description:
+      "Məlumatları açar-dəyər cütləri kimi xüsusi riyazi funksiya vasitəsilə saxlayan və çox sürətli axtarış təmin edən struktur.",
+  },
+  {
+    az: "keş uyğunluğu",
+    en: "cache coherence",
+    description:
+      "Çoxnüvəli sistemlərdə müxtəlif keş (cache) yaddaşlardakı eyni məlumatların sinxron və eyni vəziyyətdə qalması mexanizmi.",
+  },
+  {
+    az: "Kilidlənmə",
+    en: "deadlock",
+    description:
+      "İki və ya daha çox prosesin (axının) bir-birinin resursu azad etməsini gözləyərək əbədi dayanması vəziyyəti.",
+  },
+  {
+    az: "kod bazası",
+    en: "codebase",
+    description:
+      "Bir proqram təminatı layihəsini təşkil edən mənbə kodlarının tam toplusu.",
+  },
+  {
+    az: "kod generasiya",
+    en: "code generation",
+    description:
+      "Mövcud modellər, şablonlar və ya qaydalar əsasında avtomatik olaraq proqram kodunun yaradılması.",
+  },
+  {
+    az: "kompüter arxitekturası",
+    en: "computer architecture",
+    description:
+      "Kompüter sisteminin məntiqi strukturu və müxtəlif avadanlıqların necə inteqrasiya edildiyi dizaynı.",
+  },
+  {
+    az: "kontekst dəyişməsi",
+    en: "context switch",
+    description:
+      "Prosessorun bir prosesdən digərinə keçərkən köhnə vəziyyəti yadda saxlaması və yenisini yükləməsi prosesi.",
+  },
+  {
+    az: "Kontekstdən asılı olmayan qrammatika",
+    en: "context-free grammar",
+    description:
+      "Proqramlaşdırma dillərinin sintaksisini asanlıqla təsvir etmək və təhlil etmək üçün istifadə olunan formal qrammatika növü.",
+  },
+  {
+    az: "kriptoqrafiya",
+    en: "cryptography",
+    description:
+      "Məlumatın məxfiliyini, bütövlüyünü və təhlükəsizliyini təmin etmək üçün riyazi şifrələmə metodları elmi.",
+  },
+  {
+    az: "qraf",
+    en: "graph",
+    description:
+      "Düyünlər və onları birləşdirən kənarlardan (xətlərdən) ibarət şəbəkə quruluşunu modelləşdirən məlumat strukturu.",
+  },
+  {
+    az: "sandbox",
+    en: "sandbox",
+    description:
+      "Proqramların və ya sınaq kodların sistemin qalan hissəsindən təcrid olunmuş təhlükəsiz mühitdə işlədilməsi.",
+  },
+  {
+    az: "LeetCode",
+    en: "LeetCode",
+    description:
+      "Proqramçılara alqoritm və məlumat strukturu məsələlərini həll edərək müsahibələrə hazırlaşmağa kömək edən onlayn platforma.",
+  },
+  {
+    az: "Magistr dərəcəsi",
+    en: "Master's degree",
+    description:
+      "Bakalavr pilləsindən sonra əldə edilən daha dar və ixtisaslaşmış ali təhsil dərəcəsi.",
+  },
+  {
+    az: "məntiq qapısı",
+    en: "logic gate",
+    aliases: ["məntiq qapıları"],
+    description:
+      "Bir və ya daha çox giriş siqnalını alaraq məntiqi əməliyyatla tək çıxış siqnalı verən elektron və ya rəqəmsal sxem.",
+  },
+  {
+    az: "mikroproqram təminatı",
+    en: "firmware",
+    description:
+      "Aparat avadanlıqlarının daxilinə yazılmış və onların aşağı səviyyəli idarəsini təmin edən proqram təminatı.",
+  },
+  {
+    az: "Muteks",
+    en: "mutex",
+    description:
+      "Bir ortaq resursdan eyni vaxtda yalnız bir axının (thread) istifadə etməsini təmin edən sinxronizasiya obyekti.",
+  },
+  {
+    az: "müəllim köməkçisi",
+    en: "teaching assistant",
+    aliases: ["müəllim köməkçiləri"],
+    description:
+      "Müəllimə dərslərdə, tapşırıqların yoxlanmasında və tələbələrə əlavə dəstək verilməsində kömək edən şəxs.",
+  },
+  {
+    az: "mükəmməllikçilik",
+    en: "perfectionism",
+    description:
+      "Hər şeyin qüsursuz və səhvsiz olmasını tələb edən, çox vaxt işin ləngiməsinə səbəb olan yanaşma.",
+  },
+  {
+    az: "NP-tamlıq",
+    en: "NP-completeness",
+    description:
+      "Kompüter elmində həlli üçün səmərəli (polinomial vaxtlı) alqoritmin hələ tapılmadığı ən çətin hesablanan problemlər sinfi.",
+  },
+  {
+    az: "nüvə",
+    en: "kernel",
+    description:
+      "Əməliyyat sisteminin mərkəzi hissəsi; aparat resurslarını idarə edən və proqramlara xidmət edən əsas komponent.",
+  },
+  {
+    az: "OSTEP",
+    en: "Operating Systems: Three Easy Pieces",
+    description:
+      "Əməliyyat sistemlərinin əsaslarını (vizuallaşdırma, eşzamanlılıq və davamlılıq) izah edən məşhur dərslik.",
+  },
+  {
+    az: "paralelizm",
+    en: "parallelism",
+    description:
+      "Çoxnüvəli prosessorlarda və ya sistemlərdə eyni anda bir neçə tapşırığın eyni vaxtda fiziki olaraq icra edilməsi.",
+  },
+  {
+    az: "PhD",
+    en: "Doctor of Philosophy",
+    description:
+      "Elmi tədqiqat və dissertasiya müdafiəsi əsasında verilən ən yüksək akademik dərəcə.",
+  },
+  {
+    az: "planlaşdırıcı",
+    en: "scheduler",
+    description:
+      "Əməliyyat sistemində prosessorun hansı proses tərəfindən və nə qədər müddətə istifadə ediləcəyinə qərar verən modul.",
+  },
+  {
+    az: "proqram təminatı mühəndisliyi",
+    en: "software engineering",
+    description:
+      "Proqram təminatının dizaynı, inkişafı, sınaqdan keçirilməsi və davamlı saxlanması üçün mühəndislik prinsiplərinin tətbiqi.",
+  },
+  {
+    az: "proqramlaşdırma dilləri nəzəriyyəsi",
+    en: "programming language theory",
+    description:
+      "Proqramlaşdırma dillərinin riyazi dizaynı, tətbiqi, analizi və təsnifatı ilə məşğul olan elm.",
+  },
+  {
+    az: "prompt",
+    en: "prompt",
+    description:
+      "Süni intellekt modellərinə (və ya CLI sistemlərinə) verilən giriş təlimatı, mətn və ya sual.",
+  },
+  {
+    az: "React",
+    en: "React",
+    description:
+      "İstifadəçi interfeysləri (UI) qurmaq üçün Facebook tərəfindən yaradılmış məşhur JavaScript kitabxanası.",
+  },
+  {
+    az: "relyasiyalı məlumat bazası",
+    en: "relational database",
+    description:
+      "Məlumatı sətir və sütunlardan ibarət, bir-biri ilə məntiqi əlaqəli cədvəllər şəklində saxlayan sistem.",
+  },
+  {
+    az: "render ağacı",
+    en: "render tree",
+    description:
+      "Brauzerlərdə DOM və CSSOM-u birləşdirərək ekrana yalnız görünəcək elementləri çəkmək üçün yaradılan daxili struktur.",
+  },
+  {
+    az: "renderinq",
+    en: "rendering",
+    description:
+      "Kod və ya strukturlaşdırılmış məlumatların vizual olaraq ekranda istifadəçi interfeysinə çevrilməsi prosesi.",
+  },
+  {
+    az: "robototexnika",
+    en: "robotics",
+    description:
+      "Robotların dizaynı, inşası, istismarı və kompüter sistemləri vasitəsilə idarə edilməsi sahəsi.",
+  },
+  {
+    az: "silinmə siyasəti",
+    en: "eviction policy",
+    description:
+      "Keş (cache) yaddaşı dolduqda yeni gələn məlumatlara yer açmaq üçün hansı elementin silinəcəyini müəyyən edən alqoritm.",
+  },
+  {
+    az: "sistem proqramlaşdırması",
+    en: "system programming",
+    description:
+      "Birbaşa aparatla (hardware) və əməliyyat sistemləri ilə qarşılıqlı əlaqədə olan aşağı səviyyəli proqram təminatının yazılması.",
+  },
+  {
+    az: "SQL JOIN",
+    en: "SQL JOIN",
+    description:
+      "Məlumat bazasında iki və ya daha çox fərqli cədvəldəki məlumatları ortaq sütunlara əsasən birləşdirən SQL əmri.",
+  },
+  {
+    az: "Tam stek",
+    en: "full stack",
+    description:
+      "Həm frontend (istifadəçi tərəfi), həm də backend (server tərəfi) arxitekturalarını əhatə edən proqramlaşdırma modeli.",
+  },
+  {
+    az: "TCP",
+    en: "Transmission Control Protocol",
+    description:
+      "Şəbəkədə məlumat paketlərinin etibarlı, səhvsiz və ardıcıl çatdırılmasını təmin edən protokoldur.",
+  },
+  {
+    az: "təcrübə proqramları",
+    en: "internships",
+    description:
+      "Tələbələrin və ya karyeraya yeni başlayanların real iş mühitində praktik bilik qazanması üçün proqramlar.",
+  },
+  {
+    az: "tədris proqramı",
+    en: "curriculum",
+    aliases: ["Tədris proqramı"],
+    description:
+      "Təhsil müəssisələrində keçiləcək fənlərin, mövzuların və qiymətləndirmələrin təşkili planı.",
+  },
+  {
+    az: "təhlil nəzəriyyəsi",
+    en: "parsing theory",
+    description:
+      "Formal dillərdə və kompilyatorlarda sətirlərin qrammatik quruluşunu analiz etmə və ağac strukturuna çevirmə qaydaları.",
+  },
+  {
+    az: "təlim məlumatları",
+    en: "training data",
+    description:
+      "Süni intellekt və maşın öyrənməsi modellərinə naxışları (pattern) öyrətmək üçün istifadə edilən ilkin məlumat bazası.",
+  },
+  {
+    az: "tənbəl yüklənmə",
+    en: "lazy loading",
+    description:
+      "Resursların (şəkillər, modullar) əvvəlcədən deyil, yalnız istifadəçiyə lazım olduqda yüklənməsi performansı strategiyası.",
+  },
+  {
+    az: "TLD",
+    en: "top-level domain",
+    description:
+      "Domen adının ən sonuncu və ən yüksək səviyyəli hissəsi (məsələn, .com, .az, .org).",
+  },
+  {
+    az: "TLS",
+    en: "Transport Layer Security",
+    description:
+      "Şəbəkə bağlantılarında məlumatların şifrələnməsini və təhlükəsizliyini təmin edən kriptoqrafik protokol (SSL-in xələfi).",
+  },
+  {
+    az: "Tranzaksiyanın izolyasiya səviyyəsi",
+    en: "transaction isolation level",
+    description:
+      "Məlumat bazalarında paralel işləyən tranzaksiyaların bir-birinə nə dərəcədə təsir edə biləcəyini müəyyən edən səviyyə.",
+  },
+  {
+    az: "Tranzistor",
+    en: "transistor",
+    description:
+      "Elektron siqnalları gücləndirən və ya keçid (açar) kimi istifadə olunan, kompüter prosessorlarının ən kiçik təməl elementi.",
+  },
+  {
+    az: "UDP",
+    en: "User Datagram Protocol",
+    description:
+      "Bağlantı qurmadan məlumat paketlərini çox sürətli, lakin çatdırılma zəmanəti olmadan göndərən şəbəkə protokolu.",
+  },
+  {
+    az: "uyğunluq modeli",
+    en: "consistency model",
+    description:
+      "Paylanmış sistemlərdə müxtəlif qovşaqlardakı məlumatların bir-biri ilə eyniliyini və güncəlliyini tənzimləyən qaydalar.",
+  },
+  {
+    az: "Veb proqramlaşdırma",
+    en: "web development",
+    description:
+      "İnternet və ya lokal şəbəkələr üçün veb saytların və veb tətbiqlərin yaradılması və idarəsi prosesi.",
+  },
+  {
+    az: "virtual yaddaş",
+    en: "virtual memory",
+    description:
+      "Sərt diskdən istifadə edərək tətbiqlərə faktiki RAM tutumundan daha böyük əməli yaddaş illüziyası yaradan OS texnologiyası.",
+  },
+  {
+    az: "yaddaş bölüşdürücüsü",
+    en: "memory allocator",
+    description:
+      "Proqramın icrası zamanı ehtiyac duyulan dinamik yaddaşın yığın (heap) üzərindən ayrılmasını idarə edən mexanizm.",
+  },
+  {
+    az: "yaddaş iyerarxiyası",
+    en: "memory hierarchy",
+    description:
+      "Sürət, qiymət və tutuma görə fərqlənən yaddaş növlərinin (reqistr, keş, RAM, disk) piramida şəklində təşkili.",
+  },
+  {
+    az: "Yaddaş modeli",
+    en: "memory model",
+    description:
+      "Çoxaxınlı proqramlarda yaddaş oxuma/yazma əməliyyatlarının digər axınlara necə və hansı ardıcıllıqla göründüyünü təyin edən qaydalar.",
+  },
+  {
+    az: "yarış vəziyyəti",
+    en: "race condition",
+    description:
+      "Eyni məlumata və ya resursa eyni anda müraciət edən axınların gözlənilməz və səhv nəticələrə səbəb olduğu vəziyyət.",
+  },
+  {
+    az: "Yükləyici",
+    en: "loader",
+    description:
+      "Proqramı diskdən oxuyaraq əməliyyat yaddaşına (RAM) yükləyən, yaddaş ünvanlarını tənzimləyən və icraya hazırlayan OS komponenti.",
+  },
+  {
+    az: "zamanlama hücumları",
+    en: "timing attacks",
+    description:
+      "Kriptoqrafik alqoritmlərin icra müddətindəki fərqlilikləri analiz edərək məxfi məlumatları (şifrələri) ələ keçirməyə çalışan hücum növü.",
   },
 ];
 
