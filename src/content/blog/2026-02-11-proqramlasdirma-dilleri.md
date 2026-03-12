@@ -361,7 +361,7 @@ axmasını tələb edən nizam-intizamlı hərəkat başladı. Bu yeni məntiqi 
 standart tədris dili kimi istifadə olundu.
 
 Amma dünyanı əsl mənada dəyişən dil **C** (1972) oldu. Bell Labs-da yaradılan C
-dili, əməliyyat sistemlərini (xüsusən Unix-i) yazmaq üçün dizayn edilmişdi. C
+dili, [[əməliyyat sistemləri]]ni (xüsusən Unix-i) yazmaq üçün dizayn edilmişdi. C
 qeyri-adi bir balans tapmışdı: o, mühəndisə yüksək səviyyəli dilin aydınlığını,
 eyni zamanda Assembli dilinin performansı və cihaz üzərindəki qeyri-məhdud
 nəzarətini verirdi. C yaddaş xətalarını bağışlamayan, olduqca təhlükəsizsiz bir
@@ -390,7 +390,7 @@ proqramçını çoxlu dərdlərdən qurtardı (məsələn, yaddaş avtomatik tə
 "bir dəfə yaz, hər yerdə işlət" şüarı ilə çıxış etdi. Java dilində yazılan
 proqram birbaşa maşın koduna deyil, xüsusi bir aralıq koda çevrilirdi --
 yuxarıda danışdığımız hibrid versiya kimi. Bu sistem sayəsində bir dəfə yazılmış
-kod istənilən [[əməliyyat sistemi]]ndə problemsiz işləyə bilirdi. Qısa müddətdə
+kod istənilən əməliyyat sistemində problemsiz işləyə bilirdi. Qısa müddətdə
 böyük korporasiyaların sevimlisi olan Java-ya rəqib olaraq Microsoft tərəfindən
 **C#** (2000) yaradıldı.
 
