@@ -3,7 +3,7 @@ title: "Kompüter Elmlərini, Əslində, Necə Öyrənməli"
 author: abutalib-barish-namazov
 description:
   "Təkcə diplom yox, həqiqi bilik əldə etmək istəyən tələbələr üçün bələdçi."
-date: 2026-03-02
+date: 2026-03-12
 categories: ["Təhsil"]
 resource: true
 resource_audiences: ["Universitet Tələbələri"]
