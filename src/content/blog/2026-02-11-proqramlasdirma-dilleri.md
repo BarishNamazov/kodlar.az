@@ -361,13 +361,13 @@ axmasını tələb edən nizam-intizamlı hərəkat başladı. Bu yeni məntiqi 
 standart tədris dili kimi istifadə olundu.
 
 Amma dünyanı əsl mənada dəyişən dil **C** (1972) oldu. Bell Labs-da yaradılan C
-dili, [[əməliyyat sistemləri]]ni (xüsusən Unix-i) yazmaq üçün dizayn edilmişdi. C
-qeyri-adi bir balans tapmışdı: o, mühəndisə yüksək səviyyəli dilin aydınlığını,
-eyni zamanda Assembli dilinin performansı və cihaz üzərindəki qeyri-məhdud
-nəzarətini verirdi. C yaddaş xətalarını bağışlamayan, olduqca təhlükəsizsiz bir
-dil idi. Lakin o qədər sürətli və çevik idi ki, onilliklər boyu dünyanı idarə
-etdi. C++ və Java başda olmaqla, bu gün istifadə etdiyimiz bir çox dilin
-qrammatikası birbaşa C-dən miras qalıb.
+dili, [[əməliyyat sistemləri]]ni (xüsusən Unix-i) yazmaq üçün dizayn edilmişdi.
+C qeyri-adi bir balans tapmışdı: o, mühəndisə yüksək səviyyəli dilin
+aydınlığını, eyni zamanda Assembli dilinin performansı və cihaz üzərindəki
+qeyri-məhdud nəzarətini verirdi. C yaddaş xətalarını bağışlamayan, olduqca
+təhlükəsizsiz bir dil idi. Lakin o qədər sürətli və çevik idi ki, onilliklər
+boyu dünyanı idarə etdi. C++ və Java başda olmaqla, bu gün istifadə etdiyimiz
+bir çox dilin qrammatikası birbaşa C-dən miras qalıb.
 
 ### Obyektlərin Yüksəlişi
 

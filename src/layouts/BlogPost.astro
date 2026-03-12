@@ -225,11 +225,12 @@ const authorData = await getAuthor(frontmatter.author);
       }
 
       headings.forEach((heading, index) => {
-        const id = `heading-${index}`;
-        heading.id = id;
+        if (!heading.id) {
+          heading.id = `heading-${index}`;
+        }
 
         const link = document.createElement("a");
-        link.href = `#${id}`;
+        link.href = `#${heading.id}`;
         link.textContent = heading.textContent;
         link.className = `toc-link ${heading.tagName.toLowerCase() === "h3" ? "indent" : ""}`;
 
