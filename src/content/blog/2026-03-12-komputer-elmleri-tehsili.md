@@ -1075,7 +1075,7 @@ olmağı düşünün. Mən Azərbaycanda şagirdlər üçün
 çünki belə bir icma hələ mövcud deyildi. Kiminsə bunu başlatması lazım idi.
 Həmin kimsə elə siz də ola bilərsiniz.
 
-## Düşüncə tərzi və uzunmüddətli oyun haqqında
+## Düşüncə tərzi və uzunmüddətli yol haqqında
 
 Yekunda bu uzunmüddətli yol haqqında bəzi fikirlərimi bölüşmək istəyirəm, çünki
 kompüter elmləri dörd il oxuyub sonra dayanacağınız bir şey deyil.
