@@ -125,7 +125,7 @@ olaraq gözə görünməyən - sizinlə imtahan qiymətləriniz arasında duran 
 halda, onilliklərini öz sahələri barədə düşünməyə həsr etmiş və suallarınıza
 birbaşa cavab verəcək insanlardır. Tələbələrin əksəriyyəti bu resursdan çox az
 istifadə edir. Qəbul saatlarına həqiqi bir sualla getmək bütün təhsil prosesində
-ən çox bəhrəsini görəcəyiniz fəaliyyətlərdən biridir^[Burada "3-cü məsələnin
+ən çox bəhrəsini görəcəyiniz fəaliyyətlərdən biridir[^Burada "3-cü məsələnin
 üzərindən yenidən keçə bilərikmi?" kimi bir sualı nəzərdə tutmuram. Mənim
 nəzərdə tutduğum, məsələn, budur: "[[Alqoritm]]i başa düşürəm, amma
 '[[acgöz seçim]]' xassəsinin burada niyə keçərli olduğunu anlamıram - isbatın
@@ -391,7 +391,7 @@ açılır - SYN, SYN-ACK, [[ACK]]. Daha sonra
 [TLS əl sıxışması](https://en.wikipedia.org/wiki/Transport_Layer_Security#TLS_handshake)
 şifrələməni razılaşdırır: sertifikatlar yoxlanılır, açarlar mübadilə edilir.
 Brauzerinizdəki "qıfıl işarəsi" məhz buradandır. Siz bunun əslində nə demək
-olduğunu və nə demək olmadığını^[TLS sizin serverlə əlaqənizin şifrələndiyinə və
+olduğunu və nə demək olmadığını[^TLS sizin serverlə əlaqənizin şifrələndiyinə və
 serverin həmin domen üçün etibarlı sertifikata malik olduğuna zəmanət verir.
 Lakin o, serverin etibarlı olduğuna, veb-saytın fırıldaqçı olmadığına və ya
 məlumatlarınızın ünvana çatdıqdan sonra təhlükəsiz olacağına zəmanət *vermir*.
@@ -539,7 +539,7 @@ Bir tələbə çoxluqlar nəzəriyyəsinə aid bir məsələdə çətinlik çək
 məsələsini həll edə bilir, lakin bir az çətinlərdə ilişib qalır. Ondan
 "Kardinallığın dəqiq tərifi nədir?" deyə soruşuram. Cavab verə bilmir. Ağlında
 dumanlı bir təsəvvür var: "Yəni, çoxluğun ölçüsü kimi bir şeydir". Lakin bu
-formal tərif deyil^[Qeyri-rəsmi dildə, çoxluğun kardinallığı ondakı elementlərin
+formal tərif deyil[^Qeyri-rəsmi dildə, çoxluğun kardinallığı ondakı elementlərin
 sayıdır. Daha dəqiq desək, iki çoxluğun kardinallığı yalnız və yalnız onların
 arasında [[biyeksiya]] mövcud olduqda eynidir. Bu tərif təbii olaraq sonsuz
 çoxluqlara da şamil edilir və məhz bu nöqtədə o, güclü və qeyri-trivial bir
